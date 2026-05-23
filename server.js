@@ -6,12 +6,34 @@ const app = express();
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 
+// ÇáÕÝÍÉ ÇáÑÆíÓíÉ
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
+});
+
+// ?? ÈíÇäÇÊ ÊÌÑíÈíÉ
+let messages = [];
+
+// ?? ÌáÈ ÇáÑÓÇÆá
+app.get("/messages", (req, res) => {
+  res.json(messages);
+});
+
+// ?? ÅÖÇÝÉ ÑÓÇáÉ
+app.post("/messages", (req, res) => {
+  const text = req.body.text;
+
+  if (!text) {
+    return res.status(400).json({ error: "empty message" });
+  }
+
+  messages.push({ text });
+
+  res.json({ success: true });
 });
 
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
-  console.log("Backend is working ðŸš€");
+  console.log("Backend is working ??");
 });
