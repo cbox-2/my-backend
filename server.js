@@ -16,12 +16,11 @@ app.get("/messages", (req, res) => {
 });
 
 app.post("/messages", (req, res) => {
+  console.log("BODY:", req.body); // مهم للتجربة
+
   messages.push(req.body);
-  res.json({ success: true });
+  res.json({ success: true, received: req.body });
 });
 
 const PORT = process.env.PORT || 3000;
-
-app.listen(PORT, () => {
-  console.log("Server running");
-});
+app.listen(PORT, () => console.log("Server running"));
