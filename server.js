@@ -1,12 +1,12 @@
-const express = require("express");
-const app = express();
+let messages = [];
 
-app.get("/", (req, res) => {
-  res.send("Backend is working 🚀");
+app.use(express.json());
+
+app.get("/messages", (req, res) => {
+  res.json(messages);
 });
 
-const PORT = process.env.PORT || 3000;
-
-app.listen(PORT, () => {
-  console.log("Server running");
+app.post("/messages", (req, res) => {
+  messages.push(req.body);
+  res.json({ success: true });
 });
