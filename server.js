@@ -3,82 +3,44 @@ const path = require("path");
 
 const app = express();
 
-// تشغيل ملفات public
+// تشغيل ملفات static (css, js, images)
 app.use(express.static(path.join(__dirname, "public")));
 
-// الصفحة الرئيسية
+// 🔥 الصفحة الرئيسية
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "لوحة التحكم · صندوق التحكم.html"));
+  res.sendFile(
+    path.join(__dirname, "public", "لوحة التحكم · صندوق التحكم.html")
+  );
 });
 
-// الصفحات الأخرى (روابط نظيفة)
-app.get("/2", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "لوحة التحكم · صندوق التحكم2.html"));
+// 🔥 نظام صفحات ديناميكي (بدون ما تكتب 20 route)
+app.get("/:page", (req, res) => {
+  const page = req.params.page;
+
+  // إذا admin أو home يرجع الصفحة الرئيسية
+  if (page === "admin" || page === "home") {
+    return res.sendFile(
+      path.join(__dirname, "public", "لوحة التحكم · صندوق التحكم.html")
+    );
+  }
+
+  // يحاول يفتح باقي الصفحات مثل /2 /3 /10 ...
+  const filePath = path.join(
+    __dirname,
+    "public",
+    `لوحة التحكم · صندوق التحكم${page}.html`
+  );
+
+  res.sendFile(filePath, (err) => {
+    if (err) {
+      res.status(404).send("Page Not Found");
+    }
+  });
 });
 
-app.get("/3", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "لوحة التحكم · صندوق التحكم3.html"));
-});
-
-app.get("/4", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "لوحة التحكم · صندوق التحكم4.html"));
-});
-
-app.get("/5", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "لوحة التحكم · صندوق التحكم5.html"));
-});
-
-app.get("/6", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "لوحة التحكم · صندوق التحكم6.html"));
-});
-
-app.get("/7", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "لوحة التحكم · صندوق التحكم7.html"));
-});
-
-app.get("/8", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "لوحة التحكم · صندوق التحكم8.html"));
-});
-
-app.get("/9", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "لوحة التحكم · صندوق التحكم9.html"));
-});
-
-app.get("/10", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "لوحة التحكم · صندوق التحكم10.html"));
-});
-
-app.get("/11", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "لوحة التحكم · صندوق التحكم11.html"));
-});
-
-app.get("/12", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "لوحة التحكم · صندوق التحكم12.html"));
-});
-
-app.get("/13", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "Control Panel · Cbox 13.html"));
-});
-
-app.get("/14", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "Control Panel · Cbox14.html"));
-});
-
-app.get("/15", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "لوحة التحكم · صندوق التحكم15.html"));
-});
-
-app.get("/16", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "لوحة التحكم · صندوق التحكم16.html"));
-});
-
-app.get("/19", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "لوحة التحكم · صندوق التحكم19.html"));
-});
-
-// تشغيل السيرفر
+// 🔥 تشغيل السيرفر على Railway / localhost
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
-  console.log("System Running 🚀");
+  console.log("System Running 🚀 on port " + PORT);
 });
