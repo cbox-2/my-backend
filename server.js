@@ -1,110 +1,36 @@
-const express = require("express");
-const path = require("path");
+const express = require('express');
+const path = require('path');
 
 const app = express();
 
-// تشغيل الملفات الثابتة
-app.use(express.static(path.join(__dirname, "public")));
+// 🔥 يخدم كل ملفات المشروع (CSS, JS, images) بدون تعديل أي مسارات
+app.use(express.static(__dirname, {
+  setHeaders: (res, filePath) => {
+    // تحسين بسيط لأنواع الملفات
+    if (filePath.endsWith('.css')) {
+      res.setHeader('Content-Type', 'text/css');
+    }
+    if (filePath.endsWith('.js')) {
+      res.setHeader('Content-Type', 'application/javascript');
+    }
+  }
+}));
 
-
-// =========================
-// 🟢 الصفحة الرئيسية
-// =========================
-app.get("/", (req, res) => {
-  res.sendFile(
-    path.join(__dirname, "public", "لوحة التحكم · صندوق التحكم.html")
-  );
+// 🏠 الصفحة الرئيسية
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-
-// =========================
-// 🟢 /admin?home & snippet & acct
-// =========================
-app.get("/admin", (req, res) => {
-  const { home, snippet, acct, users, messages, options, theme } = req.query;
-
-  // 🟢 home
-  if (home !== undefined) {
-    return res.sendFile(
-      path.join(__dirname, "public", "لوحة التحكم · صندوق التحكم.html")
-    );
+// 🚫 يمنع رجوع HTML بدل الملفات (حل مشكلة MIME)
+app.use((req, res, next) => {
+  if (!req.path.includes('.') && req.path !== '/') {
+    return res.status(404).send('Not Found');
   }
-
-  // 🟢 snippet (انشر)
-  if (snippet !== undefined) {
-    return res.sendFile(
-      path.join(__dirname, "public", "لوحة التحكم · صندوق التحكم2.html")
-    );
-  }
-
-  // 🟢 الحساب
-  if (acct !== undefined) {
-    return res.sendFile(
-      path.join(__dirname, "public", "لوحة التحكم · صندوق التحكم3.html")
-    );
-  }
-
-  // 🟢 مستخدمين
-  if (users !== undefined) {
-    return res.sendFile(
-      path.join(__dirname, "public", "لوحة التحكم · صندوق التحكم4.html")
-    );
-  }
-
-  // 🟢 رسائل
-  if (messages !== undefined) {
-    return res.sendFile(
-      path.join(__dirname, "public", "لوحة التحكم · صندوق التحكم5.html")
-    );
-  }
-
-  // 🟢 خيارات
-  if (options !== undefined) {
-    return res.sendFile(
-      path.join(__dirname, "public", "لوحة التحكم · صندوق التحكم6.html")
-    );
-  }
-
-  // 🟢 مظهر
-  if (theme !== undefined) {
-    return res.sendFile(
-      path.join(__dirname, "public", "لوحة التحكم · صندوق التحكم7.html")
-    );
-  }
-
-  // الافتراضي
-  return res.sendFile(
-    path.join(__dirname, "public", "لوحة التحكم · صندوق التحكم.html")
-  );
+  next();
 });
 
-
-// =========================
-// 🟢 الصفحات المباشرة /2 /3 /4
-// =========================
-app.get("/:page", (req, res) => {
-  const page = req.params.page;
-
-  // منع تضارب admin
-  if (page === "admin") {
-    return res.redirect("/");
-  }
-
-  const filePath = path.join(
-    __dirname,
-    "public",
-    `لوحة التحكم · صندوق التحكم${page}.html`
-  );
-
-  return res.sendFile(filePath);
-});
-
-
-// =========================
-// 🟢 تشغيل السيرفر
-// =========================
+// 🚀 تشغيل السيرفر
 const PORT = process.env.PORT || 3000;
-
 app.listen(PORT, () => {
-  console.log("🚀 System Running on port " + PORT);
+  console.log('Server running on port', PORT);
 });
