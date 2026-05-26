@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<!-- saved from url=(0033)/admin?userint -->
+<html lang="ar" class="translated-rtl"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>لوحة التحكم · صندوق التحكم</title>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<meta name="description" content="Cbox live chat is an embeddable chat app for online communities, groups, and live-streaming events.">
+<link href="data:image/x-icon;base64,AAABAAEAEBACAAAAAACwAAAAFgAAACgAAAAQAAAAIAAAAAEAAQAAAAAAQAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA" rel="icon" type="image/x-icon">
+<link rel="stylesheet" href="./لوحة التحكم · صندوق التحكم5_files/style.css">
+<link type="text/css" rel="stylesheet" charset="UTF-8" href="./لوحة التحكم · صندوق التحكم5_files/m=el_main.css"></head>
+<body id="mainbody">
+
+	<script type="text/javascript" async="" src="./لوحة التحكم · صندوق التحكم5_files/js"></script><script async="" src="./لوحة التحكم · صندوق التحكم5_files/analytics.js."></script><script>
+	// Define stub
+	var rcvdformresponse = function () {};
+	</script>
+	
+	<div id="mask"></div>
+
+
+
+<div id="popovr_box">
+	<div class="wrap">
+		<div style="padding: 20px; background-color: #fff">
+			<!--<div style="float:right; font-size: 150%;"><b><a href="javascript:popovr_close()">X</a></b></div>-->
+			<div id="popovr_title">
+				<!-- title -->
+			</div>
+			
+			<div id="popovr_text" style="text-align: left; clear:both">
+				<!-- content -->
+			</div>
+
+			<div id="popovr_t_login" style="display: none; text-align: left; clear:both">
+				<p><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+					انتهت صلاحية جلستك. يرجى تسجيل الدخول مرة أخرى للمتابعة.
+				</font></font></p>
+				<iframe src="javascript:false" name="t_qlpop" onload="rcvdformresponse(this.name)" width="1" height="1" class="frmiframe" src="./لوحة التحكم · صندوق التحكم5_files/saved_resource.html"></iframe>
+				<form name="qlpop" action="/admin_d_login?f=qlpop" target="t_qlpop" method="post" onsubmit="return subsaving(this.name, &#39;sub&#39;, &#39;logging in...&#39;);">
+				<fieldset>
+					<label><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">اسم المستخدم:</font></font></label>
+					<input type="text" name="uname" value="" maxlength="50" class="txtbox">
+					<label><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">كلمة المرور:</font></font></label>
+					<input type="password" name="pword" value="" maxlength="50" class="txtbox">
+					<font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"><input type="submit" name="sub" value="تسجيل الدخول"></font></font>
+					
+					<div id="m_qlpop" class="frmmsg1"></div>
+					<div id="em_qlpop" class="frmmsg2"></div>
+				</fieldset>
+				</form>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<!--[if lte IE 7]>
+	<div class="notice_er notice_top">
+		You are using an old version of Internet Explorer or you are in Compatibility View mode. 
+		This website will not work correctly. 
+		<br>
+		Please upgrade your browser or disable Compatibility View.
+	</div>
+<![endif]-->
+
+
+<div id="bodywrap">
+	<div id="header">
+		<div class="wrap">
+
+			<a id="logo" href="/admin/">
+				<img src="./لوحة التحكم · صندوق التحكم5_files/logo400.png" width="200" height="86" alt="صندوق C" border="0">
+			</a>
+
+			<div id="headerExtras">
+	
+								
+								<span id="userWelcome"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"></font></font></span>
+				<a href="/admin?switch"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">صناديق بريدي</font></font></a>
+				<a href="/admin?acct"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">حسابي</font></font></a>
+												<a href="/admin/help"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">يدعم
+				</font></font></a><a href="/admin?preproc=logout" onclick="return logout()"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">تسجيل الخروج
+				</font></font></a>
+							</div>
+		</div>
+	</div>
+
+		<div id="subbar">
+		<div class="wrap">
+			<a href="/admin?home" class="submenuitem"><b><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"></font></font></b>			</a><a href="/admin?snippet" class="submenuitem"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">انشر
+			</font></font></a><a href="/admin?userint#" id="hovmenu1" class="submenuitem" onmousedown="return hovmenu(this, 1)"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">المظهر والملمس
+			</font></font></a><a href="/admin?userint#" id="hovmenu2" class="submenuitem" onmousedown="return hovmenu(this, 2)"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">خيارات
+			</font></font></a><a href="/admin?userint#" id="hovmenu3" class="submenuitem" onmousedown="return hovmenu(this, 3)"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">المستخدمون
+			</font></font></a><a href="/admin?userint#" id="hovmenu4" class="submenuitem" onmousedown="return hovmenu(this, 4)"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">رسائل
+			</font></font></a>
+		</div>
+	</div>
+	<div id="bar3">
+		<div id="hovmenu" class="wrap"><a></a></div>
+	</div>
+	
+	<div id="wideimg" style="position: relative; width: 100%; left: 0">
+	</div>
+	
+	<div id="main" class="wrap ">
+
+<div id="content">
+
+<script type="text/javascript">
+var noticetogorig = "";
+function noticetoggle(xo, v) {
+  var xo = document.getElementById(xo);
+  z = document.getElementById('notice-more');
+  if (z.style.display == 'none') {
+    z.style.display = '';
+    noticetogorig = xo.innerHTML;
+    xo.innerHTML = v;
+  }
+  else {
+    z.style.display = 'none';
+    xo.innerHTML = noticetogorig;
+  }
+}
+
+function noticeclose(x) {
+  z = document.getElementById('notice');
+  z.style.display = "none";
+  document.cookie = "rnot="+x+";";
+}
+
+function highlighthelp(sec, para, on) {
+	var ico = document.getElementById("hlpico-"+sec+"-"+para);
+  	if (!ico) return;
+  	if (!on) {
+  		ico.style.filter = "alpha(opacity=60)";
+  		ico.style.opacity = 0.6;
+  	}
+  	else {
+  		ico.style.filter = "";
+  		ico.style.opacity = 1;
+  	}
+}
+
+var createBar = function ($elem, isLog, showLimit) {
+
+	var $bar = document.createElement("div");
+	$bar.className = "barFill";
+	
+	var $text = document.createElement("div");
+	$text.className = "barText";
+	
+	$elem.appendChild($bar);
+	$elem.appendChild($text);
+	
+	var minWidth = 5;
+	
+	var format = function (n) {
+		return (n+'').split('').reverse().join('').replace(/([0-9]{3})(?=[0-9])/g, "$1,").split('').reverse().join('');
+	}
+	
+	$bar.style.width = "0%";
+	
+	return {
+		setBarSize: function (val, max) {
+			var over = false;
+			if (val > max) {
+				over = true;
+			}
+			
+
+			var val = Math.min(max, Math.max(0, val));
+			var prop = val / max;
+			
+			$text.innerHTML = format(val) + (over ? "+" : "") + (showLimit ? "/" + max : "");
+
+			var w = (isLog ? (Math.log((prop*1.718 + 1))) : prop) * 100;
+
+			var r = prop/0.7 * 255 + 50;
+			var g = 255 - prop*0.6*255;
+			var b = 80;
+			
+			var comp = (255 / (r*0.9 + g * 1.1)) * 1.4;
+			
+			r = r / comp;
+			g = g / comp;
+			b = b / comp;
+			
+			window.setTimeout(function () {
+				$bar.style.width = Math.max(w, minWidth) + "%";
+				$bar.style.backgroundColor = "rgb("+(r|0)+", "+(g|0)+", "+(b|0)+")";
+			}, 100);			
+			
+		}
+	}
+};
+  		
+</script>
+
+
+
+
+
+<h1><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">تكامل المستخدم</font></font></h1>
+
+
+
+
+
+
+<p><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+إذا كان موقعك الإلكتروني يتضمن نظام تسجيل دخول خاص به، فيمكنك استخدام التكامل لتحقيق تسجيل دخول موحد. يستطيع المستخدمون تسجيل الدخول إلى موقعك، وسيتم تسجيل دخولهم تلقائيًا إلى حسابك على Cbox. 
+</font></font></p>
+<p><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+يمكن منح المستخدمين الذين تم التحقق من هويتهم عبر التكامل صلاحيات التعديل وغيرها من الصلاحيات في </font></font><a href="/admin?users"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">صفحة المستخدمين</font></font></a><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"> . فعّل التسجيل التلقائي لتجنب تسجيل أسماء المستخدمين يدويًا في صندوق التحكم الخاص بك لمنحهم الصلاحيات.
+</font></font></p>
+
+
+<div class="notice"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+تتوفر ميزة تكامل المستخدم مع </font></font><a href="/admin/upgrade?p=2"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">Cbox Pro</font></font></a><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"> . 
+</font></font></div>
+
+<div class="col1_2">
+
+<fieldset>
+<legend><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">المفتاح الخاص</font></font></legend>
+<label><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">مفتاحك:</font></font></label>
+<div class="NotInput">
+	<code>8i9if550i3k4a2ck</code>
+</div>
+<p><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+لا تشارك هذا المفتاح علنًا.
+</font></font></p>
+</fieldset>
+
+</div>
+<div class="col2_2">
+
+<iframe src="javascript:false" name="t_fuserint" onload="rcvdformresponse(this.name)" width="1" height="1" class="frmiframe" src="./لوحة التحكم · صندوق التحكم5_files/saved_resource(1).html"></iframe>
+<form name="fuserint" target="t_fuserint" method="post" action="/admin_d_submit?f=fuserint" onsubmit="return subsaving(this.name, &#39;sub&#39;+this.override.value, &#39;&#39;);">
+
+<fieldset class="Med">
+<legend><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">خيارات التكامل</font></font></legend>
+
+
+	<label for="i_uo"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">تفعيل التكامل:</font></font></label>
+	
+	
+<!--
+	<label for="i_uoauth"> Authenticate users:</label>
+	<input type="checkbox" name="uoauth" value="1"  id="i_uoauth" disabled>
+-->
+
+	<div class="slideThree"><input type="checkbox" name="uo" value="1" id="i_uo" disabled=""><label></label></div><label for="i_uoreg"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">تسجيل المستخدمين تلقائيًا:</font></font></label>
+	
+	
+  <div class="slideThree"><input type="checkbox" name="uoreg" value="1" id="i_uoreg" disabled=""><label></label></div><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"><input type="submit" name="sub" value="يحفظ"></font></font>
+  
+  <div id="m_fuserint" class="frmmsg1"></div>
+  <div id="em_fuserint" class="frmmsg2"></div>
+</fieldset>
+</form>
+
+</div>
+
+<div class="colclear"></div>
+
+<h2><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">إعداد التكامل</font></font></h2>
+
+<br>
+
+<script type="text/javascript">
+var cur = "";
+function updateint() {
+  var f = document.getElementById("intwith");
+  a = f[f.selectedIndex].value;
+  if (cur) document.getElementById("int_"+cur).style.display = "none";
+  document.getElementById("int_"+a).style.display = "";
+  cur = a;
+}
+</script>
+
+<p style="float: right">
+<b><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">تعليمات لـ:</font></font></b> 
+<select name="intwith" id="intwith" class="txtbox" onchange="updateint()">
+<option value="generic"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">موقع ويب عام قائم على لغة PHP</font></font></option>
+
+<option value="ee16"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">ExpressionEngine 1.6.x</font></font></option>
+
+<option value="joomla"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">جوملا</font></font></option>
+<option value="phpbb3"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">phpBB 3.x</font></font></option>
+<option value="smf"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">منتدى الآلات البسيطة (SMF) 1.1.x</font></font></option>
+<option value="smf2rc1"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">منتدى الآلات البسيطة (SMF) 2.0 RC1</font></font></option>
+<option value="vbulletin"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">vBulletin 3.xx</font></font></option>
+<option value="wordpress"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">ووردبريس</font></font></option>
+
+</select>
+</p>
+<div class="colclear"></div>
+
+
+<div id="int_generic">
+<p><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+إذا كان موقعك يعتمد على لغة PHP، فقم بتعديل </font></font><a href="/admin?snippet"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">كود تضمين</font></font></a><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"> Cbox بالطريقة التالية:
+</font></font></p>
+<pre><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">...&amp;sec=form&amp;nme=&lt;?php echo urlencode($name)?&gt;&amp;nmekey=&lt;?php echo md5('8i9if550i3k4a2ck'.$name)?&gt;
+</font></font></pre>
+<p><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+عند ظهور المتغير </font></font><code>$name</code><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">، أدخل المتغير الذي يمثل اسم المستخدم كما تم استرجاعه من قاعدة بيانات المستخدمين لديك. سيختلف هذا باختلاف نظام إدارة المحتوى أو نظام المنتدى الذي تستخدمه. 
+</font></font></p>
+</div>
+
+
+<div id="int_myleague" style="display:none">
+
+</div>
+
+<div id="int_ee16" style="display:none">
+<p>
+You'll need to have an <a href="http://www.expressionengine.com/">ExpressionEngine</a>-based website up and running before proceeding with these steps. 
+Once you have ExpressionEngine running it's very easy to get Cbox integrated with your userbase. If you have already installed your Cbox in your site template, you 
+can skip the following steps and go straight to the Integration guide. 
+</p>
+
+<p>
+<b>Standard installation guide: </b>
+</p><ol>
+<li>Log in to your ExpressionEngine Control Panel.
+</li><li>Go to the <b>Templates</b> section. </li>
+<li>Click your <b>index</b> template to edit it.</li>
+<li>Choose the location for your Cbox. You may want to place it somewhere after the tag <pre>&lt;div id="sidebar"&gt;</pre></li>
+<li>Paste your <a href="/admin?snippet">Cbox HTML code</a> and click <b>Update</b>.</li>
+</ol>
+<p></p>
+
+<p>
+Confirm your Cbox appears on your site before proceeding with integration:
+</p>
+
+<p>
+<b>Integration guide: </b>
+</p><ol>
+<li>Download our <a href="/admin/extmodules/mod_cbox_ee16.zip"><img src="./لوحة التحكم · صندوق التحكم5_files/disk.gif" width="12" height="12" border="0" style="text-align: bottom"> Cbox on ExpressionEngine</a> module to your computer.</li>
+<li>Extract the module files to the <b>./system</b> directory in your ExpressionEngine installation (this may have been renamed). Note that the mcp.cbox.php and mod.cbox.php files go in the ./system/modules directory, and lang.cbox.php goes in the ./system/language directory. </li>
+<li>Log in to your ExpressionEngine Control Panel.
+</li><li>Choose the <b>Modules</b> section. Cbox should be in the list of modules. </li>
+<li>Click <b>Install</b> for the Cbox module.</li>
+<li>Now go to the <b>Templates</b> section. </li>
+<li>Click to edit the template in which your Cbox is installed (by default, <b>index</b>).</li>
+<li>Locate your Cbox HTML code in your template.</li>
+<li>Find (with Ctrl+F): <pre>&lt;!-- BEGIN CBOX ... --&gt;</pre> and paste before it: <br>
+<pre>{exp:cbox privkey="8i9if550i3k4a2ck"}</pre></li>
+<li>Find: <pre>&lt;!-- END CBOX --&gt;</pre> and paste after it:<br>
+<pre>{/exp:cbox}</pre></li>
+<li>Find: <pre>sec=form</pre> and immediately after it, paste: <br>
+<pre>&amp;nme={name}&amp;nmekey={key}</pre></li>
+<li>Click <b>Update</b> to save your Template. </li>
+<li>And finally, click <b>Enable</b> lower down on this page to turn user integration on. </li>
+</ol>
+<p></p>
+
+</div>
+
+
+<div id="int_joomla" style="display:none">
+<p>
+You'll need to have a <a href="http://www.joomla.org/">Joomla</a>-based website up and running before proceeding with these steps. 
+Once you have Joomla running it's very easy to get Cbox integrated with your Joomla userbase. Here are the steps:
+</p>
+<ol>
+<li>First download our <a href="/admin/extmodules/mod_cbox_joomla15.zip"><img src="./لوحة التحكم · صندوق التحكم5_files/disk.gif" width="12" height="12" border="0" style="text-align: bottom"> Cbox on Joomla</a> module to your computer.</li>
+<li>In your Joomla administrator menu, go to <b>Extensions</b> -&gt; <b>Install/Uninstall</b></li>
+<li>Use the <b>Upload Package File</b> tool to upload the Cbox on Joomla module you downloaded from us.
+</li><li>Then go to <b>Extensions -&gt; Module Manager</b> and click on <b>Cbox</b> on the list that appears.</li>
+<li>Now set <b>Enabled</b> to <code>Yes</code>, and paste your snippet (from <a href="/admin?snippet">here</a>) and private key (see below, required for integration) into the parameter fields on the right</li>
+<li>Click <b>Save</b></li>
+<li>And finally, click <b>Enable</b> lower down on this page to turn user integration on. </li>
+</ol>
+</div>
+
+
+<div id="int_phpbb3" style="display:none">
+<p>
+These steps will integrate your Cbox with your phpBB3 userbase. 
+</p>
+<ol>
+<li>Navigate to a copy of your phpbb installation directory.</li>
+<li>Open the file /includes/functions.php in a plain-text editor such as Notepad.</li>
+<li>Find (using Ctrl+F): <br>
+<pre>		$l_login_logout = sprintf($user-&gt;lang['LOGOUT_USER'], $user-&gt;data['username']);</pre></li>
+<li>On the next line, add: <br>
+<pre>		$cbox_username = urlencode($user-&gt;data['username']);<font></font>
+		$cbox_userkey = md5('8i9if550i3k4a2ck'.$user-&gt;data['username']);</pre></li>
+<li>Then find: <br>
+<pre>		'BOARD_URL'			=&gt; $board_url,</pre></li>
+<li>On the next line, add: <br>
+<pre>		'CBOX_USERNAME'		=&gt; $cbox_username,<font></font>
+		'CBOX_USERKEY'		=&gt; $cbox_userkey,</pre></li>
+<li>Save and upload /includes/functions.php to your phpbb installation directory on your server.</li>
+<li>Go into your phpBB admin control panel.</li>
+<li>Click the <b>Styles</b> tab, choose the <b>Templates</b> side bar item and for the current template, click <b>Edit</b>.</li>
+<li>If your Cbox is installed already, choose the template file in which you placed it. If Cbox is not installed, choose a location. Recommended files are overall_footer.html or overall_header.html.
+</li><li>Paste your Cbox HTML code into the template file. (Your Cbox HTML code is at <a href="/admin?snippet">this page</a>.)
+</li><li>In your Cbox HTML code, find: <code>sec=form</code> and immediately after, paste: <code>&amp;nme={CBOX_USERNAME}&amp;nmekey={CBOX_USERKEY}</code></li>
+<li><b>Important: </b> remove the &lt;!-- BEGIN CBOX --&gt; and &lt;!-- END CBOX --&gt; tags from your code. These will cause an error on your template. 
+</li><li>Save.</li>
+<li>Click <b>Enable</b> lower down on this page to turn user integration on.</li>
+<li>Refresh your forum to confirm you are logged in to your Cbox.</li>
+</ol>
+</div>
+
+
+<div id="int_smf" style="display:none">
+<p>
+You'll need to have a <a href="http://www.simplemachines.org/">Simple Machines Forum</a>-based website up and running before proceeding with these steps. 
+The Cbox SMF module will get Cbox on your SMF template easily, and it'll also integrate your SMF users with Cbox.
+</p>
+<ol>
+<li>First download our <a href="/admin/extmodules/mod_cbox_smf11.tar.gz"><img src="./لوحة التحكم · صندوق التحكم5_files/disk.gif" width="12" height="12" border="0" style="text-align: bottom"> Cbox on SMF</a> module to your computer.</li>
+<li>Go to the SMF Administration, and click on <b>Packages</b>.</li>
+<li>Click on the <b>Download Packages</b> tab.</li>
+<li>At <b>Upload a Package</b> at the bottom of the page, choose the <code>mod_cbox_smf11.tar.gz</code> file you just downloaded, and click <b>Upload</b>.</li>
+<li>The message "Package has been downloaded successfully" is displayed. Click <b>Apply Mod</b> beneath it.</li>
+<li>Click <b>Install Now</b>. You should then see "The package was installed successfully".</li>
+<li>Go to <b>Features and Options</b> under the Configuration heading on the menu to your left (or click on Features and Options on the Admin main page).</li>
+<li>Scroll down to locate the Cbox options. Paste your code snippet (from <a href="/admin?snippet">here</a>), private key (see below, required for integration) and choose where to place the box (header or footer).</li>
+<li>Save changes.</li>
+<li>And finally, click <b>Enable</b> lower down on this page to turn user integration on. </li>
+</ol>
+</div>
+
+
+<div id="int_smf2rc1" style="display:none">
+<p>
+You'll need to have a <a href="http://www.simplemachines.org/">Simple Machines Forum</a>-based website up and running before proceeding with these steps. 
+The Cbox SMF module will get Cbox on your SMF template easily, and it'll also integrate your SMF users with Cbox.
+</p>
+<ol>
+<li>First download our <a href="/admin/extmodules/mod_cbox_smf2rc11.zip"><img src="./لوحة التحكم · صندوق التحكم5_files/disk.gif" width="12" height="12" border="0" style="text-align: bottom"> Cbox on SMF</a> module to your computer.</li>
+<li>Go to the SMF Administration, and click on <b>Packages</b>.</li>
+<li>Click on the <b>Download Packages</b> tab.</li>
+<li>At <b>Upload a Package</b> at the bottom of the page, choose the <code>mod_cbox_smf11.tar.gz</code> file you just downloaded, and click <b>Upload</b>.</li>
+<li>The message "Package has been downloaded successfully" is displayed. Click <b>Apply Mod</b> beneath it.</li>
+<li>Click <b>Install Now</b>. You should then see "The package was installed successfully".</li>
+<li>Go to <b>Features and Options</b> under the Configuration heading on the menu to your left (or click on Features and Options on the Admin main page).</li>
+<li>Scroll down to locate the Cbox options. Paste your code snippet (from <a href="/admin?snippet">here</a>), private key (see below, required for integration) and choose where to place the box (header or footer).</li>
+<li>Save changes.</li>
+<li>And finally, click <b>Enable</b> lower down on this page to turn user integration on. </li>
+</ol>
+</div>
+
+
+<div id="int_vbulletin" style="display:none">
+<p>
+You'll need to have a vBulletin-based website up and running with your Cbox already installed in your template, before proceeding with these steps. 
+</p>
+<ol>
+<li>Log in to your vBulletin Admin Control Panel.</li>
+<li>Choose <b>Plugins &amp; Products</b> -&gt; <b>Add New Plugin</b> from the menu.</li>
+<li>Create a new plugin at 'forumhome_complete' and insert this code: 
+<pre>$cbox_nme = urlencode($vbulletin-&gt;userinfo['username']);<font></font>
+$cbox_key = md5('8i9if550i3k4a2ck' . $vbulletin-&gt;userinfo['username']);</pre></li>
+<li>Save.</li>
+<li>Locate your Cbox HTML code in your forum template.
+</li><li>In your Cbox HTML code, find: <code>sec=form</code> and immediately after, paste: 
+<pre>&amp;nme=$cbox_nme&amp;nmekey=$cbox_key</pre></li>
+<li>Save.</li>
+<li>And finally, click <b>Enable</b> lower down on this page to turn user integration on. </li>
+
+</ol>
+</div>
+
+<div id="int_wordpress" style="display:none">
+<p>
+You'll need to have a Wordpress-based website up and running before proceeding with these steps. 
+</p>
+<ol>
+<li>Open your Wordpress Theme Editor (Administration &gt; Appearance &gt; Editor).
+</li><li>Paste the following into the template your want your Cbox to appear in:
+<pre>&lt;?php global $user_ID, $user_identity ?&gt;<font></font>
+<font></font>
+&lt;?php if ( $user_ID ) : ?&gt;<font></font>
+[your Cbox HTML code]<font></font>
+&lt;?php endif;  ?&gt;</pre></li>
+<li>Where it says [your Cbox HTML code] above, replace with your <a href="/admin?snippet">Cbox HTML code</a>.</li>
+<li>In your Cbox HTML code, find: <code>sec=form</code> and immediately after, paste: 
+<pre>&amp;nme=&lt;?php echo urlencode($user_identity)?&gt;&amp;nmekey=&lt;?php echo md5('8i9if550i3k4a2ck'.$user_identity)?&gt;</pre></li>
+<li>Save.</li>
+<li>And finally, click <b>Enable</b> lower down on this page to turn user integration on. </li>
+<li>If you want unregistered (guest) visitors to be able to see your Cbox as well, delete the lines:
+<pre>&lt;?php if ( $user_ID ) : ?&gt;</pre>
+and 
+<pre>&lt;?php endif;  ?&gt;</pre>
+</li>
+</ol>
+</div>
+
+
+
+<script type="text/javascript">updateint();</script>
+
+
+<p><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+بعد تفعيل التكامل، اختبر عملية تسجيل الدخول على موقعك الإلكتروني وتأكد من إمكانية النشر على صندوق بريدك باستخدام الاسم المسجل به في موقعك. إذا ظهرت لك رسالة تفيد باحتمالية وجود خلل في إعدادات صندوق بريدك، فانقر على "تعطيل" أعلاه وأعد التحقق من التثبيت. إذا استمرت المشكلة، </font></font><a href="/admin/contact"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">تواصل معنا</font></font></a><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"> .
+</font></font></p>
+
+
+<h2><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">تكامل موسع</font></font></h2>
+<p><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+يمكنك توسيع نطاق التكامل بإضافة صور المستخدمين الشخصية وروابط ملفاتهم الشخصية بالإضافة إلى أسمائهم. الصق الكود التالي بعد تطبيق كود التكامل القياسي: 
+</font></font></p>
+
+<pre><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">&amp;pic=&lt;?php echo urlencode($avatar_url)?&gt;&amp;lnk=&lt;?php echo urlencode($profile_url)?&gt;&amp;ekey=&lt;?php echo md5("8i9if550i3k4a2ck".chr(9).$avatar_url.chr(9).$profile_url)?&gt;
+</font></font></pre>
+<p><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+غيّر قيمتي $avatar_url و$profile_url إلى القيم الصحيحة للسياق. لاحظ أن كلتيهما تظهران مرتين. ستحتاج إلى تفعيل حقل البريد الإلكتروني/عنوان URL والصور الرمزية في </font></font><a href="/admin?settings"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">خيارات النشر</font></font></a><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"> إذا لم تكن قد فعلت ذلك بالفعل.
+</font></font></p>
+
+</div>
+
+
+
+<div style="clear: both"></div>
+</div><!-- /content -->
+
+</div><!-- /bodywrap -->
+
+<div id="siteErrorBar"><div class="wrap" id="siteErrorBarCont"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">تحميل...</font></font></div></div>
+
+
+
+<div id="footer">
+
+	<a href="/admin/"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">عن
+	</font></font></a><a href="/admin/products"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">الخطط والأسعار
+	</font></font></a><a href="/admin/terms"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">الشروط والأحكام
+	</font></font></a><a href="/admin/privacy"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">سياسة الخصوصية
+	</font></font></a><a href="/admin/notices"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">إشعارات
+	</font></font></a><a href="/admin/contact"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">اتصل بنا
+	</font></font></a>
+	<div class="verybottom"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
+		© ٢٠٠٤–٢٠٢٦ شركة سي بوكس ​​للاتصالات (المحدودة)، جميع الحقوق محفوظة. ١ مللي ثانية. ٨٣ سي إي		
+	</font></font></div>
+
+</div>
+
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-242554-2', {
+	'cookieDomain': '/admin'
+});
+ga('send', 'pageview');
+
+</script>
+
+
+<script src="./لوحة التحكم · صندوق التحكم5_files/code.js."></script>
+<script>
+	// Modal / naked mode.
+	if (window.isPopup) {
+		document.body.className = "Popped";
+	}
+	
+	// Only for CP pages
+	upgradeCheckboxes();
+
+var dropCrumb = function () {
+	if (!localStorage) {
+		return;
+	}
+	var bc = getCrumbs();
+	bc.push(location.href);
+	bc.splice(0, bc.length - 5);
+	localStorage.setItem("site:bread", JSON.stringify(bc));
+};
+
+var getCrumbs = function () {
+	if (!localStorage) {
+		return [];
+	}
+	var bcStr = localStorage.getItem("site:bread");
+	var bc = [];
+	if (bcStr) {
+		bc = JSON.parse(bcStr);
+	}
+	
+	return bc;
+}
+
+dropCrumb();
+</script><div id="goog-gt-tt" class="VIpgJd-yAWNEb-L7lbkb skiptranslate" style="border-radius: 12px; margin: 0 0 0 -23px; padding: 0; font-family: &#39;Google Sans&#39;, Arial, sans-serif;" data-id=""><div id="goog-gt-vt" class="VIpgJd-yAWNEb-hvhgNd"><div class="VIpgJd-yAWNEb-hvhgNd-Ud7fr"><img src="./لوحة التحكم · صندوق التحكم5_files/24px.svg" width="24" height="24" alt=""><div class=" VIpgJd-yAWNEb-hvhgNd-IuizWc-SIsrTd " dir="rtl">النص الأصلي</div></div><div class="VIpgJd-yAWNEb-hvhgNd-k77Iif"><div id="goog-gt-original-text" class="VIpgJd-yAWNEb-nVMfcd-fmcmS VIpgJd-yAWNEb-hvhgNd-axAV1"></div></div><div class="VIpgJd-yAWNEb-hvhgNd-N7Eqid rtl"><div class="VIpgJd-yAWNEb-hvhgNd-N7Eqid-B7I4Od rtl" dir="rtl"><div class="VIpgJd-yAWNEb-hvhgNd-UTujCb">تقييم هذه الترجمة</div><div class="VIpgJd-yAWNEb-hvhgNd-eO9mKe">سيتم استخدام ملاحظاتك وآرائك للمساعدة في تحسين "ترجمة Google".</div></div><div class="VIpgJd-yAWNEb-hvhgNd-xgov5 rtl"><button id="goog-gt-thumbDownButton" type="button" class="VIpgJd-yAWNEb-hvhgNd-bgm6sf" title="ترجمة سيئة" aria-label="ترجمة سيئة" aria-pressed="false"><span id="goog-gt-thumbDownIcon"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M3 17h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 24s7.09-6.85 7.17-7h5V4H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2zM17 6h3v9h-3V6zM3 13l3-7h9v10l-4.34 4.34L12 15H3v-2z"></path></svg></span><span id="goog-gt-thumbDownIconFilled"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M3 17h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 24s7.09-6.85 7.17-7V4H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2zm16 0h4V4h-4v13z"></path></svg></span></button><button id="goog-gt-thumbUpButton" type="button" class="VIpgJd-yAWNEb-hvhgNd-bgm6sf" title="ترجمة جيدة" aria-label="ترجمة جيدة" aria-pressed="false"><span id="goog-gt-thumbUpIcon"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M21 7h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 0S7.08 6.85 7 7H2v13h16c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73V9c0-1.1-.9-2-2-2zM7 18H4V9h3v9zm14-7l-3 7H9V8l4.34-4.34L12 9h9v2z"></path></svg></span><span id="goog-gt-thumbUpIconFilled"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M21 7h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 0S7.08 6.85 7 7v13h11c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73V9c0-1.1-.9-2-2-2zM5 7H1v13h4V7z"></path></svg></span></button></div></div><div id="goog-gt-votingHiddenPane" class="VIpgJd-yAWNEb-hvhgNd-aXYTce"><form id="goog-gt-votingForm" action="https://translate.googleapis.com/translate_voting?client=te_lib" method="post" target="votingFrame" class="VIpgJd-yAWNEb-hvhgNd-aXYTce"><input type="text" name="sl" id="goog-gt-votingInputSrcLang"><input type="text" name="tl" id="goog-gt-votingInputTrgLang"><input type="text" name="query" id="goog-gt-votingInputSrcText"><input type="text" name="gtrans" id="goog-gt-votingInputTrgText"><input type="text" name="vote" id="goog-gt-votingInputVote"></form><iframe name="votingFrame" frameborder="0" src="./لوحة التحكم · صندوق التحكم5_files/saved_resource(2).html"></iframe></div></div></div>
+
+
+
+
+
+</body></html>
