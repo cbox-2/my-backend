@@ -3,8 +3,9 @@ const path = require("path");
 
 const app = express();
 
-// تشغيل الملفات الثابتة (CSS, JS, images)
+// تشغيل الملفات الثابتة
 app.use(express.static(path.join(__dirname, "public")));
+
 
 // =========================
 // 🟢 الصفحة الرئيسية
@@ -15,33 +16,80 @@ app.get("/", (req, res) => {
   );
 });
 
+
 // =========================
-// 🟢 نظام /admin?home & snippet & acct
+// 🟢 /admin?home & snippet & acct
 // =========================
 app.get("/admin", (req, res) => {
-  const { home, snippet, acct } = req.query;
+  const { home, snippet, acct, users, messages, options, theme } = req.query;
 
-  let page = null;
-
-  if (home !== undefined) page = "";
-  if (snippet !== undefined) page = "2";   // عدل حسب ملفاتك
-  if (acct !== undefined) page = "3";      // عدل حسب ملفاتك
-
-  // إذا ماكو باراميتر يرجع الصفحة الرئيسية
-  if (page === null) {
+  // 🟢 home
+  if (home !== undefined) {
     return res.sendFile(
       path.join(__dirname, "public", "لوحة التحكم · صندوق التحكم.html")
     );
   }
 
-  // إذا home بدون رقم ملف
-  if (page === "") {
+  // 🟢 snippet (انشر)
+  if (snippet !== undefined) {
     return res.sendFile(
-      path.join(__dirname, "public", "لوحة التحكم · صندوق التحكم.html")
+      path.join(__dirname, "public", "لوحة التحكم · صندوق التحكم2.html")
     );
   }
 
-  // باقي الصفحات
+  // 🟢 الحساب
+  if (acct !== undefined) {
+    return res.sendFile(
+      path.join(__dirname, "public", "لوحة التحكم · صندوق التحكم3.html")
+    );
+  }
+
+  // 🟢 مستخدمين
+  if (users !== undefined) {
+    return res.sendFile(
+      path.join(__dirname, "public", "لوحة التحكم · صندوق التحكم4.html")
+    );
+  }
+
+  // 🟢 رسائل
+  if (messages !== undefined) {
+    return res.sendFile(
+      path.join(__dirname, "public", "لوحة التحكم · صندوق التحكم5.html")
+    );
+  }
+
+  // 🟢 خيارات
+  if (options !== undefined) {
+    return res.sendFile(
+      path.join(__dirname, "public", "لوحة التحكم · صندوق التحكم6.html")
+    );
+  }
+
+  // 🟢 مظهر
+  if (theme !== undefined) {
+    return res.sendFile(
+      path.join(__dirname, "public", "لوحة التحكم · صندوق التحكم7.html")
+    );
+  }
+
+  // الافتراضي
+  return res.sendFile(
+    path.join(__dirname, "public", "لوحة التحكم · صندوق التحكم.html")
+  );
+});
+
+
+// =========================
+// 🟢 الصفحات المباشرة /2 /3 /4
+// =========================
+app.get("/:page", (req, res) => {
+  const page = req.params.page;
+
+  // منع تضارب admin
+  if (page === "admin") {
+    return res.redirect("/");
+  }
+
   const filePath = path.join(
     __dirname,
     "public",
@@ -51,23 +99,6 @@ app.get("/admin", (req, res) => {
   return res.sendFile(filePath);
 });
 
-// =========================
-// 🟢 نظام الصفحات المباشر (/2 /3 /4 ...)
-// =========================
-app.get("/:page", (req, res) => {
-  const page = req.params.page;
-
-  // يمنع دخول admin هنا
-  if (page === "admin") return res.redirect("/");
-
-  const filePath = path.join(
-    __dirname,
-    "public",
-    `لوحة التحكم · صندوق التحكم${page}.html`
-  );
-
-  res.sendFile(filePath);
-});
 
 // =========================
 // 🟢 تشغيل السيرفر
