@@ -1,14 +1,27 @@
 const express = require('express');
 const path = require('path');
+const fs = require('fs');
 
 const app = express();
 
-// يخدم كل الملفات بدون استثناء
+// يخدم كل الملفات مثل ما هي
 app.use(express.static(__dirname));
 
-// أي رابط يرجّع index.html
+// تحويل أي طلب إلى ملف فعلي (حتى لو عربي)
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
+  try {
+    const decodedPath = decodeURIComponent(req.path);
+    const filePath = path.join(__dirname, decodedPath);
+
+    if (fs.existsSync(filePath)) {
+      return res.sendFile(filePath);
+    }
+
+    // fallback
+    return res.sendFile(path.join(__dirname, 'index.html'));
+  } catch (e) {
+    return res.sendFile(path.join(__dirname, 'index.html'));
+  }
 });
 
 const PORT = process.env.PORT || 3000;
