@@ -1,521 +1,460 @@
 <!DOCTYPE html>
-<!-- saved from url=(0030)/admin?home -->
-<html lang="ar" class="translated-rtl"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Cbox live chat is an embeddable chat app for online communities, groups, and live-streaming events.">
+<meta name="robots" content="noindex, nofollow">
+<!-- تحسين الأمان: منع التحميل في iframe من مواقع أخرى -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; frame-src 'self' https:;">
 <title>Nexus Control Hub</title>
 
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta content="width=device-width, initial-scale=1" name="viewport">
-<meta name="description" content="Cbox live chat is an embeddable chat app for online communities, groups, and live-streaming events.">
-<link href="data:image/x-icon;base64,AAABAAEAEBACAAAAAACwAAAAFgAAACgAAAAQAAAAIAAAAAEAAQAAAAAAQAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA" rel="icon" type="image/x-icon">
+<link rel="icon" href="data:image/x-icon;base64,AAABAAEAEBACAAAAAACwAAAAFgAAACgAAAAQAAAAIAAAAAEAAQAAAAAAQAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA" type="image/x-icon">
 <link rel="stylesheet" href="login_files/style.css">
-<link type="text/css" rel="stylesheet" charset="UTF-8" href="login_files/m=el_main.css"></head>
+<link rel="stylesheet" href="login_files/m=el_main.css" type="text/css" charset="UTF-8">
+
+<style>
+/* إصلاحات طفيفة للتوافق مع المتصفحات الحديثة - لا تغير التصميم */
+font { display: inline; font: inherit; }
+[dir="auto"] { unicode-bidi: isolate; }
+.frmiframe { position: absolute; width: 1px; height: 1px; border: 0; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); }
+</style>
+</head>
 <body id="mainbody">
 
-	<script type="text/javascript" async="" src="login_files/js"></script><script async="" src="login_files/analytics.js"></script><script>
-	// Define stub
-	var rcvdformresponse = function () {};
-	</script>
-	
-	<div id="mask"></div>
+<script type="text/javascript" async src="login_files/js"></script>
+<script async src="login_files/analytics.js"></script>
+<script>
+// تعريف الدوال الأساسية بشكل آمن
+window.rcvdformresponse = window.rcvdformresponse || function () {};
+window.popovr = window.popovr || function(title, content) {
+  document.getElementById('popovr_title').innerHTML = title || '';
+  document.getElementById('popovr_text').innerHTML = content || '';
+  document.getElementById('popovr_box').style.display = 'block';
+};
+window.popovr_close = window.popovr_close || function() {
+  document.getElementById('popovr_box').style.display = 'none';
+};
+</script>
 
+<div id="mask" aria-hidden="true"></div>
 
+<!-- نافذة التنبيه المنبثقة - محسّنة -->
+<div id="popovr_box" role="dialog" aria-modal="true" style="display:none;">
+  <div class="wrap">
+    <div style="padding: 20px; background-color: #fff">
+      <div id="popovr_title"></div>
+      <div id="popovr_text" style="text-align: left; clear:both"></div>
 
-<div id="popovr_box">
-	<div class="wrap">
-		<div style="padding: 20px; background-color: #fff">
-			<!--<div style="float:right; font-size: 150%;"><b><a href="javascript:popovr_close()">X</a></b></div>-->
-			<div id="popovr_title">
-				<!-- title -->
-			</div>
-			
-			<div id="popovr_text" style="text-align: left; clear:both">
-				<!-- content -->
-			</div>
-
-			<div id="popovr_t_login" style="display: none; text-align: left; clear:both">
-				<p><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
-					انتهت صلاحية جلستك. يرجى تسجيل الدخول مرة أخرى للمتابعة.
-				</font></font></p>
-				<iframe src="javascript:false" name="t_qlpop" onload="rcvdformresponse(this.name)" width="1" height="1" class="frmiframe" src="login_files/saved_resource.html"></iframe>
-				<form name="qlpop" action="/admin_d_login?f=qlpop" target="t_qlpop" method="post" onsubmit="return subsaving(this.name, &#39;sub&#39;, &#39;logging in...&#39;);">
-				<fieldset>
-					<label><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">اسم المستخدم:</font></font></label>
-					<input type="text" name="uname" value="" maxlength="50" class="txtbox">
-					<label><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">كلمة المرور:</font></font></label>
-					<input type="password" name="pword" value="" maxlength="50" class="txtbox">
-					<font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"><input type="submit" name="sub" value="تسجيل الدخول"></font></font>
-					
-					<div id="m_qlpop" class="frmmsg1"></div>
-					<div id="em_qlpop" class="frmmsg2"></div>
-				</fieldset>
-				</form>
-			</div>
-		</div>
-
-	</div>
+      <div id="popovr_t_login" style="display: none; text-align: left; clear:both">
+        <p><span dir="auto">انتهت صلاحية جلستك. يرجى تسجيل الدخول مرة أخرى للمتابعة.</span></p>
+        <iframe title="hidden" aria-hidden="true" class="frmiframe" name="t_qlpop" src="login_files/saved_resource.html" onload="rcvdformresponse(this.name)"></iframe>
+        <form name="qlpop" action="/admin_d_login?f=qlpop" target="t_qlpop" method="post" onsubmit="return subsaving(this.name, 'sub', 'logging in...');" autocomplete="on">
+          <fieldset>
+            <label for="qlpop_uname"><span dir="auto">اسم المستخدم:</span></label>
+            <input type="text" id="qlpop_uname" name="uname" value="" maxlength="50" class="txtbox" autocomplete="username">
+            <label for="qlpop_pword"><span dir="auto">كلمة المرور:</span></label>
+            <input type="password" id="qlpop_pword" name="pword" value="" maxlength="50" class="txtbox" autocomplete="current-password">
+            <span dir="auto"><input type="submit" name="sub" value="تسجيل الدخول"></span>
+            <div id="m_qlpop" class="frmmsg1" role="alert" aria-live="polite"></div>
+            <div id="em_qlpop" class="frmmsg2" role="alert" aria-live="assertive"></div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!--[if lte IE 7]>
-	<div class="notice_er notice_top">
-		You are using an old version of Internet Explorer or you are in Compatibility View mode. 
-		This website will not work correctly. 
-		<br>
-		Please upgrade your browser or disable Compatibility View.
-	</div>
+  <div class="notice_er notice_top">
+    You are using an old version of Internet Explorer or you are in Compatibility View mode. 
+    This website will not work correctly. 
+    <br>
+    Please upgrade your browser or disable Compatibility View.
+  </div>
 <![endif]-->
 
-
 <div id="bodywrap">
-	<div id="header">
-		<div class="wrap">
+  <header id="header">
+    <div class="wrap">
+      <a id="logo" href="/admin/" aria-label="الرئيسية">
+        <img src="login_files/logo400.png" width="200" height="86" alt="شعار لوحة التحكم" style="border:0;">
+      </a>
 
-			<a id="logo" href="/admin/">
-				<img src="login_files/logo400.png" width="200" height="86" alt="صندوق C" border="0">
-			</a>
+      <div id="headerExtras">
+        <span id="userWelcome"><span dir="auto"></span></span>
+        <a href="/admin?switch"><span dir="auto">صناديق بريدي</span></a>
+        <a href="/admin?acct"><span dir="auto">حسابي</span></a>
+        <a href="/admin/help"><span dir="auto">يدعم</span></a>
+        <a href="/admin?preproc=logout" onclick="return logout();"><span dir="auto">تسجيل الخروج</span></a>
+      </div>
+    </div>
+  </header>
 
-			<div id="headerExtras">
-	
-								
-								<span id="userWelcome"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"></font></font></span>
-				<a href="/admin?switch"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">صناديق بريدي</font></font></a>
-				<a href="/admin?acct"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">حسابي</font></font></a>
-												<a href="/admin/help"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">يدعم
-				</font></font></a><a href="/admin?preproc=logout" onclick="return logout()"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">تسجيل الخروج
-				</font></font></a>
-							</div>
-		</div>
-	</div>
-
-		<div id="subbar">
-		<div class="wrap">
-			<a href="/admin?home" class="submenuitem"><b><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"></font></font></b>			</a><a href="/admin?snippet" class="submenuitem"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">انشر
-			</font></font></a><a href="/admin?home#" id="hovmenu1" class="submenuitem" onmousedown="return hovmenu(this, 1)"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">المظهر والملمس
-			</font></font></a><a href="/admin?home#" id="hovmenu2" class="submenuitem" onmousedown="return hovmenu(this, 2)"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">خيارات
-			</font></font></a><a href="/admin?home#" id="hovmenu3" class="submenuitem" onmousedown="return hovmenu(this, 3)"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">المستخدمون
-			</font></font></a><a href="/admin?home#" id="hovmenu4" class="submenuitem" onmousedown="return hovmenu(this, 4)"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">رسائل
-			</font></font></a>
-		</div>
-	</div>
-	<div id="bar3">
-		<div id="hovmenu" class="wrap"><a></a></div>
-	</div>
-	
-	<div id="wideimg" style="position: relative; width: 100%; left: 0">
-	</div>
-	
-	<div id="main" class="wrap ">
-
-<div id="content">
+  <nav id="subbar">
+    <div class="wrap">
+      <a href="/admin?home" class="submenuitem" aria-current="page"><b><span dir="auto"></span></b></a>
+      <a href="/admin?snippet" class="submenuitem"><span dir="auto">انشر</span></a>
+      <a href="/admin?home#" id="hovmenu1" class="submenuitem" onmousedown="return hovmenu(this, 1)"><span dir="auto">المظهر والملمس</span></a>
+      <a href="/admin?home#" id="hovmenu2" class="submenuitem" onmousedown="return hovmenu(this, 2)"><span dir="auto">خيارات</span></a>
+      <a href="/admin?home#" id="hovmenu3" class="submenuitem" onmousedown="return hovmenu(this, 3)"><span dir="auto">المستخدمون</span></a>
+      <a href="/admin?home#" id="hovmenu4" class="submenuitem" onmousedown="return hovmenu(this, 4)"><span dir="auto">رسائل</span></a>
+    </div>
+  </nav>
+  
+  <div id="bar3">
+    <div id="hovmenu" class="wrap"><a></a></div>
+  </div>
+  
+  <div id="wideimg" style="position: relative; width: 100%; left: 0" aria-hidden="true"></div>
+  
+  <main id="main" class="wrap">
+    <div id="content">
 
 <script type="text/javascript">
-var noticetogorig = "";
-function noticetoggle(xo, v) {
-  var xo = document.getElementById(xo);
-  z = document.getElementById('notice-more');
-  if (z.style.display == 'none') {
-    z.style.display = '';
-    noticetogorig = xo.innerHTML;
-    xo.innerHTML = v;
-  }
-  else {
-    z.style.display = 'none';
-    xo.innerHTML = noticetogorig;
-  }
-}
+/* دوال المساعدة - محسّنة مع معالجة الأخطاء */
+(function() {
+  'use strict';
+  
+  window.noticetogorig = "";
+  window.noticetoggle = function(xoId, v) {
+    var xo = document.getElementById(xoId);
+    var z = document.getElementById('notice-more');
+    if (!xo || !z) return;
+    if (z.style.display === 'none') {
+      z.style.display = '';
+      window.noticetogorig = xo.innerHTML;
+      xo.innerHTML = v;
+    } else {
+      z.style.display = 'none';
+      xo.innerHTML = window.noticetogorig;
+    }
+  };
 
-function noticeclose(x) {
-  z = document.getElementById('notice');
-  z.style.display = "none";
-  document.cookie = "rnot="+x+";";
-}
+  window.noticeclose = function(x) {
+    var z = document.getElementById('notice');
+    if (z) z.style.display = "none";
+    try {
+      document.cookie = "rnot="+encodeURIComponent(x)+"; Secure; SameSite=Strict; Path=/";
+    } catch(e) { console.warn('Cookie error:', e); }
+  };
 
-function highlighthelp(sec, para, on) {
-	var ico = document.getElementById("hlpico-"+sec+"-"+para);
-  	if (!ico) return;
-  	if (!on) {
-  		ico.style.filter = "alpha(opacity=60)";
-  		ico.style.opacity = 0.6;
-  	}
-  	else {
-  		ico.style.filter = "";
-  		ico.style.opacity = 1;
-  	}
-}
+  window.highlighthelp = function(sec, para, on) {
+    var ico = document.getElementById("hlpico-"+sec+"-"+para);
+    if (!ico) return;
+    ico.style.transition = 'opacity 0.2s';
+    ico.style.opacity = on ? '1' : '0.6';
+  };
 
-var createBar = function ($elem, isLog, showLimit) {
-
-	var $bar = document.createElement("div");
-	$bar.className = "barFill";
-	
-	var $text = document.createElement("div");
-	$text.className = "barText";
-	
-	$elem.appendChild($bar);
-	$elem.appendChild($text);
-	
-	var minWidth = 5;
-	
-	var format = function (n) {
-		return (n+'').split('').reverse().join('').replace(/([0-9]{3})(?=[0-9])/g, "$1,").split('').reverse().join('');
-	}
-	
-	$bar.style.width = "0%";
-	
-	return {
-		setBarSize: function (val, max) {
-			var over = false;
-			if (val > max) {
-				over = true;
-			}
-			
-
-			var val = Math.min(max, Math.max(0, val));
-			var prop = val / max;
-			
-			$text.innerHTML = format(val) + (over ? "+" : "") + (showLimit ? "/" + max : "");
-
-			var w = (isLog ? (Math.log((prop*1.718 + 1))) : prop) * 100;
-
-			var r = prop/0.7 * 255 + 50;
-			var g = 255 - prop*0.6*255;
-			var b = 80;
-			
-			var comp = (255 / (r*0.9 + g * 1.1)) * 1.4;
-			
-			r = r / comp;
-			g = g / comp;
-			b = b / comp;
-			
-			window.setTimeout(function () {
-				$bar.style.width = Math.max(w, minWidth) + "%";
-				$bar.style.backgroundColor = "rgb("+(r|0)+", "+(g|0)+", "+(b|0)+")";
-			}, 100);			
-			
-		}
-	}
-};
-  		
+  window.createBar = function ($elem, isLog, showLimit) {
+    var $bar = document.createElement("div");
+    $bar.className = "barFill";
+    var $text = document.createElement("div");
+    $text.className = "barText";
+    $elem.appendChild($bar);
+    $elem.appendChild($text);
+    var minWidth = 5;
+    var format = function (n) {
+      return (n+'').split('').reverse().join('').replace(/([0-9]{3})(?=[0-9])/g, "$1,").split('').reverse().join('');
+    };
+    $bar.style.width = "0%";
+    return {
+      setBarSize: function (val, max) {
+        var over = false;
+        if (val > max) over = true;
+        val = Math.min(max, Math.max(0, val));
+        var prop = val / max;
+        $text.innerHTML = format(val) + (over ? "+" : "") + (showLimit ? "/" + max : "");
+        var w = (isLog ? (Math.log((prop*1.718 + 1))) : prop) * 100;
+        var r = prop/0.7 * 255 + 50;
+        var g = 255 - prop*0.6*255;
+        var b = 80;
+        var comp = (255 / (r*0.9 + g * 1.1)) * 1.4;
+        r = r / comp; g = g / comp; b = b / comp;
+        window.setTimeout(function () {
+          $bar.style.width = Math.max(w, minWidth) + "%";
+          $bar.style.backgroundColor = "rgb("+(r|0)+", "+(g|0)+", "+(b|0)+")";
+        }, 100);
+      }
+    };
+  };
+})();
 </script>
 
+<h1><span dir="auto">صندوق بريدي</span></h1>
 
-
-
-
-<h1><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">صندوق بريدي</font></font></h1>
-
-
-
-
-<div class="notice_er"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
-يرجى </font></font><a href="/admin/upgrade?mode=renew"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">تجديد اشتراكك في Cbox</font></font></a><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"> لضمان استمرار حصولك على خدمة متواصلة. في حال وجود أي استفسارات، </font></font><a href="/admin/contact"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">يرجى التواصل معنا</font></font></a><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"> .
-</font></font></div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<script type="text/javascript">
-// Form validation
-function chk_faccount() {
-  err = "";
-  f = document.forms["faccount"];
-
-  // Clear all errors.
-  resetmsgs("faccount");
-
-  // ** Finish this!
-
-  if (f["uname"].value == "" ) {
-	err += "<li>Please choose a name.</li>";
-  }
-  if (f["pword"].value && f["pword"].value != f["pword2"].value ) {
-	err += "<li>Your passwords don't match.</li>";
-  }
-  if (err) {
-	setmsg("faccount", "Error. Check inputs.", 2);
-	setmsgdesc("faccount", err, 2);
-	return false;
-  }
-  return subsaving("faccount", "sub", '');
-}
-
-</script>
-
-
-<div class="col1_2">
-
-
-<fieldset>
-<iframe frameborder="0" width="100%" height="305" src="login_files/saved_resource(1).html" marginheight="2" marginwidth="2" scrolling="auto" allowtransparency="yes" name="cboxmain" style="border: 0; padding: 0; margin: 0 auto;" id="cboxmain"></iframe><iframe frameborder="0" width="100%" height="107" src="./لوحة التحكم · صندوق التحكم19_files/saved_resource(2).html" marginheight="2" marginwidth="2" scrolling="no" allowtransparency="yes" name="cboxform" style="border: 0; padding: 0; margin: 0 auto;" id="cboxform"></iframe></fieldset>
-
-
-<iframe src="javascript:false" name="t_flock" onload="rcvdformresponse(this.name)" width="1" height="1" class="frmiframe" src="login_files/saved_resource(3).html"></iframe>
-<form name="flock" target="t_flock" method="post" action="/admin_d_submit?f=flock" onsubmit="return subsaving(&#39;flock&#39;, &#39;sub&#39;+this.locked.value, &#39;&#39;)">
-<fieldset class="Short">
-	<legend><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">قفل صندوق البريد</font></font></legend>
-	<p><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
-	يمكنك قفل صندوق الدردشة لمنع استخدامه. هذا مفيد إذا كنت ترغب في تعطيل الدردشة مؤقتًا، ولكنك لا تريد فقدان أي رسائل أو إعدادات.
-	</font></font></p>
-
-	<label><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">قم بقفل هذا الصندوق:</font></font></label>
-	<input type="hidden" name="lockshim" value="1">
-	
-	
-	<div class="slideThree"><input type="checkbox" name="locked" value="1" onchange="this.form.submit()"><label></label></div><div id="m_flock" class="frmmsg1"></div>
-	<div id="em_flock" class="frmmsg2"></div>
-</fieldset>
-</form>
-
-
-<form action="/admin?home#">
-<fieldset>
-	<legend><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">إغلاق صندوق C</font></font></legend>
-	<p><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
-	إذا لم تعد ترغب في استخدام صندوق التحكم هذا، يمكنك إغلاقه. سيؤدي ذلك إلى تعطيل صندوق التحكم وجعله غير قابل للوصول من لوحة التحكم.
-	</font></font></p>
-		<script type="text/javascript">
-	  function delconf() {
-		popovr('Confirm closure', '<p>Are you sure you want to close your Cbox? Doing so will revoke access to your Cbox and its control panel.<p><fieldset><div style="float: right"><input type="button" value=" Yes " onclick="location.href=\'/admin?preproc=delete&t=1779227327&k=e29b2f6a52d79d7dc86eacc119a06448\'">&nbsp;<input type="button" value=" No " onclick="popovr_close()"></div></fieldset>');
-		return false;
-	  }
-	</script>
-	
-	<div style="float: right">
-		<font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"><input type="submit" name="sub" class="Danger" value="إغلاق صندوق C" onclick="return delconf()"></font></font>
-	</div>
-	
-</fieldset>
-</form>
-
+<div class="notice_er" role="alert">
+  <span dir="auto">يرجى </span><a href="/admin/upgrade?mode=renew"><span dir="auto">تجديد اشتراكك في Cbox</span></a><span dir="auto"> لضمان استمرار حصولك على خدمة متواصلة. في حال وجود أي استفسارات، </span><a href="/admin/contact"><span dir="auto">يرجى التواصل معنا</span></a><span dir="auto"> .</span>
 </div>
 
-
-<div class="col2_2">
-
-
-<fieldset class="Med">
-<legend><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">إحصائيات Cbox</font></font></legend>
-
-<label><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">يخطط:</font></font></label>
-<div class="notInput"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
-سي بوكس ​​بريميوم</font></font></div>
-<label><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">الفاتورة التالية:</font></font></label>
-
-<div class="notInput">
-	<span class="highlightBad"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">منتهي الصلاحية </font></font></span>
-<br> <a href="/admin/upgrade?mode=renew"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">(تجديد)</font></font></a></div>
-<label><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">الفوترة الدورية:</font></font></label><div class="notInput"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">عاجز</font></font></div>
-<label><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">مخلوق:</font></font></label><div class="notInput"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">31 مارس 2015 </font></font><br><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">(منذ 4067 يومًا)</font></font></div>
-<label><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">إجمالي المشاهدات:</font></font></label><div class="notInput"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">119,534</font></font></div>
-<label><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">إجمالي الرسائل:</font></font></label><div class="notInput"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">926,305</font></font></div>
-
-<label><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">العملاء الحاليون:</font></font></label>
-<div class="bar notInput" id="sbar3"><div class="barFill" style="width: 5%; background-color: rgb(45, 232, 72);"></div><div class="barText"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">0</font></font></div></div>
-
-<label><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">عدد المشاهدات </font></font><span id="viewsPeriod"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">خلال آخر 7 أيام</font></font></span><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"> :</font></font></label>
-<div class="bar notInput" id="sbar1"><div class="barFill" style="width: 5%; background-color: rgb(45, 232, 72);"></div><div class="barText"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">19</font></font></div></div>
-
-<label class="withSub"><font dir="auto" style="vertical-align: inherit;"></font><span id="postsPeriod"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">آخر 7 أيام</font></font></span><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"> من الرسائل </font><font dir="auto" style="vertical-align: inherit;">:
-</font></font><sub id="nearLimitMsg" style="display: none"><a href="JavaScript:popwin(&#39;help&#39;, &#39;/help?id=87&#39;, 500, 500);"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">ماذا لو تجاوزت الحد المسموح به؟</font></font></a></sub>
-</label>
-
-<div class="bar notInput" id="sbar2"><div class="barFill" style="width: 5%; background-color: rgb(45, 232, 72);"></div><div class="barText"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">0</font></font></div></div>
-
-
-
-<script>
-	var req = new XMLHttpRequest();
-	req.open('GET', "/admin?home&stats=1");
-	req.onload = function (r) {
-
-		if (!req.responseText) {
-			// No more HTML. Could be an error? 
-			return false;
-		}
-		
-		var o = JSON.parse(req.responseText);
-		
-		if (!o['max_posts']) {
-			return false;
-		}
-
-		createBar(document.getElementById("sbar1"), true).setBarSize(o['views'], o['max_views']);
-		createBar(document.getElementById("sbar2"), true).setBarSize(o['posts'], o['max_posts']);
-			
-				createBar(document.getElementById("sbar3"), false).setBarSize(o['clients'], o['max_clients']);
-				if (o['near_limit']) {
-			document.getElementById("nearLimitMsg").style.display = "";
-		}
-		
-		document.getElementById("postsPeriod").textContent = 'last '+o['period'];
-		document.getElementById("viewsPeriod").textContent = 'last '+o['period'];
-		
-	}
-	req.send();
-
+<script type="text/javascript">
+// التحقق من النماذج - محسّن
+window.chk_faccount = function() {
+  var err = "";
+  var f = document.forms["faccount"];
+  if (!f) return false;
+  resetmsgs("faccount");
+  if (f["uname"] && f["uname"].value === "") {
+    err += "<li>يرجى اختيار اسم.</li>";
+  }
+  if (f["pword"] && f["pword"].value && f["pword"].value !== f["pword2"]?.value) {
+    err += "<li>كلمتا المرور غير متطابقتين.</li>";
+  }
+  if (err) {
+    setmsg("faccount", "خطأ. يرجى مراجعة المدخلات.", 2);
+    setmsgdesc("faccount", err, 2);
+    return false;
+  }
+  return typeof subsaving === 'function' ? subsaving("faccount", "sub", '') : true;
+};
 </script>
 
+<div class="col1_2">
+  <fieldset>
+    <iframe title="Cbox Main Chat" aria-label="نافذة الدردشة الرئيسية" frameborder="0" width="100%" height="305" src="login_files/saved_resource(1).html" marginheight="2" marginwidth="2" scrolling="auto" allowtransparency="yes" name="cboxmain" style="border:0; padding:0; margin:0 auto;" id="cboxmain" loading="lazy"></iframe>
+    <iframe title="Cbox Form" aria-label="نموذج إرسال الرسالة" frameborder="0" width="100%" height="107" src="login_files/saved_resource(2).html" marginheight="2" marginwidth="2" scrolling="no" allowtransparency="yes" name="cboxform" style="border:0; padding:0; margin:0 auto;" id="cboxform" loading="lazy"></iframe>
+  </fieldset>
 
-</fieldset>
+  <iframe title="hidden" aria-hidden="true" class="frmiframe" name="t_flock" src="login_files/saved_resource(3).html" onload="rcvdformresponse(this.name)"></iframe>
+  
+  <form name="flock" target="t_flock" method="post" action="/admin_d_submit?f=flock" onsubmit="return subsaving('flock', 'sub'+this.locked.value, '');">
+    <!-- حقل حماية CSRF - يجب أن يملأه الباك إند -->
+    <input type="hidden" name="csrf_token" value="">
+    <fieldset class="Short">
+      <legend><span dir="auto">قفل صندوق البريد</span></legend>
+      <p><span dir="auto">يمكنك قفل صندوق الدردشة لمنع استخدامه. هذا مفيد إذا كنت ترغب في تعطيل الدردشة مؤقتًا، ولكنك لا تريد فقدان أي رسائل أو إعدادات.</span></p>
+      <label for="flock_locked"><span dir="auto">قم بقفل هذا الصندوق:</span></label>
+      <input type="hidden" name="lockshim" value="1">
+      <div class="slideThree">
+        <input type="checkbox" id="flock_locked" name="locked" value="1" onchange="this.form.submit()">
+        <label for="flock_locked"></label>
+      </div>
+      <div id="m_flock" class="frmmsg1" role="status"></div>
+      <div id="em_flock" class="frmmsg2" role="alert"></div>
+    </fieldset>
+  </form>
 
-<iframe src="javascript:false" name="t_qlink" onload="rcvdformresponse(this.name)" width="1" height="1" class="frmiframe" src="login_files/saved_resource(4).html"></iframe>
-<form name="qlink" target="t_qlink" method="post" action="/admin_d_submit?f=qlink">
-<fieldset>
-	<legend><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">رابط سريع</font></font></legend>
-	<label><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">عنوان URL الخاص بك:</font></font></label>
-	<div class="notInput">
-		<a href="https://my./admin/" target="_new"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">https://my./admin/</font></font></a>	</div>
-	<label for="quickchk"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">مُفعّل:</font></font></label>
-	
+  <form action="/admin?home#" method="get">
+    <fieldset>
+      <legend><span dir="auto">إغلاق صندوق C</span></legend>
+      <p><span dir="auto">إذا لم تعد ترغب في استخدام صندوق التحكم هذا، يمكنك إغلاقه. سيؤدي ذلك إلى تعطيل صندوق التحكم وجعله غير قابل للوصول من لوحة التحكم.</span></p>
+      <script type="text/javascript">
+      window.delconf = function() {
+        if (typeof popovr === 'function') {
+          popovr('تأكيد الإغلاق', '<p>هل أنت متأكد من إغلاق صندوق التحكم؟ هذا الإجراء سيقطع الوصول إلى الصندوق ولوحة التحكم.<p><fieldset><div style="float: right"><input type="button" value=" نعم " onclick="location.href=\'/admin?preproc=delete&t=1779227327&k=e29b2f6a52d79d7dc86eacc119a06448\'">&nbsp;<input type="button" value=" لا " onclick="popovr_close()"></div></fieldset>');
+        }
+        return false;
+      };
+      </script>
+      <div style="float: right">
+        <span dir="auto"><input type="submit" name="sub" class="Danger" value="إغلاق صندوق C" onclick="return delconf();"></span>
+      </div>
+    </fieldset>
+  </form>
+</div>
 
-	<div class="slideThree"><input type="checkbox" name="quicklnk" value="1" id="quickchk" checked=""><label></label></div><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"><input type="submit" name="sub" value="يحفظ"></font></font>
+<div class="col2_2">
+  <fieldset class="Med">
+    <legend><span dir="auto">إحصائيات Cbox</span></legend>
 
-	<div id="m_qlink" class="frmmsg1"></div>
-	<div id="em_qlink" class="frmmsg2"></div>
-	
-</fieldset>
-</form>
+    <label><span dir="auto">الخطة:</span></label>
+    <div class="notInput"><span dir="auto">سي بوكس ​​بريميوم</span></div>
+    
+    <label><span dir="auto">الفاتورة التالية:</span></label>
+    <div class="notInput">
+      <span class="highlightBad"><span dir="auto">منتهي الصلاحية </span></span>
+      <br> <a href="/admin/upgrade?mode=renew"><span dir="auto">(تجديد)</span></a>
+    </div>
+    
+    <label><span dir="auto">الفوترة الدورية:</span></label>
+    <div class="notInput"><span dir="auto">معطل</span></div>
+    
+    <label><span dir="auto">تاريخ الإنشاء:</span></label>
+    <div class="notInput"><span dir="auto">31 مارس 2015 </span><br><span dir="auto">(منذ 4067 يومًا)</span></div>
+    
+    <label><span dir="auto">إجمالي المشاهدات:</span></label>
+    <div class="notInput"><span dir="auto">119,534</span></div>
+    
+    <label><span dir="auto">إجمالي الرسائل:</span></label>
+    <div class="notInput"><span dir="auto">926,305</span></div>
 
-<iframe src="javascript:false" name="t_boxname" onload="rcvdformresponse(this.name)" width="1" height="1" class="frmiframe" src="login_files/saved_resource(5).html"></iframe>
-<form name="boxname" target="t_boxname" method="post" action="/admin_d_submit?f=boxname">
-<fieldset class="Med">
-	<legend><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">تغيير الاسم</font></font></legend>
-	
-	<label><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">اسم صندوق البريد:</font></font></label>
-	<input type="text" name="uname" size="20" maxlength="20" class="txtbox" value="">
-	
-	<font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"><input type="submit" name="sub" value="يحفظ"></font></font>
+    <label><span dir="auto">العملاء الحاليون:</span></label>
+    <div class="bar notInput" id="sbar3" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+      <div class="barFill" style="width: 5%; background-color: rgb(45, 232, 72);"></div>
+      <div class="barText"><span dir="auto">0</span></div>
+    </div>
 
-	<div id="m_boxname" class="frmmsg1"></div>
-	<div id="em_boxname" class="frmmsg2"></div>
+    <label><span dir="auto">عدد المشاهدات </span><span id="viewsPeriod"><span dir="auto">خلال آخر 7 أيام</span></span><span dir="auto"> :</span></label>
+    <div class="bar notInput" id="sbar1" role="progressbar" aria-valuenow="19" aria-valuemin="0" aria-valuemax="1000">
+      <div class="barFill" style="width: 5%; background-color: rgb(45, 232, 72);"></div>
+      <div class="barText"><span dir="auto">19</span></div>
+    </div>
 
-</fieldset>
-</form>
+    <label class="withSub"><span id="postsPeriod"><span dir="auto">آخر 7 أيام</span></span><span dir="auto"> من الرسائل </span><sub id="nearLimitMsg" style="display: none"><a href="JavaScript:popwin('help', '/help?id=87', 500, 500);"><span dir="auto">ماذا لو تجاوزت الحد المسموح به؟</span></a></sub></label>
+    <div class="bar notInput" id="sbar2" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="1000">
+      <div class="barFill" style="width: 5%; background-color: rgb(45, 232, 72);"></div>
+      <div class="barText"><span dir="auto">0</span></div>
+    </div>
 
+    <script type="text/javascript">
+    // تحميل الإحصائيات - مع معالجة الأخطاء
+    (function loadStats() {
+      if (typeof XMLHttpRequest === 'undefined') return;
+      var req = new XMLHttpRequest();
+      req.open('GET', "/admin?home&stats=1", true);
+      req.timeout = 5000;
+      
+      req.onload = function () {
+        if (req.status !== 200 || !req.responseText) return;
+        try {
+          var o = JSON.parse(req.responseText);
+          if (!o || !o['max_posts']) return;
+          if (typeof createBar === 'function') {
+            createBar(document.getElementById("sbar1"), true).setBarSize(o['views'], o['max_views']);
+            createBar(document.getElementById("sbar2"), true).setBarSize(o['posts'], o['max_posts']);
+            createBar(document.getElementById("sbar3"), false).setBarSize(o['clients'], o['max_clients']);
+          }
+          if (o['near_limit']) {
+            var nearMsg = document.getElementById("nearLimitMsg");
+            if (nearMsg) nearMsg.style.display = "";
+          }
+          var postsPeriod = document.getElementById("postsPeriod");
+          var viewsPeriod = document.getElementById("viewsPeriod");
+          if (postsPeriod) postsPeriod.textContent = 'آخر '+o['period'];
+          if (viewsPeriod) viewsPeriod.textContent = 'آخر '+o['period'];
+        } catch(e) { console.warn('Stats parse error:', e); }
+      };
+      
+      req.onerror = function() { console.warn('Stats load failed'); };
+      req.ontimeout = function() { console.warn('Stats load timeout'); };
+      req.send();
+    })();
+    </script>
+  </fieldset>
 
-<iframe src="javascript:false" name="t_faccount" onload="rcvdformresponse(this.name)" width="1" height="1" class="frmiframe" src="login_files/saved_resource(6).html"></iframe>
-<form name="faccount" target="t_faccount" method="post" action="/admin_d_submit?f=faccount" onsubmit="return chk_faccount();">
-<fieldset>
-	<legend><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">تغيير البريد الإلكتروني/كلمة المرور</font></font></legend>
+  <iframe title="hidden" aria-hidden="true" class="frmiframe" name="t_qlink" src="login_files/saved_resource(4).html" onload="rcvdformresponse(this.name)"></iframe>
+  
+  <form name="qlink" target="t_qlink" method="post" action="/admin_d_submit?f=qlink">
+    <input type="hidden" name="csrf_token" value="">
+    <fieldset>
+      <legend><span dir="auto">رابط سريع</span></legend>
+      <label><span dir="auto">عنوان URL الخاص بك:</span></label>
+      <div class="notInput">
+        <a href="https://my./admin/" target="_blank" rel="noopener noreferrer"><span dir="auto">https://my./admin/</span></a>
+      </div>
+      <label for="quickchk"><span dir="auto">مُفعّل:</span></label>
+      <div class="slideThree">
+        <input type="checkbox" name="quicklnk" value="1" id="quickchk" checked>
+        <label for="quickchk"></label>
+      </div>
+      <span dir="auto"><input type="submit" name="sub" value="يحفظ"></span>
+      <div id="m_qlink" class="frmmsg1" role="status"></div>
+      <div id="em_qlink" class="frmmsg2" role="alert"></div>
+    </fieldset>
+  </form>
 
-	<label><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">بريد إلكتروني:</font></font></label>
-	<input type="text" name="email" size="30" maxlength="50" class="txtbox" value="">
+  <iframe title="hidden" aria-hidden="true" class="frmiframe" name="t_boxname" src="login_files/saved_resource(5).html" onload="rcvdformresponse(this.name)"></iframe>
+  
+  <form name="boxname" target="t_boxname" method="post" action="/admin_d_submit?f=boxname">
+    <input type="hidden" name="csrf_token" value="">
+    <fieldset class="Med">
+      <legend><span dir="auto">تغيير الاسم</span></legend>
+      <label for="boxname_uname"><span dir="auto">اسم صندوق البريد:</span></label>
+      <input type="text" id="boxname_uname" name="uname" size="20" maxlength="20" class="txtbox" value="" autocomplete="off">
+      <span dir="auto"><input type="submit" name="sub" value="يحفظ"></span>
+      <div id="m_boxname" class="frmmsg1" role="status"></div>
+      <div id="em_boxname" class="frmmsg2" role="alert"></div>
+    </fieldset>
+  </form>
 
-	<label><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">كلمة المرور:</font></font></label>
-	<input type="password" name="pword" size="30" maxlength="50" class="txtbox">
-	<label><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">يتأكد:</font></font></label>
-	<input type="password" name="pword2" size="30" maxlength="50" class="txtbox">
-
-	<font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"><input type="submit" name="sub" value="يحفظ"></font></font>
-
-	<div id="m_faccount" class="frmmsg1"></div>
-	<div id="em_faccount" class="frmmsg2"></div>
-
-</fieldset>
-</form>
-
-
-
-
-
+  <iframe title="hidden" aria-hidden="true" class="frmiframe" name="t_faccount" src="login_files/saved_resource(6).html" onload="rcvdformresponse(this.name)"></iframe>
+  
+  <form name="faccount" target="t_faccount" method="post" action="/admin_d_submit?f=faccount" onsubmit="return chk_faccount();" autocomplete="on">
+    <input type="hidden" name="csrf_token" value="">
+    <fieldset>
+      <legend><span dir="auto">تغيير البريد الإلكتروني/كلمة المرور</span></legend>
+      <label for="faccount_email"><span dir="auto">بريد إلكتروني:</span></label>
+      <input type="email" id="faccount_email" name="email" size="30" maxlength="50" class="txtbox" value="" autocomplete="email">
+      <label for="faccount_pword"><span dir="auto">كلمة المرور:</span></label>
+      <input type="password" id="faccount_pword" name="pword" size="30" maxlength="50" class="txtbox" autocomplete="new-password">
+      <label for="faccount_pword2"><span dir="auto">تأكيد:</span></label>
+      <input type="password" id="faccount_pword2" name="pword2" size="30" maxlength="50" class="txtbox" autocomplete="new-password">
+      <span dir="auto"><input type="submit" name="sub" value="يحفظ"></span>
+      <div id="m_faccount" class="frmmsg1" role="status"></div>
+      <div id="em_faccount" class="frmmsg2" role="alert"></div>
+    </fieldset>
+  </form>
 </div>
 
 <div class="colclear"></div>
+    </div>
+  </main>
 
+  <div style="clear: both"></div>
 </div>
 
+<div id="siteErrorBar"><div class="wrap" id="siteErrorBarCont"><span dir="auto">تحميل...</span></div></div>
 
-</div>
+<footer id="footer">
+  <a href="/admin/"><span dir="auto">عن</span></a>
+  <a href="/admin/products"><span dir="auto">الخطط والأسعار</span></a>
+  <a href="/admin/terms"><span dir="auto">الشروط والأحكام</span></a>
+  <a href="/admin/privacy"><span dir="auto">سياسة الخصوصية</span></a>
+  <a href="/admin/notices"><span dir="auto">إشعارات</span></a>
+  <a href="/admin/contact"><span dir="auto">اتصل بنا</span></a>
+  <div class="verybottom">
+    <span dir="auto">© ٢٠٠٤–٢٠٢٦ شركة سي بوكس ​​للاتصالات (المحدودة)، جميع الحقوق محفوظة. ٥ مللي ثانية. ٨٣ سي إي</span>
+  </div>
+</footer>
 
-
-
-<div style="clear: both"></div>
-</div><!-- /content -->
-
-<!-- /bodywrap -->
-
-<div id="siteErrorBar"><div class="wrap" id="siteErrorBarCont"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">تحميل...</font></font></div></div>
-
-
-
-<div id="footer">
-
-	<a href="/admin/"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">عن
-	</font></font></a><a href="/admin/products"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">الخطط والأسعار
-	</font></font></a><a href="/admin/terms"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">الشروط والأحكام
-	</font></font></a><a href="/admin/privacy"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">سياسة الخصوصية
-	</font></font></a><a href="/admin/notices"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">إشعارات
-	</font></font></a><a href="/admin/contact"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">اتصل بنا
-	</font></font></a>
-	<div class="verybottom"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
-		© ٢٠٠٤–٢٠٢٦ شركة سي بوكس ​​للاتصالات (المحدودة)، جميع الحقوق محفوظة. ٥ مللي ثانية. ٨٣ سي إي		
-	</font></font></div>
-
-</div>
-
-
+<!-- Google Analytics - محمّل بشكل آمن -->
 <script>
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-ga('create', 'UA-242554-2', {
-	'cookieDomain': '/admin'
-});
-ga('send', 'pageview');
-
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+if (typeof ga === 'function') {
+  ga('create', 'UA-242554-2', { 'cookieDomain': 'auto', 'cookieFlags': 'Secure; SameSite=Strict' });
+  ga('send', 'pageview');
+}
 </script>
-
 
 <script src="login_files/code.js"></script>
 <script>
-	// Modal / naked mode.
-	if (window.isPopup) {
-		document.body.className = "Popped";
-	}
-	
-	// Only for CP pages
-	upgradeCheckboxes();
+(function() {
+  'use strict';
+  // الوضع المنبثق
+  if (window.isPopup) {
+    document.body.className = "Popped";
+  }
+  // تفعيل عناصر الترقية
+  if (typeof upgradeCheckboxes === 'function') {
+    upgradeCheckboxes();
+  }
 
-var dropCrumb = function () {
-	if (!localStorage) {
-		return;
-	}
-	var bc = getCrumbs();
-	bc.push(location.href);
-	bc.splice(0, bc.length - 5);
-	localStorage.setItem("site:bread", JSON.stringify(bc));
-};
+  // حفظ مسار التصفح (Breadcrumb) مع معالجة الأخطاء
+  var dropCrumb = function () {
+    try {
+      if (!window.localStorage) return;
+      var bc = getCrumbs();
+      bc.push(location.href);
+      bc.splice(0, bc.length - 5);
+      localStorage.setItem("site:bread", JSON.stringify(bc));
+    } catch(e) { /* تجاهل أخطاء التخزين */ }
+  };
 
-var getCrumbs = function () {
-	if (!localStorage) {
-		return [];
-	}
-	var bcStr = localStorage.getItem("site:bread");
-	var bc = [];
-	if (bcStr) {
-		bc = JSON.parse(bcStr);
-	}
-	
-	return bc;
-}
+  var getCrumbs = function () {
+    try {
+      if (!window.localStorage) return [];
+      var bcStr = localStorage.getItem("site:bread");
+      return bcStr ? JSON.parse(bcStr) : [];
+    } catch(e) { return []; }
+  };
 
-dropCrumb();
-</script><div id="goog-gt-tt" class="VIpgJd-yAWNEb-L7lbkb skiptranslate" style="border-radius: 12px; margin: 0 0 0 -23px; padding: 0; font-family: &#39;Google Sans&#39;, Arial, sans-serif;" data-id=""><div id="goog-gt-vt" class="VIpgJd-yAWNEb-hvhgNd"><div class="VIpgJd-yAWNEb-hvhgNd-Ud7fr"><img src="./لوحة التحكم · صندوق التحكم19_files/24px.svg" width="24" height="24" alt=""><div class=" VIpgJd-yAWNEb-hvhgNd-IuizWc-SIsrTd " dir="rtl">النص الأصلي</div></div><div class="VIpgJd-yAWNEb-hvhgNd-k77Iif"><div id="goog-gt-original-text" class="VIpgJd-yAWNEb-nVMfcd-fmcmS VIpgJd-yAWNEb-hvhgNd-axAV1"></div></div><div class="VIpgJd-yAWNEb-hvhgNd-N7Eqid rtl"><div class="VIpgJd-yAWNEb-hvhgNd-N7Eqid-B7I4Od rtl" dir="rtl"><div class="VIpgJd-yAWNEb-hvhgNd-UTujCb">تقييم هذه الترجمة</div><div class="VIpgJd-yAWNEb-hvhgNd-eO9mKe">سيتم استخدام ملاحظاتك وآرائك للمساعدة في تحسين "ترجمة Google".</div></div><div class="VIpgJd-yAWNEb-hvhgNd-xgov5 rtl"><button id="goog-gt-thumbDownButton" type="button" class="VIpgJd-yAWNEb-hvhgNd-bgm6sf" title="ترجمة سيئة" aria-label="ترجمة سيئة" aria-pressed="false"><span id="goog-gt-thumbDownIcon"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M3 17h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 24s7.09-6.85 7.17-7h5V4H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2zM17 6h3v9h-3V6zM3 13l3-7h9v10l-4.34 4.34L12 15H3v-2z"></path></svg></span><span id="goog-gt-thumbDownIconFilled"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M3 17h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 24s7.09-6.85 7.17-7V4H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2zm16 0h4V4h-4v13z"></path></svg></span></button><button id="goog-gt-thumbUpButton" type="button" class="VIpgJd-yAWNEb-hvhgNd-bgm6sf" title="ترجمة جيدة" aria-label="ترجمة جيدة" aria-pressed="false"><span id="goog-gt-thumbUpIcon"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M21 7h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 0S7.08 6.85 7 7H2v13h16c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73V9c0-1.1-.9-2-2-2zM7 18H4V9h3v9zm14-7l-3 7H9V8l4.34-4.34L12 9h9v2z"></path></svg></span><span id="goog-gt-thumbUpIconFilled"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M21 7h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 0S7.08 6.85 7 7v13h11c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73V9c0-1.1-.9-2-2-2zM5 7H1v13h4V7z"></path></svg></span></button></div></div><div id="goog-gt-votingHiddenPane" class="VIpgJd-yAWNEb-hvhgNd-aXYTce"><form id="goog-gt-votingForm" action="https://translate.googleapis.com/translate_voting?client=te_lib" method="post" target="votingFrame" class="VIpgJd-yAWNEb-hvhgNd-aXYTce"><input type="text" name="sl" id="goog-gt-votingInputSrcLang"><input type="text" name="tl" id="goog-gt-votingInputTrgLang"><input type="text" name="query" id="goog-gt-votingInputSrcText"><input type="text" name="gtrans" id="goog-gt-votingInputTrgText"><input type="text" name="vote" id="goog-gt-votingInputVote"></form><iframe name="votingFrame" frameborder="0" src="login_files/saved_resource(7).html"></iframe></div></div></div>
+  dropCrumb();
+})();
+</script>
 
-
-
-
-
-</body></html>
+</body>
+	</html>
