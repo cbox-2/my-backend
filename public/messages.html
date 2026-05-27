@@ -1,207 +1,200 @@
 <!DOCTYPE html>
-<!-- saved from url=(0014)about:internet -->
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Cbox live chat is an embeddable chat app for online communities, groups, and live-streaming events.">
+<meta name="robots" content="noindex, nofollow">
+<!-- سياسة أمان المحتوى -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; frame-src 'self' https:;">
 <title>Nexus Control Hub</title>
 
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta content="width=device-width, initial-scale=1" name="viewport">
-<meta name="description" content="Cbox live chat is an embeddable chat app for online communities, groups, and live-streaming events.">
-<link href="data:image/x-icon;base64,AAABAAEAEBACAAAAAACwAAAAFgAAACgAAAAQAAAAIAAAAAEAAQAAAAAAQAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA" rel="icon" type="image/x-icon">
+<link rel="icon" href="data:image/x-icon;base64,AAABAAEAEBACAAAAAACwAAAAFgAAACgAAAAQAAAAIAAAAAEAAQAAAAAAQAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA" type="image/x-icon">
 <link rel="stylesheet" href="messages_files/style.css">
+<link rel="stylesheet" href="messages_files/m=el_main.css" type="text/css" charset="UTF-8">
+
+<style>
+/* إصلاحات طفيفة للتوافق - لا تغير التصميم */
+font { display: inline; font: inherit; }
+.frmiframe { position: absolute; width: 1px; height: 1px; border: 0; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); }
+.txtarea { direction: ltr; text-align: left; font-family: monospace; font-size: 13px; padding: 8px; border: 1px solid #ccc; border-radius: 4px; width: 100%; box-sizing: border-box; min-height: 300px; resize: vertical; }
+.txtarea:focus { border-color: #007bff; outline: none; box-shadow: 0 0 0 2px rgba(0,123,255,0.25); }
+.slideThree { display: inline-block; vertical-align: middle; margin: 0 5px; }
+.notice { background: #fff3cd; border: 1px solid #ffc107; padding: 10px; border-radius: 4px; margin: 10px 0; }
+.frmmsg1 { color: #28a745; font-size: 13px; margin-top: 5px; }
+.frmmsg2 { color: #dc3545; font-size: 13px; margin-top: 5px; }
+code { background: #f8f9fa; padding: 2px 6px; border-radius: 3px; font-family: monospace; font-size: 12px; }
+fieldset.Med { margin: 15px 0; }
+fieldset.Med p { margin: 8px 0; font-size: 13px; color: #555; }
+@media (max-width: 768px) {
+  .txtarea { font-size: 12px; }
+  fieldset.Med p { font-size: 12px; }
+}
+</style>
 </head>
 <body id="mainbody">
 
-	<script type="text/javascript" async="" src="messages_files/js"></script><script async="" src="messages_files/analytics.js"></script><script>
-	// Define stub
-	var rcvdformresponse = function () {};
-	</script>
-	
-	<div id="mask"></div>
+<script type="text/javascript" async src="messages_files/js"></script>
+<script async src="messages_files/analytics.js"></script>
+<script>
+// تعريف الدوال الأساسية بشكل آمن
+window.rcvdformresponse = window.rcvdformresponse || function () {};
+window.popovr = window.popovr || function(title, content) {
+  document.getElementById('popovr_title').innerHTML = title || '';
+  document.getElementById('popovr_text').innerHTML = content || '';
+  document.getElementById('popovr_box').style.display = 'block';
+};
+window.popovr_close = window.popovr_close || function() {
+  document.getElementById('popovr_box').style.display = 'none';
+};
+</script>
 
+<div id="mask" aria-hidden="true"></div>
 
+<!-- نافذة التنبيه المنبثقة - محسّنة -->
+<div id="popovr_box" role="dialog" aria-modal="true" style="display:none;">
+  <div class="wrap">
+    <div style="padding: 20px; background-color: #fff">
+      <div id="popovr_title"></div>
+      <div id="popovr_text" style="text-align: left; clear:both"></div>
 
-<div id="popovr_box">
-	<div class="wrap">
-		<div style="padding: 20px; background-color: #fff">
-			<!--<div style="float:right; font-size: 150%;"><b><a href="javascript:popovr_close()">X</a></b></div>-->
-			<div id="popovr_title">
-				<!-- title -->
-			</div>
-			
-			<div id="popovr_text" style="text-align: left; clear:both">
-				<!-- content -->
-			</div>
-
-			<div id="popovr_t_login" style="display: none; text-align: left; clear:both">
-				<p>
-					Your session has expired. Please log back in to continue.
-				</p>
-				<iframe src="javascript:false" name="t_qlpop" onload="rcvdformresponse(this.name)" width="1" height="1" class="frmiframe" src="messages_files/saved_resource.html"></iframe>
-				<form name="qlpop" action="/admin_d_login?f=qlpop" target="t_qlpop" method="post" onsubmit="return subsaving(this.name, &#39;sub&#39;, &#39;logging in...&#39;);">
-				<fieldset>
-					<label>Username:</label>
-					<input type="text" name="uname" value="" maxlength="50" class="txtbox">
-					<label>Password:</label>
-					<input type="password" name="pword" value="" maxlength="50" class="txtbox">
-					<input type="submit" name="sub" value=" Log in ">
-					
-					<div id="m_qlpop" class="frmmsg1"></div>
-					<div id="em_qlpop" class="frmmsg2"></div>
-				</fieldset>
-				</form>
-			</div>
-		</div>
-
-	</div>
+      <div id="popovr_t_login" style="display: none; text-align: left; clear:both">
+        <p>Your session has expired. Please log back in to continue.</p>
+        <iframe title="hidden" aria-hidden="true" class="frmiframe" name="t_qlpop" src="messages_files/saved_resource.html" onload="rcvdformresponse(this.name)" loading="lazy"></iframe>
+        <form name="qlpop" action="/admin_d_login?f=qlpop" target="t_qlpop" method="post" onsubmit="return subsaving(this.name, 'sub', 'logging in...');" autocomplete="on">
+          <fieldset>
+            <label for="qlpop_uname">Username:</label>
+            <input type="text" id="qlpop_uname" name="uname" value="" maxlength="50" class="txtbox" autocomplete="username">
+            <label for="qlpop_pword">Password:</label>
+            <input type="password" id="qlpop_pword" name="pword" value="" maxlength="50" class="txtbox" autocomplete="current-password">
+            <input type="submit" name="sub" value=" Log in ">
+            <div id="m_qlpop" class="frmmsg1" role="alert" aria-live="polite"></div>
+            <div id="em_qlpop" class="frmmsg2" role="alert" aria-live="assertive"></div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!--[if lte IE 7]>
-	<div class="notice_er notice_top">
-		You are using an old version of Internet Explorer or you are in Compatibility View mode. 
-		This website will not work correctly. 
-		<br>
-		Please upgrade your browser or disable Compatibility View.
-	</div>
+  <div class="notice_er notice_top">
+    You are using an old version of Internet Explorer or you are in Compatibility View mode. 
+    This website will not work correctly. 
+    <br>
+    Please upgrade your browser or disable Compatibility View.
+  </div>
 <![endif]-->
 
-
 <div id="bodywrap">
-	<div id="header">
-		<div class="wrap">
+  <header id="header">
+    <div class="wrap">
+      <a id="logo" href="/admin/" aria-label="Home">
+        <img src="messages_files/logo400.png" width="200" height="86" alt="Cbox Logo" style="border:0;">
+      </a>
 
-			<a id="logo" href="/admin/">
-				<img src="messages_files/logo400.png" width="200" height="86" alt="Cbox" border="0">
-			</a>
+      <div id="headerExtras">
+        <span id="userWelcome"></span>
+        <a href="/admin?switch">My Cboxes</a>
+        <a href="/admin?acct">My Account</a>
+        <a href="/admin/help">Support</a>
+        <a href="/admin?preproc=logout" onclick="return logout();">Log out</a>
+      </div>
+    </div>
+  </header>
 
-			<div id="headerExtras">
-	
-								
-								<span id="userWelcome"></span>
-				<a href="/admin?switch">My Cboxes</a>
-				<a href="/admin?acct">My Account</a>
-												<a href="/admin/help">Support
-				</a><a href="/admin?preproc=logout" onclick="return logout()">Log out
-				</a>
-							</div>
-		</div>
-	</div>
-
-		<div id="subbar">
-		<div class="wrap">
-			<a href="/admin?home" class="submenuitem"><b></b>			</a><a href="/admin?snippet" class="submenuitem">Publish
-			</a><a href="/admin?filtering#" id="hovmenu1" class="submenuitem" onmousedown="return hovmenu(this, 1)">Look &amp; feel
-			</a><a href="/admin?filtering#" id="hovmenu2" class="submenuitem" onmousedown="return hovmenu(this, 2)">Options
-			</a><a href="/admin?filtering#" id="hovmenu3" class="submenuitem" onmousedown="return hovmenu(this, 3)">Users
-			</a><a href="/admin?filtering#" id="hovmenu4" class="submenuitem" onmousedown="return hovmenu(this, 4)">Messages
-			</a>
-		</div>
-	</div>
-	<div id="bar3">
-		<div id="hovmenu" class="wrap"><a></a></div>
-	</div>
-	
-	<div id="wideimg" style="position: relative; width: 100%; left: 0">
-	</div>
-	
-	<div id="main" class="wrap ">
-
-<div id="content">
+  <nav id="subbar">
+    <div class="wrap">
+      <a href="/admin?home" class="submenuitem"><b></b></a>
+      <a href="/admin?snippet" class="submenuitem">Publish</a>
+      <a href="/admin?filtering#" id="hovmenu1" class="submenuitem" onmousedown="return hovmenu(this, 1)">Look &amp; feel</a>
+      <a href="/admin?filtering#" id="hovmenu2" class="submenuitem" onmousedown="return hovmenu(this, 2)">Options</a>
+      <a href="/admin?filtering#" id="hovmenu3" class="submenuitem" onmousedown="return hovmenu(this, 3)">Users</a>
+      <a href="/admin?filtering#" id="hovmenu4" class="submenuitem" onmousedown="return hovmenu(this, 4)">Messages</a>
+    </div>
+  </nav>
+  
+  <div id="bar3">
+    <div id="hovmenu" class="wrap"><a></a></div>
+  </div>
+  
+  <div id="wideimg" style="position: relative; width: 100%; left: 0" aria-hidden="true"></div>
+  
+  <main id="main" class="wrap">
+    <div id="content">
 
 <script type="text/javascript">
-var noticetogorig = "";
-function noticetoggle(xo, v) {
-  var xo = document.getElementById(xo);
-  z = document.getElementById('notice-more');
-  if (z.style.display == 'none') {
-    z.style.display = '';
-    noticetogorig = xo.innerHTML;
-    xo.innerHTML = v;
-  }
-  else {
-    z.style.display = 'none';
-    xo.innerHTML = noticetogorig;
-  }
-}
+/* دوال المساعدة - محسّنة مع معالجة الأخطاء */
+(function() {
+  'use strict';
+  
+  window.noticetogorig = "";
+  window.noticetoggle = function(xoId, v) {
+    var xo = document.getElementById(xoId);
+    var z = document.getElementById('notice-more');
+    if (!xo || !z) return;
+    if (z.style.display === 'none') {
+      z.style.display = '';
+      window.noticetogorig = xo.innerHTML;
+      xo.innerHTML = v;
+    } else {
+      z.style.display = 'none';
+      xo.innerHTML = window.noticetogorig;
+    }
+  };
 
-function noticeclose(x) {
-  z = document.getElementById('notice');
-  z.style.display = "none";
-  document.cookie = "rnot="+x+";";
-}
+  window.noticeclose = function(x) {
+    var z = document.getElementById('notice');
+    if (z) z.style.display = "none";
+    try {
+      document.cookie = "rnot="+encodeURIComponent(x)+"; Secure; SameSite=Strict; Path=/";
+    } catch(e) { console.warn('Cookie error:', e); }
+  };
 
-function highlighthelp(sec, para, on) {
-	var ico = document.getElementById("hlpico-"+sec+"-"+para);
-  	if (!ico) return;
-  	if (!on) {
-  		ico.style.filter = "alpha(opacity=60)";
-  		ico.style.opacity = 0.6;
-  	}
-  	else {
-  		ico.style.filter = "";
-  		ico.style.opacity = 1;
-  	}
-}
+  window.highlighthelp = function(sec, para, on) {
+    var ico = document.getElementById("hlpico-"+sec+"-"+para);
+    if (!ico) return;
+    ico.style.transition = 'opacity 0.2s';
+    ico.style.opacity = on ? '1' : '0.6';
+  };
 
-var createBar = function ($elem, isLog, showLimit) {
-
-	var $bar = document.createElement("div");
-	$bar.className = "barFill";
-	
-	var $text = document.createElement("div");
-	$text.className = "barText";
-	
-	$elem.appendChild($bar);
-	$elem.appendChild($text);
-	
-	var minWidth = 5;
-	
-	var format = function (n) {
-		return (n+'').split('').reverse().join('').replace(/([0-9]{3})(?=[0-9])/g, "$1,").split('').reverse().join('');
-	}
-	
-	$bar.style.width = "0%";
-	
-	return {
-		setBarSize: function (val, max) {
-			var over = false;
-			if (val > max) {
-				over = true;
-			}
-			
-
-			var val = Math.min(max, Math.max(0, val));
-			var prop = val / max;
-			
-			$text.innerHTML = format(val) + (over ? "+" : "") + (showLimit ? "/" + max : "");
-
-			var w = (isLog ? (Math.log((prop*1.718 + 1))) : prop) * 100;
-
-			var r = prop/0.7 * 255 + 50;
-			var g = 255 - prop*0.6*255;
-			var b = 80;
-			
-			var comp = (255 / (r*0.9 + g * 1.1)) * 1.4;
-			
-			r = r / comp;
-			g = g / comp;
-			b = b / comp;
-			
-			window.setTimeout(function () {
-				$bar.style.width = Math.max(w, minWidth) + "%";
-				$bar.style.backgroundColor = "rgb("+(r|0)+", "+(g|0)+", "+(b|0)+")";
-			}, 100);			
-			
-		}
-	}
-};
-  		
+  window.createBar = function ($elem, isLog, showLimit) {
+    var $bar = document.createElement("div");
+    $bar.className = "barFill";
+    var $text = document.createElement("div");
+    $text.className = "barText";
+    $elem.appendChild($bar);
+    $elem.appendChild($text);
+    var minWidth = 5;
+    var format = function (n) {
+      return (n+'').split('').reverse().join('').replace(/([0-9]{3})(?=[0-9])/g, "$1,").split('').reverse().join('');
+    };
+    $bar.style.width = "0%";
+    return {
+      setBarSize: function (val, max) {
+        var over = false;
+        if (val > max) over = true;
+        val = Math.min(max, Math.max(0, val));
+        var prop = val / max;
+        $text.innerHTML = format(val) + (over ? "+" : "") + (showLimit ? "/" + max : "");
+        var w = (isLog ? (Math.log((prop*1.718 + 1))) : prop) * 100;
+        var r = prop/0.7 * 255 + 50;
+        var g = 255 - prop*0.6*255;
+        var b = 80;
+        var comp = (255 / (r*0.9 + g * 1.1)) * 1.4;
+        r = r / comp; g = g / comp; b = b / comp;
+        window.setTimeout(function () {
+          $bar.style.width = Math.max(w, minWidth) + "%";
+          $bar.style.backgroundColor = "rgb("+(r|0)+", "+(g|0)+", "+(b|0)+")";
+        }, 100);
+      }
+    };
+  };
+})();
 </script>
 
-
-
-
 <h1>Filtering</h1>
-
 
 <p>
 Cbox supports filtering the text in messages and names posted to your Cbox. 
@@ -209,185 +202,196 @@ You can use filters to hide objectionable content, or to create shortcuts, style
 custom <a href="/admin/help?id=42">boxcode</a>, and much more. 
 </p>
 
-<iframe src="javascript:false" name="t_ffilter" onload="rcvdformresponse(this.name)" width="1" height="1" class="frmiframe" src="messages_files/saved_resource(1).html"></iframe>
-<form name="ffilter" target="t_ffilter" method="post" action="/admin_d_submit?f=ffilter&amp;srv=4&amp;boxid=4271419" onsubmit="return subsaving(this.name, &#39;sub&#39;, &#39;&#39;);">
+<iframe title="hidden" aria-hidden="true" class="frmiframe" name="t_ffilter" src="messages_files/saved_resource(1).html" onload="rcvdformresponse(this.name)" loading="lazy"></iframe>
 
-<fieldset>
-	<legend>Built-in profanity filter</legend>
-	<label for="i_filter">Enable profanity filter</label>
-	
-	<div class="slideThree"><input type="checkbox" name="filter" value="1" checked="" id="i_filter"><label></label></div><span>The built-in filter will mask out some common curse words. Use custom filtering to extend it.</span>
-	
-</fieldset>
+<form name="ffilter" target="t_ffilter" method="post" action="/admin_d_submit?f=ffilter&amp;srv=4&amp;boxid=4271419" onsubmit="return subsaving(this.name, 'sub', '');" autocomplete="off">
+  <input type="hidden" name="csrf_token" value="">
+  
+  <fieldset>
+    <legend>Built-in profanity filter</legend>
+    <label for="i_filter">Enable profanity filter</label>
+    <div class="slideThree">
+      <input type="checkbox" name="filter" value="1" checked id="i_filter">
+      <label for="i_filter"></label>
+    </div>
+    <span>The built-in filter will mask out some common curse words. Use custom filtering to extend it.</span>
+  </fieldset>
 
-<fieldset class="Med">
-	<legend>Custom filtering</legend>
-	<p>
-	Each line is a filter. The format is <code>word:replacement</code>. Use <code>!part:replacement</code> to match substrings.
-	If <code>replacement</code> is omitted, it defaults to asterisks. Boxcode is supported. <a href="/admin/help?id=67" target="_new">Read more...</a>
-	</p>
-	
-	<p>
-	You have <span id="ftcount">0</span> filter rules defined. Plan limit: <span id="ftlimit">10</span>.
-		</p>
-	
-	<textarea name="wordsub" cols="90" rows="20" class="txtarea" spellcheck="false" placeholder="word:replacement
+  <fieldset class="Med">
+    <legend>Custom filtering</legend>
+    <p>
+    Each line is a filter. The format is <code>word:replacement</code>. Use <code>!part:replacement</code> to match substrings.
+    If <code>replacement</code> is omitted, it defaults to asterisks. Boxcode is supported. <a href="/admin/help?id=67" target="_blank" rel="noopener noreferrer">Read more...</a>
+    </p>
+    
+    <p>
+    You have <span id="ftcount">0</span> filter rules defined. Plan limit: <span id="ftlimit">10</span>.
+    </p>
+    
+    <textarea name="wordsub" id="wordsub" cols="90" rows="20" class="txtarea" spellcheck="false" placeholder="word:replacement
 hide-this-word
-shortcut:[b]bold message[/b]"></textarea>
-		
-	
-<div class="notice" id="limitNotice" style="display: none">
-You are limited to 10 filter rules on your current plan. <a href="/admin/upgrade">Upgrade</a> to increase the limit.
-</div>
-	
-</fieldset>
+shortcut:[b]bold message[/b]" aria-label="Custom filter rules" autocomplete="off"></textarea>
+    
+    <div class="notice" id="limitNotice" style="display: none" role="alert">
+    You are limited to 10 filter rules on your current plan. <a href="/admin/upgrade">Upgrade</a> to increase the limit.
+    </div>
+  </fieldset>
 
-<fieldset>
-	<input type="submit" name="sub" value=" Save ">
-	<div id="m_ffilter" class="frmmsg1"></div>
-	<div id="em_ffilter" class="frmmsg2" style="text-align: left;"></div>
-</fieldset>
-
+  <fieldset>
+    <input type="submit" name="sub" value=" Save ">
+    <div id="m_ffilter" class="frmmsg1" role="status"></div>
+    <div id="em_ffilter" class="frmmsg2" style="text-align: left;" role="alert"></div>
+  </fieldset>
 </form>
 
-
-
 <script>
-var lines = 0;
-var MAX_LINES = 10;
-var ERR_MAX = "You have reached the maximum number of filter rules for your plan.\nDelete or edit existing lines or upgrade your Cbox to increase the limit.";
+/* دوال إدارة الفلترة - محسّنة مع معالجة الأخطاء */
+(function() {
+  'use strict';
+  
+  var lines = 0;
+  var MAX_LINES = 10;
+  var ERR_MAX = "You have reached the maximum number of filter rules for your plan.\nDelete or edit existing lines or upgrade your Cbox to increase the limit.";
+  
+  var wordbox = document.getElementById("wordsub");
+  if (!wordbox) return;
 
-var wordbox = document.forms["ffilter"]["wordsub"];
+  // Adjust textarea height up but never down, with some margin, only on definite overflow.
+  function rsztxtbox (d) {
+    try {
+      var padding = 100;
+      var c = d.scrollHeight;
+      if (d.scrollHeight < d.offsetHeight) { return; }
+      d.style.height = (d.scrollHeight + padding) + "px";
+    } catch(e) { console.warn('rsztxtbox error:', e); }
+  }
 
-// Adjust textarea height up but never down, with some margin, only on definite overflow. 
-// Browsers disagree on scrollHeight in textarea (Chrome wrong, imo, considering clientHeight equal.); 
-// workaround involving fixing height to guarantee scrollbars then introduces body scroll offset problems.
-function rsztxtbox (d) {
-	var padding = 100;
-	var c = d.scrollHeight;
-	if (d.scrollHeight < d.offsetHeight) {
-		return;
-	}
-	d.style.height = d.scrollHeight + padding +"px";
-}
+  function numlines () {
+    try {
+      if (!wordbox.value) return 0;
+      // Count non-empty lines only for more accurate count
+      var lines = wordbox.value.split(/\r\n|\r|\n/).filter(function(line) {
+        return line.trim() !== '';
+      });
+      return lines.length;
+    } catch(e) { console.warn('numlines error:', e); return 0; }
+  }
 
-rsztxtbox(wordbox);
+  function updateCount () {
+    try {
+      var $ftCount = document.getElementById("ftcount");
+      var $ftLimit = document.getElementById("ftlimit");
+      if ($ftCount) $ftCount.innerHTML = numlines();
+      if ($ftLimit) $ftLimit.innerHTML = MAX_LINES;
+    } catch(e) { /* تجاهل */ }
+  }
 
-function updateCount () {
-  var $ftCount = document.getElementById("ftcount");
-  $ftCount.innerHTML = numlines();
-  var $ftCount = document.getElementById("ftlimit");
-  $ftCount.innerHTML = MAX_LINES;
-}
+  function showLimitExceeded() {
+    var el = document.getElementById("limitNotice");
+    if (el) el.style.display = "";
+  }
 
-function numlines () {
-	return wordbox.value ? (wordbox.value.split(/\r\n|\r|\n/).length - (wordbox.value[wordbox.value.length-1] == "\n" ? 1 : 0)) : 0;
-}
+  // Initial resize
+  rsztxtbox(wordbox);
+  updateCount();
 
-function showLimitExceeded() {
-	document.getElementById("limitNotice").style.display = "";
-}
-
-wordbox.onkeyup = function (e) {
-	if (this.value.length > 30000) {
-		this.value = this.value.substring(0, 30000);
-	}
-	
-	rsztxtbox(wordbox);
-
-	var numLines = numlines();
-	updateCount(numLines);
-	
-	if (1 && numLines > MAX_LINES) {
-		this.value = wordbox.value.split(/\r\n|\r|\n/).slice(0, MAX_LINES).join("\r\n");
-		showLimitExceeded();
-	}
-	
-}
-updateCount(numlines());
-
-</script></div>
-
-
+  wordbox.onkeyup = function (e) {
+    try {
+      if (this.value.length > 30000) {
+        this.value = this.value.substring(0, 30000);
+      }
+      
+      rsztxtbox(wordbox);
+      var numLines = numlines();
+      updateCount();
+      
+      if (numLines > MAX_LINES) {
+        // Keep only MAX_LINES non-empty lines
+        var allLines = this.value.split(/\r\n|\r|\n/);
+        var keptLines = [];
+        var count = 0;
+        for (var i = 0; i < allLines.length && count < MAX_LINES; i++) {
+          if (allLines[i].trim() !== '') {
+            keptLines.push(allLines[i]);
+            count++;
+          } else {
+            keptLines.push(allLines[i]); // Keep empty lines for formatting
+          }
+        }
+        this.value = keptLines.join("\n");
+        showLimitExceeded();
+      }
+    } catch(e) { console.warn('wordbox onkeyup error:', e); }
+  };
+})();
+</script>
 
 <div style="clear: both"></div>
-</div><!-- /content -->
-
-</div><!-- /bodywrap -->
-
-<div id="siteErrorBar"><div class="wrap" id="siteErrorBarCont">Loading...</div></div>
-
-
-
-<div id="footer">
-
-	<a href="/admin/">About
-	</a><a href="/admin/products">Plans &amp; pricing
-	</a><a href="/admin/terms">Terms &amp; conditions
-	</a><a href="/admin/privacy">Privacy policy
-	</a><a href="/admin/notices">Notices
-	</a><a href="/admin/contact">Contact us
-	</a>
-	<div class="verybottom">
-		© 2004–2026 Cbox Communications (Pty) Ltd, all rights reserved. 
-			1 ms. 
-			83ce		
-	</div>
-
+    </div>
+  </main>
 </div>
 
+<div id="siteErrorBar"><div class="wrap" id="siteErrorBarCont"><span>Loading...</span></div></div>
 
+<footer id="footer">
+  <a href="/admin/">About</a>
+  <a href="/admin/products">Plans &amp; pricing</a>
+  <a href="/admin/terms">Terms &amp; conditions</a>
+  <a href="/admin/privacy">Privacy policy</a>
+  <a href="/admin/notices">Notices</a>
+  <a href="/admin/contact">Contact us</a>
+  <div class="verybottom">
+    <span>© 2004–2026 Cbox Communications (Pty) Ltd, all rights reserved. 1 ms. 83ce</span>
+  </div>
+</footer>
+
+<!-- Google Analytics - محمّل بشكل آمن -->
 <script>
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-ga('create', 'UA-242554-2', {
-	'cookieDomain': '/admin'
-});
-ga('send', 'pageview');
-
-</script>
-
-
-<script src="billing_files/code.js></script>
-<script>
-	// Modal / naked mode.
-	if (window.isPopup) {
-		document.body.className = "Popped";
-	}
-	
-	// Only for CP pages
-	upgradeCheckboxes();
-
-var dropCrumb = function () {
-	if (!localStorage) {
-		return;
-	}
-	var bc = getCrumbs();
-	bc.push(location.href);
-	bc.splice(0, bc.length - 5);
-	localStorage.setItem("site:bread", JSON.stringify(bc));
-};
-
-var getCrumbs = function () {
-	if (!localStorage) {
-		return [];
-	}
-	var bcStr = localStorage.getItem("site:bread");
-	var bc = [];
-	if (bcStr) {
-		bc = JSON.parse(bcStr);
-	}
-	
-	return bc;
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+if (typeof ga === 'function') {
+  ga('create', 'UA-242554-2', { 'cookieDomain': 'auto', 'cookieFlags': 'Secure; SameSite=Strict' });
+  ga('send', 'pageview');
 }
-
-dropCrumb();
 </script>
 
+<script src="messages_files/code.js"></script>
+<script>
+(function() {
+  'use strict';
+  // الوضع المنبثق
+  if (window.isPopup) {
+    document.body.className = "Popped";
+  }
+  // تفعيل عناصر الترقية
+  if (typeof upgradeCheckboxes === 'function') {
+    upgradeCheckboxes();
+  }
 
+  // حفظ مسار التصفح (Breadcrumb) مع معالجة الأخطاء
+  var dropCrumb = function () {
+    try {
+      if (!window.localStorage) return;
+      var bc = getCrumbs();
+      bc.push(location.href);
+      bc.splice(0, bc.length - 5);
+      localStorage.setItem("site:bread", JSON.stringify(bc));
+    } catch(e) { /* تجاهل أخطاء التخزين */ }
+  };
 
+  var getCrumbs = function () {
+    try {
+      if (!window.localStorage) return [];
+      var bcStr = localStorage.getItem("site:bread");
+      return bcStr ? JSON.parse(bcStr) : [];
+    } catch(e) { return []; }
+  };
 
+  dropCrumb();
+})();
+</script>
 
-</body></html>
+</body>
+</html>
