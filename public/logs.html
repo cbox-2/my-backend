@@ -1,673 +1,686 @@
 <!DOCTYPE html>
-<!-- saved from url=(0030)/admin?bans -->
-<html lang="ar" class="translated-rtl"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Cbox live chat is an embeddable chat app for online communities, groups, and live-streaming events.">
+<meta name="robots" content="noindex, nofollow">
+<!-- سياسة أمان المحتوى -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; frame-src 'self' https:;">
 <title>Nexus Control Hub</title>
 
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta content="width=device-width, initial-scale=1" name="viewport">
-<meta name="description" content="Cbox live chat is an embeddable chat app for online communities, groups, and live-streaming events.">
-<link href="data:image/x-icon;base64,AAABAAEAEBACAAAAAACwAAAAFgAAACgAAAAQAAAAIAAAAAEAAQAAAAAAQAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA" rel="icon" type="image/x-icon">
+<link rel="icon" href="data:image/x-icon;base64,AAABAAEAEBACAAAAAACwAAAAFgAAACgAAAAQAAAAIAAAAAEAAQAAAAAAQAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA" type="image/x-icon">
 <link rel="stylesheet" href="logs_files/style.css">
-<link type="text/css" rel="stylesheet" charset="UTF-8" href="logs_files/m=el_main.css"></head>
+<link rel="stylesheet" href="logs_files/m=el_main.css" type="text/css" charset="UTF-8">
+
+<style>
+/* إصلاحات طفيفة للتوافق - لا تغير التصميم */
+font { display: inline; font: inherit; }
+[dir="auto"] { unicode-bidi: isolate; }
+.frmiframe { position: absolute; width: 1px; height: 1px; border: 0; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); }
+.txtbox { direction: rtl; text-align: right; }
+.dHead { width: 100%; border-collapse: collapse; margin: 10px 0; }
+.dHead td { padding: 8px; border-bottom: 1px solid #eee; vertical-align: middle; }
+.slideThree { display: inline-block; vertical-align: middle; margin: 0 5px; }
+.frmmsg1 { color: #28a745; font-size: 13px; margin-top: 5px; }
+.frmmsg2 { color: #dc3545; font-size: 13px; margin-top: 5px; }
+#country_ban_policy { background: #fff3cd; border: 1px solid #ffc107; padding: 10px; border-radius: 4px; margin-top: 10px; font-size: 13px; }
+#country_ban_policy a { color: #856404; }
+@media (max-width: 768px) {
+  .dHead td { display: block; width: 100%; text-align: center !important; }
+  .txtbox { width: 100%; box-sizing: border-box; }
+}
+</style>
+</head>
 <body id="mainbody">
 
-	<script type="text/javascript" async="" src="logs_files/js"></script><script async="" src="logs_files/analytics.js"></script><script>
-	// Define stub
-	var rcvdformresponse = function () {};
-	</script>
-	
-	<div id="mask"></div>
+<script type="text/javascript" async src="logs_files/js"></script>
+<script async src="logs_files/analytics.js"></script>
+<script>
+// تعريف الدوال الأساسية بشكل آمن
+window.rcvdformresponse = window.rcvdformresponse || function () {};
+window.popovr = window.popovr || function(title, content) {
+  document.getElementById('popovr_title').innerHTML = title || '';
+  document.getElementById('popovr_text').innerHTML = content || '';
+  document.getElementById('popovr_box').style.display = 'block';
+};
+window.popovr_close = window.popovr_close || function() {
+  document.getElementById('popovr_box').style.display = 'none';
+};
+window.popwin = window.popwin || function(name, url, w, h) {
+  window.open(url, name, 'width='+w+',height='+h+',scrollbars=yes');
+};
+</script>
 
+<div id="mask" aria-hidden="true"></div>
 
+<!-- نافذة التنبيه المنبثقة - محسّنة -->
+<div id="popovr_box" role="dialog" aria-modal="true" style="display:none;">
+  <div class="wrap">
+    <div style="padding: 20px; background-color: #fff">
+      <div id="popovr_title"></div>
+      <div id="popovr_text" style="text-align: left; clear:both"></div>
 
-<div id="popovr_box">
-	<div class="wrap">
-		<div style="padding: 20px; background-color: #fff">
-			<!--<div style="float:right; font-size: 150%;"><b><a href="javascript:popovr_close()">X</a></b></div>-->
-			<div id="popovr_title">
-				<!-- title -->
-			</div>
-			
-			<div id="popovr_text" style="text-align: left; clear:both">
-				<!-- content -->
-			</div>
-
-			<div id="popovr_t_login" style="display: none; text-align: left; clear:both">
-				<p><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
-					انتهت صلاحية جلستك. يرجى تسجيل الدخول مرة أخرى للمتابعة.
-				</font></font></p>
-				<iframe src="javascript:false" name="t_qlpop" onload="rcvdformresponse(this.name)" width="1" height="1" class="frmiframe" src="logs_files/saved_resource.html"></iframe>
-				<form name="qlpop" action="/admin_d_login?f=qlpop" target="t_qlpop" method="post" onsubmit="return subsaving(this.name, &#39;sub&#39;, &#39;logging in...&#39;);">
-				<fieldset>
-					<label><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">اسم المستخدم:</font></font></label>
-					<input type="text" name="uname" value="" maxlength="50" class="txtbox">
-					<label><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">كلمة المرور:</font></font></label>
-					<input type="password" name="pword" value="" maxlength="50" class="txtbox">
-					<font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"><input type="submit" name="sub" value="تسجيل الدخول"></font></font></font></font>
-					
-					<div id="m_qlpop" class="frmmsg1"></div>
-					<div id="em_qlpop" class="frmmsg2"></div>
-				</fieldset>
-				</form>
-			</div>
-		</div>
-
-	</div>
+      <div id="popovr_t_login" style="display: none; text-align: left; clear:both">
+        <p><span dir="auto">انتهت صلاحية جلستك. يرجى تسجيل الدخول مرة أخرى للمتابعة.</span></p>
+        <iframe title="hidden" aria-hidden="true" class="frmiframe" name="t_qlpop" src="logs_files/saved_resource.html" onload="rcvdformresponse(this.name)" loading="lazy"></iframe>
+        <form name="qlpop" action="/admin_d_login?f=qlpop" target="t_qlpop" method="post" onsubmit="return subsaving(this.name, 'sub', 'logging in...');" autocomplete="on">
+          <fieldset>
+            <label for="qlpop_uname"><span dir="auto">اسم المستخدم:</span></label>
+            <input type="text" id="qlpop_uname" name="uname" value="" maxlength="50" class="txtbox" autocomplete="username">
+            <label for="qlpop_pword"><span dir="auto">كلمة المرور:</span></label>
+            <input type="password" id="qlpop_pword" name="pword" value="" maxlength="50" class="txtbox" autocomplete="current-password">
+            <span dir="auto"><input type="submit" name="sub" value="تسجيل الدخول"></span>
+            <div id="m_qlpop" class="frmmsg1" role="alert" aria-live="polite"></div>
+            <div id="em_qlpop" class="frmmsg2" role="alert" aria-live="assertive"></div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!--[if lte IE 7]>
-	<div class="notice_er notice_top">
-		You are using an old version of Internet Explorer or you are in Compatibility View mode. 
-		This website will not work correctly. 
-		<br>
-		Please upgrade your browser or disable Compatibility View.
-	</div>
+  <div class="notice_er notice_top">
+    You are using an old version of Internet Explorer or you are in Compatibility View mode. 
+    This website will not work correctly. 
+    <br>
+    Please upgrade your browser or disable Compatibility View.
+  </div>
 <![endif]-->
 
-
 <div id="bodywrap">
-	<div id="header">
-		<div class="wrap">
+  <header id="header">
+    <div class="wrap">
+      <a id="logo" href="/admin/" aria-label="الرئيسية">
+        <img src="logs_files/logo400.png" width="200" height="86" alt="شعار لوحة التحكم" style="border:0;">
+      </a>
 
-			<a id="logo" href="/admin/">
-				<img src="logs_files/logo400.png" width="200" height="86" alt="صندوق C" border="0">
-			</a>
+      <div id="headerExtras">
+        <span id="userWelcome"><span dir="auto"></span></span>
+        <a href="/admin?switch"><span dir="auto">صناديق بريدي</span></a>
+        <a href="/admin?acct"><span dir="auto">حسابي</span></a>
+        <a href="/admin/help"><span dir="auto">يدعم</span></a>
+        <a href="/admin?preproc=logout" onclick="return logout();"><span dir="auto">تسجيل الخروج</span></a>
+      </div>
+    </div>
+  </header>
 
-			<div id="headerExtras">
-	
-								
-								<span id="userWelcome"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"></font></font></span>
-				<a href="/admin?switch"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">صناديق بريدي</font></font></a>
-				<a href="/admin?acct"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">حسابي</font></font></a>
-												<a href="/admin/help"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">يدعم
-				</font></font></a><a href="/admin?preproc=logout" onclick="return logout()"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">تسجيل الخروج
-				</font></font></a>
-							</div>
-		</div>
-	</div>
-
-		<div id="subbar">
-		<div class="wrap">
-			<a href="/admin?home" class="submenuitem"><b><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"></font></font></b>			</a><a href="/admin?snippet" class="submenuitem"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">انشر
-			</font></font></a><a href="/admin?bans#" id="hovmenu1" class="submenuitem" onmousedown="return hovmenu(this, 1)"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">المظهر والملمس
-			</font></font></a><a href="/admin?bans#" id="hovmenu2" class="submenuitem" onmousedown="return hovmenu(this, 2)"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">خيارات
-			</font></font></a><a href="/admin?bans#" id="hovmenu3" class="submenuitem" onmousedown="return hovmenu(this, 3)"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">المستخدمون
-			</font></font></a><a href="/admin?bans#" id="hovmenu4" class="submenuitem" onmousedown="return hovmenu(this, 4)"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">رسائل
-			</font></font></a>
-		</div>
-	</div>
-	<div id="bar3">
-		<div id="hovmenu" class="wrap"><a></a></div>
-	</div>
-	
-	<div id="wideimg" style="position: relative; width: 100%; left: 0">
-	</div>
-	
-	<div id="main" class="wrap ">
-
-<div id="content">
+  <nav id="subbar">
+    <div class="wrap">
+      <a href="/admin?home" class="submenuitem"><b><span dir="auto"></span></b></a>
+      <a href="/admin?snippet" class="submenuitem"><span dir="auto">انشر</span></a>
+      <a href="/admin?bans#" id="hovmenu1" class="submenuitem" onmousedown="return hovmenu(this, 1)"><span dir="auto">المظهر والملمس</span></a>
+      <a href="/admin?bans#" id="hovmenu2" class="submenuitem" onmousedown="return hovmenu(this, 2)"><span dir="auto">خيارات</span></a>
+      <a href="/admin?bans#" id="hovmenu3" class="submenuitem" onmousedown="return hovmenu(this, 3)"><span dir="auto">المستخدمون</span></a>
+      <a href="/admin?bans#" id="hovmenu4" class="submenuitem" onmousedown="return hovmenu(this, 4)"><span dir="auto">رسائل</span></a>
+    </div>
+  </nav>
+  
+  <div id="bar3">
+    <div id="hovmenu" class="wrap"><a></a></div>
+  </div>
+  
+  <div id="wideimg" style="position: relative; width: 100%; left: 0" aria-hidden="true"></div>
+  
+  <main id="main" class="wrap">
+    <div id="content">
 
 <script type="text/javascript">
-var noticetogorig = "";
-function noticetoggle(xo, v) {
-  var xo = document.getElementById(xo);
-  z = document.getElementById('notice-more');
-  if (z.style.display == 'none') {
-    z.style.display = '';
-    noticetogorig = xo.innerHTML;
-    xo.innerHTML = v;
-  }
-  else {
-    z.style.display = 'none';
-    xo.innerHTML = noticetogorig;
-  }
-}
-
-function noticeclose(x) {
-  z = document.getElementById('notice');
-  z.style.display = "none";
-  document.cookie = "rnot="+x+";";
-}
-
-function highlighthelp(sec, para, on) {
-	var ico = document.getElementById("hlpico-"+sec+"-"+para);
-  	if (!ico) return;
-  	if (!on) {
-  		ico.style.filter = "alpha(opacity=60)";
-  		ico.style.opacity = 0.6;
-  	}
-  	else {
-  		ico.style.filter = "";
-  		ico.style.opacity = 1;
-  	}
-}
-
-var createBar = function ($elem, isLog, showLimit) {
-
-	var $bar = document.createElement("div");
-	$bar.className = "barFill";
-	
-	var $text = document.createElement("div");
-	$text.className = "barText";
-	
-	$elem.appendChild($bar);
-	$elem.appendChild($text);
-	
-	var minWidth = 5;
-	
-	var format = function (n) {
-		return (n+'').split('').reverse().join('').replace(/([0-9]{3})(?=[0-9])/g, "$1,").split('').reverse().join('');
-	}
-	
-	$bar.style.width = "0%";
-	
-	return {
-		setBarSize: function (val, max) {
-			var over = false;
-			if (val > max) {
-				over = true;
-			}
-			
-
-			var val = Math.min(max, Math.max(0, val));
-			var prop = val / max;
-			
-			$text.innerHTML = format(val) + (over ? "+" : "") + (showLimit ? "/" + max : "");
-
-			var w = (isLog ? (Math.log((prop*1.718 + 1))) : prop) * 100;
-
-			var r = prop/0.7 * 255 + 50;
-			var g = 255 - prop*0.6*255;
-			var b = 80;
-			
-			var comp = (255 / (r*0.9 + g * 1.1)) * 1.4;
-			
-			r = r / comp;
-			g = g / comp;
-			b = b / comp;
-			
-			window.setTimeout(function () {
-				$bar.style.width = Math.max(w, minWidth) + "%";
-				$bar.style.backgroundColor = "rgb("+(r|0)+", "+(g|0)+", "+(b|0)+")";
-			}, 100);			
-			
-		}
-	}
-};
-  		
-</script>
-
-
-
-
-
-<script type="text/javascript">
-function pf(f, t, p) {
-  c = frames[f].document.forms[0];
-  c.act.value = t;
-  if (c.parm) c.parm.value = p;
-  c.submit();
-}
-sel = new Array();
-function jselall(f) {
-  c = frames[f].document.forms[0];
-  str = "";
-  for (i = 0; i < c.length; i++) {
-    if (c[i].name.substring(0, 1) == "z") {
-      x = c[i].id;
-      if (sel[x] || !frames[f].document.getElementById(x).checked) {
-        frames[f].t(x.substring(1));
-        sel[x] = false;
-      }
-      else sel[x] = true;
+/* دوال المساعدة - محسّنة مع معالجة الأخطاء */
+(function() {
+  'use strict';
+  
+  window.noticetogorig = "";
+  window.noticetoggle = function(xoId, v) {
+    var xo = document.getElementById(xoId);
+    var z = document.getElementById('notice-more');
+    if (!xo || !z) return;
+    if (z.style.display === 'none') {
+      z.style.display = '';
+      window.noticetogorig = xo.innerHTML;
+      xo.innerHTML = v;
+    } else {
+      z.style.display = 'none';
+      xo.innerHTML = window.noticetogorig;
     }
-  }
-}
+  };
 
-function togsrch(f) {
-  d = document.getElementById(f);
-  if (d.style.display == "none") d.style.display = "";
-  else d.style.display = "none";
-}
+  window.noticeclose = function(x) {
+    var z = document.getElementById('notice');
+    if (z) z.style.display = "none";
+    try {
+      document.cookie = "rnot="+encodeURIComponent(x)+"; Secure; SameSite=Strict; Path=/";
+    } catch(e) { console.warn('Cookie error:', e); }
+  };
 
-function reload(f) {
-  f = document.forms[f];
-//  tmp = f.srch.value;
-//  f.srch.value = "";
-  f.submit();
-//  f.srch.value = tmp;
-}
+  window.highlighthelp = function(sec, para, on) {
+    var ico = document.getElementById("hlpico-"+sec+"-"+para);
+    if (!ico) return;
+    ico.style.transition = 'opacity 0.2s';
+    ico.style.opacity = on ? '1' : '0.6';
+  };
 
-function rsziframe(i) {
-  d = frames[i].document;
-  c = Math.max(d.body.clientHeight, d.documentElement.clientHeight);
-  if (c == 0) return;
-  document.getElementById(i+"_i").style.height = c+"px"; // would be nice to be able to reference iframe object from the window reference instead. Can it be done?
-}
+  window.createBar = function ($elem, isLog, showLimit) {
+    var $bar = document.createElement("div");
+    $bar.className = "barFill";
+    var $text = document.createElement("div");
+    $text.className = "barText";
+    $elem.appendChild($bar);
+    $elem.appendChild($text);
+    var minWidth = 5;
+    var format = function (n) {
+      return (n+'').split('').reverse().join('').replace(/([0-9]{3})(?=[0-9])/g, "$1,").split('').reverse().join('');
+    };
+    $bar.style.width = "0%";
+    return {
+      setBarSize: function (val, max) {
+        var over = false;
+        if (val > max) over = true;
+        val = Math.min(max, Math.max(0, val));
+        var prop = val / max;
+        $text.innerHTML = format(val) + (over ? "+" : "") + (showLimit ? "/" + max : "");
+        var w = (isLog ? (Math.log((prop*1.718 + 1))) : prop) * 100;
+        var r = prop/0.7 * 255 + 50;
+        var g = 255 - prop*0.6*255;
+        var b = 80;
+        var comp = (255 / (r*0.9 + g * 1.1)) * 1.4;
+        r = r / comp; g = g / comp; b = b / comp;
+        window.setTimeout(function () {
+          $bar.style.width = Math.max(w, minWidth) + "%";
+          $bar.style.backgroundColor = "rgb("+(r|0)+", "+(g|0)+", "+(b|0)+")";
+        }, 100);
+      }
+    };
+  };
+})();
 </script>
 
+<script type="text/javascript">
+/* دوال إدارة الحظر - محسّنة مع معالجة الأخطاء */
+(function() {
+  'use strict';
+  
+  // دالة تنفيذ الإجراءات على الإطار
+  window.pf = function(f, t, p) {
+    try {
+      var frame = window.frames[f];
+      if (!frame || !frame.document) { console.warn('Frame not found:', f); return; }
+      var c = frame.document.forms[0];
+      if (!c) return;
+      if (!c.act) {
+        c.act = frame.document.createElement('input');
+        c.act.type = 'hidden'; c.act.name = 'act';
+        c.appendChild(c.act);
+      }
+      c.act.value = t;
+      if (p && c.parm) { c.parm.value = p; }
+      c.submit();
+    } catch(e) { console.warn('pf error:', e); }
+  };
 
+  window.sel = window.sel || {};
+  
+  // تحديد الكل في الإطار
+  window.jselall = function(f) {
+    try {
+      var frame = window.frames[f];
+      if (!frame || !frame.document) return;
+      var c = frame.document.forms[0];
+      if (!c) return;
+      for (var i = 0; i < c.length; i++) {
+        if (c[i].name && c[i].name.substring(0, 1) === "z") {
+          var x = c[i].id;
+          var el = frame.document.getElementById(x);
+          if (!el) continue;
+          if (window.sel[x] || !el.checked) {
+            if (typeof frame.t === 'function') frame.t(x.substring(1));
+            window.sel[x] = false;
+          } else { window.sel[x] = true; }
+        }
+      }
+    } catch(e) { console.warn('jselall error:', e); }
+  };
 
-<h1><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">المستخدمون المحظورون</font></font></h1>
+  // إظهار/إخفاء البحث
+  window.togsrch = function(f) {
+    var d = document.getElementById(f);
+    if (d) d.style.display = (d.style.display === "none") ? "" : "none";
+  };
 
-<p><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
-يمكنك الاحتفاظ بقائمة الحظر هنا. يمكنك حظر المستخدمين عبر صفحة </font></font><a href="/admin?posts"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">الرسائل</font></font></a><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"> أو بإدخال عناوين IP الخاصة بهم يدويًا في هذه الصفحة.
-</font></font></p>
+  // إعادة تحميل النموذج
+  window.reload = function(f) {
+    var form = document.forms[f];
+    if (form) form.submit();
+  };
 
+  // تعديل ارتفاع iframe ديناميكياً
+  window.rsziframe = function(i) {
+    try {
+      var frame = window.frames[i];
+      if (!frame || !frame.document) return;
+      var doc = frame.document;
+      var c = Math.max(doc.body?.clientHeight || 0, doc.documentElement?.clientHeight || 0);
+      if (c === 0) return;
+      var el = document.getElementById(i+"_i");
+      if (el) el.style.height = c + "px";
+    } catch(e) { /* تجاهل أخطاء CORS */ }
+  };
+})();
+</script>
 
+<h1><span dir="auto">المستخدمون المحظورون</span></h1>
 
+<p><span dir="auto">يمكنك الاحتفاظ بقائمة الحظر هنا. يمكنك حظر المستخدمين عبر صفحة </span><a href="/admin?posts"><span dir="auto">الرسائل</span></a><span dir="auto"> أو بإدخال عناوين IP الخاصة بهم يدويًا في هذه الصفحة.</span></p>
 
+<!-- نموذج قيود البلد -->
+<iframe title="hidden" aria-hidden="true" class="frmiframe" name="t_fcban" src="logs_files/saved_resource(1).html" onload="rcvdformresponse(this.name)" loading="lazy"></iframe>
+<form name="fcban" target="t_fcban" method="post" action="/admin_d_submit?f=fcban" onsubmit="return subsaving(this.name, 'sub', '');" autocomplete="on">
+  <input type="hidden" name="csrf_token" value="">
+  <fieldset>
+    <div class="fsInlineHelp"><a href="javascript:popwin('help', '/admin_p_help?sec=4#1', 500, 600)" title="احصل على المساعدة في هذا القسم" aria-label="مساعدة">?</a></div>
+    <legend><span dir="auto">قيود على البلد</span></legend>
 
-<iframe src="javascript:false" name="t_fcban" onload="rcvdformresponse(this.name)" width="1" height="1" class="frmiframe" src="logs_files/saved_resource(1).html"></iframe>
-<form name="fcban" target="t_fcban" method="post" action="/admin_d_submit?f=fcban" onsubmit="return subsaving(this.name, &#39;sub&#39;, &#39;&#39;);">
+    <label for="fcban_policy"><span dir="auto">سياسة:</span></label>
+    <select name="policy" id="fcban_policy" class="txtbox">
+      <option value="0" selected><span dir="auto">السماح بأي</span></option>
+      <option value="-1"><span dir="auto">يُسمح فقط من</span></option>
+      <option value="1"><span dir="auto">حظر الكل من</span></option>
+    </select>
 
-<fieldset>
-	<div class="fsInlineHelp"><a href="javascript:popwin(&#39;help&#39;, &#39;/admin_p_help?sec=4#1&#39;, 500, 600)" title="احصل على المساعدة في هذا القسم"></a></div>	<legend><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">قيود على البلد</font></font></legend>
+    <label for="fcban_country"><span dir="auto">دولة:</span></label>
+    <select name="country" id="fcban_country" class="txtbox">
+      <option value="AF"><span dir="auto">أفغانستان</span></option>
+      <option value="AL"><span dir="auto">ألبانيا</span></option>
+      <option value="DZ"><span dir="auto">الجزائر</span></option>
+      <option value="AS"><span dir="auto">ساموا الأمريكية</span></option>
+      <option value="AD"><span dir="auto">أندورا</span></option>
+      <option value="AO"><span dir="auto">أنغولا</span></option>
+      <option value="AI"><span dir="auto">أنغيلا</span></option>
+      <option value="AQ"><span dir="auto">أنتاركتيكا</span></option>
+      <option value="AG"><span dir="auto">أنتيغوا وبربودا</span></option>
+      <option value="AR"><span dir="auto">الأرجنتين</span></option>
+      <option value="AM"><span dir="auto">أرمينيا</span></option>
+      <option value="AW"><span dir="auto">أروبا</span></option>
+      <option value="AU"><span dir="auto">أستراليا</span></option>
+      <option value="AT"><span dir="auto">النمسا</span></option>
+      <option value="AZ"><span dir="auto">أذربيجان</span></option>
+      <option value="BS"><span dir="auto">جزر البهاما</span></option>
+      <option value="BH"><span dir="auto">البحرين</span></option>
+      <option value="BD"><span dir="auto">بنغلاديش</span></option>
+      <option value="BB"><span dir="auto">بربادوس</span></option>
+      <option value="BY"><span dir="auto">بيلاروسيا</span></option>
+      <option value="BE"><span dir="auto">بلجيكا</span></option>
+      <option value="BZ"><span dir="auto">بليز</span></option>
+      <option value="BJ"><span dir="auto">بنين</span></option>
+      <option value="BM"><span dir="auto">برمودا</span></option>
+      <option value="BT"><span dir="auto">بوتان</span></option>
+      <option value="BO"><span dir="auto">بوليفيا</span></option>
+      <option value="BQ"><span dir="auto">بونير، سينت أوستاتيوس وسابا</span></option>
+      <option value="BA"><span dir="auto">البوسنة والهرسك</span></option>
+      <option value="BW"><span dir="auto">بوتسوانا</span></option>
+      <option value="BV"><span dir="auto">جزيرة بوفيت</span></option>
+      <option value="BR"><span dir="auto">البرازيل</span></option>
+      <option value="IO"><span dir="auto">إقليم المحيط الهندي البريطاني</span></option>
+      <option value="BN"><span dir="auto">بروناي دار السلام</span></option>
+      <option value="BG"><span dir="auto">بلغاريا</span></option>
+      <option value="BF"><span dir="auto">بوركينا فاسو</span></option>
+      <option value="BI"><span dir="auto">بوروندي</span></option>
+      <option value="CV"><span dir="auto">الرأس الأخضر</span></option>
+      <option value="KH"><span dir="auto">كمبوديا</span></option>
+      <option value="CM"><span dir="auto">الكاميرون</span></option>
+      <option value="CA"><span dir="auto">كندا</span></option>
+      <option value="KY"><span dir="auto">جزر كايمان</span></option>
+      <option value="CF"><span dir="auto">جمهورية أفريقيا الوسطى</span></option>
+      <option value="TD"><span dir="auto">تشاد</span></option>
+      <option value="CL"><span dir="auto">تشيلي</span></option>
+      <option value="CN"><span dir="auto">الصين</span></option>
+      <option value="CX"><span dir="auto">جزيرة الكريسماس</span></option>
+      <option value="CC"><span dir="auto">جزر كوكوس (كيلينغ)</span></option>
+      <option value="CO"><span dir="auto">كولومبيا</span></option>
+      <option value="KM"><span dir="auto">جزر القمر</span></option>
+      <option value="CD"><span dir="auto">الكونغو</span></option>
+      <option value="CG"><span dir="auto">الكونغو</span></option>
+      <option value="CK"><span dir="auto">جزر كوك</span></option>
+      <option value="CR"><span dir="auto">كوستاريكا</span></option>
+      <option value="HR"><span dir="auto">كرواتيا</span></option>
+      <option value="CU"><span dir="auto">كوبنهاغن</span></option>
+      <option value="CW"><span dir="auto">كوراساو</span></option>
+      <option value="CY"><span dir="auto">قبرص</span></option>
+      <option value="CZ"><span dir="auto">الجمهورية التشيكية</span></option>
+      <option value="CI"><span dir="auto">ساحل العاج</span></option>
+      <option value="DK"><span dir="auto">الدنمارك</span></option>
+      <option value="DJ"><span dir="auto">جيبوتي</span></option>
+      <option value="DM"><span dir="auto">دومينيكا</span></option>
+      <option value="DO"><span dir="auto">جمهورية الدومينيكان</span></option>
+      <option value="EC"><span dir="auto">الإكوادور</span></option>
+      <option value="EG"><span dir="auto">مصر</span></option>
+      <option value="SV"><span dir="auto">السلفادور</span></option>
+      <option value="GQ"><span dir="auto">غينيا الاستوائية</span></option>
+      <option value="ER"><span dir="auto">إريتريا</span></option>
+      <option value="EE"><span dir="auto">إستونيا</span></option>
+      <option value="ET"><span dir="auto">أثيوبيا</span></option>
+      <option value="FK"><span dir="auto">جزر فوكلاند (مالفيناس)</span></option>
+      <option value="FO"><span dir="auto">جزر فارو</span></option>
+      <option value="FJ"><span dir="auto">فيجي</span></option>
+      <option value="FI"><span dir="auto">فنلندا</span></option>
+      <option value="FR"><span dir="auto">فرنسا</span></option>
+      <option value="GF"><span dir="auto">غيانا الفرنسية</span></option>
+      <option value="PF"><span dir="auto">بولينيزيا الفرنسية</span></option>
+      <option value="TF"><span dir="auto">الأراضي الجنوبية الفرنسية</span></option>
+      <option value="GA"><span dir="auto">الغابون</span></option>
+      <option value="GM"><span dir="auto">غامبيا</span></option>
+      <option value="GE"><span dir="auto">جورجيا</span></option>
+      <option value="DE"><span dir="auto">ألمانيا</span></option>
+      <option value="GH"><span dir="auto">غانا</span></option>
+      <option value="GI"><span dir="auto">جبل طارق</span></option>
+      <option value="GR"><span dir="auto">اليونان</span></option>
+      <option value="GL"><span dir="auto">جرينلاند</span></option>
+      <option value="GD"><span dir="auto">غرينادا</span></option>
+      <option value="GP"><span dir="auto">غوادلوب</span></option>
+      <option value="GU"><span dir="auto">غوام</span></option>
+      <option value="GT"><span dir="auto">غواتيمالا</span></option>
+      <option value="GG"><span dir="auto">غيرنسي</span></option>
+      <option value="GN"><span dir="auto">غينيا</span></option>
+      <option value="GW"><span dir="auto">غينيا بيساو</span></option>
+      <option value="GY"><span dir="auto">غيانا</span></option>
+      <option value="HT"><span dir="auto">هايتي</span></option>
+      <option value="HM"><span dir="auto">جزيرة هيرد وجزر ماكدونالد</span></option>
+      <option value="VA"><span dir="auto">الكرسي الرسولي</span></option>
+      <option value="HN"><span dir="auto">هندوراس</span></option>
+      <option value="HK"><span dir="auto">هونغ كونغ</span></option>
+      <option value="HU"><span dir="auto">هنغاريا</span></option>
+      <option value="IS"><span dir="auto">أيسلندا</span></option>
+      <option value="IN"><span dir="auto">الهند</span></option>
+      <option value="ID"><span dir="auto">أندونيسيا</span></option>
+      <option value="IR"><span dir="auto">إيران</span></option>
+      <option value="IQ" selected><span dir="auto">العراق</span></option>
+      <option value="IE"><span dir="auto">أيرلندا</span></option>
+      <option value="IM"><span dir="auto">جزيرة مان</span></option>
+      <option value="IL"><span dir="auto">إسرائيل</span></option>
+      <option value="IT"><span dir="auto">إيطاليا</span></option>
+      <option value="JM"><span dir="auto">جامايكا</span></option>
+      <option value="JP"><span dir="auto">اليابان</span></option>
+      <option value="JE"><span dir="auto">جيرسي</span></option>
+      <option value="JO"><span dir="auto">الأردن</span></option>
+      <option value="KZ"><span dir="auto">كازاخستان</span></option>
+      <option value="KE"><span dir="auto">كينيا</span></option>
+      <option value="KI"><span dir="auto">كيريباتي</span></option>
+      <option value="KR"><span dir="auto">كوريا</span></option>
+      <option value="KP"><span dir="auto">كوريا الشمالية</span></option>
+      <option value="KW"><span dir="auto">الكويت</span></option>
+      <option value="KG"><span dir="auto">قيرغيزستان</span></option>
+      <option value="LA"><span dir="auto">جمهورية لاو الديمقراطية الشعبية</span></option>
+      <option value="LV"><span dir="auto">لاتفيا</span></option>
+      <option value="LB"><span dir="auto">لبنان</span></option>
+      <option value="LS"><span dir="auto">ليسوتو</span></option>
+      <option value="LR"><span dir="auto">ليبيريا</span></option>
+      <option value="LY"><span dir="auto">ليبيا</span></option>
+      <option value="LI"><span dir="auto">ليختنشتاين</span></option>
+      <option value="LT"><span dir="auto">ليتوانيا</span></option>
+      <option value="LU"><span dir="auto">لوكسمبورغ</span></option>
+      <option value="MO"><span dir="auto">ماكاو</span></option>
+      <option value="MK"><span dir="auto">مقدونيا</span></option>
+      <option value="MG"><span dir="auto">مدغشقر</span></option>
+      <option value="MW"><span dir="auto">مالاوي</span></option>
+      <option value="MY"><span dir="auto">ماليزيا</span></option>
+      <option value="MV"><span dir="auto">جزر المالديف</span></option>
+      <option value="ML"><span dir="auto">مالي</span></option>
+      <option value="MT"><span dir="auto">مالطا</span></option>
+      <option value="MH"><span dir="auto">جزر مارشال</span></option>
+      <option value="MQ"><span dir="auto">مارتينيك</span></option>
+      <option value="MR"><span dir="auto">موريتانيا</span></option>
+      <option value="MU"><span dir="auto">موريشيوس</span></option>
+      <option value="YT"><span dir="auto">مايوت</span></option>
+      <option value="MX"><span dir="auto">المكسيك</span></option>
+      <option value="FM"><span dir="auto">ميكرونيزيا</span></option>
+      <option value="MD"><span dir="auto">مولدوفا</span></option>
+      <option value="MC"><span dir="auto">موناكو</span></option>
+      <option value="MN"><span dir="auto">منغوليا</span></option>
+      <option value="ME"><span dir="auto">الجبل الأسود</span></option>
+      <option value="MS"><span dir="auto">مونتسيرات</span></option>
+      <option value="MA"><span dir="auto">المغرب</span></option>
+      <option value="MZ"><span dir="auto">موزمبيق</span></option>
+      <option value="MM"><span dir="auto">ميانمار</span></option>
+      <option value="NA"><span dir="auto">ناميبيا</span></option>
+      <option value="NR"><span dir="auto">ناورو</span></option>
+      <option value="NP"><span dir="auto">نيبال</span></option>
+      <option value="NL"><span dir="auto">هولندا</span></option>
+      <option value="NC"><span dir="auto">كاليدونيا الجديدة</span></option>
+      <option value="NZ"><span dir="auto">نيوزيلندا</span></option>
+      <option value="NI"><span dir="auto">نيكاراغوا</span></option>
+      <option value="NE"><span dir="auto">النيجر</span></option>
+      <option value="NG"><span dir="auto">نيجيريا</span></option>
+      <option value="NU"><span dir="auto">نيوي</span></option>
+      <option value="NF"><span dir="auto">جزيرة نورفولك</span></option>
+      <option value="MP"><span dir="auto">جزر ماريانا الشمالية</span></option>
+      <option value="NO"><span dir="auto">النرويج</span></option>
+      <option value="OM"><span dir="auto">سلطنة عمان</span></option>
+      <option value="PK"><span dir="auto">باكستان</span></option>
+      <option value="PW"><span dir="auto">بالاو</span></option>
+      <option value="PS"><span dir="auto">فلسطين</span></option>
+      <option value="PA"><span dir="auto">بنما</span></option>
+      <option value="PG"><span dir="auto">بابوا غينيا الجديدة</span></option>
+      <option value="PY"><span dir="auto">باراغواي</span></option>
+      <option value="PE"><span dir="auto">بيرو</span></option>
+      <option value="PH"><span dir="auto">فيلبيني</span></option>
+      <option value="PN"><span dir="auto">بيتكيرن</span></option>
+      <option value="PL"><span dir="auto">بولندا</span></option>
+      <option value="PT"><span dir="auto">البرتغال</span></option>
+      <option value="PR"><span dir="auto">بورتوريكو</span></option>
+      <option value="QA"><span dir="auto">قطر</span></option>
+      <option value="RO"><span dir="auto">رومانيا</span></option>
+      <option value="RU"><span dir="auto">الاتحاد الروسي</span></option>
+      <option value="RW"><span dir="auto">رواندا</span></option>
+      <option value="RE"><span dir="auto">جمع شمل</span></option>
+      <option value="BL"><span dir="auto">سانت بارتيليمي</span></option>
+      <option value="SH"><span dir="auto">سانت هيلينا، أسنسيون، وتريستان دا كونا</span></option>
+      <option value="KN"><span dir="auto">سانت كيتس ونيفيس</span></option>
+      <option value="LC"><span dir="auto">سانت لوسيا</span></option>
+      <option value="MF"><span dir="auto">سانت مارتن (الجزء الفرنسي)</span></option>
+      <option value="PM"><span dir="auto">سان بيير وميكلون</span></option>
+      <option value="VC"><span dir="auto">سانت فنسنت وجزر غرينادين</span></option>
+      <option value="WS"><span dir="auto">ساموا</span></option>
+      <option value="SM"><span dir="auto">سان مارينو</span></option>
+      <option value="ST"><span dir="auto">ساو تومي وبرينسيبي</span></option>
+      <option value="SA"><span dir="auto">المملكة العربية السعودية</span></option>
+      <option value="SN"><span dir="auto">السنغال</span></option>
+      <option value="RS"><span dir="auto">صربيا</span></option>
+      <option value="SC"><span dir="auto">سيشل</span></option>
+      <option value="SL"><span dir="auto">سيراليون</span></option>
+      <option value="SG"><span dir="auto">سنغافورة</span></option>
+      <option value="SX"><span dir="auto">سينت مارتن (الجزء الهولندي)</span></option>
+      <option value="SK"><span dir="auto">سلوفاكيا</span></option>
+      <option value="SI"><span dir="auto">سلوفينيا</span></option>
+      <option value="SB"><span dir="auto">جزر سليمان</span></option>
+      <option value="SO"><span dir="auto">الصومال</span></option>
+      <option value="ZA"><span dir="auto">جنوب أفريقيا</span></option>
+      <option value="GS"><span dir="auto">جورجيا الجنوبية وجزر ساندويتش الجنوبية</span></option>
+      <option value="SS"><span dir="auto">جنوب السودان</span></option>
+      <option value="ES"><span dir="auto">إسبانيا</span></option>
+      <option value="LK"><span dir="auto">سريلانكا</span></option>
+      <option value="SD"><span dir="auto">السودان</span></option>
+      <option value="SR"><span dir="auto">سورينام</span></option>
+      <option value="SJ"><span dir="auto">سفالبارد ويان ماين</span></option>
+      <option value="SZ"><span dir="auto">سوازيلاند</span></option>
+      <option value="SE"><span dir="auto">السويد</span></option>
+      <option value="CH"><span dir="auto">سويسرا</span></option>
+      <option value="SY"><span dir="auto">الجمهورية العربية السورية</span></option>
+      <option value="TW"><span dir="auto">تايوان</span></option>
+      <option value="TJ"><span dir="auto">طاجيكستان</span></option>
+      <option value="TZ"><span dir="auto">تنزانيا</span></option>
+      <option value="TH"><span dir="auto">تايلاند</span></option>
+      <option value="TL"><span dir="auto">تيمور الشرقية</span></option>
+      <option value="TG"><span dir="auto">توغو</span></option>
+      <option value="TK"><span dir="auto">توكيلاو</span></option>
+      <option value="TO"><span dir="auto">تونغا</span></option>
+      <option value="TT"><span dir="auto">ترينيداد وتوباغو</span></option>
+      <option value="TN"><span dir="auto">تونس</span></option>
+      <option value="TR"><span dir="auto">ديك رومى</span></option>
+      <option value="TM"><span dir="auto">تركمانستان</span></option>
+      <option value="TC"><span dir="auto">جزر تركس وكايكوس</span></option>
+      <option value="TV"><span dir="auto">توفالو</span></option>
+      <option value="UG"><span dir="auto">أوغندا</span></option>
+      <option value="UA"><span dir="auto">أوكرانيا</span></option>
+      <option value="AE"><span dir="auto">الإمارات العربية المتحدة</span></option>
+      <option value="GB"><span dir="auto">المملكة المتحدة</span></option>
+      <option value="UM"><span dir="auto">الجزر الصغيرة النائية للولايات المتحدة</span></option>
+      <option value="US"><span dir="auto">الولايات المتحدة الأمريكية</span></option>
+      <option value="UY"><span dir="auto">أوروغواي</span></option>
+      <option value="UZ"><span dir="auto">أوزبكستان</span></option>
+      <option value="VU"><span dir="auto">فانواتو</span></option>
+      <option value="VE"><span dir="auto">فنزويلا</span></option>
+      <option value="VN"><span dir="auto">فيتنام</span></option>
+      <option value="VG"><span dir="auto">جزر العذراء البريطانية</span></option>
+      <option value="VI"><span dir="auto">جزر العذراء، الولايات المتحدة</span></option>
+      <option value="WF"><span dir="auto">واليس وفوتونا</span></option>
+      <option value="EH"><span dir="auto">الصحراء الغربية</span></option>
+      <option value="YE"><span dir="auto">اليمن</span></option>
+      <option value="ZM"><span dir="auto">زامبيا</span></option>
+      <option value="ZW"><span dir="auto">زيمبابوي</span></option>
+      <option value="AX"><span dir="auto">جزر أولاند</span></option>
+    </select>
+    
+    <span dir="auto"><input type="submit" name="sub" value="إضافة/تحديث"></span>
 
-	<label><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">سياسة:</font></font></label>
-	<select name="policy" class="txtbox">
-	<option value="0" selected=""><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">السماح بأي</font></font></option>
-<option value="-1"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">يُسمح فقط من</font></font></option>
-<option value="1"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">حظر الكل من</font></font></option>	</select>
+    <div id="m_fcban" class="frmmsg1" role="status"></div>
+    <div id="em_fcban" class="frmmsg2" role="alert"></div>
 
-	<label><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">دولة:</font></font></label>
-	<select name="country" class="txtbox">
-		<option value="AF"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">أفغانستان</font></font></option>
-<option value="AL"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">ألبانيا</font></font></option>
-<option value="DZ"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">الجزائر</font></font></option>
-<option value="AS"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">ساموا الأمريكية</font></font></option>
-<option value="AD"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">أندورا</font></font></option>
-<option value="AO"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">أنغولا</font></font></option>
-<option value="AI"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">أنغيلا</font></font></option>
-<option value="AQ"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">أنتاركتيكا</font></font></option>
-<option value="AG"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">أنتيغوا وبربودا</font></font></option>
-<option value="AR"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">الأرجنتين</font></font></option>
-<option value="AM"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">أرمينيا</font></font></option>
-<option value="AW"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">أروبا</font></font></option>
-<option value="AU"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">أستراليا</font></font></option>
-<option value="AT"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">النمسا</font></font></option>
-<option value="AZ"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">أذربيجان</font></font></option>
-<option value="BS"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">جزر البهاما</font></font></option>
-<option value="BH"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">البحرين</font></font></option>
-<option value="BD"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">بنغلاديش</font></font></option>
-<option value="BB"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">بربادوس</font></font></option>
-<option value="BY"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">بيلاروسيا</font></font></option>
-<option value="BE"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">بلجيكا</font></font></option>
-<option value="BZ"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">بليز</font></font></option>
-<option value="BJ"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">بنين</font></font></option>
-<option value="BM"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">برمودا</font></font></option>
-<option value="BT"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">بوتان</font></font></option>
-<option value="BO"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">بوليفيا</font></font></option>
-<option value="BQ"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">بونير، سينت أوستاتيوس وسابا</font></font></option>
-<option value="BA"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">البوسنة والهرسك</font></font></option>
-<option value="BW"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">بوتسوانا</font></font></option>
-<option value="BV"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">جزيرة بوفيت</font></font></option>
-<option value="BR"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">البرازيل</font></font></option>
-<option value="IO"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">إقليم المحيط الهندي البريطاني</font></font></option>
-<option value="BN"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">بروناي دار السلام</font></font></option>
-<option value="BG"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">بلغاريا</font></font></option>
-<option value="BF"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">بوركينا فاسو</font></font></option>
-<option value="BI"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">بوروندي</font></font></option>
-<option value="CV"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">الرأس الأخضر</font></font></option>
-<option value="KH"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">كمبوديا</font></font></option>
-<option value="CM"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">الكاميرون</font></font></option>
-<option value="CA"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">كندا</font></font></option>
-<option value="KY"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">جزر كايمان</font></font></option>
-<option value="CF"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">جمهورية أفريقيا الوسطى</font></font></option>
-<option value="TD"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">تشاد</font></font></option>
-<option value="CL"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">تشيلي</font></font></option>
-<option value="CN"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">الصين</font></font></option>
-<option value="CX"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">جزيرة الكريسماس</font></font></option>
-<option value="CC"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">جزر كوكوس (كيلينغ)</font></font></option>
-<option value="CO"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">كولومبيا</font></font></option>
-<option value="KM"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">جزر القمر</font></font></option>
-<option value="CD"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">الكونغو</font></font></option>
-<option value="CG"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">الكونغو</font></font></option>
-<option value="CK"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">جزر كوك</font></font></option>
-<option value="CR"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">كوستاريكا</font></font></option>
-<option value="HR"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">كرواتيا</font></font></option>
-<option value="CU"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">كوبنهاغن</font></font></option>
-<option value="CW"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">كوراساو</font></font></option>
-<option value="CY"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">قبرص</font></font></option>
-<option value="CZ"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">الجمهورية التشيكية</font></font></option>
-<option value="CI"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">ساحل العاج</font></font></option>
-<option value="DK"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">الدنمارك</font></font></option>
-<option value="DJ"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">جيبوتي</font></font></option>
-<option value="DM"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">دومينيكا</font></font></option>
-<option value="DO"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">جمهورية الدومينيكان</font></font></option>
-<option value="EC"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">الإكوادور</font></font></option>
-<option value="EG"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">مصر</font></font></option>
-<option value="SV"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">السلفادور</font></font></option>
-<option value="GQ"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">غينيا الاستوائية</font></font></option>
-<option value="ER"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">إريتريا</font></font></option>
-<option value="EE"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">إستونيا</font></font></option>
-<option value="ET"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">أثيوبيا</font></font></option>
-<option value="FK"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">جزر فوكلاند (مالفيناس)</font></font></option>
-<option value="FO"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">جزر فارو</font></font></option>
-<option value="FJ"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">فيجي</font></font></option>
-<option value="FI"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">فنلندا</font></font></option>
-<option value="FR"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">فرنسا</font></font></option>
-<option value="GF"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">غيانا الفرنسية</font></font></option>
-<option value="PF"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">بولينيزيا الفرنسية</font></font></option>
-<option value="TF"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">الأراضي الجنوبية الفرنسية</font></font></option>
-<option value="GA"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">الغابون</font></font></option>
-<option value="GM"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">غامبيا</font></font></option>
-<option value="GE"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">جورجيا</font></font></option>
-<option value="DE"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">ألمانيا</font></font></option>
-<option value="GH"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">غانا</font></font></option>
-<option value="GI"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">جبل طارق</font></font></option>
-<option value="GR"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">اليونان</font></font></option>
-<option value="GL"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">جرينلاند</font></font></option>
-<option value="GD"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">غرينادا</font></font></option>
-<option value="GP"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">غوادلوب</font></font></option>
-<option value="GU"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">غوام</font></font></option>
-<option value="GT"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">غواتيمالا</font></font></option>
-<option value="GG"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">غيرنسي</font></font></option>
-<option value="GN"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">غينيا</font></font></option>
-<option value="GW"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">غينيا بيساو</font></font></option>
-<option value="GY"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">غيانا</font></font></option>
-<option value="HT"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">هايتي</font></font></option>
-<option value="HM"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">جزيرة هيرد وجزر ماكدونالد</font></font></option>
-<option value="VA"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">الكرسي الرسولي</font></font></option>
-<option value="HN"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">هندوراس</font></font></option>
-<option value="HK"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">هونغ كونغ</font></font></option>
-<option value="HU"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">هنغاريا</font></font></option>
-<option value="IS"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">أيسلندا</font></font></option>
-<option value="IN"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">الهند</font></font></option>
-<option value="ID"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">أندونيسيا</font></font></option>
-<option value="IR"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">إيران</font></font></option>
-<option value="IQ" selected=""><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">العراق</font></font></option>
-<option value="IE"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">أيرلندا</font></font></option>
-<option value="IM"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">جزيرة مان</font></font></option>
-<option value="IL"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">إسرائيل</font></font></option>
-<option value="IT"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">إيطاليا</font></font></option>
-<option value="JM"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">جامايكا</font></font></option>
-<option value="JP"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">اليابان</font></font></option>
-<option value="JE"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">جيرسي</font></font></option>
-<option value="JO"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">الأردن</font></font></option>
-<option value="KZ"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">كازاخستان</font></font></option>
-<option value="KE"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">كينيا</font></font></option>
-<option value="KI"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">كيريباتي</font></font></option>
-<option value="KR"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">كوريا</font></font></option>
-<option value="KP"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">كوريا الشمالية</font></font></option>
-<option value="KW"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">الكويت</font></font></option>
-<option value="KG"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">قيرغيزستان</font></font></option>
-<option value="LA"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">جمهورية لاو الديمقراطية الشعبية</font></font></option>
-<option value="LV"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">لاتفيا</font></font></option>
-<option value="LB"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">لبنان</font></font></option>
-<option value="LS"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">ليسوتو</font></font></option>
-<option value="LR"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">ليبيريا</font></font></option>
-<option value="LY"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">ليبيا</font></font></option>
-<option value="LI"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">ليختنشتاين</font></font></option>
-<option value="LT"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">ليتوانيا</font></font></option>
-<option value="LU"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">لوكسمبورغ</font></font></option>
-<option value="MO"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">ماكاو</font></font></option>
-<option value="MK"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">مقدونيا</font></font></option>
-<option value="MG"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">مدغشقر</font></font></option>
-<option value="MW"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">مالاوي</font></font></option>
-<option value="MY"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">ماليزيا</font></font></option>
-<option value="MV"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">جزر المالديف</font></font></option>
-<option value="ML"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">مالي</font></font></option>
-<option value="MT"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">مالطا</font></font></option>
-<option value="MH"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">جزر مارشال</font></font></option>
-<option value="MQ"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">مارتينيك</font></font></option>
-<option value="MR"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">موريتانيا</font></font></option>
-<option value="MU"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">موريشيوس</font></font></option>
-<option value="YT"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">مايوت</font></font></option>
-<option value="MX"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">المكسيك</font></font></option>
-<option value="FM"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">ميكرونيزيا</font></font></option>
-<option value="MD"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">مولدوفا</font></font></option>
-<option value="MC"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">موناكو</font></font></option>
-<option value="MN"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">منغوليا</font></font></option>
-<option value="ME"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">الجبل الأسود</font></font></option>
-<option value="MS"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">مونتسيرات</font></font></option>
-<option value="MA"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">المغرب</font></font></option>
-<option value="MZ"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">موزمبيق</font></font></option>
-<option value="MM"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">ميانمار</font></font></option>
-<option value="NA"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">ناميبيا</font></font></option>
-<option value="NR"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">ناورو</font></font></option>
-<option value="NP"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">نيبال</font></font></option>
-<option value="NL"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">هولندا</font></font></option>
-<option value="NC"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">كاليدونيا الجديدة</font></font></option>
-<option value="NZ"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">نيوزيلندا</font></font></option>
-<option value="NI"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">نيكاراغوا</font></font></option>
-<option value="NE"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">النيجر</font></font></option>
-<option value="NG"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">نيجيريا</font></font></option>
-<option value="NU"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">نيوي</font></font></option>
-<option value="NF"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">جزيرة نورفولك</font></font></option>
-<option value="MP"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">جزر ماريانا الشمالية</font></font></option>
-<option value="NO"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">النرويج</font></font></option>
-<option value="OM"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">سلطنة عمان</font></font></option>
-<option value="PK"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">باكستان</font></font></option>
-<option value="PW"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">بالاو</font></font></option>
-<option value="PS"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">فلسطين</font></font></option>
-<option value="PA"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">بنما</font></font></option>
-<option value="PG"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">بابوا غينيا الجديدة</font></font></option>
-<option value="PY"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">باراغواي</font></font></option>
-<option value="PE"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">بيرو</font></font></option>
-<option value="PH"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">فيلبيني</font></font></option>
-<option value="PN"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">بيتكيرن</font></font></option>
-<option value="PL"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">بولندا</font></font></option>
-<option value="PT"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">البرتغال</font></font></option>
-<option value="PR"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">بورتوريكو</font></font></option>
-<option value="QA"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">قطر</font></font></option>
-<option value="RO"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">رومانيا</font></font></option>
-<option value="RU"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">الاتحاد الروسي</font></font></option>
-<option value="RW"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">رواندا</font></font></option>
-<option value="RE"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">جمع شمل</font></font></option>
-<option value="BL"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">سانت بارتيليمي</font></font></option>
-<option value="SH"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">سانت هيلينا، أسنسيون، وتريستان دا كونا</font></font></option>
-<option value="KN"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">سانت كيتس ونيفيس</font></font></option>
-<option value="LC"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">سانت لوسيا</font></font></option>
-<option value="MF"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">سانت مارتن (الجزء الفرنسي)</font></font></option>
-<option value="PM"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">سان بيير وميكلون</font></font></option>
-<option value="VC"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">سانت فنسنت وجزر غرينادين</font></font></option>
-<option value="WS"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">ساموا</font></font></option>
-<option value="SM"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">سان مارينو</font></font></option>
-<option value="ST"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">ساو تومي وبرينسيبي</font></font></option>
-<option value="SA"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">المملكة العربية السعودية</font></font></option>
-<option value="SN"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">السنغال</font></font></option>
-<option value="RS"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">صربيا</font></font></option>
-<option value="SC"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">سيشل</font></font></option>
-<option value="SL"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">سيراليون</font></font></option>
-<option value="SG"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">سنغافورة</font></font></option>
-<option value="SX"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">سينت مارتن (الجزء الهولندي)</font></font></option>
-<option value="SK"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">سلوفاكيا</font></font></option>
-<option value="SI"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">سلوفينيا</font></font></option>
-<option value="SB"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">جزر سليمان</font></font></option>
-<option value="SO"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">الصومال</font></font></option>
-<option value="ZA"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">جنوب أفريقيا</font></font></option>
-<option value="GS"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">جورجيا الجنوبية وجزر ساندويتش الجنوبية</font></font></option>
-<option value="SS"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">جنوب السودان</font></font></option>
-<option value="ES"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">إسبانيا</font></font></option>
-<option value="LK"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">سريلانكا</font></font></option>
-<option value="SD"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">السودان</font></font></option>
-<option value="SR"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">سورينام</font></font></option>
-<option value="SJ"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">سفالبارد ويان ماين</font></font></option>
-<option value="SZ"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">سوازيلاند</font></font></option>
-<option value="SE"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">السويد</font></font></option>
-<option value="CH"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">سويسرا</font></font></option>
-<option value="SY"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">الجمهورية العربية السورية</font></font></option>
-<option value="TW"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">تايوان</font></font></option>
-<option value="TJ"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">طاجيكستان</font></font></option>
-<option value="TZ"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">تنزانيا</font></font></option>
-<option value="TH"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">تايلاند</font></font></option>
-<option value="TL"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">تيمور الشرقية</font></font></option>
-<option value="TG"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">توغو</font></font></option>
-<option value="TK"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">توكيلاو</font></font></option>
-<option value="TO"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">تونغا</font></font></option>
-<option value="TT"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">ترينيداد وتوباغو</font></font></option>
-<option value="TN"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">تونس</font></font></option>
-<option value="TR"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">ديك رومى</font></font></option>
-<option value="TM"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">تركمانستان</font></font></option>
-<option value="TC"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">جزر تركس وكايكوس</font></font></option>
-<option value="TV"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">توفالو</font></font></option>
-<option value="UG"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">أوغندا</font></font></option>
-<option value="UA"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">أوكرانيا</font></font></option>
-<option value="AE"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">الإمارات العربية المتحدة</font></font></option>
-<option value="GB"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">المملكة المتحدة</font></font></option>
-<option value="UM"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">الجزر الصغيرة النائية للولايات المتحدة</font></font></option>
-<option value="US"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">الولايات المتحدة الأمريكية</font></font></option>
-<option value="UY"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">أوروغواي</font></font></option>
-<option value="UZ"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">أوزبكستان</font></font></option>
-<option value="VU"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">فانواتو</font></font></option>
-<option value="VE"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">فنزويلا</font></font></option>
-<option value="VN"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">فيتنام</font></font></option>
-<option value="VG"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">جزر العذراء البريطانية</font></font></option>
-<option value="VI"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">جزر العذراء، الولايات المتحدة</font></font></option>
-<option value="WF"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">واليس وفوتونا</font></font></option>
-<option value="EH"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">الصحراء الغربية</font></font></option>
-<option value="YE"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">اليمن</font></font></option>
-<option value="ZM"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">زامبيا</font></font></option>
-<option value="ZW"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">زيمبابوي</font></font></option>
-<option value="AX"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">جزر أولاند</font></font></option>	</select>
-	
-    <font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"><input type="submit" name="sub" value="إضافة/تحديث"></font></font></font></font>
-
-	<div id="m_fcban" class="frmmsg1"></div>
-	<div id="em_fcban" class="frmmsg2"></div>
-
-	<div id="country_ban_policy"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
-	السياسة الحالية: </font></font><b><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">السماح بأي شيء.</font></font></b> <br><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"> تتطلب هذه الميزة </font></font><a href="/admin/upgrade?p=2"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">Cbox Pro</font></font></a><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"> .	</font></font></div>
-	
-</fieldset>
-
+    <div id="country_ban_policy" role="note">
+      <span dir="auto">السياسة الحالية: </span><b><span dir="auto">السماح بأي شيء.</span></b> <br>
+      <span dir="auto"> تتطلب هذه الميزة </span><a href="/admin/upgrade?p=2"><span dir="auto">Cbox Pro</span></a><span dir="auto"> .</span>
+    </div>
+  </fieldset>
 </form>
 
+<!-- نموذج إضافة حظر IP -->
+<iframe title="hidden" aria-hidden="true" class="frmiframe" name="t_fban" src="logs_files/saved_resource(2).html" onload="rcvdformresponse(this.name)" loading="lazy"></iframe>
+<form name="fban" target="t_fban" method="post" action="/admin_d_submit?f=fban" onsubmit="return subsaving(this.name, 'sub', '');" autocomplete="on">
+  <input type="hidden" name="csrf_token" value="">
+  <fieldset>
+    <div class="fsInlineHelp"><a href="javascript:popwin('help', '/admin_p_help?sec=4#2', 500, 600)" title="احصل على المساعدة في هذا القسم" aria-label="مساعدة">?</a></div>
+    <legend><span dir="auto">إضافة حظر عنوان IP</span></legend>
 
-<iframe src="javascript:false" name="t_fban" onload="rcvdformresponse(this.name)" width="1" height="1" class="frmiframe" src="logs_files/saved_resource(2).html"></iframe>
-<form name="fban" target="t_fban" method="post" action="/admin_d_submit?f=fban" onsubmit="return subsaving(this.name, &#39;sub&#39;, &#39;&#39;);">
+    <label for="fban_ip"><span dir="auto">عنوان IP المراد حظره:</span></label>
+    <input type="text" id="fban_ip" name="ip" maxlength="15" size="20" class="txtbox" placeholder="123.45.67.89" pattern="^([0-9]{1,3}\.){3}[0-9]{1,3}$" title="أدخل عنوان IP صالح" autocomplete="off">
 
-<fieldset>
-	<div class="fsInlineHelp"><a href="javascript:popwin(&#39;help&#39;, &#39;/admin_p_help?sec=4#2&#39;, 500, 600)" title="احصل على المساعدة في هذا القسم"></a></div>	<legend><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">إضافة حظر عنوان IP</font></font></legend>
+    <label for="fban_dur"><span dir="auto">مدة:</span></label>
+    <input type="text" id="fban_dur" name="dur" maxlength="15" placeholder="أسبوع واحد" size="9" class="txtbox" autocomplete="off">
+    
+    <label for="fban_ref"><span dir="auto">السبب/المذكرة:</span></label>
+    <input type="text" id="fban_ref" name="ref" maxlength="25" size="40" class="txtbox" autocomplete="off">
 
-	<label><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">عنوان IP المراد حظره:</font></font></label>
-	<input type="text" placeholder="123.45.67.89" name="ip" maxlength="15" size="20" class="txtbox">
+    <span dir="auto"><input type="submit" name="sub" value="يضيف"></span>
 
-	<label><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">مدة:</font></font></label>
-	<input type="text" name="dur" maxlength="15" placeholder="أسبوع واحد" size="9" class="txtbox">
-	
-	<label><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">السبب/المذكرة:</font></font></label>
-	<input type="text" name="ref" maxlength="25" size="40" class="txtbox">
-
-    <font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"><input type="submit" name="sub" value="يضيف"></font></font></font></font>
-
-	<div id="m_fban" class="frmmsg1"></div>
-	<div id="em_fban" class="frmmsg2"></div>
-
-</fieldset>
-
+    <div id="m_fban" class="frmmsg1" role="status"></div>
+    <div id="em_fban" class="frmmsg2" role="alert"></div>
+  </fieldset>
 </form>
 
-
-
+<!-- قائمة الحظر -->
 <fieldset>
-	<div class="fsInlineHelp"><a href="javascript:popwin(&#39;help&#39;, &#39;/admin_p_help?sec=4#3&#39;, 500, 600)" title="احصل على المساعدة في هذا القسم"></a></div>	<legend><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">قائمة حظر المستخدمين/عناوين IP</font></font></legend>
+  <div class="fsInlineHelp"><a href="javascript:popwin('help', '/admin_p_help?sec=4#3', 500, 600)" title="احصل على المساعدة في هذا القسم" aria-label="مساعدة">?</a></div>
+  <legend><span dir="auto">قائمة حظر المستخدمين/عناوين IP</span></legend>
 
-	<table class="dHead">
-	<tbody><tr>
-		<td>
-			<a href="JavaScript:jselall(&#39;cboxbans&#39;)"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">تحديد الكل</font></font></a><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"> | 
-			 </font></font><a href="JavaScript:togsrch(&#39;srchbans&#39;)"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">بحث</font></font></a><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"> | 
-			 </font></font><a href="JavaScript:reload(&#39;srchbansf&#39;)"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">تحديث</font></font></a>
-		</td>
-		<td align="right"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
-			مع الخيارات المحددة: 
-			 </font></font><a href="JavaScript:pf(&#39;cboxbans&#39;, 1)"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">إلغاء الحظر</font></font></a><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"> | 
-			 </font></font><a href="JavaScript:if (confirm(&#39;Are you sure you want to strengthen the bans on the selected user(s)?\nPlease note that strong bans may block users you do not intend to ban.&#39;)) {pf(&#39;cboxbans&#39;, 2)}"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">تعزيز</font></font></a><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"> | 
-			 </font></font><a href="JavaScript:void(0)" onclick="p = prompt(&#39;Enter new duration from now, e.g. 3 weeks; 1 month; forever&#39;, &#39;4 weeks&#39;); if (p !== null) pf(&#39;cboxbans&#39;, 3, p);"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">تغيير تاريخ انتهاء الصلاحية</font></font></a>
-		</td>
-	</tr>
-	<tr id="srchbans" style="display:none">
-		<form name="srchbansf" target="cboxbans" action="/admin_l_bans" method="get"></form>
-		<td colspan="2" align="center"><br><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">بحث عن:</font></font><input type="text" name="srch" value="" maxlength="100" size="30" class="txtbox"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">في</font></font><select name="srchin" class="txtbox"><option value="nme"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">اسم</font></font></option><option value="ref"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">مود / ريزون</font></font></option><option value="applied"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">تاريخ الحظر</font></font></option><option value="expiry"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">تاريخ الانتهاء</font></font></option></select>&nbsp;<font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"><input type="submit" name="find" value="يجد"></font></font></font></font></td>
-		
-	</tr>
-	</tbody></table>
-	
-	<iframe frameborder="0" width="100%" height="600" src="logs_files/admin_l_bans.html" onload="rsziframe(this.name)" marginheight="0" marginwidth="0" scrolling="auto" name="cboxbans" id="cboxbans_i" allowtransparency="yes" style="height: 592px;"></iframe>
-
-	
-</fieldset></div></div>
-
-
+  <table class="dHead">
+    <tbody>
+    <tr>
+      <td>
+        <a href="JavaScript:jselall('cboxbans')"><span dir="auto">تحديد الكل</span></a><span dir="auto"> | </span>
+        <a href="JavaScript:togsrch('srchbans')"><span dir="auto">بحث</span></a><span dir="auto"> | </span>
+        <a href="JavaScript:reload('srchbansf')"><span dir="auto">تحديث</span></a>
+      </td>
+      <td style="text-align: left"><span dir="auto">
+        مع الخيارات المحددة: 
+        </span><a href="JavaScript:pf('cboxbans', 1)"><span dir="auto">إلغاء الحظر</span></a><span dir="auto"> | </span>
+        <a href="JavaScript:if (confirm('Are you sure you want to strengthen the bans on the selected user(s)?\nPlease note that strong bans may block users you do not intend to ban.')) {pf('cboxbans', 2)}"><span dir="auto">تعزيز</span></a><span dir="auto"> | </span>
+        <a href="JavaScript:void(0)" onclick="var p = prompt('Enter new duration from now, e.g. 3 weeks; 1 month; forever', '4 weeks'); if (p !== null) pf('cboxbans', 3, p);"><span dir="auto">تغيير تاريخ انتهاء الصلاحية</span></a>
+      </td>
+    </tr>
+    <tr id="srchbans" style="display:none">
+      <form name="srchbansf" target="cboxbans" action="/admin_l_bans" method="get">
+        <td colspan="2" style="text-align: center"><br><span dir="auto">بحث عن:</span><input type="search" name="srch" value="" maxlength="100" size="30" class="txtbox" aria-label="كلمة البحث"><span dir="auto">في</span>
+        <select name="srchin" class="txtbox" aria-label="حقل البحث">
+          <option value="nme"><span dir="auto">اسم</span></option>
+          <option value="ref"><span dir="auto">مود / ريزون</span></option>
+          <option value="applied"><span dir="auto">تاريخ الحظر</span></option>
+          <option value="expiry"><span dir="auto">تاريخ الانتهاء</span></option>
+        </select>&nbsp;<span dir="auto"><input type="submit" name="find" value="يجد"></span></td>
+      </form>
+    </tr>
+    </tbody>
+  </table>
+  
+  <iframe title="قائمة الحظر" aria-label="جدول المستخدمين المحظورين" frameborder="0" width="100%" height="600" src="logs_files/admin_l_bans.html" onload="rsziframe(this.name)" marginheight="0" marginwidth="0" scrolling="auto" name="cboxbans" id="cboxbans_i" allowtransparency="yes" style="height: 592px;" loading="lazy"></iframe>
+</fieldset>
 
 <div style="clear: both"></div>
-</div><!-- /content -->
-
-<!-- /bodywrap -->
-
-<div id="siteErrorBar"><div class="wrap" id="siteErrorBarCont"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">تحميل...</font></font></div></div>
-
-
-
-<div id="footer">
-
-	<a href="/admin/"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">عن
-	</font></font></a><a href="/admin/products"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">الخطط والأسعار
-	</font></font></a><a href="/admin/terms"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">الشروط والأحكام
-	</font></font></a><a href="/admin/privacy"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">سياسة الخصوصية
-	</font></font></a><a href="/admin/notices"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">إشعارات
-	</font></font></a><a href="/admin/contact"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">اتصل بنا
-	</font></font></a>
-	<div class="verybottom"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
-		© ٢٠٠٤–٢٠٢٦ شركة سي بوكس ​​للاتصالات (المحدودة)، جميع الحقوق محفوظة. ١ مللي ثانية. ٨٣ سي إي		
-	</font></font></div>
-
+    </div>
+  </main>
 </div>
 
+<div id="siteErrorBar"><div class="wrap" id="siteErrorBarCont"><span dir="auto">تحميل...</span></div></div>
 
+<footer id="footer">
+  <a href="/admin/"><span dir="auto">عن</span></a>
+  <a href="/admin/products"><span dir="auto">الخطط والأسعار</span></a>
+  <a href="/admin/terms"><span dir="auto">الشروط والأحكام</span></a>
+  <a href="/admin/privacy"><span dir="auto">سياسة الخصوصية</span></a>
+  <a href="/admin/notices"><span dir="auto">إشعارات</span></a>
+  <a href="/admin/contact"><span dir="auto">اتصل بنا</span></a>
+  <div class="verybottom">
+    <span dir="auto">© ٢٠٠٤–٢٠٢٦ شركة سي بوكس ​​للاتصالات (المحدودة)، جميع الحقوق محفوظة. ١ مللي ثانية. ٨٣ سي إي</span>
+  </div>
+</footer>
+
+<!-- Google Analytics - محمّل بشكل آمن -->
 <script>
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-ga('create', 'UA-242554-2', {
-	'cookieDomain': '/admin'
-});
-ga('send', 'pageview');
-
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+if (typeof ga === 'function') {
+  ga('create', 'UA-242554-2', { 'cookieDomain': 'auto', 'cookieFlags': 'Secure; SameSite=Strict' });
+  ga('send', 'pageview');
+}
 </script>
-
 
 <script src="logs_files/code.js"></script>
 <script>
-	// Modal / naked mode.
-	if (window.isPopup) {
-		document.body.className = "Popped";
-	}
-	
-	// Only for CP pages
-	upgradeCheckboxes();
+(function() {
+  'use strict';
+  // الوضع المنبثق
+  if (window.isPopup) {
+    document.body.className = "Popped";
+  }
+  // تفعيل عناصر الترقية
+  if (typeof upgradeCheckboxes === 'function') {
+    upgradeCheckboxes();
+  }
 
-var dropCrumb = function () {
-	if (!localStorage) {
-		return;
-	}
-	var bc = getCrumbs();
-	bc.push(location.href);
-	bc.splice(0, bc.length - 5);
-	localStorage.setItem("site:bread", JSON.stringify(bc));
-};
+  // حفظ مسار التصفح (Breadcrumb) مع معالجة الأخطاء
+  var dropCrumb = function () {
+    try {
+      if (!window.localStorage) return;
+      var bc = getCrumbs();
+      bc.push(location.href);
+      bc.splice(0, bc.length - 5);
+      localStorage.setItem("site:bread", JSON.stringify(bc));
+    } catch(e) { /* تجاهل أخطاء التخزين */ }
+  };
 
-var getCrumbs = function () {
-	if (!localStorage) {
-		return [];
-	}
-	var bcStr = localStorage.getItem("site:bread");
-	var bc = [];
-	if (bcStr) {
-		bc = JSON.parse(bcStr);
-	}
-	
-	return bc;
-}
+  var getCrumbs = function () {
+    try {
+      if (!window.localStorage) return [];
+      var bcStr = localStorage.getItem("site:bread");
+      return bcStr ? JSON.parse(bcStr) : [];
+    } catch(e) { return []; }
+  };
 
-dropCrumb();
-</script><div id="goog-gt-tt" class="VIpgJd-yAWNEb-L7lbkb skiptranslate" style="border-radius: 12px; margin: 0 0 0 -23px; padding: 0; font-family: &#39;Google Sans&#39;, Arial, sans-serif;" data-id=""><div id="goog-gt-vt" class="VIpgJd-yAWNEb-hvhgNd"><div class="VIpgJd-yAWNEb-hvhgNd-Ud7fr"><img src="./لوحة التحكم · صندوق التحكم4_files/24px.svg" width="24" height="24" alt=""><div class=" VIpgJd-yAWNEb-hvhgNd-IuizWc-SIsrTd " dir="rtl">النص الأصلي</div></div><div class="VIpgJd-yAWNEb-hvhgNd-k77Iif"><div id="goog-gt-original-text" class="VIpgJd-yAWNEb-nVMfcd-fmcmS VIpgJd-yAWNEb-hvhgNd-axAV1"></div></div><div class="VIpgJd-yAWNEb-hvhgNd-N7Eqid rtl"><div class="VIpgJd-yAWNEb-hvhgNd-N7Eqid-B7I4Od rtl" dir="rtl"><div class="VIpgJd-yAWNEb-hvhgNd-UTujCb">تقييم هذه الترجمة</div><div class="VIpgJd-yAWNEb-hvhgNd-eO9mKe">سيتم استخدام ملاحظاتك وآرائك للمساعدة في تحسين "ترجمة Google".</div></div><div class="VIpgJd-yAWNEb-hvhgNd-xgov5 rtl"><button id="goog-gt-thumbDownButton" type="button" class="VIpgJd-yAWNEb-hvhgNd-bgm6sf" title="ترجمة سيئة" aria-label="ترجمة سيئة" aria-pressed="false"><span id="goog-gt-thumbDownIcon"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M3 17h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 24s7.09-6.85 7.17-7h5V4H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2zM17 6h3v9h-3V6zM3 13l3-7h9v10l-4.34 4.34L12 15H3v-2z"></path></svg></span><span id="goog-gt-thumbDownIconFilled"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M3 17h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 24s7.09-6.85 7.17-7V4H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2zm16 0h4V4h-4v13z"></path></svg></span></button><button id="goog-gt-thumbUpButton" type="button" class="VIpgJd-yAWNEb-hvhgNd-bgm6sf" title="ترجمة جيدة" aria-label="ترجمة جيدة" aria-pressed="false"><span id="goog-gt-thumbUpIcon"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M21 7h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 0S7.08 6.85 7 7H2v13h16c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73V9c0-1.1-.9-2-2-2zM7 18H4V9h3v9zm14-7l-3 7H9V8l4.34-4.34L12 9h9v2z"></path></svg></span><span id="goog-gt-thumbUpIconFilled"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M21 7h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 0S7.08 6.85 7 7v13h11c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73V9c0-1.1-.9-2-2-2zM5 7H1v13h4V7z"></path></svg></span></button></div></div><div id="goog-gt-votingHiddenPane" class="VIpgJd-yAWNEb-hvhgNd-aXYTce"><form id="goog-gt-votingForm" action="https://translate.googleapis.com/translate_voting?client=te_lib" method="post" target="votingFrame" class="VIpgJd-yAWNEb-hvhgNd-aXYTce"><input type="text" name="sl" id="goog-gt-votingInputSrcLang"><input type="text" name="tl" id="goog-gt-votingInputTrgLang"><input type="text" name="query" id="goog-gt-votingInputSrcText"><input type="text" name="gtrans" id="goog-gt-votingInputTrgText"><input type="text" name="vote" id="goog-gt-votingInputVote"></form><iframe name="votingFrame" frameborder="0" src="logs_files/saved_resource(3).html"></iframe></div></div></div>
+  dropCrumb();
+})();
+</script>
 
-
-
-
-
-</body></html>
+</body>
+	</html>
