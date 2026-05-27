@@ -1,325 +1,304 @@
 <!DOCTYPE html>
-<!-- saved from url=(0033)/admin?webhook -->
-<html lang="ar" class="translated-rtl"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Cbox live chat is an embeddable chat app for online communities, groups, and live-streaming events.">
+<meta name="robots" content="noindex, nofollow">
+<!-- سياسة أمان المحتوى -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; frame-src 'self' https:;">
 <title>Nexus Control Hub</title>
 
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta content="width=device-width, initial-scale=1" name="viewport">
-<meta name="description" content="Cbox live chat is an embeddable chat app for online communities, groups, and live-streaming events.">
-<link href="data:image/x-icon;base64,AAABAAEAEBACAAAAAACwAAAAFgAAACgAAAAQAAAAIAAAAAEAAQAAAAAAQAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA" rel="icon" type="image/x-icon">
+<link rel="icon" href="data:image/x-icon;base64,AAABAAEAEBACAAAAAACwAAAAFgAAACgAAAAQAAAAIAAAAAEAAQAAAAAAQAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA" type="image/x-icon">
 <link rel="stylesheet" href="notifications_files/style.css">
-<link type="text/css" rel="stylesheet" charset="UTF-8" href="notifications_files/m=el_main.css"></head>
+<link rel="stylesheet" href="notifications_files/m=el_main.css" type="text/css" charset="UTF-8">
+
+<style>
+/* إصلاحات طفيفة للتوافق - لا تغير التصميم */
+font { display: inline; font: inherit; }
+[dir="auto"] { unicode-bidi: isolate; }
+.frmiframe { position: absolute; width: 1px; height: 1px; border: 0; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); }
+.txtbox { direction: rtl; text-align: right; }
+.notice { background: #fff3cd; border: 1px solid #ffc107; padding: 10px; border-radius: 4px; margin: 10px 0; }
+.notice a { color: #856404; }
+.frmmsg1 { color: #28a745; font-size: 13px; margin-top: 5px; }
+.frmmsg2 { color: #dc3545; font-size: 13px; margin-top: 5px; }
+.slideThree { display: inline-block; vertical-align: middle; margin: 0 5px; }
+.notInput { padding: 6px 10px; background: #f8f9fa; border: 1px solid #dee2e6; border-radius: 4px; min-height: 20px; }
+@media (max-width: 768px) {
+  .txtbox { width: 100%; box-sizing: border-box; }
+}
+</style>
+</head>
 <body id="mainbody">
 
-	<script type="text/javascript" async="" src="notifications_files/js"></script><script async="" src="notifications_files/analytics.js"></script><script>
-	// Define stub
-	var rcvdformresponse = function () {};
-	</script>
-	
-	<div id="mask"></div>
+<script type="text/javascript" async src="notifications_files/js"></script>
+<script async src="notifications_files/analytics.js"></script>
+<script>
+// تعريف الدوال الأساسية بشكل آمن
+window.rcvdformresponse = window.rcvdformresponse || function () {};
+window.popovr = window.popovr || function(title, content) {
+  document.getElementById('popovr_title').innerHTML = title || '';
+  document.getElementById('popovr_text').innerHTML = content || '';
+  document.getElementById('popovr_box').style.display = 'block';
+};
+window.popovr_close = window.popovr_close || function() {
+  document.getElementById('popovr_box').style.display = 'none';
+};
+window.popwin = window.popwin || function(name, url, w, h) {
+  window.open(url, name, 'width='+w+',height='+h+',scrollbars=yes');
+};
+</script>
 
+<div id="mask" aria-hidden="true"></div>
 
+<!-- نافذة التنبيه المنبثقة - محسّنة -->
+<div id="popovr_box" role="dialog" aria-modal="true" style="display:none;">
+  <div class="wrap">
+    <div style="padding: 20px; background-color: #fff">
+      <div id="popovr_title"></div>
+      <div id="popovr_text" style="text-align: left; clear:both"></div>
 
-<div id="popovr_box">
-	<div class="wrap">
-		<div style="padding: 20px; background-color: #fff">
-			<!--<div style="float:right; font-size: 150%;"><b><a href="javascript:popovr_close()">X</a></b></div>-->
-			<div id="popovr_title">
-				<!-- title -->
-			</div>
-			
-			<div id="popovr_text" style="text-align: left; clear:both">
-				<!-- content -->
-			</div>
-
-			<div id="popovr_t_login" style="display: none; text-align: left; clear:both">
-				<p><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
-					انتهت صلاحية جلستك. يرجى تسجيل الدخول مرة أخرى للمتابعة.
-				</font></font></p>
-				<iframe src="javascript:false" name="t_qlpop" onload="rcvdformresponse(this.name)" width="1" height="1" class="frmiframe" src="notifications_files/saved_resource.html"></iframe>
-				<form name="qlpop" action="/admin_d_login?f=qlpop" target="t_qlpop" method="post" onsubmit="return subsaving(this.name, &#39;sub&#39;, &#39;logging in...&#39;);">
-				<fieldset>
-					<label><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">اسم المستخدم:</font></font></label>
-					<input type="text" name="uname" value="" maxlength="50" class="txtbox">
-					<label><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">كلمة المرور:</font></font></label>
-					<input type="password" name="pword" value="" maxlength="50" class="txtbox">
-					<font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"><input type="submit" name="sub" value="تسجيل الدخول"></font></font>
-					
-					<div id="m_qlpop" class="frmmsg1"></div>
-					<div id="em_qlpop" class="frmmsg2"></div>
-				</fieldset>
-				</form>
-			</div>
-		</div>
-
-	</div>
+      <div id="popovr_t_login" style="display: none; text-align: left; clear:both">
+        <p><span dir="auto">انتهت صلاحية جلستك. يرجى تسجيل الدخول مرة أخرى للمتابعة.</span></p>
+        <iframe title="hidden" aria-hidden="true" class="frmiframe" name="t_qlpop" src="notifications_files/saved_resource.html" onload="rcvdformresponse(this.name)" loading="lazy"></iframe>
+        <form name="qlpop" action="/admin_d_login?f=qlpop" target="t_qlpop" method="post" onsubmit="return subsaving(this.name, 'sub', 'logging in...');" autocomplete="on">
+          <fieldset>
+            <label for="qlpop_uname"><span dir="auto">اسم المستخدم:</span></label>
+            <input type="text" id="qlpop_uname" name="uname" value="" maxlength="50" class="txtbox" autocomplete="username">
+            <label for="qlpop_pword"><span dir="auto">كلمة المرور:</span></label>
+            <input type="password" id="qlpop_pword" name="pword" value="" maxlength="50" class="txtbox" autocomplete="current-password">
+            <span dir="auto"><input type="submit" name="sub" value="تسجيل الدخول"></span>
+            <div id="m_qlpop" class="frmmsg1" role="alert" aria-live="polite"></div>
+            <div id="em_qlpop" class="frmmsg2" role="alert" aria-live="assertive"></div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!--[if lte IE 7]>
-	<div class="notice_er notice_top">
-		You are using an old version of Internet Explorer or you are in Compatibility View mode. 
-		This website will not work correctly. 
-		<br>
-		Please upgrade your browser or disable Compatibility View.
-	</div>
+  <div class="notice_er notice_top">
+    You are using an old version of Internet Explorer or you are in Compatibility View mode. 
+    This website will not work correctly. 
+    <br>
+    Please upgrade your browser or disable Compatibility View.
+  </div>
 <![endif]-->
 
-
 <div id="bodywrap">
-	<div id="header">
-		<div class="wrap">
+  <header id="header">
+    <div class="wrap">
+      <a id="logo" href="/admin/" aria-label="الرئيسية">
+        <img src="notifications_files/logo400.png" width="200" height="86" alt="شعار لوحة التحكم" style="border:0;">
+      </a>
 
-			<a id="logo" href="/admin/">
-				<img src=notifications_files/logo400.png" width="200" height="86" alt="صندوق C" border="0">
-			</a>
+      <div id="headerExtras">
+        <span id="userWelcome"><span dir="auto"></span></span>
+        <a href="/admin?switch"><span dir="auto">صناديق بريدي</span></a>
+        <a href="/admin?acct"><span dir="auto">حسابي</span></a>
+        <a href="/admin/help"><span dir="auto">يدعم</span></a>
+        <a href="/admin?preproc=logout" onclick="return logout();"><span dir="auto">تسجيل الخروج</span></a>
+      </div>
+    </div>
+  </header>
 
-			<div id="headerExtras">
-	
-								
-								<span id="userWelcome"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"></font></font></span>
-				<a href="/admin?switch"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">صناديق بريدي</font></font></a>
-				<a href="/admin?acct"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">حسابي</font></font></a>
-												<a href="/admin/help"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">يدعم
-				</font></font></a><a href="/admin?preproc=logout" onclick="return logout()"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">تسجيل الخروج
-				</font></font></a>
-							</div>
-		</div>
-	</div>
-
-		<div id="subbar">
-		<div class="wrap">
-			<a href="/admin?home" class="submenuitem"><b><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"></font></font></b>			</a><a href="/admin?snippet" class="submenuitem"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">انشر
-			</font></font></a><a href="/admin?webhook#" id="hovmenu1" class="submenuitem" onmousedown="return hovmenu(this, 1)"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">المظهر والملمس
-			</font></font></a><a href="/admin?webhook#" id="hovmenu2" class="submenuitem" onmousedown="return hovmenu(this, 2)"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">خيارات
-			</font></font></a><a href="/admin?webhook#" id="hovmenu3" class="submenuitem" onmousedown="return hovmenu(this, 3)"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">المستخدمون
-			</font></font></a><a href="/admin?webhook#" id="hovmenu4" class="submenuitem" onmousedown="return hovmenu(this, 4)"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">رسائل
-			</font></font></a>
-		</div>
-	</div>
-	<div id="bar3">
-		<div id="hovmenu" class="wrap"><a></a></div>
-	</div>
-	
-	<div id="wideimg" style="position: relative; width: 100%; left: 0">
-	</div>
-	
-	<div id="main" class="wrap ">
-
-<div id="content">
+  <nav id="subbar">
+    <div class="wrap">
+      <a href="/admin?home" class="submenuitem"><b><span dir="auto"></span></b></a>
+      <a href="/admin?snippet" class="submenuitem"><span dir="auto">انشر</span></a>
+      <a href="/admin?webhook#" id="hovmenu1" class="submenuitem" onmousedown="return hovmenu(this, 1)"><span dir="auto">المظهر والملمس</span></a>
+      <a href="/admin?webhook#" id="hovmenu2" class="submenuitem" onmousedown="return hovmenu(this, 2)"><span dir="auto">خيارات</span></a>
+      <a href="/admin?webhook#" id="hovmenu3" class="submenuitem" onmousedown="return hovmenu(this, 3)"><span dir="auto">المستخدمون</span></a>
+      <a href="/admin?webhook#" id="hovmenu4" class="submenuitem" onmousedown="return hovmenu(this, 4)"><span dir="auto">رسائل</span></a>
+    </div>
+  </nav>
+  
+  <div id="bar3">
+    <div id="hovmenu" class="wrap"><a></a></div>
+  </div>
+  
+  <div id="wideimg" style="position: relative; width: 100%; left: 0" aria-hidden="true"></div>
+  
+  <main id="main" class="wrap">
+    <div id="content">
 
 <script type="text/javascript">
-var noticetogorig = "";
-function noticetoggle(xo, v) {
-  var xo = document.getElementById(xo);
-  z = document.getElementById('notice-more');
-  if (z.style.display == 'none') {
-    z.style.display = '';
-    noticetogorig = xo.innerHTML;
-    xo.innerHTML = v;
-  }
-  else {
-    z.style.display = 'none';
-    xo.innerHTML = noticetogorig;
-  }
-}
+/* دوال المساعدة - محسّنة مع معالجة الأخطاء */
+(function() {
+  'use strict';
+  
+  window.noticetogorig = "";
+  window.noticetoggle = function(xoId, v) {
+    var xo = document.getElementById(xoId);
+    var z = document.getElementById('notice-more');
+    if (!xo || !z) return;
+    if (z.style.display === 'none') {
+      z.style.display = '';
+      window.noticetogorig = xo.innerHTML;
+      xo.innerHTML = v;
+    } else {
+      z.style.display = 'none';
+      xo.innerHTML = window.noticetogorig;
+    }
+  };
 
-function noticeclose(x) {
-  z = document.getElementById('notice');
-  z.style.display = "none";
-  document.cookie = "rnot="+x+";";
-}
+  window.noticeclose = function(x) {
+    var z = document.getElementById('notice');
+    if (z) z.style.display = "none";
+    try {
+      document.cookie = "rnot="+encodeURIComponent(x)+"; Secure; SameSite=Strict; Path=/";
+    } catch(e) { console.warn('Cookie error:', e); }
+  };
 
-function highlighthelp(sec, para, on) {
-	var ico = document.getElementById("hlpico-"+sec+"-"+para);
-  	if (!ico) return;
-  	if (!on) {
-  		ico.style.filter = "alpha(opacity=60)";
-  		ico.style.opacity = 0.6;
-  	}
-  	else {
-  		ico.style.filter = "";
-  		ico.style.opacity = 1;
-  	}
-}
+  window.highlighthelp = function(sec, para, on) {
+    var ico = document.getElementById("hlpico-"+sec+"-"+para);
+    if (!ico) return;
+    ico.style.transition = 'opacity 0.2s';
+    ico.style.opacity = on ? '1' : '0.6';
+  };
 
-var createBar = function ($elem, isLog, showLimit) {
-
-	var $bar = document.createElement("div");
-	$bar.className = "barFill";
-	
-	var $text = document.createElement("div");
-	$text.className = "barText";
-	
-	$elem.appendChild($bar);
-	$elem.appendChild($text);
-	
-	var minWidth = 5;
-	
-	var format = function (n) {
-		return (n+'').split('').reverse().join('').replace(/([0-9]{3})(?=[0-9])/g, "$1,").split('').reverse().join('');
-	}
-	
-	$bar.style.width = "0%";
-	
-	return {
-		setBarSize: function (val, max) {
-			var over = false;
-			if (val > max) {
-				over = true;
-			}
-			
-
-			var val = Math.min(max, Math.max(0, val));
-			var prop = val / max;
-			
-			$text.innerHTML = format(val) + (over ? "+" : "") + (showLimit ? "/" + max : "");
-
-			var w = (isLog ? (Math.log((prop*1.718 + 1))) : prop) * 100;
-
-			var r = prop/0.7 * 255 + 50;
-			var g = 255 - prop*0.6*255;
-			var b = 80;
-			
-			var comp = (255 / (r*0.9 + g * 1.1)) * 1.4;
-			
-			r = r / comp;
-			g = g / comp;
-			b = b / comp;
-			
-			window.setTimeout(function () {
-				$bar.style.width = Math.max(w, minWidth) + "%";
-				$bar.style.backgroundColor = "rgb("+(r|0)+", "+(g|0)+", "+(b|0)+")";
-			}, 100);			
-			
-		}
-	}
-};
-  		
+  window.createBar = function ($elem, isLog, showLimit) {
+    var $bar = document.createElement("div");
+    $bar.className = "barFill";
+    var $text = document.createElement("div");
+    $text.className = "barText";
+    $elem.appendChild($bar);
+    $elem.appendChild($text);
+    var minWidth = 5;
+    var format = function (n) {
+      return (n+'').split('').reverse().join('').replace(/([0-9]{3})(?=[0-9])/g, "$1,").split('').reverse().join('');
+    };
+    $bar.style.width = "0%";
+    return {
+      setBarSize: function (val, max) {
+        var over = false;
+        if (val > max) over = true;
+        val = Math.min(max, Math.max(0, val));
+        var prop = val / max;
+        $text.innerHTML = format(val) + (over ? "+" : "") + (showLimit ? "/" + max : "");
+        var w = (isLog ? (Math.log((prop*1.718 + 1))) : prop) * 100;
+        var r = prop/0.7 * 255 + 50;
+        var g = 255 - prop*0.6*255;
+        var b = 80;
+        var comp = (255 / (r*0.9 + g * 1.1)) * 1.4;
+        r = r / comp; g = g / comp; b = b / comp;
+        window.setTimeout(function () {
+          $bar.style.width = Math.max(w, minWidth) + "%";
+          $bar.style.backgroundColor = "rgb("+(r|0)+", "+(g|0)+", "+(b|0)+")";
+        }, 100);
+      }
+    };
+  };
+})();
 </script>
 
+<h1><span dir="auto">رابط رسائل الويب</span></h1>
 
+<p><span dir="auto">قم بتهيئة وتفعيل رابط Cbox هنا. يتيح لك هذا استلام نسخة من كل رسالة تُنشر على Cbox الخاص بك عبر نقطة نهاية HTTP الخاصة بك. كما يتيح لك الاحتفاظ بسجلات، وإرسال إشعاراتك الخاصة، وتفعيل برامج الروبوت، وغير ذلك الكثير.</span></p>
+<p><span dir="auto">تتطلب هذه الميزة بعض الخبرة في مجال التطوير. </span><a href="/admin/help?id=95"><span dir="auto">راجع قسم المساعدة الخاص بـ webhook</span></a><span dir="auto"> .</span></p>
 
+<div class="notice" role="alert">
+  <span dir="auto">Webhook هي إحدى ميزات </span><a href="/admin/upgrade"><span dir="auto">Cbox Pro</span></a><span dir="auto"> . تعرف على المزيد حول Webhooks </span><a href="/admin/help?id=95"><span dir="auto">هنا</span></a><span dir="auto"> .</span>
+</div>
 
-<h1><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">رابط رسائل الويب</font></font></h1>
+<form name="fpostopt" method="post" action="/admin?webhook" autocomplete="on">
+  <input type="hidden" name="csrf_token" value="">
+  <fieldset>
+    <legend><span dir="auto">إعدادات معاودة الاتصال</span></legend>
+    
+    <label for="webhook_url"><span dir="auto">عنوان URL للرد:</span></label>
+    <input type="url" id="webhook_url" name="url" value="" placeholder="https://yoursite.example.com/cbox-webhook" maxlength="200" class="txtbox" pattern="^https://.*" title="يجب أن يبدأ الرابط بـ https://">
 
-<p><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
-قم بتهيئة وتفعيل رابط Cbox هنا. يتيح لك هذا استلام نسخة من كل رسالة تُنشر على Cbox الخاص بك عبر نقطة نهاية HTTP الخاصة بك. كما يتيح لك الاحتفاظ بسجلات، وإرسال إشعاراتك الخاصة، وتفعيل برامج الروبوت، وغير ذلك الكثير. 
-</font></font></p>
-<p><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
-تتطلب هذه الميزة بعض الخبرة في مجال التطوير. </font></font><a href="/admin/help?id=95"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">راجع قسم المساعدة الخاص بـ webhook</font></font></a><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"> .
-</font></font></p>
-
-<div class="notice"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
-Webhook هي إحدى ميزات </font></font><a href="/admin/upgrade"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">Cbox Pro</font></font></a><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"> . تعرف على المزيد حول Webhooks </font></font><a href="/admin/help?id=95"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">هنا</font></font></a><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"> .
-</font></font></div>
-
-
-
-<form name="fpostopt" method="post" action="/admin?webhook">
-<fieldset>
-	<legend><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">إعدادات معاودة الاتصال</font></font></legend>
-	<label><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">عنوان URL للرد:</font></font></label>
-	<input type="text" name="url" value="facebook.com/groups/3023261787777217/user/100063958663026?locale=ar_AR" placeholder="http://yoursite.example.com/cbox" maxlength="200" class="txtbox">
-
-	<label for="i_enabled"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">تم تفعيل خاصية معاودة الاتصال:</font></font></label>
-	
-	<div class="slideThree"><input type="checkbox" name="enabled" value="1" disabled="" id="i_enabled"><label></label></div><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"><input type="submit" name="sub" value="يحفظ"></font></font>	
-  
-</fieldset>
+    <label for="i_enabled"><span dir="auto">تم تفعيل خاصية معاودة الاتصال:</span></label>
+    <div class="slideThree">
+      <input type="checkbox" name="enabled" value="1" disabled id="i_enabled">
+      <label for="i_enabled"></label>
+    </div>
+    
+    <span dir="auto"><input type="submit" name="sub" value="يحفظ"></span>
+  </fieldset>
 </form>
 
-
 <fieldset>
-	<legend><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">الحالة الحالية</font></font></legend>
-	
-	<label><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">حالة نقطة النهاية:</font></font></label>
-	
-		<div class="notInput"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">غير مُهيأ</font></font></div>
-		
-	<div style="float: right">
-		<font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;"><input type="button" value="ينعش" onclick="location = &#39;?webhook&#39;"></font></font>
-	</div>
+  <legend><span dir="auto">الحالة الحالية</span></legend>
+  
+  <label><span dir="auto">حالة نقطة النهاية:</span></label>
+  <div class="notInput"><span dir="auto">غير مُهيأ</span></div>
+  
+  <div style="float: right">
+    <span dir="auto"><input type="button" value="ينعش" onclick="location = '?webhook';"></span>
+  </div>
 </fieldset>
-</div>
-
-
 
 <div style="clear: both"></div>
-</div><!-- /content -->
-
-</div><!-- /bodywrap -->
-
-<div id="siteErrorBar"><div class="wrap" id="siteErrorBarCont"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">تحميل...</font></font></div></div>
-
-
-
-<div id="footer">
-
-	<a href="/admin/"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">عن
-	</font></font></a><a href="/admin/products"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">الخطط والأسعار
-	</font></font></a><a href="/admin/terms"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">الشروط والأحكام
-	</font></font></a><a href="/admin/privacy"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">سياسة الخصوصية
-	</font></font></a><a href="/admin/notices"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">إشعارات
-	</font></font></a><a href="/admin/contact"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">اتصل بنا
-	</font></font></a>
-	<div class="verybottom"><font dir="auto" style="vertical-align: inherit;"><font dir="auto" style="vertical-align: inherit;">
-		© ٢٠٠٤–٢٠٢٦ شركة سي بوكس ​​للاتصالات (المحدودة)، جميع الحقوق محفوظة. ١ مللي ثانية. ٨٣ سي إي		
-	</font></font></div>
-
+    </div>
+  </main>
 </div>
 
+<div id="siteErrorBar"><div class="wrap" id="siteErrorBarCont"><span dir="auto">تحميل...</span></div></div>
 
+<footer id="footer">
+  <a href="/admin/"><span dir="auto">عن</span></a>
+  <a href="/admin/products"><span dir="auto">الخطط والأسعار</span></a>
+  <a href="/admin/terms"><span dir="auto">الشروط والأحكام</span></a>
+  <a href="/admin/privacy"><span dir="auto">سياسة الخصوصية</span></a>
+  <a href="/admin/notices"><span dir="auto">إشعارات</span></a>
+  <a href="/admin/contact"><span dir="auto">اتصل بنا</span></a>
+  <div class="verybottom">
+    <span dir="auto">© ٢٠٠٤–٢٠٢٦ شركة سي بوكس ​​للاتصالات (المحدودة)، جميع الحقوق محفوظة. ١ مللي ثانية. ٨٣ سي إي</span>
+  </div>
+</footer>
+
+<!-- Google Analytics - محمّل بشكل آمن -->
 <script>
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-ga('create', 'UA-242554-2', {
-	'cookieDomain': '/admin'
-});
-ga('send', 'pageview');
-
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+if (typeof ga === 'function') {
+  ga('create', 'UA-242554-2', { 'cookieDomain': 'auto', 'cookieFlags': 'Secure; SameSite=Strict' });
+  ga('send', 'pageview');
+}
 </script>
-
 
 <script src="notifications_files/code.js"></script>
 <script>
-	// Modal / naked mode.
-	if (window.isPopup) {
-		document.body.className = "Popped";
-	}
-	
-	// Only for CP pages
-	upgradeCheckboxes();
+(function() {
+  'use strict';
+  // الوضع المنبثق
+  if (window.isPopup) {
+    document.body.className = "Popped";
+  }
+  // تفعيل عناصر الترقية
+  if (typeof upgradeCheckboxes === 'function') {
+    upgradeCheckboxes();
+  }
 
-var dropCrumb = function () {
-	if (!localStorage) {
-		return;
-	}
-	var bc = getCrumbs();
-	bc.push(location.href);
-	bc.splice(0, bc.length - 5);
-	localStorage.setItem("site:bread", JSON.stringify(bc));
-};
+  // حفظ مسار التصفح (Breadcrumb) مع معالجة الأخطاء
+  var dropCrumb = function () {
+    try {
+      if (!window.localStorage) return;
+      var bc = getCrumbs();
+      bc.push(location.href);
+      bc.splice(0, bc.length - 5);
+      localStorage.setItem("site:bread", JSON.stringify(bc));
+    } catch(e) { /* تجاهل أخطاء التخزين */ }
+  };
 
-var getCrumbs = function () {
-	if (!localStorage) {
-		return [];
-	}
-	var bcStr = localStorage.getItem("site:bread");
-	var bc = [];
-	if (bcStr) {
-		bc = JSON.parse(bcStr);
-	}
-	
-	return bc;
-}
+  var getCrumbs = function () {
+    try {
+      if (!window.localStorage) return [];
+      var bcStr = localStorage.getItem("site:bread");
+      return bcStr ? JSON.parse(bcStr) : [];
+    } catch(e) { return []; }
+  };
 
-dropCrumb();
-</script><div id="goog-gt-tt" class="VIpgJd-yAWNEb-L7lbkb skiptranslate" style="border-radius: 12px; margin: 0 0 0 -23px; padding: 0; font-family: &#39;Google Sans&#39;, Arial, sans-serif;" data-id=""><div id="goog-gt-vt" class="VIpgJd-yAWNEb-hvhgNd"><div class="VIpgJd-yAWNEb-hvhgNd-Ud7fr"><img src="./لوحة التحكم · صندوق التحكم10_files/24px.svg" width="24" height="24" alt=""><div class=" VIpgJd-yAWNEb-hvhgNd-IuizWc-SIsrTd " dir="rtl">النص الأصلي</div></div><div class="VIpgJd-yAWNEb-hvhgNd-k77Iif"><div id="goog-gt-original-text" class="VIpgJd-yAWNEb-nVMfcd-fmcmS VIpgJd-yAWNEb-hvhgNd-axAV1"></div></div><div class="VIpgJd-yAWNEb-hvhgNd-N7Eqid rtl"><div class="VIpgJd-yAWNEb-hvhgNd-N7Eqid-B7I4Od rtl" dir="rtl"><div class="VIpgJd-yAWNEb-hvhgNd-UTujCb">تقييم هذه الترجمة</div><div class="VIpgJd-yAWNEb-hvhgNd-eO9mKe">سيتم استخدام ملاحظاتك وآرائك للمساعدة في تحسين "ترجمة Google".</div></div><div class="VIpgJd-yAWNEb-hvhgNd-xgov5 rtl"><button id="goog-gt-thumbDownButton" type="button" class="VIpgJd-yAWNEb-hvhgNd-bgm6sf" title="ترجمة سيئة" aria-label="ترجمة سيئة" aria-pressed="false"><span id="goog-gt-thumbDownIcon"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M3 17h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 24s7.09-6.85 7.17-7h5V4H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2zM17 6h3v9h-3V6zM3 13l3-7h9v10l-4.34 4.34L12 15H3v-2z"></path></svg></span><span id="goog-gt-thumbDownIconFilled"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M3 17h6.31l-.95 4.57-.03.32c0 .41.17.79.44 1.06L9.83 24s7.09-6.85 7.17-7V4H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2c0 1.1.9 2 2 2zm16 0h4V4h-4v13z"></path></svg></span></button><button id="goog-gt-thumbUpButton" type="button" class="VIpgJd-yAWNEb-hvhgNd-bgm6sf" title="ترجمة جيدة" aria-label="ترجمة جيدة" aria-pressed="false"><span id="goog-gt-thumbUpIcon"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M21 7h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 0S7.08 6.85 7 7H2v13h16c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73V9c0-1.1-.9-2-2-2zM7 18H4V9h3v9zm14-7l-3 7H9V8l4.34-4.34L12 9h9v2z"></path></svg></span><span id="goog-gt-thumbUpIconFilled"><svg width="24" height="24" viewBox="0 0 24 24" focusable="false" class="VIpgJd-yAWNEb-hvhgNd-THI6Vb NMm5M"><path d="M21 7h-6.31l.95-4.57.03-.32c0-.41-.17-.79-.44-1.06L14.17 0S7.08 6.85 7 7v13h11c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73V9c0-1.1-.9-2-2-2zM5 7H1v13h4V7z"></path></svg></span></button></div></div><div id="goog-gt-votingHiddenPane" class="VIpgJd-yAWNEb-hvhgNd-aXYTce"><form id="goog-gt-votingForm" action="https://translate.googleapis.com/translate_voting?client=te_lib" method="post" target="votingFrame" class="VIpgJd-yAWNEb-hvhgNd-aXYTce"><input type="text" name="sl" id="goog-gt-votingInputSrcLang"><input type="text" name="tl" id="goog-gt-votingInputTrgLang"><input type="text" name="query" id="goog-gt-votingInputSrcText"><input type="text" name="gtrans" id="goog-gt-votingInputTrgText"><input type="text" name="vote" id="goog-gt-votingInputVote"></form><iframe name="votingFrame" frameborder="0" src="notifications_files/saved_resource(1).html"></iframe></div></div></div>
+  dropCrumb();
+})();
+</script>
 
-
-
-
-
-</body></html>
+</body>
+																	 </html>
