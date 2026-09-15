@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Contact Us · NexusBox</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<meta name="description" content="Contact NexusBox support.">
+<link href="data:image/x-icon;base64,AAABAAEAEBACAAAAAACwAAAAFgAAACgAAAAQAAAAIAAAAAEAAQAAAAAAQAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA" rel="icon" type="image/x-icon">
+<link rel="stylesheet" href="style.css">
+</head>
+<body id="mainbody">
+
+<script type="text/javascript" async="" src="code.js"></script>
+<script async="" src="analytics.js"></script>
+<script>
+var rcvdformresponse = function () {};
+</script>
+
+<div id="mask"></div>
+
+<!--[if lte IE 7]>
+	<div class="notice_er notice_top">
+		You are using an old version of Internet Explorer or you are in Compatibility View mode. 
+		This website will not work correctly. 
+		<br>
+		Please upgrade your browser or disable Compatibility View.
+	</div>
+<![endif]-->
+
+<div id="bodywrap">
+	<div id="header">
+		<div class="wrap">
+
+			<a id="logo" href="/">
+				<img src="/gfx/logo400.png" alt="NexusBox" width="200" height="86" border="0">
+			</a>
+
+			<div id="headerExtras">
+				<a href="/public/admin/">Log in</a>
+			</div>
+		</div>
+	</div>
+
+	<div id="topbar">
+		<div class="wrap">
+			<span class="Spacer">&nbsp;</span>
+			<a href="/" class="button">Home</a>
+			<a href="/public/plans/" class="button">Plans &amp; Pricing</a>
+			<a href="/public/signup/" class="button">Sign up</a>
+			<a href="/public/upgrade/" class="button">Upgrade</a>
+			<a href="/public/help/" class="button">Support</a>
+		</div>
+	</div>
+
+	<div id="subbar">
+		<div class="wrap">
+		</div>
+	</div>
+
+	<div id="content">
+		<div class="wrap">
+
+			<h1>Contact Us</h1>
+
+			<p>If you have a questions, comment or request regarding your NexusBox or the NexusBox service, use the form below to contact us. We will endeavour to get back to you as soon as possible. Paid customers have priority support.</p>
+
+			<form name="contact" method="post" action="/api/contact.php" id="contactForm">
+			<fieldset>
+				<legend>Send us a message</legend>
+
+				<label>Subject:</label>
+				<select name="subject" class="txtbox" required>
+					<option value="general">General enquiry</option>
+					<option value="help">NexusBox help</option>
+					<option value="premium">NexusBox Premium or Pro</option>
+					<option value="access">Account access lost</option>
+					<option value="install">Installing NexusBox</option>
+					<option value="advertising">Advertising enquiry</option>
+					<option value="business">Business enquiry</option>
+				</select>
+
+				<label>Message:</label>
+				<textarea name="message" class="txtarea" rows="8" required></textarea>
+
+				<label>Your email address:</label>
+				<input type="email" name="email" class="txtbox" required>
+
+				<label>Your name:</label>
+				<input type="text" name="name" class="txtbox" required>
+
+				<label>NexusBox name:</label>
+				<input type="text" name="boxname" class="txtbox">
+
+				<input type="submit" value="Send message">
+			</fieldset>
+			</form>
+
+		</div>
+	</div>
+
+</div>
+
+<div id="siteErrorBar"><div class="wrap" id="siteErrorBarCont">Loading...</div></div>
+
+<div id="footer">
+	<a href="/">About</a>
+	<a href="/public/plans/">Plans &amp; pricing</a>
+	<a href="/public/terms/">Terms &amp; conditions</a>
+	<a href="/public/privacy/">Privacy policy</a>
+	<a href="/public/notices/">Notices</a>
+	<a href="/public/contact/">Contact us</a>
+	<div class="verybottom">
+		&copy; 2004–2026 NexusBox Communications (Pty) Ltd, all rights reserved.
+	</div>
+</div>
+
+<script src="code.js"></script>
+<script>
+(function() {
+    var form = document.getElementById('contactForm');
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            var btn = form.querySelector('input[type=submit]');
+            btn.disabled = true;
+            btn.value = 'Sending...';
+
+            var formData = new FormData(form);
+
+            fetch('/api/contact.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(function(r) { return r.json(); })
+            .then(function(d) {
+                btn.disabled = false;
+                btn.value = 'Send message';
+                if (d.success) {
+                    alert(d.message || 'Message sent successfully.');
+                    form.reset();
+                } else {
+                    alert(d.message || 'Failed to send message. Please try again.');
+                }
+            })
+            .catch(function() {
+                btn.disabled = false;
+                btn.value = 'Send message';
+                alert('Connection error. Please try again.');
+            });
+        });
+    }
+})();
+</script>
+
+</body>
+</html>

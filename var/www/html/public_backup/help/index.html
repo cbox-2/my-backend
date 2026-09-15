@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<title>My NexusBox · NexusBox</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<meta name="description" content="NexusBox live chat is an embeddable chat app for online communities, groups, and live-streaming events.">
+<link href="data:image/x-icon;base64,AAABAAEAEBACAAAAAACwAAAAFgAAACgAAAAQAAAAIAAAAAEAAQAAAAAAQAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA" rel="icon" type="image/x-icon">
+<link rel="stylesheet" href="style.css">
+</head>
+<body id="mainbody">
+
+	<script type="text/javascript" async="" src="code.js"></script><script>
+	// Define stub
+	var rcvdformresponse = function () {};
+	</script>
+	
+	<div id="mask"></div>
+
+<div id="popovr_box">
+	<div class="wrap">
+		<div style="padding: 20px; background-color: #fff">
+			<div id="popovr_title"></div>
+			<div id="popovr_text" style="text-align: left; clear:both"></div>
+			<div id="popovr_t_login" style="display: none; text-align: left; clear:both">
+				<p>Your session has expired. Please log back in to continue.</p>
+				<iframe src="javascript:false" name="t_qlpop" onload="rcvdformresponse(this.name)" class="frmiframe" width="1" height="1"></iframe>
+				<form name="qlpop" action="/public/admin_d_login?f=qlpop" target="t_qlpop" method="post" onsubmit="return subsaving(this.name, 'sub', 'logging in...');">
+				<fieldset>
+					<label>Username:</label>
+					<input type="text" name="uname" value="" maxlength="50" class="txtbox">
+					<label>Password:</label>
+					<input type="password" name="pword" value="" maxlength="50" class="txtbox">
+					<input type="submit" name="sub" value=" Log in ">
+					<div id="m_qlpop" class="frmmsg1"></div>
+					<div id="em_qlpop" class="frmmsg2"></div>
+				</fieldset>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--[if lte IE 7]>
+	<div class="notice_er notice_top">
+		You are using an old version of Internet Explorer or you are in Compatibility View mode. 
+		This website will not work correctly. <br>Please upgrade your browser or disable Compatibility View.
+	</div>
+<![endif]-->
+
+<div id="bodywrap">
+	<div id="header">
+		<div class="wrap">
+			<a id="logo" href="http://34.61.70.211/">
+				<img src="/public/images/nexusbox-logo.png" alt="NexusBox" width="200" height="86" border="0">
+			</a>
+			<div id="headerExtras">
+				<span id="userWelcome">user@example.com</span>
+				<a href="http://34.61.70.211/public/admin/switch/">My Boxes</a>
+				<a href="http://34.61.70.211/public/admin/acct/">My Account</a>
+				<a href="http://34.61.70.211/public/help/">Support</a>
+				<a href="http://34.61.70.211/public/admin/logout/" onclick="return logout()">Log out</a>
+			</div>
+		</div>
+	</div>
+
+	<div id="subbar">
+		<div class="wrap">
+			<a href="http://34.61.70.211/public/admin/" class="submenuitem Active"><b>MYBOX2026</b></a>
+			<a href="http://34.61.70.211/public/admin/snippet/" class="submenuitem">Publish</a>
+			<a href="#" id="hovmenu1" class="submenuitem" onmousedown="return hovmenu(this, 1)">Look &amp; feel</a>
+			<a href="#" id="hovmenu2" class="submenuitem" onmousedown="return hovmenu(this, 2)">Options</a>
+			<a href="#" id="hovmenu3" class="submenuitem" onmousedown="return hovmenu(this, 3)">Users</a>
+			<a href="#" id="hovmenu4" class="submenuitem" onmousedown="return hovmenu(this, 4)">Messages</a>
+		</div>
+	</div>
+	<div id="bar3"><div id="hovmenu" class="wrap"><a></a></div></div>
+	
+	<div id="wideimg" style="position: relative; width: 100%; left: 0"></div>
+	
+	<div id="main" class="wrap">
+		<div id="content">
+
+<script type="text/javascript">
+var noticetogorig = "";
+function noticetoggle(xo, v) {
+  var xo = document.getElementById(xo);
+  z = document.getElementById('notice-more');
+  if (z.style.display == 'none') { z.style.display = ''; noticetogorig = xo.innerHTML; xo.innerHTML = v; }
+  else { z.style.display = 'none'; xo.innerHTML = noticetogorig; }
+}
+function noticeclose(x) { z = document.getElementById('notice'); z.style.display = "none"; document.cookie = "rnot="+x+";"; }
+function highlighthelp(sec, para, on) {
+	var ico = document.getElementById("hlpico-"+sec+"-"+para);
+  	if (!ico) return;
+  	if (!on) { ico.style.filter = "alpha(opacity=60)"; ico.style.opacity = 0.6; }
+  	else { ico.style.filter = ""; ico.style.opacity = 1; }
+}
+var createBar = function ($elem, isLog, showLimit) {
+	var $bar = document.createElement("div"); $bar.className = "barFill";
+	var $text = document.createElement("div"); $text.className = "barText";
+	$elem.appendChild($bar); $elem.appendChild($text);
+	var minWidth = 5;
+	var format = function (n) { return (n+'').split('').reverse().join('').replace(/([0-9]{3})(?=[0-9])/g, "$1,").split('').reverse().join(''); }
+	$bar.style.width = "0%";
+	return {
+		setBarSize: function (val, max) {
+			var over = false; if (val > max) { over = true; }
+			var val = Math.min(max, Math.max(0, val)); var prop = val / max;
+			$text.innerHTML = format(val) + (over ? "+" : "") + (showLimit ? "/" + max : "");
+			var w = (isLog ? (Math.log((prop*1.718 + 1))) : prop) * 100;
+			var r = prop/0.7 * 255 + 50; var g = 255 - prop*0.6*255; var b = 80;
+			var comp = (255 / (r*0.9 + g * 1.1)) * 1.4;
+			r = r / comp; g = g / comp; b = b / comp;
+			window.setTimeout(function () { $bar.style.width = Math.max(w, minWidth) + "%"; $bar.style.backgroundColor = "rgb("+(r|0)+", "+(g|0)+", "+(b|0)+")"; }, 100);
+		}
+	}
+};
+</script>
+
+<h1>My NexusBox</h1>
+
+<div class="notice_er">
+Please <a href="http://34.61.70.211/public/upgrade?mode=renew">renew your NexusBox</a> in order to continue receiving uninterrupted service. If you have any queries, <a href="http://34.61.70.211/public/contact">please contact us</a>.
+</div>
+
+<script type="text/javascript">
+function chk_faccount() {
+  err = "";
+  f = document.forms["faccount"];
+  resetmsgs("faccount");
+  if (f["uname"].value == "" ) { err += "<li>Please choose a name.</li>"; }
+  if (f["pword"].value && f["pword"].value != f["pword2"].value ) { err += "<li>Your passwords don't match.</li>"; }
+  if (err) { setmsg("faccount", "Error. Check inputs.", 2); setmsgdesc("faccount", err, 2); return false; }
+  return subsaving("faccount", "sub", '');
+}
+</script>
+
+<div class="col1_2">
+<fieldset>
+<iframe src="/public/box/?boxid=1000001&boxtag=abc123&sec=main" marginheight="2" marginwidth="2" scrolling="auto" allowtransparency="yes" name="cboxmain" style="border: 0; padding: 0; margin: 0 auto;" id="cboxmain" width="100%" height="305" frameborder="0"></iframe>
+<iframe src="/public/box/?boxid=1000001&boxtag=abc123&sec=form" marginheight="2" marginwidth="2" scrolling="no" allowtransparency="yes" name="cboxform" style="border: 0; padding: 0; margin: 0 auto;" id="cboxform" width="100%" height="107" frameborder="0"></iframe>
+</fieldset>
+
+<iframe src="javascript:false" name="t_flock" onload="rcvdformresponse(this.name)" class="frmiframe" width="1" height="1"></iframe>
+<form name="flock" target="t_flock" method="post" action="/public/admin/submit?f=flock" onsubmit="return subsaving('flock', 'sub'+this.locked.value, '')">
+<fieldset class="Short">
+	<legend>Lock NexusBox</legend>
+	<p>You can lock your NexusBox to prevent it from being used. This is useful if you want to disable the chat temporarily, but don't want to lose any messages or settings.</p>
+	<label>Lock this NexusBox: </label>
+	<input type="hidden" name="lockshim" value="1">
+	<div class="slideThree"><input type="checkbox" name="locked" value="1" onchange="this.form.submit()"><label></label></div>
+	<div id="m_flock" class="frmmsg1"></div>
+	<div id="em_flock" class="frmmsg2"></div>
+</fieldset>
+</form>
+
+<form action="#">
+<fieldset>
+	<legend>Close NexusBox</legend>
+	<p>If you no longer want this NexusBox, you can close it. This will disable your NexusBox and make it inaccessible from the control panel.</p>
+	<script type="text/javascript">
+	  function delconf() {
+		popovr('Confirm closure', '<p>Are you sure you want to close your NexusBox? Doing so will revoke access to your NexusBox and its control panel.<p><fieldset><div style="float: right"><input type="button" value=" Yes " onclick="location.href=\'/public/admin/delete/?t=1780849234&k=bf576dada3c4986e3dfb815532b09b02\'">&nbsp;<input type="button" value=" No " onclick="popovr_close()"></div></fieldset>');
+		return false;
+	  }
+	</script>
+	<div style="float: right">
+		<input type="submit" name="sub" class="Danger" value=" Close NexusBox " onclick="return delconf()">
+	</div>
+</fieldset>
+</form>
+</div>
+
+<div class="col2_2">
+<fieldset class="Med">
+<legend>NexusBox stats</legend>
+<label>Plan:</label><div class="notInput">NexusBox Premium</div>
+<label>Next billing:</label><div class="notInput"><span class="highlightBad">EXPIRED</span><br> <a href="http://34.61.70.211/public/upgrade?mode=renew">(Renew)</a></div>
+<label>Recurring billing:</label><div class="notInput">Disabled</div>
+<label>Created:</label><div class="notInput">31 Mar 2015<br>(4,085 days ago)</div>
+<label>Views total:</label><div class="notInput">119,565</div>
+<label>Messages total:</label><div class="notInput">926,305</div>
+<label>Clients now:</label><div class="bar notInput" id="sbar3"><div class="barFill" style="width: 5%; background-color: rgb(45, 232, 72);"></div><div class="barText">0</div></div>
+<label>Views <span id="viewsPeriod">last 7d</span>:</label><div class="bar notInput" id="sbar1"><div class="barFill" style="width: 5%; background-color: rgb(45, 232, 72);"></div><div class="barText">2</div></div>
+<label class="withSub">Messages <span id="postsPeriod">last 7d</span>:<sub id="nearLimitMsg" style="display: none"><a href="javascript:popwin('help', '/public/help/87/', 500, 500);">What if I'm over my limit?</a></sub></label>
+<div class="bar notInput" id="sbar2"><div class="barFill" style="width: 5%; background-color: rgb(45, 232, 72);"></div><div class="barText">0</div></div>
+
+<script>
+	var req = new XMLHttpRequest();
+	req.open('GET', "/public/admin/stats/");
+	req.onload = function (r) {
+		if (!req.responseText) { return false; }
+		var o = JSON.parse(req.responseText);
+		if (!o['max_posts']) { return false; }
+		createBar(document.getElementById("sbar1"), true).setBarSize(o['views'], o['max_views']);
+		createBar(document.getElementById("sbar2"), true).setBarSize(o['posts'], o['max_posts']);
+		createBar(document.getElementById("sbar3"), false).setBarSize(o['clients'], o['max_clients']);
+		if (o['near_limit']) { document.getElementById("nearLimitMsg").style.display = ""; }
+		document.getElementById("postsPeriod").textContent = 'last '+o['period'];
+		document.getElementById("viewsPeriod").textContent = 'last '+o['period'];
+	}
+	req.send();
+</script>
+</fieldset>
+
+<iframe src="javascript:false" name="t_qlink" onload="rcvdformresponse(this.name)" class="frmiframe" width="1" height="1"></iframe>
+<form name="qlink" target="t_qlink" method="post" action="/public/admin/submit?f=qlink">
+<fieldset>
+	<legend>Quick Link</legend>
+	<label>Your URL:</label>
+	<div class="notInput"><a href="http://34.61.70.211/public/box/MYBOX2026/" target="_new">http://34.61.70.211/public/box/MYBOX2026/</a></div>
+	<label for="quickchk">Enabled:</label>
+	<div class="slideThree"><input type="checkbox" name="quicklnk" value="1" id="quickchk" checked="checked"><label></label></div>
+	<input type="submit" name="sub" value=" Save ">
+	<div id="m_qlink" class="frmmsg1"></div>
+	<div id="em_qlink" class="frmmsg2"></div>
+</fieldset>
+</form>
+
+<iframe src="javascript:false" name="t_boxname" onload="rcvdformresponse(this.name)" class="frmiframe" width="1" height="1"></iframe>
+<form name="boxname" target="t_boxname" method="post" action="/public/admin/submit?f=boxname">
+<fieldset class="Med">
+	<legend>Change name</legend>
+	<label>NexusBox name:</label>
+	<input type="text" name="uname" size="20" maxlength="20" class="txtbox" value="MYBOX2026">
+	<input type="submit" name="sub" value=" Save ">
+	<div id="m_boxname" class="frmmsg1"></div>
+	<div id="em_boxname" class="frmmsg2"></div>
+</fieldset>
+</form>
+
+<iframe src="javascript:false" name="t_faccount" onload="rcvdformresponse(this.name)" class="frmiframe" width="1" height="1"></iframe>
+<form name="faccount" target="t_faccount" method="post" action="/public/admin/submit?f=faccount" onsubmit="return chk_faccount();">
+<fieldset>
+	<legend>Change email/password</legend>
+	<label>Email:</label>
+	<input type="text" name="email" size="30" maxlength="50" class="txtbox" value="user@example.com">
+	<label>Password:</label>
+	<input type="password" name="pword" size="30" maxlength="50" class="txtbox">
+	<label>Confirm:</label>
+	<input type="password" name="pword2" size="30" maxlength="50" class="txtbox">
+	<input type="submit" name="sub" value=" Save ">
+	<div id="m_faccount" class="frmmsg1"></div>
+	<div id="em_faccount" class="frmmsg2"></div>
+</fieldset>
+</form>
+</div>
+
+<div class="colclear"></div>
+		</div>
+		<div style="clear: both"></div>
+	</div>
+</div>
+
+<div id="siteErrorBar"><div class="wrap" id="siteErrorBarCont">Loading...</div></div>
+
+<div id="footer">
+	<a href="http://34.61.70.211/">About</a>
+	<a href="http://34.61.70.211/public/products">Plans &amp; pricing</a>
+	<a href="http://34.61.70.211/public/terms">Terms &amp; conditions</a>
+	<a href="http://34.61.70.211/public/privacy">Privacy policy</a>
+	<a href="http://34.61.70.211/public/notices">Notices</a>
+	<a href="http://34.61.70.211/public/contact">Contact us</a>
+	<div class="verybottom">© 2004–2026 NexusBox Communications (Pty) Ltd, all rights reserved. 5 ms. 83ce</div>
+</div>
+
+<script>
+if (window.isPopup) { document.body.className = "Popped"; }
+if (typeof upgradeCheckboxes === 'function') { upgradeCheckboxes(); }
+var dropCrumb = function () { if (!localStorage) { return; } var bc = getCrumbs(); bc.push(location.href); bc.splice(0, bc.length - 5); localStorage.setItem("site:bread", JSON.stringify(bc)); };
+var getCrumbs = function () { if (!localStorage) { return []; } var bcStr = localStorage.getItem("site:bread"); var bc = []; if (bcStr) { bc = JSON.parse(bcStr); } return bc; }
+dropCrumb();
+</script>
+<script src="code.js"></script>
+</body></html>

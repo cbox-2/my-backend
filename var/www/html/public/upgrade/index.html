@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Upgrade · NexusBox</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<meta name="description" content="Upgrade your NexusBox plan to unlock premium features and higher client limits.">
+<link href="data:image/x-icon;base64,AAABAAEAEBACAAAAAACwAAAAFgAAACgAAAAQAAAAIAAAAAEAAQAAAAAAQAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA" rel="icon" type="image/x-icon">
+<link rel="stylesheet" href="style.css">
+</head>
+<body id="mainbody">
+
+<script type="text/javascript" async="" src="code.js"></script>
+<script async="" src="analytics.js"></script>
+<script>
+var rcvdformresponse = function () {};
+</script>
+
+<div id="mask"></div>
+
+<div id="bodywrap">
+	<div id="header">
+		<div class="wrap">
+
+			<a id="logo" href="/">
+				<img src="/gfx/logo400.png" alt="NexusBox" width="200" height="86" border="0">
+			</a>
+
+			<div id="headerExtras">
+				<a href="/public/admin/">Log in</a>
+			</div>
+		</div>
+	</div>
+
+	<div id="topbar">
+		<div class="wrap">
+			<span class="Spacer">&nbsp;</span>
+			<a href="/" class="button">Home</a>
+			<a href="/public/plans/" class="button">Plans &amp; Pricing</a>
+			<a href="/public/signup/" class="button">Sign up</a>
+			<a href="/public/upgrade/" class="button Active">Upgrade</a>
+			<a href="/public/support/" class="button">Support</a>
+		</div>
+	</div>
+
+	<div id="subbar">
+		<div class="wrap">
+		</div>
+	</div>
+
+	<div id="content">
+		<div class="wrap">
+
+			<h1>Upgrade your NexusBox</h1>
+
+			<p>Upgrading your NexusBox is easy. Make your selections below and proceed to the next step to check out. Your purchase comes with a 30-day money-back policy, so there is no risk. For more information on the products we offer, <a href="/public/plans/">see our feature comparison</a>.</p>
+
+			<h2>Upgrade account</h2>
+
+			<form name="upgrade" method="post" action="/api/upgrade.php" id="upgradeForm">
+			<fieldset>
+				<legend>Choose your upgrade options</legend>
+
+				<label>NexusBox name:</label>
+				<input type="text" name="boxname" class="txtbox" placeholder="Enter your NexusBox name" required>
+				<p class="notInput" style="width:70%">You can upgrade your own NexusBox or a friend's. If you do not have a NexusBox, <a href="/public/signup/">sign up</a> first.</p>
+
+				<label>Choose product:</label>
+				<div class="notInput" style="width:70%">
+					<select name="product" class="txtbox" required>
+						<option value="premium">NexusBox Premium</option>
+						<option value="pro">NexusBox Pro</option>
+						<option value="proplus">NexusBox Pro+</option>
+					</select>
+				</div>
+
+				<label>Upgrade term:</label>
+				<div class="notInput" style="width:70%">
+					<select name="term" class="txtbox" required>
+						<option value="12">12 months — SAVE 15%!</option>
+						<option value="6">6 months</option>
+						<option value="3">3 months</option>
+						<option value="1">1 month</option>
+					</select>
+				</div>
+
+				<label>Client limit (CCU):</label>
+				<div class="notInput" style="width:70%">
+					<select name="ccu" class="txtbox" required>
+						<option value="10000">10k CCU</option>
+						<option value="15000">15k CCU</option>
+						<option value="30000">30k CCU</option>
+						<option value="75000">75k CCU</option>
+						<option value="150000">150k CCU</option>
+						<option value="400000">400k CCU</option>
+					</select>
+					<p class="notInput" style="width:100%; font-size:85%; color:#777;">Choose a concurrent client (CCU) provisioning limit that meets your requirements.</p>
+				</div>
+
+				<label>Pay by:</label>
+				<div class="notInput" style="width:70%">
+					<select name="payment" class="txtbox" required>
+						<option value="paypal">PayPal or credit card online</option>
+						<option value="bitcoin">Bitcoin</option>
+					</select>
+				</div>
+
+				<label>Auto-renew:</label>
+				<div class="notInput" style="width:70%">
+					<input type="checkbox" name="autorenew" value="1" checked> Automatically renew on expiry
+				</div>
+
+				<input type="submit" value="Proceed to checkout">
+			</fieldset>
+			</form>
+
+			<p>If you would like to know more about our plans before upgrading, don't hesitate to <a href="/public/contact/">contact us</a>.</p>
+
+		</div>
+	</div>
+
+</div>
+
+<div id="siteErrorBar"><div class="wrap" id="siteErrorBarCont">Loading...</div></div>
+
+<div id="footer">
+	<a href="/">About</a>
+	<a href="/public/plans/">Plans &amp; pricing</a>
+	<a href="/public/terms/">Terms &amp; conditions</a>
+	<a href="/public/privacy/">Privacy policy</a>
+	<a href="/public/notices/">Notices</a>
+	<a href="/public/contact/">Contact us</a>
+	<div class="verybottom">
+		&copy; 2004–2026 NexusBox Communications (Pty) Ltd, all rights reserved.
+	</div>
+</div>
+
+<script src="code.js"></script>
+<script>
+(function() {
+    var form = document.getElementById('upgradeForm');
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            var boxname = form['boxname'].value.trim();
+            var product = form['product'].value;
+            var term = form['term'].value;
+            var ccu = form['ccu'].value;
+            var payment = form['payment'].value;
+            var autorenew = form['autorenew'].checked ? 1 : 0;
+
+            if (!boxname) {
+                alert('Please enter your NexusBox name');
+                return;
+            }
+
+            fetch('/api/upgrade.php', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({
+                    boxname: boxname,
+                    product: product,
+                    term: term,
+                    ccu: ccu,
+                    payment: payment,
+                    autorenew: autorenew
+                })
+            })
+            .then(function(r) { return r.json(); })
+            .then(function(d) {
+                if (d.success) {
+                    alert(d.message || 'Redirecting to payment...');
+                    if (d.redirect) {
+                        window.location.href = d.redirect;
+                    }
+                } else {
+                    alert(d.message || 'Upgrade failed. Please try again.');
+                }
+            })
+            .catch(function() {
+                alert('Connection error. Please try again.');
+            });
+        });
+    }
+})();
+</script>
+
+</body>
+</html>

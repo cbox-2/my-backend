@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<title>Publish · NexusBox</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<meta name="description" content="NexusBox live chat is an embeddable chat app for online communities, groups, and live-streaming events.">
+<link href="data:image/x-icon;base64,AAABAAEAEBACAAAAAACwAAAAFgAAACgAAAAQAAAAIAAAAAEAAQAAAAAAQAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA" rel="icon" type="image/x-icon">
+<link rel="stylesheet" href="style.css">
+<body id="mainbody">
+
+	<script type="text/javascript" async="" src="code.js"></script><script>
+	// Define stub
+	var rcvdformresponse = function () {};
+	</script>
+	
+	<div id="mask"></div>
+
+<div id="popovr_box">
+	<div class="wrap">
+		<div style="padding: 20px; background-color: #fff">
+			<div id="popovr_title"></div>
+			<div id="popovr_text" style="text-align: left; clear:both"></div>
+			<div id="popovr_t_login" style="display: none; text-align: left; clear:both">
+				<p>Your session has expired. Please log back in to continue.</p>
+				<iframe src="javascript:false" name="t_qlpop" onload="rcvdformresponse(this.name)" class="frmiframe" width="1" height="1"></iframe>
+				<form name="qlpop" action="/public/admin_d_login?f=qlpop" target="t_qlpop" method="post" onsubmit="return subsaving(this.name, 'sub', 'logging in...');">
+				<fieldset>
+					<label>Username:</label>
+					<input type="text" name="uname" value="" maxlength="50" class="txtbox">
+					<label>Password:</label>
+					<input type="password" name="pword" value="" maxlength="50" class="txtbox">
+					<input type="submit" name="sub" value=" Log in ">
+					<div id="m_qlpop" class="frmmsg1"></div>
+					<div id="em_qlpop" class="frmmsg2"></div>
+				</fieldset>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--[if lte IE 7]>
+	<div class="notice_er notice_top">
+		You are using an old version of Internet Explorer or you are in Compatibility View mode. 
+		This website will not work correctly. <br>Please upgrade your browser or disable Compatibility View.
+	</div>
+<![endif]-->
+
+<div id="bodywrap">
+	<div id="header">
+		<div class="wrap">
+			<a id="logo" href="http://34.61.70.211/">
+				<img src="/public/images/nexusbox-logo.png" alt="NexusBox" width="200" height="86" border="0">
+			</a>
+			<div id="headerExtras">
+				<span id="userWelcome">user@example.com</span>
+				<a href="http://34.61.70.211/public/admin/switch/">My Boxes</a>
+				<a href="http://34.61.70.211/public/admin/acct/">My Account</a>
+				<a href="http://34.61.70.211/public/help/">Support</a>
+				<a href="http://34.61.70.211/public/admin/logout/" onclick="return logout()">Log out</a>
+			</div>
+		</div>
+	</div>
+
+	<div id="subbar">
+		<div class="wrap">
+			<a href="http://34.61.70.211/public/admin/" class="submenuitem"><b>MYBOX2026</b></a>
+			<a href="http://34.61.70.211/public/admin/snippet/" class="submenuitem Active">Publish</a>
+			<a href="#" id="hovmenu1" class="submenuitem" onmousedown="return hovmenu(this, 1)">Look &amp; feel</a>
+			<a href="#" id="hovmenu2" class="submenuitem" onmousedown="return hovmenu(this, 2)">Options</a>
+			<a href="#" id="hovmenu3" class="submenuitem" onmousedown="return hovmenu(this, 3)">Users</a>
+			<a href="#" id="hovmenu4" class="submenuitem" onmousedown="return hovmenu(this, 4)">Messages</a>
+		</div>
+	</div>
+	<div id="bar3"><div id="hovmenu" class="wrap"><a></a></div></div>
+	
+	<div id="wideimg" style="position: relative; width: 100%; left: 0"></div>
+	
+	<div id="main" class="wrap">
+		<div id="content">
+
+<script type="text/javascript">
+var noticetogorig = "";
+function noticetoggle(xo, v) {
+  var xo = document.getElementById(xo);
+  z = document.getElementById('notice-more');
+  if (z.style.display == 'none') { z.style.display = ''; noticetogorig = xo.innerHTML; xo.innerHTML = v; }
+  else { z.style.display = 'none'; xo.innerHTML = noticetogorig; }
+}
+function noticeclose(x) { z = document.getElementById('notice'); z.style.display = "none"; document.cookie = "rnot="+x+";"; }
+function highlighthelp(sec, para, on) {
+	var ico = document.getElementById("hlpico-"+sec+"-"+para);
+  	if (!ico) return;
+  	if (!on) { ico.style.filter = "alpha(opacity=60)"; ico.style.opacity = 0.6; }
+  	else { ico.style.filter = ""; ico.style.opacity = 1; }
+}
+var createBar = function ($elem, isLog, showLimit) {
+	var $bar = document.createElement("div"); $bar.className = "barFill";
+	var $text = document.createElement("div"); $text.className = "barText";
+	$elem.appendChild($bar); $elem.appendChild($text);
+	var minWidth = 5;
+	var format = function (n) { return (n+'').split('').reverse().join('').replace(/([0-9]{3})(?=[0-9])/g, "$1,").split('').reverse().join(''); }
+	$bar.style.width = "0%";
+	return {
+		setBarSize: function (val, max) {
+			var over = false; if (val > max) { over = true; }
+			var val = Math.min(max, Math.max(0, val)); var prop = val / max;
+			$text.innerHTML = format(val) + (over ? "+" : "") + (showLimit ? "/" + max : "");
+			var w = (isLog ? (Math.log((prop*1.718 + 1))) : prop) * 100;
+			var r = prop/0.7 * 255 + 50; var g = 255 - prop*0.6*255; var b = 80;
+			var comp = (255 / (r*0.9 + g * 1.1)) * 1.4;
+			r = r / comp; g = g / comp; b = b / comp;
+			window.setTimeout(function () { $bar.style.width = Math.max(w, minWidth) + "%"; $bar.style.backgroundColor = "rgb("+(r|0)+", "+(g|0)+", "+(b|0)+")"; }, 100);
+		}
+	}
+};
+</script>
+
+<h1>Publish Your NexusBox</h1>
+
+<script>
+function gentag (tag) {
+	var x = document.getElementById("hashtag");
+  	if (tag) var t = tag;
+  	else {
+  		var t = Math.round(Math.random()*1838265624).toString(35);
+  		t = t.replace('u', 'z'); t = t.replace('i', '5'); t = t.replace('o', 'w');
+  	}
+	x.value = t;
+}
+function copytext () {
+  var $ta = document.getElementById("nexuscode_"+curCode);
+  $ta.focus(); $ta.select();
+  try {
+    if (!document.execCommand("copy")) { navigator.clipboard.writeText($ta.value); }
+	var $btnCopy = document.getElementById("btnCopy");
+	$btnCopy.value = "Code copied! You can now paste it into your site.";
+  } catch (e) {
+    alert("After clicking OK, press Ctrl+C to copy the code to the clipboard. Then press Ctrl+V to paste the code where you want it to go.");
+  }
+}
+var curCode = "default";
+function switchcode() {
+	var f = document.forms["fsnippet2"];
+	var v = f.variation[f.variation.selectedIndex].value;
+	var $taCode = document.getElementById("nexuscode_"+v);
+	document.getElementById("nexuscode_"+curCode).style.display = "none";
+	curCode = v;
+	$taCode.style.display = "";
+}
+function toggle(m) {
+  if (document.getElementById("set"+m).style.display == "") document.getElementById("set"+m).style.display = "none";
+  else document.getElementById("set"+m).style.display = "";
+}
+var curInstructions = "generic";
+function updateinst() {
+	var f = document.forms["fsnippet2"];
+	var a = f.sitetype[f.sitetype.selectedIndex].value;
+	document.getElementById("ii_"+curInstructions).style.display = "none";
+	document.getElementById("ii_"+a).style.display = "";
+	curInstructions = a;
+}
+</script>
+
+<p>If you run your own site, you can embed NexusBox directly into the pages of your site.</p>
+
+<iframe src="javascript:false" name="t_fsnippet" onload="rcvdformresponse(this.name)" class="frmiframe" width="1" height="1"></iframe>
+<form name="fsnippet" target="t_fsnippet" method="post" action="/public/admin/submit?f=fsnippet" onsubmit="return subsaving(this.name, 'sub', '');">
+<fieldset class="Med WithSuffix"><div class="fsInlineHelp"><a href="javascript:popwin('help', '/public/admin/help/?sec=5#0', 500, 600)" title="Get help on this section"></a></div>
+<legend>Embed options</legend>
+	<label>Your website URL:</label>
+	<input type="text" name="site" size="35" maxlength="100" class="txtbox" value="https://mustafa-kareem5.blogspot.com/">
+	<label for="privchk" id="privlbl"> Enable site whitelist: </label>
+	<div class="slideThree"><input type="checkbox" name="private" value="1" id="privchk"><label></label></div>
+	<textarea id="moreaddr" name="whitelist" cols="20" rows="6" class="txtbox" placeholder="Enter URLs for whitelist, one per line." onkeyup="if (this.value.length > 6000) this.value = this.value.substring(0, 6000);" style="display: none;"></textarea>
+	<label for="codessl">Use secure HTTP (TLS/SSL):</label>
+	<div class="slideThree"><input type="checkbox" name="codessl" value="1" id="codessl"><label></label></div>
+	<label>Security tag:</label>
+	<input type="text" name="hashtag" id="hashtag" size="10" maxlength="6" class="txtbox" value="abc123">
+	<a href="javascript:void(0);" onclick="gentag()">&nbsp;[generate new]</a>
+	<input type="submit" name="sub" value=" Save ">
+	<div id="m_fsnippet" class="frmmsg1"></div>
+	<div id="em_fsnippet" class="frmmsg2"></div>
+</fieldset>
+</form>
+
+<script>
+var privchk = document.getElementById("privchk");
+privchk.onchange = function () {
+	var whitelist = document.getElementById("moreaddr");
+	if (privchk.checked) { whitelist.style.display = "block"; }
+	else { whitelist.style.display = "none"; }
+}
+privchk.onchange();
+</script>
+
+<form name="fsnippet2" action="/public/admin/snippet/" method="post">
+<fieldset>
+	<legend>Get your embed code </legend>
+	<label>Code variation: </label>
+	<select name="variation" class="txtbox" onchange="switchcode()">
+	<optgroup label="Standard codes">
+		<option value="default" selected="selected">Standard inline</option>
+		<option value="pop">Popup link</option>
+		<option value="bar">Fixed button</option>
+		<option value="defer">Deferred load</option>
+	</optgroup>
+	<optgroup label="Platform-specific codes">
+		<option value="myleague">MyLeague site</option>
+	</optgroup>
+	</select>
+
+	<textarea cols="70" rows="8" spellcheck="false" class="txtarea" id="nexuscode_v10_inline" style="display: none; width: 100%">&lt;iframe src="http://34.61.70.211/public/box/?boxid=1000001&amp;boxtag=abc123" width="400" height="400" allowtransparency="yes" allow="autoplay" frameborder="0" marginheight="0" marginwidth="0" scrolling="auto"&gt;&lt;/iframe&gt;</textarea>
+	<textarea cols="70" rows="8" spellcheck="false" class="txtarea" id="nexuscode_v10_button" style="display: none; width: 100%">&lt;script&gt;window['NexusBoxReady'] = function (NexusBox) { NexusBox('button', '1-1000001-abc123'); }&lt;/script&gt;&lt;script src="http://34.61.70.211/public/static/embed/2.js" async&gt;&lt;/script&gt;</textarea>
+	<textarea cols="70" rows="16" spellcheck="false" class="txtarea" id="nexuscode_default" style="width: 100%;">&lt;!-- BEGIN NEXUSBOX - www.nexusbox.ws - v4.3 --&gt;
+&lt;div id="nexusdiv" style="position: relative; margin: 0 auto; width: 400px; font-size: 0; line-height: 0;"&gt;
+&lt;div style="position: relative; height: 293px; overflow: auto; overflow-y: auto; -webkit-overflow-scrolling: touch; border: 0px solid;"&gt;
+&lt;iframe src="http://34.61.70.211/public/box/?boxid=1000001&amp;boxtag=abc123&amp;sec=main" marginheight="0" marginwidth="0" frameborder="0" width="100%" height="100%" scrolling="auto" allowtransparency="yes" name="nexusmain1-1000001" id="nexusmain1-1000001"&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;div style="position: relative; height: 107px; overflow: hidden; border: 0px solid; border-top: 0px;"&gt;
+&lt;iframe src="http://34.61.70.211/public/box/?boxid=1000001&amp;boxtag=abc123&amp;sec=form" allow="autoplay" marginheight="0" marginwidth="0" frameborder="0" width="100%" height="100%" scrolling="no" allowtransparency="yes" name="nexusform1-1000001" id="nexusform1-1000001"&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- END NEXUSBOX --&gt;</textarea>
+	<textarea cols="70" rows="16" spellcheck="false" class="txtarea" id="nexuscode_defer" style="display: none; width: 100%">&lt;div id="nexuswrap"&gt;&lt;/div&gt;
+&lt;script&gt;(function () { var showByDefault = true; var nexusContainer = document.getElementById("nexuswrap"); var nexusToggleButton = document.getElementById("nexusbutton"); var buttonStringOpen = "Open NexusBox"; var buttonStringClose = "Close NexusBox"; var lsKey = "nexusbox:isOpen"; var nexusHTML = '&lt;!-- BEGIN NEXUSBOX --&gt;&lt;div id="nexusdiv" style="position: relative; margin: 0 auto; width: 400px; font-size: 0; line-height: 0;"&gt;&lt;div style="position: relative; height: 293px; overflow: auto; overflow-y: auto; -webkit-overflow-scrolling: touch; border: 0px solid;"&gt;&lt;iframe src="http://34.61.70.211/public/box/?boxid=1000001&amp;boxtag=abc123&amp;sec=main" marginheight="0" marginwidth="0" frameborder="0" width="100%" height="100%" scrolling="auto" allowtransparency="yes" name="nexusmain1-1000001" id="nexusmain1-1000001"&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;div style="position: relative; height: 107px; overflow: hidden; border: 0px solid; border-top: 0px;"&gt;&lt;iframe src="http://34.61.70.211/public/box/?boxid=1000001&amp;boxtag=abc123&amp;sec=form" allow="autoplay" marginheight="0" marginwidth="0" frameborder="0" width="100%" height="100%" scrolling="no" allowtransparency="yes" name="nexusform1-1000001" id="nexusform1-1000001"&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/div&gt;&lt;!-- END NEXUSBOX --&gt;'; var htmlInjected = false; var isVisible = false; var toggleNexus = function (show) { if (!show) { nexusContainer.style.display = "none"; if (nexusToggleButton) { nexusToggleButton.innerHTML = buttonStringOpen; } } else { nexusContainer.style.display = "block"; if (nexusToggleButton) { nexusToggleButton.innerHTML = buttonStringClose; } } if (show && !htmlInjected) { nexusContainer.innerHTML = nexusHTML; htmlInjected = true; } isVisible = show; }; if (localStorage && lsKey && typeof localStorage.getItem(lsKey) === "string") { toggleNexus((localStorage.getItem(lsKey) === "yes")); } else { toggleNexus(showByDefault); } if (nexusToggleButton) { nexusToggleButton.onclick = function () { toggleNexus(!isVisible); if (localStorage && lsKey) { localStorage.setItem(lsKey, isVisible ? "yes" : "no"); } } } })();&lt;/script&gt;</textarea>
+	<textarea cols="70" rows="16" spellcheck="false" class="txtarea" id="nexuscode_pop" style="display: none; width: 100%">&lt;script&gt;function popcbox(tid, tkey) { var baseurl = "http://34.61.70.211/public/box/?boxid=1000001&amp;boxtag=abc123", baseid = '1-1000001', fontop = 0, turl = '', tid = tid || 0, tkey = tkey || "", html = [], width = 400, height = 400, fheight = 107; if (tid && tkey) { turl = '&amp;tid='+tid+'&amp;tkey='+tkey; } var htmlform = '&lt;frame src="'+baseurl+turl+'&amp;sec=form" marginwidth="0" marginheight="0" noresize="true" scrolling="auto" name="nexusform'+baseid+'-'+tid+'"&gt;'; var htmlmain = '&lt;frame src="'+baseurl+turl+'&amp;sec=main" marginwidth="0" marginheight="0" noresize="true" scrolling="no" name="nexusmain'+baseid+'-'+tid+'"&gt;'; var prows = (fontop) ? (fheight+',*') : ('*,'+fheight); html.push('&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;&lt;title&gt;NexusBox&lt;/title&gt;&lt;meta name="viewport" content="width=device-width, user-scalable=no"&gt;&lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;&lt;/head&gt;&lt;frameset rows="'+prows+'" frameborder="0" framespacing="0"&gt;'); html.push(fontop ? htmlform : htmlmain); html.push(fontop ? htmlmain : htmlform); html.push('&lt;/frameset&gt;&lt;noframes&gt;Frames required&lt;/noframes&gt;&lt;/html&gt;'); var cboxwin = window.open("","NexusBox-"+baseid+"-"+tid,"width="+width+",height="+height+",toolbar=no,scrollbars=no,status=no,resizable=yes"); cboxwin.document.open(); cboxwin.document.write(html.join('')); try { x = screen.width; y = screen.height; cboxwin.moveTo(Math.max((x - width)/2, 0), Math.max((y - height)/2, 0)); cboxwin.focus(); } catch (e) {}; }&lt;/script&gt;&lt;a href="JavaScript:popcbox('', '');"&gt;Pop up my NexusBox&lt;/a&gt;</textarea>
+	<textarea cols="70" rows="16" spellcheck="false" class="txtarea" id="nexuscode_bar" style="display: none; width: 100%">&lt;div id="nexusbutton" style="position: fixed; bottom: 8px; right: 16px; padding: 3px 20px; text-align: center; cursor: pointer; background-color: #EDF3F7; border:#C3D7E5 1px solid;border-radius: 3px; font-family: Tahoma, sans-serif; font-size: 14px; font-weight: bold"&gt;&lt;/div&gt;&lt;div id="nexuswrap" style="position: fixed; bottom: 48px; right: 16px; background: #EDF3F7; padding: 3px; border:#C3D7E5 1px solid;border-radius: 3px;"&gt;&lt;/div&gt;&lt;script&gt;(function () { var showByDefault = true; var nexusContainer = document.getElementById("nexuswrap"); var nexusToggleButton = document.getElementById("nexusbutton"); var buttonStringOpen = "Open NexusBox"; var buttonStringClose = "Close NexusBox"; var lsKey = "nexusbox:isOpen"; var nexusHTML = '&lt;!-- BEGIN NEXUSBOX --&gt;&lt;div id="nexusdiv" style="position: relative; margin: 0 auto; width: 400px; font-size: 0; line-height: 0;"&gt;&lt;div style="position: relative; height: 293px; overflow: auto; overflow-y: auto; -webkit-overflow-scrolling: touch; border: 0px solid;"&gt;&lt;iframe src="http://34.61.70.211/public/box/?boxid=1000001&amp;boxtag=abc123&amp;sec=main" marginheight="0" marginwidth="0" frameborder="0" width="100%" height="100%" scrolling="auto" allowtransparency="yes" name="nexusmain1-1000001" id="nexusmain1-1000001"&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;div style="position: relative; height: 107px; overflow: hidden; border: 0px solid; border-top: 0px;"&gt;&lt;iframe src="http://34.61.70.211/public/box/?boxid=1000001&amp;boxtag=abc123&amp;sec=form" allow="autoplay" marginheight="0" marginwidth="0" frameborder="0" width="100%" height="100%" scrolling="no" allowtransparency="yes" name="nexusform1-1000001" id="nexusform1-1000001"&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;/div&gt;&lt;!-- END NEXUSBOX --&gt;'; var htmlInjected = false; var isVisible = false; var toggleNexus = function (show) { if (!show) { nexusContainer.style.display = "none"; if (nexusToggleButton) { nexusToggleButton.innerHTML = buttonStringOpen; } } else { nexusContainer.style.display = "block"; if (nexusToggleButton) { nexusToggleButton.innerHTML = buttonStringClose; } } if (show && !htmlInjected) { nexusContainer.innerHTML = nexusHTML; htmlInjected = true; } isVisible = show; }; if (localStorage && lsKey && typeof localStorage.getItem(lsKey) === "string") { toggleNexus((localStorage.getItem(lsKey) === "yes")); } else { toggleNexus(showByDefault); } if (nexusToggleButton) { nexusToggleButton.onclick = function () { toggleNexus(!isVisible); if (localStorage && lsKey) { localStorage.setItem(lsKey, isVisible ? "yes" : "no"); } } } })();&lt;/script&gt;</textarea>
+	<textarea cols="70" rows="16" spellcheck="false" class="txtarea" id="nexuscode_myleague" style="display: none; width: 100%">&lt;!-- BEGIN NEXUSBOX - www.nexusbox.ws - v4.3 --&gt;
+&lt;div id="nexusdiv" style="position: relative; margin: 0 auto; width: 400px; font-size: 0; line-height: 0;"&gt;
+&lt;div style="position: relative; height: 293px; overflow: auto; overflow-y: auto; -webkit-overflow-scrolling: touch; border: 0px solid;"&gt;
+&lt;iframe src="http://34.61.70.211/public/box/?boxid=1000001&amp;boxtag=abc123&amp;sec=main" marginheight="0" marginwidth="0" frameborder="0" width="100%" height="100%" scrolling="auto" allowtransparency="yes" name="nexusmain1-1000001" id="nexusmain1-1000001"&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;div style="position: relative; height: 107px; overflow: hidden; border: 0px solid; border-top: 0px;"&gt;
+&lt;iframe src="http://34.61.70.211/public/box/?boxid=1000001&amp;boxtag=abc123&amp;sec=form&amp;nme=[cbox_name]&amp;key=[cbox_key_8i9if550i3k4a2ck]&amp;pic=[cbox_pic]&amp;lnk=[cbox_lnk]&amp;ath=[cbox_auth]" allow="autoplay" marginheight="0" marginwidth="0" frameborder="0" width="100%" height="100%" scrolling="no" allowtransparency="yes" name="nexusform1-1000001" id="nexusform1-1000001"&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- END NEXUSBOX --&gt;</textarea>
+
+	<div style="float:right;">
+		<input type="button" name="cpy" id="btnCopy" value="Copy to clipboard" onclick="copytext()">
+	</div>
+</fieldset>
+
+<span style="float: right">Instructions for: 
+	<select name="sitetype" class="txtbox" onchange="updateinst()">
+	<option value="generic">Any site</option>
+	<option value="forum">Forums</option>
+	<option value="blogger" selected="selected">Blogger / Blogspot</option>
+	<option value="ee16">ExpressionEngine 1.6.x</option>
+	<option value="joomla">Joomla</option>
+	<option value="myleague">MyLeague.com</option>
+	<option value="phpbb3">phpBB 3.x</option>
+	<option value="smf">Simple Machines Forum (SMF)</option>
+	<option value="webs">Webs.com</option>
+	<option value="winlive">Windows Live Spaces</option>
+	</select>
+</span>
+
+<h2>Embed instructions</h2>
+
+<div id="ii_generic_v10">
+<ol>
+<li>Copy your code to the clipboard by clicking the button above.</li>
+<li>Open the page or template editor for your site.</li>
+<li>Switch to HTML or raw editing mode.</li>
+<li>Paste your code into the editor.</li>
+<li>Save and publish your changes.</li>
+</ol>
+<h2>Problems installing?</h2>
+<p>If you see code on your page instead of your NexusBox, your editor may be stripping or sanitizing NexusBox HTML.</p>
+<p>If your platform supports apps or widgets, you may be able to find one that allows you to embed your NexusBox. Search for an "iframe" or "embed" app or widget.</p>
+<p>If the app or widget requires a URL, enter <code>http://34.61.70.211/public/box/?boxid=1000001&amp;boxtag=abc123</code>.</p>
+<p>On some platforms it may not be possible to embed NexusBox into the page. Remember that you can always use your Quick Link to publish your NexusBox anywhere that you can post a link. Your link is: <a href="http://34.61.70.211/public/box/MYBOX2026/" target="_new">http://34.61.70.211/public/box/MYBOX2026/</a></p>
+</div>
+
+<div id="ii_blogger_v10" style="display:none">
+<ol>
+<li>Open your Blogger editor.</li>
+<li>Select Layout from the menu.</li>
+<li>In the area you want to your NexusBox to be shown, click "Add a Gadget".</li>
+<li>Select "HTML/JavaScript" from the Basics category.</li>
+<li>In the "Content" section, paste your NexusBox embed code.</li>
+<li>Save your changes.</li>
+</ol>
+</div>
+
+<div id="ii_joomla_v10" style="display:none">
+<ol>
+<li>Copy your code to the clipboard by clicking the button above.</li>
+<li>Download our <a href="http://34.61.70.211/public/extmodules/mod_nexusbox_joomla15.zip">NexusBox on Joomla</a> module to your computer.</li>
+<li>In your Joomla administrator menu, go to <b>Extensions</b> -&gt; <b>Install/Uninstall</b></li>
+<li>Use the <b>Upload Package File</b> tool to upload the NexusBox on Joomla module you downloaded from us.</li>
+<li>Then go to <b>Extensions -&gt; Module Manager</b> and click on <b>NexusBox</b> on the list that appears.</li>
+<li>Now set <b>Enabled</b> to <code>Yes</code>, and paste your code into the box on the right.</li>
+<li>Click <b>Save</b></li>
+</ol>
+NexusBox supports User Integration on Joomla. For more information, see <a href="http://34.61.70.211/public/admin/userint/">this page</a>.
+</div>
+
+<div id="ii_phpbb3_v10" style="display:none">
+<ol>
+<li>Copy your code to the clipboard by clicking the button above.</li>
+<li>Go into your phpBB admin control panel.</li>
+<li>Click the <b>Styles</b> tab, choose the <b>Templates</b> side bar item and for the current template, click <b>Edit</b>.</li>
+<li>Choose a location for your NexusBox. Recommended files are overall_footer.html or overall_header.html.</li>
+<li>Paste your NexusBox HTML code into your chosen template by pressing Ctrl + V.</li>
+<li><b>Important: </b> remove the &lt;!-- BEGIN NEXUSBOX --&gt; and &lt;!-- END NEXUSBOX --&gt; tags from your code. These will cause an error on your template.</li>
+<li>Save, and refresh your forum to confirm your NexusBox is installed.</li>
+</ol>
+NexusBox supports User Integration on phpBB 3.x. For more information, see <a href="http://34.61.70.211/public/admin/userint/">this page</a>.
+</div>
+
+<script>switchcode(); updateinst();</script>
+</form>
+
+		</div>
+		<div style="clear: both"></div>
+	</div>
+</div>
+
+<div id="siteErrorBar"><div class="wrap" id="siteErrorBarCont">Loading...</div></div>
+
+<div id="footer">
+	<a href="http://34.61.70.211/">About</a>
+	<a href="http://34.61.70.211/public/products">Plans &amp; pricing</a>
+	<a href="http://34.61.70.211/public/terms">Terms &amp; conditions</a>
+	<a href="http://34.61.70.211/public/privacy">Privacy policy</a>
+	<a href="http://34.61.70.211/public/notices">Notices</a>
+	<a href="http://34.61.70.211/public/contact">Contact us</a>
+	<div class="verybottom">© 2004–2026 NexusBox Communications (Pty) Ltd, all rights reserved. 1 ms. 83ce</div>
+</div>
+
+<script>
+if (window.isPopup) { document.body.className = "Popped"; }
+if (typeof upgradeCheckboxes === 'function') { upgradeCheckboxes(); }
+var dropCrumb = function () { if (!localStorage) { return; } var bc = getCrumbs(); bc.push(location.href); bc.splice(0, bc.length - 5); localStorage.setItem("site:bread", JSON.stringify(bc)); };
+var getCrumbs = function () { if (!localStorage) { return []; } var bcStr = localStorage.getItem("site:bread"); var bc = []; if (bcStr) { bc = JSON.parse(bcStr); } return bc; }
+dropCrumb();
+</script>
+<script src="code.js"></script>
+</body></html>

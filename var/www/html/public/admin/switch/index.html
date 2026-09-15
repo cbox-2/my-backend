@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<title>My Cboxes · NexusBox</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<meta name="description" content="NexusBox live chat is an embeddable chat app for online communities, groups, and live-streaming events.">
+<link href="data:image/x-icon;base64,AAABAAEAEBACAAAAAACwAAAAFgAAACgAAAAQAAAAIAAAAAEAAQAAAAAAQAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA" rel="icon" type="image/x-icon">
+<link rel="stylesheet" href="style.css">
+<body id="mainbody">
+
+	<script type="text/javascript" async="" src="code.js"></script><script>
+	var rcvdformresponse = function () {};
+	</script>
+	
+	<div id="mask"></div>
+
+<div id="popovr_box">
+	<div class="wrap">
+		<div style="padding: 20px; background-color: #fff">
+			<div id="popovr_title"></div>
+			<div id="popovr_text" style="text-align: left; clear:both"></div>
+			<div id="popovr_t_login" style="display: none; text-align: left; clear:both">
+				<p>Your session has expired. Please log back in to continue.</p>
+				<iframe src="javascript:false" name="t_qlpop" onload="rcvdformresponse(this.name)" class="frmiframe" width="1" height="1"></iframe>
+				<form name="qlpop" action="/public/admin_d_login?f=qlpop" target="t_qlpop" method="post" onsubmit="return subsaving(this.name, 'sub', 'logging in...');">
+				<fieldset>
+					<label>Username:</label>
+					<input type="text" name="uname" value="" maxlength="50" class="txtbox">
+					<label>Password:</label>
+					<input type="password" name="pword" value="" maxlength="50" class="txtbox">
+					<input type="submit" name="sub" value=" Log in ">
+					<div id="m_qlpop" class="frmmsg1"></div>
+					<div id="em_qlpop" class="frmmsg2"></div>
+				</fieldset>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--[if lte IE 7]>
+	<div class="notice_er notice_top">
+		You are using an old version of Internet Explorer or you are in Compatibility View mode. 
+		This website will not work correctly. <br>Please upgrade your browser or disable Compatibility View.
+	</div>
+<![endif]-->
+
+<div id="bodywrap">
+	<div id="header">
+		<div class="wrap">
+			<a id="logo" href="http://34.61.70.211/">
+				<img src="/public/images/nexusbox-logo.png" alt="NexusBox" width="200" height="86" border="0">
+			</a>
+			<div id="headerExtras">
+				<span id="userWelcome">user@example.com</span>
+				<a href="http://34.61.70.211/public/admin/switch/">My Cboxes</a>
+				<a href="http://34.61.70.211/public/admin/acct/">My Account</a>
+				<a href="http://34.61.70.211/public/help/">Support</a>
+				<a href="http://34.61.70.211/public/admin/logout/" onclick="return logout()">Log out</a>
+			</div>
+		</div>
+	</div>
+
+	<div id="subbar">
+		<div class="wrap">
+			<span id="activeBoxName" class="submenuitem Active">Loading...</span>
+			<a href="http://34.61.70.211/public/admin/snippet/" class="submenuitem">Publish</a>
+			<a href="#" id="hovmenu1" class="submenuitem" onmousedown="return hovmenu(this, 1)">Look &amp; feel</a>
+			<a href="#" id="hovmenu2" class="submenuitem" onmousedown="return hovmenu(this, 2)">Options</a>
+			<a href="#" id="hovmenu3" class="submenuitem" onmousedown="return hovmenu(this, 3)">Users</a>
+			<a href="#" id="hovmenu4" class="submenuitem" onmousedown="return hovmenu(this, 4)">Messages</a>
+		</div>
+	</div>
+	<div id="bar3"><div id="hovmenu" class="wrap"><a></a></div></div>
+	
+	<div id="wideimg" style="position: relative; width: 100%; left: 0"></div>
+	
+	<div id="main" class="wrap">
+		<div id="content">
+
+<script type="text/javascript">
+var noticetogorig = "";
+function noticetoggle(xo, v) {
+  var xo = document.getElementById(xo);
+  z = document.getElementById('notice-more');
+  if (z.style.display == 'none') { z.style.display = ''; noticetogorig = xo.innerHTML; xo.innerHTML = v; }
+  else { z.style.display = 'none'; xo.innerHTML = noticetogorig; }
+}
+function noticeclose(x) { z = document.getElementById('notice'); z.style.display = "none"; document.cookie = "rnot="+x+";"; }
+function highlighthelp(sec, para, on) {
+	var ico = document.getElementById("hlpico-"+sec+"-"+para);
+  	if (!ico) return;
+  	if (!on) { ico.style.filter = "alpha(opacity=60)"; ico.style.opacity = 0.6; }
+  	else { ico.style.filter = ""; ico.style.opacity = 1; }
+}
+</script>
+
+<h1>My Cboxes</h1>
+
+<p>Select a Cbox to manage, or create a new one.</p>
+
+<div style="margin-bottom: 20px;">
+	<input type="text" id="newBoxName" placeholder="Enter new Cbox name" class="txtbox" style="width: 300px;">
+	<input type="button" value="+ Create new Cbox" onclick="createNewBox()" style="width: auto; cursor: pointer;">
+</div>
+
+<div id="boxesList">
+	<p>Loading Cboxes...</p>
+</div>
+
+		</div>
+		<div style="clear: both"></div>
+	</div>
+</div>
+
+<div id="siteErrorBar"><div class="wrap" id="siteErrorBarCont">Loading...</div></div>
+
+<div id="footer">
+	<a href="http://34.61.70.211/">About</a>
+	<a href="http://34.61.70.211/public/products">Plans &amp; pricing</a>
+	<a href="http://34.61.70.211/public/terms">Terms &amp; conditions</a>
+	<a href="http://34.61.70.211/public/privacy">Privacy policy</a>
+	<a href="http://34.61.70.211/public/notices">Notices</a>
+	<a href="http://34.61.70.211/public/contact">Contact us</a>
+	<div class="verybottom">© 2004–2026 NexusBox Communications (Pty) Ltd, all rights reserved.</div>
+</div>
+
+<script>
+function loadBoxes() {
+	fetch('/api/switch.php?action=list')
+		.then(function(r) { return r.json(); })
+		.then(function(data) {
+			if (data.success && data.boxes) {
+				displayBoxes(data.boxes);
+			} else {
+				document.getElementById('boxesList').innerHTML = '<p>Error loading Cboxes.</p>';
+			}
+		})
+		.catch(function(e) {
+			document.getElementById('boxesList').innerHTML = '<p>Error: ' + e.message + '</p>';
+		});
+}
+
+function displayBoxes(boxes) {
+	var html = '';
+	var activeBoxName = 'Loading...';
+	
+	boxes.forEach(function(box) {
+		var isActive = box.is_active == 1;
+		var statusClass = box.status === 'expired' ? 'Expired' : '';
+		var planClass = box.plan === 'premium' ? 'Premium' : 'Free';
+		
+		if (isActive) {
+			activeBoxName = box.name;
+		}
+		
+		var lastUsed = box.last_used ? timeAgo(box.last_used) : 'Never';
+		
+		html += '<div class="card ' + statusClass + '" style="cursor: pointer;" onclick="switchBox(' + box.id + ')">';
+		html += '<h2>' + box.name + '</h2>';
+		html += '<p><strong>' + planClass + '</strong></p>';
+		html += '<p>Last used ' + lastUsed + '</p>';
+		if (isActive) {
+			html += '<p style="color: #a6d83f; font-weight: bold;">✓ Active</p>';
+		}
+		html += '</div>';
+	});
+	
+	document.getElementById('boxesList').innerHTML = html || '<p>No Cboxes found.</p>';
+	document.getElementById('activeBoxName').textContent = activeBoxName;
+}
+
+function switchBox(boxId) {
+	var formData = new FormData();
+	formData.append('box_id', boxId);
+	
+	fetch('/api/switch.php?action=switch', { method: 'POST', body: formData })
+		.then(function(r) { return r.json(); })
+		.then(function(data) {
+			if (data.success) {
+				// تحديث القائمة فقط بدون الانتقال إلى صفحة أخرى
+				loadBoxes();
+			} else {
+				alert('Error: ' + data.message);
+			}
+		})
+		.catch(function(e) {
+			alert('Error: ' + e.message);
+		});
+}
+
+function createNewBox() {
+	var name = document.getElementById('newBoxName').value.trim();
+	if (!name) {
+		alert('Please enter a Cbox name');
+		return;
+	}
+	
+	var formData = new FormData();
+	formData.append('name', name);
+	
+	fetch('/api/switch.php?action=create', { method: 'POST', body: formData })
+		.then(function(r) { return r.json(); })
+		.then(function(data) {
+			if (data.success) {
+				document.getElementById('newBoxName').value = '';
+				loadBoxes();
+			} else {
+				alert('Error: ' + data.message);
+			}
+		})
+		.catch(function(e) {
+			alert('Error: ' + e.message);
+		});
+}
+
+function timeAgo(dateString) {
+	var date = new Date(dateString);
+	var now = new Date();
+	var diff = Math.floor((now - date) / 1000);
+	
+	if (diff < 60) return 'just now';
+	if (diff < 3600) return Math.floor(diff / 60) + ' minutes ago';
+	if (diff < 86400) return Math.floor(diff / 3600) + ' hours ago';
+	if (diff < 604800) return Math.floor(diff / 86400) + ' days ago';
+	return Math.floor(diff / 604800) + ' weeks ago';
+}
+
+window.onload = function() {
+	loadBoxes();
+};
+
+if (window.isPopup) { document.body.className = "Popped"; }
+if (typeof upgradeCheckboxes === 'function') { upgradeCheckboxes(); }
+var dropCrumb = function () { if (!localStorage) { return; } var bc = getCrumbs(); bc.push(location.href); bc.splice(0, bc.length - 5); localStorage.setItem("site:bread", JSON.stringify(bc)); };
+var getCrumbs = function () { if (!localStorage) { return []; } var bcStr = localStorage.getItem("site:bread"); var bc = []; if (bcStr) { bc = JSON.parse(bcStr); } return bc; }
+dropCrumb();
+</script>
+</body></html>

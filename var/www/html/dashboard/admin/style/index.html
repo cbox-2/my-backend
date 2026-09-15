@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Theme Editor · NexusBox</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="../style.css">
+<style>
+.themeEditor { max-width: 1200px; margin: 0 auto; }
+.editorSection { background: #f5f5f5; padding: 20px; margin: 20px 0; border-radius: 5px; }
+.colorRow { display: flex; align-items: center; margin: 10px 0; }
+.colorRow label { width: 200px; text-align: right; margin-left: 10px; }
+.colorRow input[type="text"] { width: 100px; margin-left: 10px; }
+.colorRow input[type="color"] { width: 50px; height: 30px; border: none; cursor: pointer; }
+.previewFrame { width: 100%; height: 400px; border: 1px solid #ddd; background: #fff; }
+.cssEditor { width: 100%; height: 200px; font-family: monospace; }
+.saveBtn { background: #059ad0; color: #fff; padding: 10px 20px; border: none; cursor: pointer; }
+</style>
+</head>
+<body id="mainbody">
+
+<div id="header">
+<div class="wrap">
+<a id="logo" href="/"><img src="/public/images/nexusbox-logo.png" alt="NexusBox" width="200" height="86"></a>
+<div id="headerExtras">
+<span id="userWelcome">user@example.com</span>
+<a href="/public/admin/switch/">My Boxes</a>
+<a href="/public/admin/acct/">My Account</a>
+<a href="/public/help/">Support</a>
+<a href="/public/admin/logout/" onclick="return logout()">Log out</a>
+</div>
+</div>
+</div>
+
+<div id="subbar">
+<div class="wrap">
+<a href="/public/admin/" class="submenuitem"><b>MYBOX2026</b></a>
+<a href="/public/admin/snippet/" class="submenuitem">Publish</a>
+<a href="#" class="submenuitem Active">Look & feel</a>
+<a href="/public/admin/settings/" class="submenuitem">Options</a>
+<a href="/public/admin/users/" class="submenuitem">Users</a>
+<a href="/public/admin/posts/" class="submenuitem">Messages</a>
+</div>
+</div>
+
+<div id="main" class="wrap">
+<div id="content">
+
+<h1>Theme Editor</h1>
+
+<p>You can customize your NexusBox theme with this powerful editor. Click the swatches to open the colour picker. You can also add CSS overrides which allows you to further customize and extend your theme.</p>
+
+<div class="themeEditor">
+
+<!-- Load Theme -->
+<div class="editorSection">
+<label>Load a theme: </label>
+<select id="themeSelector" onchange="loadTheme(this.value)">
+<option value="default">Default</option>
+<option value="slate">Slate</option>
+<option value="dark">Dark</option>
+<option value="custom">My custom CSS</option>
+</select>
+</div>
+
+<!-- Live Preview -->
+<div class="editorSection">
+<h2>Live preview</h2>
+<iframe id="previewFrame" class="previewFrame" src="/public/chat/preview.html"></iframe>
+</div>
+
+<!-- Colors -->
+<div class="editorSection">
+<h2>Colours</h2>
+
+<div class="colorRow">
+<label>Background:</label>
+<input type="text" id="col_bg" value="#eaeaea" onchange="updateColor('bg', this.value)">
+<input type="color" id="color_bg" value="#eaeaea" onchange="updateColor('bg', this.value)">
+</div>
+
+<div class="colorRow">
+<label>Message background:</label>
+<input type="text" id="col_msg_bg" value="#ffffff" onchange="updateColor('msg_bg', this.value)">
+<input type="color" id="color_msg_bg" value="#ffffff" onchange="updateColor('msg_bg', this.value)">
+</div>
+
+<div class="colorRow">
+<label>Base text:</label>
+<input type="text" id="col_text" value="#333333" onchange="updateColor('text', this.value)">
+<input type="color" id="color_text" value="#333333" onchange="updateColor('text', this.value)">
+</div>
+
+<div class="colorRow">
+<label>Date/status text:</label>
+<input type="text" id="col_date" value="#aaaaaa" onchange="updateColor('date', this.value)">
+<input type="color" id="color_date" value="#aaaaaa" onchange="updateColor('date', this.value)">
+</div>
+
+<div class="colorRow">
+<label>Form background:</label>
+<input type="text" id="col_form_bg" value="#29b6f6" onchange="updateColor('form_bg', this.value)">
+<input type="color" id="color_form_bg" value="#29b6f6" onchange="updateColor('form_bg', this.value)">
+</div>
+
+<div class="colorRow">
+<label>Input background:</label>
+<input type="text" id="col_input_bg" value="#73e8ff" onchange="updateColor('input_bg', this.value)">
+<input type="color" id="color_input_bg" value="#73e8ff" onchange="updateColor('input_bg', this.value)">
+</div>
+
+<div class="colorRow">
+<label>Form button color:</label>
+<input type="text" id="col_btn_text" value="#ffffff" onchange="updateColor('btn_text', this.value)">
+<input type="color" id="color_btn_text" value="#ffffff" onchange="updateColor('btn_text', this.value)">
+</div>
+
+<div class="colorRow">
+<label>Button background:</label>
+<input type="text" id="col_btn_bg" value="#29b6f6" onchange="updateColor('btn_bg', this.value)">
+<input type="color" id="color_btn_bg" value="#29b6f6" onchange="updateColor('btn_bg', this.value)">
+</div>
+
+<div class="colorRow">
+<label>Link color:</label>
+<input type="text" id="col_link" value="#059ad0" onchange="updateColor('link', this.value)">
+<input type="color" id="color_link" value="#059ad0" onchange="updateColor('link', this.value)">
+</div>
+
+<div class="colorRow">
+<label>Link active color:</label>
+<input type="text" id="col_link_active" value="#0c6b8e" onchange="updateColor('link_active', this.value)">
+<input type="color" id="color_link_active" value="#0c6b8e" onchange="updateColor('link_active', this.value)">
+</div>
+</div>
+
+<!-- Font Settings -->
+<div class="editorSection">
+<h2>Font family</h2>
+<select id="fontFamily" onchange="updateFont()" style="width: 100%; padding: 8px;">
+<option value="Arial, sans-serif">Arial</option>
+<option value="'Helvetica Neue', Helvetica, Arial, sans-serif">Helvetica Neue</option>
+<option value="'Times New Roman', Times, serif">Times New Roman</option>
+<option value="'Courier New', Courier, monospace">Courier New</option>
+<option value="Georgia, serif">Georgia</option>
+<option value="Verdana, sans-serif">Verdana</option>
+</select>
+
+<div style="margin-top: 20px;">
+<div class="colorRow">
+<label>Font size:</label>
+<input type="text" id="fontSize" value="14px" onchange="updateFont()" style="width: 100px;">
+</div>
+<div class="colorRow">
+<label>Secondary font size:</label>
+<input type="text" id="fontSizeSec" value="75%" onchange="updateFont()" style="width: 100px;">
+</div>
+<div class="colorRow">
+<label>Icon size:</label>
+<input type="text" id="iconSize" value="14px" onchange="updateFont()" style="width: 100px;">
+</div>
+</div>
+</div>
+
+<!-- CSS Overrides -->
+<div class="editorSection">
+<h2>CSS overrides</h2>
+<p><strong>Note:</strong> Add custom CSS to override default styles.</p>
+<textarea id="cssOverrides" class="cssEditor" placeholder="/* Enter your custom CSS here */
+.msg {
+  border-radius: 5px;
+}"></textarea>
+</div>
+
+<!-- Save -->
+<div class="editorSection" style="text-align: center;">
+<label>Theme name: </label>
+<input type="text" id="themeName" value="My Custom Theme" style="padding: 8px; width: 300px;">
+<button class="saveBtn" onclick="saveTheme()">Save Theme</button>
+<button class="saveBtn" onclick="exportCSS()" style="background: #8bc34a; margin-left: 10px;">Export CSS</button>
+</div>
+
+</div>
+
+</div>
+</div>
+
+<div id="footer">
+<a href="/public/">About</a>
+<a href="/public/products">Plans & pricing</a>
+<a href="/public/terms">Terms & conditions</a>
+<a href="/public/privacy">Privacy policy</a>
+<a href="/public/notices">Notices</a>
+<a href="/public/contact">Contact us</a>
+<div class="verybottom">© 2004–2026 NexusBox Communications (Pty) Ltd, all rights reserved.</div>
+</div>
+
+<script>
+// Theme Editor JavaScript
+var currentTheme = {};
+
+// Initialize
+window.onload = function() {
+    loadTheme('default');
+    updatePreview();
+};
+
+// Load theme
+function loadTheme(theme) {
+    if (theme === 'default') {
+        currentTheme = {
+            bg: '#eaeaea',
+            msg_bg: '#ffffff',
+            text: '#333333',
+            date: '#aaaaaa',
+            form_bg: '#29b6f6',
+            input_bg: '#73e8ff',
+            btn_text: '#ffffff',
+            btn_bg: '#29b6f6',
+            link: '#059ad0',
+            link_active: '#0c6b8e'
+        };
+    } else if (theme === 'slate') {
+        currentTheme = {
+            bg: '#2c3e50',
+            msg_bg: '#34495e',
+            text: '#ecf0f1',
+            date: '#95a5a6',
+            form_bg: '#3498db',
+            input_bg: '#2980b9',
+            btn_text: '#ffffff',
+            btn_bg: '#3498db',
+            link: '#3498db',
+            link_active: '#2980b9'
+        };
+    } else if (theme === 'dark') {
+        currentTheme = {
+            bg: '#1a1a1a',
+            msg_bg: '#2d2d2d',
+            text: '#ffffff',
+            date: '#888888',
+            form_bg: '#4a4a4a',
+            input_bg: '#333333',
+            btn_text: '#ffffff',
+            btn_bg: '#4a4a4a',
+            link: '#3498db',
+            link_active: '#2980b9'
+        };
+    }
+    
+    // Update color inputs
+    for (var key in currentTheme) {
+        var input = document.getElementById('col_' + key);
+        var colorPicker = document.getElementById('color_' + key);
+        if (input && colorPicker) {
+            input.value = currentTheme[key];
+            colorPicker.value = currentTheme[key];
+        }
+    }
+    
+    updatePreview();
+}
+
+// Update color
+function updateColor(key, value) {
+    currentTheme[key] = value;
+    
+    // Sync text and color picker
+    var input = document.getElementById('col_' + key);
+    var colorPicker = document.getElementById('color_' + key);
+    if (input && input.value !== value) input.value = value;
+    if (colorPicker && colorPicker.value !== value) colorPicker.value = value;
+    
+    updatePreview();
+}
+
+// Update font
+function updateFont() {
+    updatePreview();
+}
+
+// Update preview
+function updatePreview() {
+    var iframe = document.getElementById('previewFrame');
+    var css = generateCSS();
+    
+    var previewHTML = '<!DOCTYPE html><html><head><style>' + css + '</style></head><body style="margin:0;padding:20px;">';
+    previewHTML += '<div style="background:' + currentTheme.bg + '; padding:20px; min-height:300px;">';
+    previewHTML += '<h3 style="color:' + currentTheme.text + '">Live Preview</h3>';
+    previewHTML += '<div style="background:' + currentTheme.msg_bg + '; color:' + currentTheme.text + '; padding:10px; margin:10px 0; border-radius:5px;">';
+    previewHTML += '<span style="color:' + currentTheme.date + '; font-size:12px;">Just now</span><br>';
+    previewHTML += '<strong>User</strong><br>';
+    previewHTML += 'This is a sample message';
+    previewHTML += '</div>';
+    previewHTML += '<div style="background:' + currentTheme.form_bg + '; padding:10px; margin-top:20px;">';
+    previewHTML += '<input type="text" placeholder="name" style="background:' + currentTheme.input_bg + '; color:' + currentTheme.text + '; padding:5px; margin:5px;">';
+    previewHTML += '<input type="text" placeholder="message" style="background:' + currentTheme.input_bg + '; color:' + currentTheme.text + '; padding:5px; margin:5px; width:70%;">';
+    previewHTML += '<button style="background:' + currentTheme.btn_bg + '; color:' + currentTheme.btn_text + '; padding:5px 15px; border:none; cursor:pointer;">Post</button>';
+    previewHTML += '</div></div></body></html>';
+    
+    iframe.srcdoc = previewHTML;
+}
+
+// Generate CSS
+function generateCSS() {
+    var css = '';
+    css += 'html, body { background: ' + currentTheme.bg + '; color: ' + currentTheme.text + '; }\n';
+    css += '.msg { background: ' + currentTheme.msg_bg + '; color: ' + currentTheme.text + '; }\n';
+    css += '.dtxt, .status { color: ' + currentTheme.date + '; }\n';
+    css += 'form#frmMain { background: ' + currentTheme.form_bg + '; }\n';
+    css += 'textarea, input { background: ' + currentTheme.input_bg + '; color: ' + currentTheme.text + '; }\n';
+    css += 'button { background: ' + currentTheme.btn_bg + '; color: ' + currentTheme.btn_text + '; }\n';
+    css += 'a, a:visited { color: ' + currentTheme.link + '; }\n';
+    css += 'a:active, a:hover { color: ' + currentTheme.link_active + '; }\n';
+    
+    // Add custom CSS
+    var customCSS = document.getElementById('cssOverrides').value;
+    if (customCSS) {
+        css += '\n/* Custom CSS */\n' + customCSS;
+    }
+    
+    return css;
+}
+
+// Save theme
+function saveTheme() {
+    var themeName = document.getElementById('themeName').value;
+    var css = generateCSS();
+    
+    // Save to localStorage
+    var themeData = {
+        name: themeName,
+        colors: currentTheme,
+        css: css,
+        fontFamily: document.getElementById('fontFamily').value,
+        fontSize: document.getElementById('fontSize').value,
+        fontSizeSec: document.getElementById('fontSizeSec').value,
+        iconSize: document.getElementById('iconSize').value
+    };
+    
+    localStorage.setItem('nexusbox_theme_' + themeName, JSON.stringify(themeData));
+    
+    // Add to selector
+    var selector = document.getElementById('themeSelector');
+    var option = document.createElement('option');
+    option.value = 'custom_' + themeName.replace(/\s+/g, '_').toLowerCase();
+    option.textContent = themeName + ' (saved)';
+    selector.appendChild(option);
+    
+    alert('Theme "' + themeName + '" saved successfully!');
+}
+
+// Export CSS
+function exportCSS() {
+    var css = generateCSS();
+    var blob = new Blob([css], { type: 'text/css' });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url;
+    a.download = 'nexusbox-theme.css';
+    a.click();
+    URL.revokeObjectURL(url);
+}
+
+// Logout function
+function logout() {
+    if (confirm('Log out of the control panel?')) {
+        window.location.href = '/public/admin/logout/';
+    }
+    return false;
+}
+</script>
+
+</body>
+</html>

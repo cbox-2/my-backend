@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<title>Control Panel · NexusBox</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<meta name="description" content="NexusBox live chat is an embeddable chat app for online communities, groups, and live-streaming events.">
+<link href="data:image/x-icon;base64,AAABAAEAEBACAAAAAACwAAAAFgAAACgAAAAQAAAAIAAAAAEAAQAAAAAAQAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA" rel="icon" type="image/x-icon">
+<link rel="stylesheet" href="style.css">
+</head>
+<body id="mainbody">
+
+	<script type="text/javascript" async="" src="code.js"></script><script async="" src="analytics.js"></script><script>
+	// Define stub
+	var rcvdformresponse = function () {};
+	</script>
+	
+	<div id="mask"></div>
+
+
+<!--[if lte IE 7]>
+	<div class="notice_er notice_top">
+		You are using an old version of Internet Explorer or you are in Compatibility View mode. 
+		This website will not work correctly. 
+		<br>
+		Please upgrade your browser or disable Compatibility View.
+	</div>
+<![endif]-->
+
+
+<div id="bodywrap">
+	<div id="header">
+		<div class="wrap">
+
+			<a id="logo" href="/">
+				<img src="gfx/logo400.png" alt="NexusBox" width="200" height="86" border="0">
+			</a>
+
+			<div id="headerExtras">
+	
+								
+								
+				<form id="qlogin" action="#" method="post">
+				
+				<input type="text" placeholder="Email / NexusBox name" tabindex="1" name="uname" spellcheck="false" value="" maxlength="50" class="txtbox" style="width: 160px">
+				<input type="password" placeholder="Password" tabindex="2" name="pword" maxlength="50" class="txtbox" style="width: 160px;">
+				<input type="submit" value="Log in" tabindex="3">
+
+				</form>
+							</div>
+		</div>
+	</div>
+
+		
+	<div id="topbar">
+		<div class="wrap">
+			<span class="Spacer">&nbsp;</span>
+			<a href="/" class="button">Home
+			</a><a href="/public/chat/" class="button">Chat
+			</a><a href="#" class="button" id="signupBtn">Sign up
+			</a><a href="#" class="button">Upgrade
+			</a><a href="#" class="button">Support
+			</a>
+		</div>
+	</div>
+	
+	<div id="wideimg" style="position: relative; width: 100%; left: 0">
+	</div>
+	
+	<div id="main" class="wrap ">
+<div id="content">
+
+<h1>Control Panel</h1>
+
+<div class="notice_ok" id="authNotice" style="display:none;"></div>
+
+<form name="logmain" method="post" action="#" id="mainLoginForm">
+<fieldset>
+	<legend id="formLegend">Log in</legend>
+	<label>Email / NexusBox name:</label>
+	<input type="text" name="uname" size="25" maxlength="50" class="txtbox">
+	<label>Password:</label>
+	<input type="password" name="pword" size="45" maxlength="50" class="txtbox" value="">
+	
+	<input type="submit" value="Log in" id="submitBtn">
+</fieldset>
+</form>
+
+<script>
+(function () {
+	var f = document.forms["logmain"];
+	if (f['uname'].value) {
+		f['pword'].focus();
+		return;
+	}
+	
+	f['uname'].focus();
+
+})();
+</script>
+
+<p>
+If you have forgotten your password, <a href="/public/forgot/">click here</a> to recover your account.
+</p>
+<p>
+If you don't yet have a NexusBox login, go ahead and <a href="#" onclick="document.getElementById('signupBtn').click();return false;">create an account</a>.
+</p>
+<p>
+If you are repeatedly returned to this page after logging in, ensure that you have <a href="#" onclick="alert('Enable cookies in your browser');return false;">cookies enabled</a> in your browser.
+</p>
+<p>
+The NexusBox Control Panel is where you go to get your NexusBox installation 
+code, where you configure its settings and maintain user accounts and 
+messages. 
+Everything you need to run your NexusBox effectively is easily accessible 
+from this Control Panel.
+</p>
+</div>
+
+
+
+<div style="clear: both"></div>
+</div><!-- /content -->
+
+</div><!-- /bodywrap -->
+
+<div id="siteErrorBar"><div class="wrap" id="siteErrorBarCont">Loading...</div></div>
+
+
+
+<div id="footer">
+
+	<a href="/">About
+	</a><a href="/public/chat/">Chat
+	</a><a href="#">Terms &amp; conditions
+	</a><a href="#">Privacy policy
+	</a><a href="#">Notices
+	</a><a href="#">Contact us
+	</a>
+	<div class="verybottom">
+		© 2024–2026 NexusBox Communications, all rights reserved. 
+			0 ms. 		
+	</div>
+
+</div>
+
+
+<script src="code.js"></script>
+<script>
+	// Modal / naked mode.
+	if (window.isPopup) {
+		document.body.className = "Popped";
+	}
+	
+	// Only for CP pages
+	if (typeof upgradeCheckboxes === 'function') upgradeCheckboxes();
+
+var dropCrumb = function () {
+	if (!localStorage) {
+		return;
+	}
+	var bc = getCrumbs();
+	bc.push(location.href);
+	bc.splice(0, bc.length - 5);
+	localStorage.setItem("site:bread", JSON.stringify(bc));
+};
+
+var getCrumbs = function () {
+	if (!localStorage) {
+		return [];
+	}
+	var bcStr = localStorage.getItem("site:bread");
+	var bc = [];
+	if (bcStr) {
+		bc = JSON.parse(bcStr);
+	}
+	
+	return bc;
+}
+
+dropCrumb();
+</script>
+
+<!-- NexusBox Auth System Hook -->
+<script>
+(function() {
+    var isReg = false;
+    var notice = document.getElementById('authNotice');
+    var form = document.forms["logmain"];
+    var legend = document.getElementById('formLegend');
+    var btn = document.getElementById('submitBtn');
+    var signupBtn = document.getElementById('signupBtn');
+    
+    function showNotice(msg, type) {
+        if(notice) {
+            notice.textContent = msg;
+            notice.className = 'notice_ok ' + (type || 'Okay');
+            notice.style.display = 'block';
+            setTimeout(function(){ notice.style.display = 'none'; }, 5000);
+        }
+    }
+    
+    if(signupBtn) {
+        signupBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            isReg = true;
+            legend.textContent = 'Register';
+            btn.value = 'Register';
+            form['uname'].focus();
+            showNotice('Registration mode active', 'Okay');
+        });
+    }
+    
+    if(form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            var u = form['uname'].value.trim();
+            var p = form['pword'].value;
+            if(!u || !p) { showNotice('Please fill all fields', 'Error'); return; }
+            
+            var endpoint = isReg ? '/api/register.php' : '/api/login.php';
+            btn.disabled = true;
+            btn.value = '...';
+            
+            fetch(endpoint, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({username: u, password: p, email: u + '@nexusbox.local'})
+            })
+            .then(function(r) { return r.json(); })
+            .then(function(d) {
+                btn.disabled = false;
+                btn.value = isReg ? 'Register' : 'Log in';
+                if(d.success) {
+                    showNotice(d.message, 'Okay');
+                    setTimeout(function(){ window.location.href = '/public/admin/home/'; }, 1500);
+                } else {
+                    showNotice(d.message || 'Error', 'Error');
+                    if(isReg) {
+                        isReg = false;
+                        legend.textContent = 'Log in';
+                        btn.value = 'Log in';
+                    }
+                }
+            })
+            .catch(function() {
+                btn.disabled = false;
+                btn.value = isReg ? 'Register' : 'Log in';
+                showNotice('Connection error', 'Error');
+            });
+        });
+    }
+    
+    var qForm = document.getElementById('qlogin');
+    if(qForm) {
+        qForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            var u = qForm['uname'].value.trim();
+            var p = qForm['pword'].value;
+            if(!u || !p) return;
+            
+            fetch('/api/login.php', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({username: u, password: p, email: u + '@nexusbox.local'})
+            })
+            .then(function(r) { return r.json(); })
+            .then(function(d) {
+                if(data.success) { window.location.href = '/public/admin/home/'; }
+                else alert(d.message || 'Login failed');
+            })
+            .catch(function() { alert('Connection error'); });
+        });
+    }
+})();
+</script>
+
+</body></html>

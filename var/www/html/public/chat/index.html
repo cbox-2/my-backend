@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>NexusBox Chat</title>
+<meta name="referrer" content="origin">
+<link rel="stylesheet" type="text/css" href="style.css">
+<!-- REMOVE async - Load scripts at bottom instead -->
+</head>
+<body class="WithUserPanel Connected">
+<form name="cbox" id="frmMain" action="./?boxid=1000001&boxtag=nexusbox&sec=submit" method="post">
+<div id="barDefault" class="bar">
+<button type="button" id="btnUser" class="btn Interactive" aria-label="Your Profile"><i class="ico User"></i><span></span></button>
+<a id="btnRefresh" href="./" class="btn Right Disabled"><i class="ico Circle"></i><span></span></a>
+<button type="button" id="btnModPop" class="Right" aria-label="Pending messages" style="display: none;"><i class="ico Approval"></i><span></span></button>
+<button type="button" class="btn Right Interactive" id="btnVolume" aria-label="Notification options"><i class="ico VolumeHigh"></i><span></span></button>
+<button type="button" class="Right Interactive" id="btnPop" aria-label="Pop out"><i class="ico Pop"></i><span></span></button>
+</div>
+<div id="barTitle" class="bar Hide">
+<button type="button" id="btnTitle" class="Full"></button>
+</div>
+<div id="barNotice" class="bar Hide">
+<button type="button" id="btnStatus" class="Full">
+<span id="notice">Please enable JavaScript</span>
+</button>
+</div>
+<fieldset>
+<!-- FIXED: Added Interactive class so button is visible -->
+<button type="button" id="btnProfile" class="btn OverInput AbsTR Interactive" tabindex="4" aria-label="Log in / register"><i class="ico SignIn"></i><span></span></button>
+<input type="hidden" name="key" value="">
+<input type="text" maxlength="25" name="nme" tabindex="2" placeholder="name" spellcheck="false" autocomplete="off" size="10">
+<input type="hidden" maxlength="100" name="pic" value="">
+<div id="caret"></div>
+<textarea name="pst" placeholder="message" cols="15" tabindex="1" rows="1"></textarea>
+<button id="btnSmilies" type="button" tabindex="5" class="OverInput AbsBL Interactive" aria-label="Smilies"><i class="ico Smile"></i><span></span></button>
+<button type="submit" id="btnSubmit" name="sub" tabindex="3" class="OverInput AbsBR Disabled" aria-label="Post"><i class="ico Go"></i><span></span></button>
+</fieldset>
+</form>
+<div id="channels"></div>
+<div id="users" style="bottom: 85px; overflow: auto; top: auto;"><div class="notUsr"><span id="usrAnonCount">0</span> anonymous users</div></div>
+<div id="messages" style="bottom: 85px; overflow: auto; top: 0px;">
+<div class="notMsg" id="olderMsgs" style="height: 20px;">&nbsp;</div>
+<div class="msg" data-id="1" data-uid="0" data-time="1777963219" data-lvl="1">
+<span class="pic Empty"></span>
+<img class="flag" src="flags/jo.png">
+<div class="dtxt" title="Welcome">Just now</div>
+<div class="nme">NexusBox</div>
+<div class="body">Welcome to NexusBox Chat!</div>
+</div>
+<div class="notMsg Head" id="msgHead"></div>
+</div>
+<div id="typingStatus" style="bottom: 85px;"></div>
+<div id="overlay" style="bottom: 85px; overflow: auto; top: auto;"></div>
+<div id="progress"></div>
+<div id="overlayStage" style="display: none">
+<form id="authForm">
+<fieldset>
+<div id="authMsg"></div>
+<label>Password:</label>
+<input type="password" maxlength="40" name="pword">
+<label>Confirm:</label>
+<input type="password" maxlength="40" name="pword2" style="display:none;">
+<div id="captcha"></div>
+<button type="submit" id="authSubmit">
+<span id="logRegText">Log in</span>
+<i class="ico SignIn"></i>
+</button>
+</fieldset>
+</form>
+<form id="pgProfile">
+<div id="imgContainer"></div>
+<fieldset>
+<label class="btn fileMagic Full" id="btnAvatar">
+<i class="ico Upload"></i>
+<span>Change picture</span>
+</label>
+<button type="button" class="Full" id="btnDelAvatar" style="display: none;">
+<i class="ico Cancel"></i>
+<span>Remove picture</span>
+</button>
+<button type="button" class="Full" id="btnLogout" style="display: none;">
+<i class="ico SignOut"></i>
+<span>Log out</span>
+</button>
+</fieldset>
+</form>
+</div>
+<script>
+document.getElementById("barNotice").className = "bar Hide";
+document.getElementById("barDefault").className = "bar";
+(function () {
+var config = {lpid:0,onu:0,uo:0,ae:0,av:1,id:"1000001",rq:"boxid=1000001&boxtag=nexusbox",rt:0,ml:200,dt:3,sn:1,sv:0,uon:4,ld:0,pm:1,sno:"",srv:1,tid:0,ft:0,bs:1,fluri:'',smuri:'',nq:1,sf:1,modtid:1,xp:0,img_usr:"1-1000001",img_key:"nexusbox_key_12345",flrqs:"",wsuri:"ws://34.61.70.211:8060/",wsuri_https:"wss://34.61.70.211:4430/",lpuri:"//34.61.70.211/lp",lpuri_https:"//34.61.70.211/lp",wsuri_alts:{"ws":[],"wss":[]},snuri:"/public/chat/snd/blip1",mc_uo_path:""};
+var lang = ["Log in to post","name","Please enter a name.","message","Please type a message.","URL","Invalid e-mail / URL.","user online","users online","Checking for messages...","No new messages","Note: if you change your name, you will not be able to use it again, unless you password protect it first.","Posting failed.","Note: cookies need to be enabled in your browser or you will not be able to use this name the next time you visit.","Error processing request. Please retry shortly.\nError: ","Private message",["sec", "secs", "min", "mins", "hour", "hours", "day", "days", "week", "weeks", "month", "months"],"Delete","Ban User","Are you sure you want to delete this message?","Please upgrade your browser to make use of this feature.","Enter ban duration (e.g. 6 hours; 5 days; forever)","Deleted","Posting...","%d %s ago","Please wait longer between posts","Awaiting moderation","Log in","Register","Log out","Your Profile","Log in / register","Loading...","Notification options","Users online","Change picture","Remove picture","You must log in, but cannot register this name. Please contact the administrator.","Pop out","Pending messages","Smilies","On new messages","On @tagged messages","Post","No more messages"];
+if (window['CBXINIT']) { window['CBXINIT'](config, lang); }
+else { window['CBXINIT'] = function (init) { init(config, lang); } }
+})();
+</script>
+<!-- Scripts loaded at bottom in correct order -->
+<script src="code.js"></script>
+<script src="auth.js"></script>
+</body>
+</html>
