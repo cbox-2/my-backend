@@ -1,0 +1,84 @@
+
+
+<html><head><title>Cbox Posts</title><meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="/style.css?2050221">
+<script type="text/javascript">
+function s() {
+  return confirm("Are you sure?");
+}
+sel = new Array();
+function t(id) {
+  if (!document.getElementById("r"+id)) return false;
+  if (sel[id] == null) {
+    sel[id] = document.getElementById("r"+id).style.backgroundColor;
+    document.getElementById("r"+id).style.backgroundColor="#e9eff3";
+    document.getElementById("c"+id).checked = true;
+  }
+  else {
+    document.getElementById("r"+id).style.backgroundColor=sel[id];
+    document.getElementById("c"+id).checked = false;
+    sel[id] = null;
+  }
+}
+</script>
+</head>
+<body class="embList" style="overflow:auto;" onload="">
+<form name="users" action="/admin_l_posts.php?tid=0" method="post">
+<input type="hidden" name="act" value="0">
+<input type="hidden" name="pg" value="1">
+<input type="hidden" name="thread" value="0">
+<a name="top"></a>
+<div align="right">Page:  [1] </div>
+<table border="0" cellpadding="2" cellspacing="1" width="100%" style="table-layout:fixed;word-wrap:break-word;overflow:hidden;">
+<tr><td width="20">&nbsp;</td>
+<td><b><a href="/admin_l_posts.php?tid=0&srch=&srchin=&pg=1&ordby=0&orddir=0">Name</a> / <a href="/admin_l_posts.php?tid=0&srch=&srchin=&pg=1&ordby=1&orddir=0">Email</a> / <a href="/admin_l_posts.php?tid=0&srch=&srchin=&pg=1&ordby=2&orddir=0">Message</a></b></td>
+<td width="100"><b><a href="/admin_l_posts.php?tid=0&srch=&srchin=&pg=1&ordby=3&orddir=1">Date</a><img src="gfx/arrow_colup.gif" width="12" height="12"> / <a href="/admin_l_posts.php?tid=0&srch=&srchin=&pg=1&ordby=4&orddir=0">IP</a></b></td>
+</tr>
+
+<tr bgcolor="#ffffff" id="r1" onClick="t('1')">
+<td><input type="checkbox" name="x1" id="c1"></td>
+<td><i>مهند</i> <br>سلام</td>
+<td align="right"><small>12 May 15 02:16<br>
+62.201.226.102</small></td>
+</tr>
+
+<tr id="r2" onClick="t('2')">
+<td><input type="checkbox" name="x2" id="c2"></td>
+<td><i>مهند</i> <br>گـّيَفْ الـّحـّال ٱن شـْاءِ اللـٌہ بَخـّيَرٌ</td>
+<td align="right"><small>12 May 15 02:16<br>
+62.201.226.102</small></td>
+</tr>
+
+<tr bgcolor="#ffffff" id="r3" onClick="t('3')">
+<td><input type="checkbox" name="x3" id="c3"></td>
+<td><i>مهند</i> <br>اففففف</td>
+<td align="right"><small>12 May 15 02:22<br>
+62.201.226.102</small></td>
+</tr>
+
+<tr id="r4" onClick="t('4')">
+<td><input type="checkbox" name="x4" id="c4"></td>
+<td><i>مهند</i> <br>ل6</td>
+<td align="right"><small>12 May 15 02:22<br>
+62.201.226.102</small></td>
+</tr>
+
+<tr bgcolor="#ffffff" id="r5" onClick="t('5')">
+<td><input type="checkbox" name="x5" id="c5"></td>
+<td><i>مهند</i> <br>:heart:</td>
+<td align="right"><small>12 May 15 02:22<br>
+62.201.226.102</small></td>
+</tr>
+
+</table>
+<div align="right">Page:  [1] </div>
+<script type="text/javascript">
+tosel = new Array("");
+for (i in tosel) {
+  if (tosel[i] > 0) t(tosel[i]);
+}
+</script>
+</form>
+</body>
+</html>
+

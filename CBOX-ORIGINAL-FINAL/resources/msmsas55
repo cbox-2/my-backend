@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>msmsas55 &middot; Cbox</title>
+<meta content='width=device-width, user-scalable=no, initial-scale=1' name='viewport'>
+<meta name="mobile-web-app-capable" content="yes">
+<!--<link href="data:image/x-icon;base64,AAABAAEAEBACAAAAAACwAAAAFgAAACgAAAAQAAAAIAAAAAEAAQAAAAAAQAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA" rel="icon" type="image/x-icon">-->
+<!--<link rel="icon"  type="image/png" href="/smile192.png">-->
+<link rel="manifest" href="?manifest=1">
+<style type="text/css">
+html, body {
+	margin: 0;
+	padding: 0;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	min-width: 150px;
+	overflow: hidden;
+	background: #fff;
+	font-family: "Open Sans", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+}
+
+body {
+	overflow: auto;
+}
+
+.btn {
+	position: relative;
+	float: right;
+	height: 40px;
+	width: 40px;
+	text-align: center;
+	cursor: pointer;
+	
+	color: #fff;
+	fill: #fff;
+}
+
+.btn:active {
+	background: #059ad0;
+}
+
+.btn.Hidden {
+	display: none;
+}
+.btn.Busy, .btn.Busy:active {
+	animation: ring 0.2s ease-in-out infinite alternate;
+}
+
+@keyframes ring {
+	from {
+		transform: rotateZ(15deg);
+	}
+	to {
+		transform: rotateZ(-15deg);
+	}
+}
+
+.svgico {
+	transform: scale(0.6);
+	display: none;
+}
+
+#pushBtn.NotAvail {
+	color: #888;
+	fill: #888;
+}
+
+#pushBtn.Subscribed .bellSlash {
+	display: inline-block;
+}
+
+#pushBtn.CanSubscribe .bell {
+	display: inline-block;
+}
+
+#pushBtn.NotAvail .bell {
+	display: inline-block;
+}
+
+
+
+#header {
+	position: relative;
+	z-index: 3;
+	background: #323232;
+	color: #ddd;
+	font: normal 150% Century Gothic, Helvetica, Arial, sans-serif;
+	color: #fff;
+	height: 40px;
+	line-height: 40px;
+}
+
+#notice {
+    position: relative;
+    z-index: 2;
+	background: #A6D83F;
+    text-align: right;
+	padding: 0.5em;
+	top: -60px;
+	font-size: 0;
+	color: #fff;
+	transition: all 300ms ease-in;
+}
+
+#notice.Show {
+	top: 0;
+	font-size: 120%;
+}
+
+.wrap {
+	position: relative;
+	height: 100%;
+}
+
+h1 {
+    margin: 0 1em;
+    font-weight: normal;
+    font-size: inherit;
+	float: left;
+	max-width: 50%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+#main {
+	position: absolute;
+	top: 40px;
+	bottom: 0;
+	left: 0;
+	right: 0;
+/* 	max-height: 800px;	square */
+}
+
+#main.Fullscreen {
+	top: 0;
+}
+
+#main.Fullscreen .wrap {
+	width: 100%;
+	left: 0;
+	margin: 0;
+}
+
+#fscont {
+	
+}
+
+#footer {
+	
+}
+
+#credit {
+	font-size: 13px;
+	float: right;
+	color: #ababab;
+	padding-right: 1em;
+}
+
+#credit a {
+	text-decoration: none;
+	color: inherit;
+}
+
+@media (max-height: 300px) {
+
+	#header {
+		display: none;
+	}
+	#main {
+		top: 0;
+	}
+
+}
+
+@media (min-width: 800px) {
+	.wrap {
+		width: 800px;
+		left: 50%;
+		margin-left: -400px;
+	}
+}
+</style>
+<script>
+
+window['chanID'] = "msmsas55";
+window['isEnh'] = false;
+window['sslMode'] = false;
+
+var wl = window.location;
+if (window['sslMode'] && wl.protocol !== "https:") {
+	wl.href = "https://"+wl.hostname+wl.pathname;
+}
+	
+</script>
+</head>
+<body>
+
+<div id="header">
+	<div class="wrap">
+		<h1>msmsas55</h1>
+		
+		<div class="btn Hidden" id="pushBtn" title="Push notifications enable/disable">
+			<svg class="svgico bell" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M912 1696q0-16-16-16-59 0-101.5-42.5t-42.5-101.5q0-16-16-16t-16 16q0 73 51.5 124.5t124.5 51.5q16 0 16-16zm-666-288h1300q-266-300-266-832 0-51-24-105t-69-103-121.5-80.5-169.5-31.5-169.5 31.5-121.5 80.5-69 103-24 105q0 532-266 832zm1482 0q0 52-38 90t-90 38h-448q0 106-75 181t-181 75-181-75-75-181h-448q-52 0-90-38t-38-90q50-42 91-88t85-119.5 74.5-158.5 50-206 19.5-260q0-152 117-282.5t307-158.5q-8-19-8-39 0-40 28-68t68-28 68 28 28 68q0 20-8 39 190 28 307 158.5t117 282.5q0 139 19.5 260t50 206 74.5 158.5 85 119.5 91 88z"/></svg>
+			<svg class="svgico bellSlash" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M912 1696q0-16-16-16-59 0-101.5-42.5t-42.5-101.5q0-16-16-16t-16 16q0 73 51.5 124.5t124.5 51.5q16 0 16-16zm-537-475l877-760q-42-88-132.5-146.5t-223.5-58.5q-93 0-169.5 31.5t-121.5 80.5-69 103-24 105q0 384-137 645zm1353 187q0 52-38 90t-90 38h-448q0 106-75 181t-181 75-180.5-74.5-75.5-180.5l149-129h757q-166-187-227-459l111-97q61 356 298 556zm86-1392l84 96q8 10 7.5 23.5t-10.5 22.5l-1872 1622q-10 8-23.5 7t-21.5-11l-84-96q-8-10-7.5-23.5t10.5-21.5l186-161q-19-32-19-66 50-42 91-88t85-119.5 74.5-158.5 50-206 19.5-260q0-152 117-282.5t307-158.5q-8-19-8-39 0-40 28-68t68-28 68 28 28 68q0 20-8 39 124 18 219 82.5t148 157.5l418-363q10-8 23.5-7t21.5 11z"/></svg>
+		</div>
+
+		<!--<div class="btn" id="btnFS"></div>-->
+		<!--<div class="btn Hidden" id="btnBreakout" title="Open in a new window"></div>-->
+		
+				<div id="credit"><a href="//www.cbox.ws/" target="_new">Cbox</a></div>
+			</div>
+</div>
+<div id="notice">
+	<div class="wrap" id="noticeBody">
+
+	</div>
+</div>
+
+<div id="main">
+	<div class="wrap">
+		<div id="fscont">
+		<div style="font-size: 0px; position: absolute; left: 0; right: 0; top: 0px; bottom: 108px; overflow: auto; overflow-y: auto; -webkit-overflow-scrolling:touch;"><iframe allowtransparency="yes" frameborder="0" width="100%" height="100%" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0;" src="//www4.cbox.ws/box/?boxid=4271419&boxtag=do3gdi&sec=main" marginheight="0" marginwidth="0" scrolling="auto" name="cboxmain"></iframe></div>		<div style="font-size: 0px; position: absolute; left: 0; right: 0; height: 108px; overflow: hidden; bottom: 0;"><iframe allowtransparency="yes" allow="autoplay" frameborder="0" width="100%" height="100%" src="//www4.cbox.ws/box/?boxid=4271419&boxtag=do3gdi&sec=form" marginheight="0" marginwidth="0" scrolling="no" name="cboxform"></iframe></div>		</div>
+	</div>
+</div>
+
+<div id="footer">
+
+</div>
+
+<script>
+var flashTitle=function(){},cbxIsFocused=!1,updateFavicon=function(){var a=document.createElement("canvas"),c=document.createElement("link");if(!a.getContext)return function(){};var b=a.getContext("2d");a.height=a.width=16;return function(d){b.font='bold 11px "Helvetica", "Tahoma", sans-serif';b.fillStyle="#dd2211";b.clearRect(0,0,a.width,a.height);isNaN(d)||b.fillText(50>1*d?1*d:"50+",0,12);c.rel="icon";c.type="image/png";c.href=a.toDataURL("image/png");c.parentNode!==document.head&&document.head.appendChild(c)}}(),
+unread=0,oTitle=document.title,enableNotify=function(){unread=0;flashTitle=oFlashTitle=function(){if(cbxIsFocused)return!1;updateFavicon(++unread);document.title="[New] "+oTitle;flashTitle=function(){};window.setTimeout(function(){document.title=oTitle;flashTitle=oFlashTitle},5E3)}},disableNotify=function(){unread=0;updateFavicon();document.title=oTitle;flashTitle=function(){}};window.onblur=enableNotify;window.onfocus=disableNotify;
+document.addEventListener&&document.addEventListener("visibilitychange",function(){!1===document.hidden?disableNotify():enableNotify()});updateFavicon();var onCboxMessage=function(a){if(null!==a.origin.match(/\.cbox\.ws$/)){var c={};try{c=JSON.parse(a.data)}catch(b){console.error(b),console.log(a)}switch(c.event){case "message":flashTitle();break;case "focus":cbxIsFocused=!0;unread=0;updateFavicon();break;case "blur":cbxIsFocused=!1}}};
+window.addEventListener?window.addEventListener("message",onCboxMessage,!1):window.attachEvent("onmessage",onCboxMessage);var showNotice=function(){var a=null;return function(c){a&&(window.clearTimeout(a),a=null);var b=document.getElementById("notice");document.getElementById("noticeBody").textContent=c;b.className="Show";a=window.setTimeout(function(){b.className=""},5E3)}}();
+(function(){var a=document.getElementById("pushBtn");if(window.chanID&&"https:"===location.protocol&&"function"===typeof ServiceWorkerRegistration&&"showNotification"in ServiceWorkerRegistration.prototype)if(window.isEnh){var c=window.chanID,b=document.createElement("script"),d=document.getElementsByTagName("script")[0];b.async=1;b.src="/push-setup.js";d.parentNode.insertBefore(b,d);var k=function(f){console.log("Got message from SW",f)},g=null,e=!1,h=function(f){a.className="";switch(f){case "subscribed":e&&
+(showNotice("You are subscribed to receive push notifications for this channel."),e=!1);a.className="btn Subscribed";a.onclick=function(){e=!0;pushMgr.unsubscribe()};break;case "ready":e&&(showNotice("You will no longer receive push notifications for this channel."),e=!1);a.className="btn CanSubscribe";a.onclick=function(){e=!0;pushMgr.subscribe()};break;case "busy":a.className="ready"==g?"btn CanSubscribe Busy":"btn Subscribe Busy";a.onclick=function(){};break;default:a.className="btn Hidden",a.onclick=
+null}g=f};h("unavailable");window.pushMgrReady=function(){pushMgr.onmessage=k;pushMgr.init(c,"/service-worker.js?11","/register.php",h)}}else a.className="btn NotAvail",a.onclick=function(){showNotice("Push notifications require Cbox Premium.")}})();
+</script>
+
+
+
+</body>
+</html>

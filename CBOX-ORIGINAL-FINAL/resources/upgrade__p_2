@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Upgrade &middot; Cbox</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content='width=device-width, initial-scale=1' name='viewport'>
+<meta name="description" content="Cbox live chat is an embeddable chat app for online communities, groups, and live-streaming events.">
+<link href="data:image/x-icon;base64,AAABAAEAEBACAAAAAACwAAAAFgAAACgAAAAQAAAAIAAAAAEAAQAAAAAAQAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA" rel="icon" type="image/x-icon">
+<link rel="stylesheet" href="/style.css?2050221">
+</head>
+<body id="mainbody">
+
+	<script>
+	// Define stub
+	var rcvdformresponse = function () {};
+	</script>
+	
+	<div id="mask"></div>
+
+
+
+<div id="popovr_box">
+	<div class="wrap">
+		<div style="padding: 20px; background-color: #fff">
+			<!--<div style="float:right; font-size: 150%;"><b><a href="javascript:popovr_close()">X</a></b></div>-->
+			<div id="popovr_title">
+				<!-- title -->
+			</div>
+			
+			<div id="popovr_text" style="text-align: left; clear:both">
+				<!-- content -->
+			</div>
+
+			<div id="popovr_t_login" style="display: none; text-align: left; clear:both">
+				<p>
+					Your session has expired. Please log back in to continue.
+				</p>
+				<iframe src="javascript:false" name="t_qlpop" onload="rcvdformresponse(this.name)" width="1" height="1" class="frmiframe"></iframe>
+				<form name="qlpop" action="/admin_d_login?f=qlpop" target="t_qlpop" method="post" onsubmit="return subsaving(this.name, 'sub', 'logging in...');">
+				<fieldset>
+					<label>Username:</label>
+					<input type="text" name="uname" value="msmsas55@gmail.com" maxlength="50" class="txtbox">
+					<label>Password:</label>
+					<input type="password" name="pword" value="" maxlength="50" class="txtbox">
+					<input type="submit" name="sub" value=" Log in ">
+					
+					<div id="m_qlpop" class="frmmsg1"></div>
+					<div id="em_qlpop" class="frmmsg2"></div>
+				</fieldset>
+				</form>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<!--[if lte IE 7]>
+	<div class="notice_er notice_top">
+		You are using an old version of Internet Explorer or you are in Compatibility View mode. 
+		This website will not work correctly. 
+		<br>
+		Please upgrade your browser or disable Compatibility View.
+	</div>
+<![endif]-->
+
+
+<div id="bodywrap">
+	<div id="header">
+		<div class="wrap">
+
+			<a id="logo" href="https://www.cbox.ws">
+				<img src="//www.cbox.ws/gfx/logo400.png" width="200" height="86" alt="Cbox" border="0">
+			</a>
+
+			<div id="headerExtras">
+	
+								
+								<span id="userWelcome">msmsas55@gmail.com</span>
+				<a href="/admin?switch">My Cboxes</a>
+				<a href="/admin?acct">My Account</a>
+												<a href="/help">Support
+				</a><a href="/admin?preproc=logout" onclick="return logout()">Log out
+				</a>
+							</div>
+		</div>
+	</div>
+
+		<div id="subbar">
+		<div class="wrap">
+			<a href="/admin?home" class="submenuitem"><b>msmsas55</b>			</a><a href="/admin?snippet" class="submenuitem">Publish
+			</a><a href="#" id="hovmenu1" class="submenuitem" onmousedown="return hovmenu(this, 1)">Look &amp; feel
+			</a><a href="#" id="hovmenu2" class="submenuitem" onmousedown="return hovmenu(this, 2)">Options
+			</a><a href="#" id="hovmenu3" class="submenuitem" onmousedown="return hovmenu(this, 3)">Users
+			</a><a href="#" id="hovmenu4" class="submenuitem" onmousedown="return hovmenu(this, 4)">Messages
+			</a>
+		</div>
+	</div>
+	<div id="bar3">
+		<div id="hovmenu" class="wrap"><a></a></div>
+	</div>
+	
+	<div id="wideimg" style="position: relative; width: 100%; left: 0">
+	</div>
+	
+	<div id="main" class="wrap ">
+
+<div id="content">
+<h1>Upgrade your Cbox</h1>
+
+
+<script type="text/javascript">
+function onnext() {
+  un = document.forms["upgrade"]["uname"];
+  if (un.value == "") {
+    alert("Please enter your Cbox account name.");
+    un.focus();
+    return false;
+  }
+  return true;
+}
+
+// Change the user-selected state of recurring
+var selrecur = true;	// true by default
+function recurchk(x) {
+  if (x) selrecur = true;
+  else selrecur = false;
+}
+
+function paybychk(x) {
+
+}
+
+function cstate() {
+  f = document.forms["upgrade"];
+
+  if (f["product"] && (f["product"].value == 1 || (f["product"][0] && f["product"][0].checked))) {
+  	if (!f["period"][0].checked && !f["period"][1].checked && !f["period"][2].checked) {
+  		// On first load, neither of these will be checked because they are grouped with product=1
+  		f["period"][0].checked = true;
+  	}
+  	document.getElementById("p1_terms").style.display = "block";
+  	document.getElementById("p2_terms").style.display = "none";
+	document.getElementById("p3_terms").style.display = "none";
+  }
+  else {
+	  
+  	if (!f["period"][3].checked && !f["period"][4].checked && !f["period"][5].checked && !f["period"][6].checked) {
+  		f["period"][3].checked = true;
+  	}
+  	document.getElementById("p1_terms").style.display = "none";
+  	document.getElementById("p2_terms").style.display = "block";
+	document.getElementById("p3_terms").style.display = "none";
+	
+	if (f["product"] && f["product"].value == 3) {
+		document.getElementById("p1_terms").style.display = "none";
+		document.getElementById("p2_terms").style.display = "none";
+		document.getElementById("p3_terms").style.display = "block";
+		//document.getElementById("period3_1_1").checked = true;
+	}
+	
+  }
+  
+  
+	var $boxAutorenew = document.getElementById("boxAutorenew");
+  
+  // Determine whether recurring billing is available from period + method. IE8fix checkbox no value.
+  if (f["payby"].value != "pp" || (f["period"].value > 6 && f["product"].value != 3)) {
+    f["recur"].checked = false;
+    f["recur"].disabled = true;
+	$boxAutorenew.style.display = "none";
+  }
+  else if (f["payby"].value == "pp") {
+    f["recur"].disabled = false;
+    f["recur"].checked = selrecur;
+	$boxAutorenew.style.display = "";
+  }
+
+}
+</script>
+
+<p>
+Upgrading your Cbox is easy. Make your selections below and proceed to the next step to check out. Your purchase comes with a 30-day money-back  
+policy, so there is no risk. For more information on the products we offer, <a href="/features#compare">see our feature comparison</a>.
+</p>
+
+<form name="upgrade" action="/upgrade?mode=upgrade" method="post" onsubmit="return onnext()">
+
+<input type="hidden" name="uname" value="msmsas55">
+<div class="notice_ok">
+You are about to upgrade the Cbox <b>msmsas55</b>. 
+To upgrade a different Cbox, <a href="/upgrade?mode=upgrade&editname=1">click here</a>. 
+</div>
+<input type="hidden" name="product" value="2">
+
+<fieldset id="p1_terms" class="Short">
+<legend>Upgrade term</legend>
+
+<label for="period_12"> <span class="highlightGood">SAVE 15%!</span> 12 months @ $1.67 &mdash; <b>$20.00</b> <span style="color: #666;" title="">(27,000.000 IQD)*</span></label>
+<input type="radio" name="period" value="12" id="period_12" onClick="cstate()" checked>
+<label for="period_6"> 6 months @ $1.83 &mdash; <b>$11.00</b> <span style="color: #666;" title="">(14,800.000 IQD)*</span></label>
+<input type="radio" name="period" value="6" id="period_6" onClick="cstate()">
+<label for="period_3"> 3 months @ $2.00 &mdash; <b>$6.00</b> <span style="color: #666;" title="">(8,090.000 IQD)*</span></label>
+<input type="radio" name="period" value="3" id="period_3" onClick="cstate()">
+
+<label><span style="color: #666; font-size: 80%">* Indicative rate for Iraqi Dinar; confirm on checkout. Billing is in U.S. Dollars.</span></label></fieldset>
+
+<fieldset id="p2_terms" class="Short">
+<legend>Upgrade term</legend>
+<label for="period2_4"><span class="highlightGood">BEST VALUE</span> 12 months @ $7.50 &mdash; <b>$90.00</b> <span style="color: #666;" title="">(121,000.000 IQD)*</span></label> 
+<input type="radio" name="period" value="12" id="period2_4" onClick="cstate()" checked>
+<label for="period2_3"> 6 months @ $8.16 &mdash; <b>$49.00</b> <span style="color: #666;" title="">(66,100.000 IQD)*</span></label> 
+<input type="radio" name="period" value="6" id="period2_3" onClick="cstate()">
+<label for="period2_2"> 3 months @ $8.33 &mdash; <b>$25.00</b> <span style="color: #666;" title="">(33,700.000 IQD)*</span></label>
+<input type="radio" name="period" value="3" id="period2_2" onClick="cstate()">
+<label for="period2_1"> 1 month &mdash; <b>$9.00</b> <span style="color: #666;" title="">(12,100.000 IQD)*</span></label>
+<input type="radio" name="period" value="1" id="period2_1" onClick="cstate()">
+<label><span style="color: #666; font-size: 80%">* Indicative rate for Iraqi Dinar; confirm on checkout. Billing is in U.S. Dollars.</span></label></fieldset>
+
+
+<fieldset id="p3_terms" class="Short">
+<legend>Client limit</legend>
+<p>
+Choose a concurrent client (CCU) provisioning limit that meets your requirements. 
+</p>
+<label for="period3_10k"> 10k CCU &mdash; <b>$15.00</b> <span style="color: #666;" title="">(20,200.000 IQD)*</span></label>
+<input type="radio" name="ccu" value="10k" id="period3_10k" checked>
+<label for="period3_15k"> 15k CCU &mdash; <b>$25.00</b> <span style="color: #666;" title="">(33,700.000 IQD)*</span></label>
+<input type="radio" name="ccu" value="15k" id="period3_15k" >
+<label for="period3_30k"> 30k CCU &mdash; <b>$45.00</b> <span style="color: #666;" title="">(60,700.000 IQD)*</span></label>
+<input type="radio" name="ccu" value="30k" id="period3_30k" >
+<label for="period3_75k"> 75k CCU &mdash; <b>$109.00</b> <span style="color: #666;" title="">(147,000.000 IQD)*</span></label>
+<input type="radio" name="ccu" value="75k" id="period3_75k" >
+<label for="period3_150k"> 150k CCU &mdash; <b>$199.00</b> <span style="color: #666;" title="">(268,000.000 IQD)*</span></label>
+<input type="radio" name="ccu" value="150k" id="period3_150k" >
+<label for="period3_400k"> 400k CCU &mdash; <b>$399.00</b> <span style="color: #666;" title="">(538,000.000 IQD)*</span></label>
+<input type="radio" name="ccu" value="400k" id="period3_400k" >
+
+<label><span style="color: #666; font-size: 80%">* Indicative rate for Iraqi Dinar; confirm on checkout. Billing is in U.S. Dollars.</span></label></fieldset>
+
+
+	
+<fieldset class="Short">
+<legend>Pay by</legend>
+<label for="payby_pp"> PayPal or credit card online &mdash; PayPal</label>
+<input type="radio" name="payby" value="pp" id="payby_pp" onClick="paybychk(0);cstate()" checked>
+<label for="payby_bt"> Bitcoin</label>
+<input type="radio" name="payby" value="bt" id="payby_bt" onClick="paybychk(3);cstate()">
+
+</fieldset>
+
+<fieldset id="boxAutorenew" class="Short">
+<label for="recur" title="Choose whether or not to enable automatic billing. You can cancel subscriptions at any time.">Automatically renew on expiry</label>
+<input type="checkbox" class="NoReplace" name="recur" value="1" id="recur" onclick="recurchk(this.checked)">
+</fieldset>
+
+<fieldset>
+  <input type="submit" name="sub" value=" Next &gt;&gt; " id="button_next">
+</fieldset>
+
+</form>
+
+
+<script>
+cstate();
+</script>
+
+<p>
+If you would like to know more about our plans before upgrading, don't hesitate to <a href="/contact?ref=premium">contact us</a>.
+</p>
+
+
+<div style="text-align: center">
+<img src="gfx/logo_ppslv2.gif" width="88" height="33" border="0" alt="PayPal - eBay's service to make fast, easy and secure payments for your eBay purchases." title="PayPal - eBay's service to make fast, easy and secure payments for your eBay purchases.">
+<br>
+<img src="gfx/logo_cards.gif" border="0" alt="Cards accepted" width="295" height="23">
+</div>
+
+</div>
+
+
+<div style="clear: both"></div>
+</div><!-- /content -->
+
+</div><!-- /bodywrap -->
+
+<div id="siteErrorBar"><div class="wrap" id="siteErrorBarCont">Loading...</div></div>
+
+
+
+<div id="footer">
+
+	<a href="/">About
+	</a><a href="/products">Plans &amp; pricing
+	</a><a href="/terms">Terms &amp; conditions
+	</a><a href="/privacy">Privacy policy
+	</a><a href="/notices">Notices
+	</a><a href="/contact">Contact us
+	</a>
+	<div class="verybottom">
+		&copy; 2004&ndash;2026 Cbox Communications (Pty) Ltd, all rights reserved. 
+			1 ms. 
+			83ce		</a>
+	</div>
+
+</div>
+
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-242554-2', {
+	'cookieDomain': 'www.cbox.ws'
+});
+ga('send', 'pageview');
+
+</script>
+
+
+<script src="/code.js?20171024"></script>
+<script>
+	// Modal / naked mode.
+	if (window.isPopup) {
+		document.body.className = "Popped";
+	}
+	
+	// Only for CP pages
+	upgradeCheckboxes();
+
+var dropCrumb = function () {
+	if (!localStorage) {
+		return;
+	}
+	var bc = getCrumbs();
+	bc.push(location.href);
+	bc.splice(0, bc.length - 5);
+	localStorage.setItem("site:bread", JSON.stringify(bc));
+};
+
+var getCrumbs = function () {
+	if (!localStorage) {
+		return [];
+	}
+	var bcStr = localStorage.getItem("site:bread");
+	var bc = [];
+	if (bcStr) {
+		bc = JSON.parse(bcStr);
+	}
+	
+	return bc;
+}
+
+dropCrumb();
+</script>
+
+
+</body>
+</html>
+

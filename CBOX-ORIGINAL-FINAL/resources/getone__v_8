@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Sign Up &middot; Cbox</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content='width=device-width, initial-scale=1' name='viewport'>
+<meta name="description" content="Cbox live chat is an embeddable chat app for online communities, groups, and live-streaming events.">
+<link href="data:image/x-icon;base64,AAABAAEAEBACAAAAAACwAAAAFgAAACgAAAAQAAAAIAAAAAEAAQAAAAAAQAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA" rel="icon" type="image/x-icon">
+<link rel="stylesheet" href="/style.css?2050221">
+</head>
+<body id="mainbody">
+
+	<script>
+	// Define stub
+	var rcvdformresponse = function () {};
+	</script>
+	
+	<div id="mask"></div>
+
+
+
+<div id="popovr_box">
+	<div class="wrap">
+		<div style="padding: 20px; background-color: #fff">
+			<!--<div style="float:right; font-size: 150%;"><b><a href="javascript:popovr_close()">X</a></b></div>-->
+			<div id="popovr_title">
+				<!-- title -->
+			</div>
+			
+			<div id="popovr_text" style="text-align: left; clear:both">
+				<!-- content -->
+			</div>
+
+			<div id="popovr_t_login" style="display: none; text-align: left; clear:both">
+				<p>
+					Your session has expired. Please log back in to continue.
+				</p>
+				<iframe src="javascript:false" name="t_qlpop" onload="rcvdformresponse(this.name)" width="1" height="1" class="frmiframe"></iframe>
+				<form name="qlpop" action="/admin_d_login?f=qlpop" target="t_qlpop" method="post" onsubmit="return subsaving(this.name, 'sub', 'logging in...');">
+				<fieldset>
+					<label>Username:</label>
+					<input type="text" name="uname" value="msmsas55@gmail.com" maxlength="50" class="txtbox">
+					<label>Password:</label>
+					<input type="password" name="pword" value="" maxlength="50" class="txtbox">
+					<input type="submit" name="sub" value=" Log in ">
+					
+					<div id="m_qlpop" class="frmmsg1"></div>
+					<div id="em_qlpop" class="frmmsg2"></div>
+				</fieldset>
+				</form>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<!--[if lte IE 7]>
+	<div class="notice_er notice_top">
+		You are using an old version of Internet Explorer or you are in Compatibility View mode. 
+		This website will not work correctly. 
+		<br>
+		Please upgrade your browser or disable Compatibility View.
+	</div>
+<![endif]-->
+
+
+<div id="bodywrap">
+	<div id="header">
+		<div class="wrap">
+
+			<a id="logo" href="https://www.cbox.ws">
+				<img src="//www.cbox.ws/gfx/logo400.png" width="200" height="86" alt="Cbox" border="0">
+			</a>
+
+			<div id="headerExtras">
+	
+								
+								<span id="userWelcome">msmsas55@gmail.com</span>
+				<a href="/admin?switch">My Cboxes</a>
+				<a href="/admin?acct">My Account</a>
+												<a href="/help">Support
+				</a><a href="/admin?preproc=logout" onclick="return logout()">Log out
+				</a>
+							</div>
+		</div>
+	</div>
+
+		<div id="subbar">
+		<div class="wrap">
+			<a href="/admin?home" class="submenuitem"><b>msmsas55</b>			</a><a href="/admin?snippet" class="submenuitem">Publish
+			</a><a href="#" id="hovmenu1" class="submenuitem" onmousedown="return hovmenu(this, 1)">Look &amp; feel
+			</a><a href="#" id="hovmenu2" class="submenuitem" onmousedown="return hovmenu(this, 2)">Options
+			</a><a href="#" id="hovmenu3" class="submenuitem" onmousedown="return hovmenu(this, 3)">Users
+			</a><a href="#" id="hovmenu4" class="submenuitem" onmousedown="return hovmenu(this, 4)">Messages
+			</a>
+		</div>
+	</div>
+	<div id="bar3">
+		<div id="hovmenu" class="wrap"><a></a></div>
+	</div>
+	
+	<div id="wideimg" style="position: relative; width: 100%; left: 0">
+	</div>
+	
+	<div id="main" class="wrap ">
+<div id="content">
+
+<h1>Get your own Cbox</h1>
+
+<p>
+Open a new Cbox in one step. Afterwards you will have the option of purchasing a paid plan to 
+activate all your Cbox features. Or you can install your Cbox right away and start chatting! 
+</p>
+
+
+<script type="text/javascript">
+// Form validation
+function chk_fsignup() {
+  err = "";
+  fn = "fsignup";
+  f = document.forms[fn];
+  foc = "";
+  
+  // Clear all errors.
+  resetmsgs("fsignup");
+
+  if (f["uname"].value == "") {
+    err += "<li>Please choose a unique name for your Cbox.</li>";
+    if (!foc) foc = "uname";
+  }
+  else {
+    try {
+      if (!f["uname"].value.match(/^[a-z][a-z0-9_-]{3,19}$/i)) {
+        err += "<li>Invalid Cbox name. Please use A-Z and 0-9, with no spaces, 4-20 characters.</li>";
+        if (!foc) foc = "uname";
+      }
+    } catch (e) {}
+  }
+
+  if (f["email"] && f["email"].value == "") {
+    err += "<li>Please enter your email address.</li>";
+    if (!foc) foc = "email";
+  }
+  else {
+    try {
+      if (!f["email"].value.match(/^.+@.+\.[a-zA-Z]{2,9}$/)) {
+        err += "<li>Invalid email address.</li>";
+        if (!foc) foc = "email";
+      }
+    } catch (e) {}
+  }
+  
+  if (f["pword"] && f["pword"].value == "") {
+    err += "<li>Please enter a password.</li>";
+    if (!foc) foc = "pword";
+  }
+  else if (f["pword2"] && f["pword2"].value == "") {
+    err += "<li>Please enter your password twice to confirm it.</li>";
+    if (!foc) foc = "pword2";
+  }
+  else if (f["pword"] && f["pword2"] && f["pword"].value != f["pword2"].value) {
+    err += "<li>Your passwords don't match; please retype them.</li>";
+    if (!foc) foc = "pword";
+  }
+  
+  if (f["terms"] && f["terms"].checked == false) {
+    err += "<li>You need to agree to the terms and conditions of service.</li>";
+  }
+
+  // Must come last.
+  if (!err && f["email"] && (f["email"].value.indexOf("hottmail.com") != -1
+    || f["email"].value.indexOf("htomail.com") != -1 
+    || f["email"].value.indexOf("www.") == 0
+    || f["email"].value.indexOf("http://") == 0
+    || f["email"].value.indexOf("https://") == 0
+    || f["email"].value.indexOf(".con") != -1
+    || f["email"].value.indexOf("..com") != -1
+    || f["email"].value.indexOf("@.") != -1
+    || f["email"].value.indexOf(".co") == f["email"].value.length - 3))
+  {
+    if(!confirm("We detected a possible typo in your email address, "+(f["email"].value)+"\nIf you see a mistake, please click Cancel and correct it.")) {
+      f["email"].focus();
+      return false;
+    }
+  }
+  
+  document.forms["fsignup"]["vdchk"].value = "1";
+
+  if (err) {
+    setmsg("fsignup", "There was a problem with your input.", 2);
+    setmsgdesc("fsignup", err, 2);
+    if (foc) f[foc].focus();
+    return false;
+  }
+  return subsaving(fn, "sub", 'Registering...');;
+}
+
+</script>
+
+<div class="col1_2">
+
+<form name="fsignup" method="post" action="/getone" onsubmit="return chk_fsignup();">
+
+<input type="hidden" name="vdchk" value="0">
+<input type="hidden" name="sl" value="0">
+<input type="hidden" name="tmez" value="0">
+<input type="hidden" name="lang" value="en">
+<input type="hidden" name="version" value="8">
+
+
+<fieldset>
+<legend>Create Cbox</legend>
+<label>Cbox name:</label>
+<input type="text" name="uname" size="25" maxlength="20" class="txtbox" value="">
+
+<label>Website:</label>
+<input type="text" name="site" size="45" maxlength="50" class="txtbox" placeholder="https://" value="">
+
+
+
+<div id="palette"></div>
+
+<input type="submit" name="sub" value="Create my Cbox!">
+<div id="m_fsignup" class="frmmsg1"></div>
+<div id="em_fsignup" class="frmmsg2"></div>
+
+</fieldset>
+
+</form>
+
+</div>
+
+
+<div class="col1_2">
+<p>
+<iframe name="cboxmain" id="themedemo" width="100%" height="340" src="" marginheight="0" marginwidth="0" frameborder="0" scrolling="no" allowtransparency="yes"></iframe>
+</p>
+</div>
+
+<div class="colclear"></div>
+
+
+
+<script>
+f = document.forms["fsignup"]
+f["tmez"].value = (new Date()).getTimezoneOffset()/-60;
+f["lang"].value = (navigator.languages ? navigator.languages[0] : (navigator.language || navigator.userLanguage) || 'en').split('-')[0];
+
+if (f["theme"]) {
+	var setDemoBox = f["theme"].onchange = function () {
+		document.getElementById("themedemo").src = 
+		'//www7.cbox.ws/box/?boxid=813408&boxtag=fw0hPf&sec=main'
+		+ '&theme=' + f["theme"].options[f["theme"].selectedIndex].value
+	}
+
+		var randpick = Math.floor(Math.random() * f["theme"].options.length);
+	f["theme"].selectedIndex = randpick;
+		
+	setDemoBox();
+}
+
+</script>
+
+
+</div>
+
+
+
+
+<div style="clear: both"></div>
+</div><!-- /content -->
+
+</div><!-- /bodywrap -->
+
+<div id="siteErrorBar"><div class="wrap" id="siteErrorBarCont">Loading...</div></div>
+
+
+
+<div id="footer">
+
+	<a href="/">About
+	</a><a href="/products">Plans &amp; pricing
+	</a><a href="/terms">Terms &amp; conditions
+	</a><a href="/privacy">Privacy policy
+	</a><a href="/notices">Notices
+	</a><a href="/contact">Contact us
+	</a>
+	<div class="verybottom">
+		&copy; 2004&ndash;2026 Cbox Communications (Pty) Ltd, all rights reserved. 
+			0 ms. 
+			83ce		</a>
+	</div>
+
+</div>
+
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-242554-2', {
+	'cookieDomain': 'www.cbox.ws'
+});
+ga('send', 'pageview');
+
+</script>
+
+
+<script src="/code.js?20171024"></script>
+<script>
+	// Modal / naked mode.
+	if (window.isPopup) {
+		document.body.className = "Popped";
+	}
+	
+	// Only for CP pages
+	upgradeCheckboxes();
+
+var dropCrumb = function () {
+	if (!localStorage) {
+		return;
+	}
+	var bc = getCrumbs();
+	bc.push(location.href);
+	bc.splice(0, bc.length - 5);
+	localStorage.setItem("site:bread", JSON.stringify(bc));
+};
+
+var getCrumbs = function () {
+	if (!localStorage) {
+		return [];
+	}
+	var bcStr = localStorage.getItem("site:bread");
+	var bc = [];
+	if (bcStr) {
+		bc = JSON.parse(bcStr);
+	}
+	
+	return bc;
+}
+
+dropCrumb();
+</script>
+
+
+</body>
+</html>
+

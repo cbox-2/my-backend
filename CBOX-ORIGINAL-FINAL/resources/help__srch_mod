@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Help &middot; Cbox</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content='width=device-width, initial-scale=1' name='viewport'>
+<meta name="description" content="Cbox live chat is an embeddable chat app for online communities, groups, and live-streaming events.">
+<link href="data:image/x-icon;base64,AAABAAEAEBACAAAAAACwAAAAFgAAACgAAAAQAAAAIAAAAAEAAQAAAAAAQAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA" rel="icon" type="image/x-icon">
+<link rel="stylesheet" href="/style.css?2050221">
+</head>
+<body id="mainbody">
+
+	<script>
+	// Define stub
+	var rcvdformresponse = function () {};
+	</script>
+	
+	<div id="mask"></div>
+
+
+
+<div id="popovr_box">
+	<div class="wrap">
+		<div style="padding: 20px; background-color: #fff">
+			<!--<div style="float:right; font-size: 150%;"><b><a href="javascript:popovr_close()">X</a></b></div>-->
+			<div id="popovr_title">
+				<!-- title -->
+			</div>
+			
+			<div id="popovr_text" style="text-align: left; clear:both">
+				<!-- content -->
+			</div>
+
+			<div id="popovr_t_login" style="display: none; text-align: left; clear:both">
+				<p>
+					Your session has expired. Please log back in to continue.
+				</p>
+				<iframe src="javascript:false" name="t_qlpop" onload="rcvdformresponse(this.name)" width="1" height="1" class="frmiframe"></iframe>
+				<form name="qlpop" action="/admin_d_login?f=qlpop" target="t_qlpop" method="post" onsubmit="return subsaving(this.name, 'sub', 'logging in...');">
+				<fieldset>
+					<label>Username:</label>
+					<input type="text" name="uname" value="msmsas55@gmail.com" maxlength="50" class="txtbox">
+					<label>Password:</label>
+					<input type="password" name="pword" value="" maxlength="50" class="txtbox">
+					<input type="submit" name="sub" value=" Log in ">
+					
+					<div id="m_qlpop" class="frmmsg1"></div>
+					<div id="em_qlpop" class="frmmsg2"></div>
+				</fieldset>
+				</form>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<!--[if lte IE 7]>
+	<div class="notice_er notice_top">
+		You are using an old version of Internet Explorer or you are in Compatibility View mode. 
+		This website will not work correctly. 
+		<br>
+		Please upgrade your browser or disable Compatibility View.
+	</div>
+<![endif]-->
+
+
+<div id="bodywrap">
+	<div id="header">
+		<div class="wrap">
+
+			<a id="logo" href="https://www.cbox.ws">
+				<img src="//www.cbox.ws/gfx/logo400.png" width="200" height="86" alt="Cbox" border="0">
+			</a>
+
+			<div id="headerExtras">
+	
+								
+								<span id="userWelcome">msmsas55@gmail.com</span>
+				<a href="/admin?switch">My Cboxes</a>
+				<a href="/admin?acct">My Account</a>
+												<a href="/help">Support
+				</a><a href="/admin?preproc=logout" onclick="return logout()">Log out
+				</a>
+							</div>
+		</div>
+	</div>
+
+		<div id="subbar">
+		<div class="wrap">
+			<a href="/admin?home" class="submenuitem"><b>msmsas55</b>			</a><a href="/admin?snippet" class="submenuitem">Publish
+			</a><a href="#" id="hovmenu1" class="submenuitem" onmousedown="return hovmenu(this, 1)">Look &amp; feel
+			</a><a href="#" id="hovmenu2" class="submenuitem" onmousedown="return hovmenu(this, 2)">Options
+			</a><a href="#" id="hovmenu3" class="submenuitem" onmousedown="return hovmenu(this, 3)">Users
+			</a><a href="#" id="hovmenu4" class="submenuitem" onmousedown="return hovmenu(this, 4)">Messages
+			</a>
+		</div>
+	</div>
+	<div id="bar3">
+		<div id="hovmenu" class="wrap"><a></a></div>
+	</div>
+	
+	<div id="wideimg" style="position: relative; width: 100%; left: 0">
+	</div>
+	
+	<div id="main" class="wrap ">
+<script language="JavaScript">
+var hit = new Array();
+var openans = new Array();
+
+function toggleanswer(id) {
+  if (typeof(document.getElementById("ans"+id).style.display) == "undefined") {
+    return true;
+  }
+  x = document.getElementById("ans"+id);
+  if (x.style.display != "none") {
+    x.style.display = "none";
+  }
+  else {
+    x.style.display = "";
+    if (document.images && !hit[id]) {
+      (new Image()).src="/help?hit="+id;
+      hit[id] = true;
+    }
+	if (x.scrollIntoViewIfNeeded) {
+		// Cuts question title off in some cases; workaround not straightforward. 
+		x.scrollIntoViewIfNeeded();
+	}
+  }
+  return false;
+}
+</script>
+
+<div id="content" class="withAside">
+<h1>Help &amp; Support</h1>
+
+
+	<p>
+	Our help database contains answers to most of the common questions regarding our products. 
+	</p>
+	<p>
+	If you are unable to locate a satisfactory answer for your query by searching here, please <a href="/contact?ref=help">contact us</a>.
+	</p>
+
+	<form action="/help" method="get">
+	<fieldset>
+	<legend>Search support</legend>
+	<input type="text" id="inpHelpQuery" name="srch" size="45" maxlength="255" class="txtbox" placeholder="e.g. how do I change my theme?" value="mod">
+	<input type="submit" value=" Go " style="">
+	</fieldset>
+	</form>
+
+<script>
+	document.getElementById("inpHelpQuery").focus();
+	document.getElementById("inpHelpQuery").select();
+</script>
+<h2 id="q45"><a href="/help?id=45" onclick="return toggleanswer(45)">Can I create moderators or administrators?</a></h2>
+
+<div class="helpContent" id="ans45" data-score="0" style="display:none;">
+	<p>
+Moderation is available on <a href="/upgrade">paid Cboxes</a>. Messages on a free Cbox can only be deleted via the control panel only. 
+</p>
+<div class="aside">
+Mods and admins have the same permissions, but admins are ranked higher than mods: mods cannot ban admins or delete their messages. Mods cannot ban each other, but they can delete each others' messages. Admins cannot ban each other either, but they can delete anyone's messages.
+</div>
+<p>
+You can create a mod or admin name at your <a href="/admin?users">Users page</a>, either by selecting one of the existing registered names and clicking the "Mod" button, or by creating a new registered user with Moderator or Administrator status using the form on that page. 
+</p>
+<p>
+To log in with a mod/admin name on your Cbox, enter the name in the "name" box, click the "profile" link at the bottom-right, and then enter the password.
+</p>
+<p>
+After successfully logging in, you should see [x] and [o] icons next to each message in your Cbox. Clicking the [x] deletes a message, while clicking [o] bans the user that posted the message.
+</p>
+		<div class="helpDate">
+		Last updated 19 October 2015	</div>
+	</div>
+<h2 id="q91"><a href="/help?id=91" onclick="return toggleanswer(91)">What is Moderated chat and voice permission?</a></h2>
+
+<div class="helpContent" id="ans91" data-score="0" style="display:none;">
+	<p>
+A <a href="/admin?settings">Moderated</a> Cbox requires that messages be manually approved before they are published. 
+</p>
+<p>
+Normally, all users can post to your public Cbox, and everyone can see their messages. If you enable Moderated chat, then only <b>voiced</b> users can post directly. Unvoiced users' messages are redirected to a special channel where moderators can view and approve them.  
+</p>
+<p>
+This setting enables <i>proactive</i> moderation. It's important if you are concerned about your platform's brand but still want your Cbox to be publicly-accessible. It's also useful if you host live chats where you may want to control the volume and relevance of published messages by accepting only the ones you want, and at the appropriate time. 
+</p>
+
+<h3>Using Moderated chat</h3>
+<p class="aside">
+For testing, it's helpful to open another instance of your Cbox in an incognito/private tab. This allows you to log in as a guest in one tab and as a Mod in the other. 
+</p>
+<p>
+When you enable this setting, a <b>shadow channel</b> is created. Regular users cannot access it, but a Mod or Admin user on the public Cbox will see a "mod channel" link or "thumbs up" button. Clicking this button opens the shadow channel, and shows any messages that are awaiting approval. These messages can be published (i.e. re-posted) to the public Cbox by clicking the <b>[a]</b>/"tick" button in the mod tools next to each message. 
+</p>
+
+<h3>Voice permission</h3>
+<p class="aside">
+Note that when users register they do not automatically get voice. So, if you have existing registered users, before you enable Moderated chat, you might first want to <a href="/admin?users">voice them</a>.
+</p>
+<p>
+Mods and admins always have voice. This means they can always post directly to your public Cbox. Registered users (other than mods and admins) can be voiced and unvoiced from within your Cbox by clicking the <b>[v]</b>/"plus" button in the mod tools next to their messages. Unregistered guest users cannot be granted this permission, however. 
+</p>
+<p>
+Voice permission grants a user direct publication access to your Cbox, without any of the special permissions of mods or admins. It is useful in cases where the user is trusted and/or conversation established.
+</p>
+
+<h3>Moderated channels</h3>
+<p>
+Moderation works in conjunction with channels, too. The global setting controls whether new channels are created in Moderated mode or not. The per-channel setting is maintained even if the global setting is later changed. 
+</p>
+
+
+		<div class="helpDate">
+		Last updated 18 November 2016	</div>
+	</div>
+<h2 id="q76"><a href="/help?id=76" onclick="return toggleanswer(76)">Can I use HTML in filters and sticky messages?</a></h2>
+
+<div class="helpContent" id="ans76" data-score="0.23076923076923" style="display:none;">
+	<p>
+Cbox has traditionally supported HTML in filters and sticky messages for paid accounts. For security reasons this option is not enabled by default. Furthermore, in HTML mode, some other features of Cbox may be limited or disabled. 
+</p><p>
+If HTML mode is <em>disabled</em> on your Cbox, then you can add markup and colour to your filters and stickies using <a href="/admin?srch=boxcode">boxcode</a>, which supports a range of HTML-like tags.
+</p><p>
+If you are currently using HTML mode, we strongly recommend disabling it and using boxcode instead &mdash; this will help to ensure that your Cbox is as secure as possible and compatible with all features.
+</p>
+		<div class="helpDate">
+		Last updated 19 October 2015	</div>
+	</div>
+<h2 id="q65"><a href="/help?id=65" onclick="return toggleanswer(65)">Can I configure custom user groups or colors?</a></h2>
+
+<div class="helpContent" id="ans65" data-score="0.5959595959596" style="display:none;">
+	<p>
+Cbox Premium and Pro allow you to customize the four built-in usergroup name colours at your <a href="/admin?style">Themes</a> page. The group colours you can specify are Normal, Registered, Moderator, and Admin. These correspond to the user types at your <a href="/admin?users">Users</a> page.
+</p>
+<p>
+In addition, you can use <a href="/admin?filtering">Filtering</a> rules to specify unique styles for selected names, including unregistered ones. To do this, add rules as follows, one per line:
+</p>
+<pre>
+jacob:[color=green]jacob[/color]
+</pre>
+<p>
+In the above example "jacob" is the name of the user. You can change the colour to any valid HTML colour name or hex code. You will need to have <a href="/admin?settings">boxcode</a> enabled in order for this to work. 
+</p>
+
+<h3>Custom CSS-based rules</h3>
+<p>
+For registered users you can create <a href="/admin?style">custom CSS</a> to target their names or messages by ID. For example: 
+</p>
+<pre>
+.msg[data-uid="123456"] .nme {
+    color: red;
+}
+</pre>
+<p>
+The data-uid is the registered user's Cbox ID. The easiest way to get this is to click the user's name in your Cbox. An at-tag will appear in your message input box, e.g. <@123456|ExampleUser> where the number after the @ is the user ID. 
+</p>
+		<div class="helpDate">
+		Last updated 20 May 2024	</div>
+	</div>
+<h2 id="q24"><a href="/help?id=24" onclick="return toggleanswer(24)">How do I put my Cbox on my website?</a></h2>
+
+<div class="helpContent" id="ans24" data-score="0.87820512820513" style="display:none;">
+	<p>
+Once you have <a href="/getone">created your Cbox account</a>, go to the <a href="/admin?snippet">Publish</a> page of your control panel. The code and steps for embedding your Cbox are provided there for a number of common platforms. 
+</p>
+<p>
+If you install your Cbox and all you see is code, or nothing at all, your web host may be removing or otherwise interfering with the HTML iframe tags that Cbox uses. Your Cbox code needs to be pasted into an area of your site that accepts HTML without modification. This may mean switching your editor from "rich text" or "WYSIWYG" mode into HTML-editing or "raw" mode, or you may need to open your template files in a plain-text editor like Notepad. 
+</p><p>
+Remember that you always have the option of posting or sharing your Cbox <a href="/admin?snippet">Quick Link</a> &mdash; this gives visitors direct access to your Cbox in a full-screen layout, so it's perfect as a mobile option or for stand-alone use.
+</p>		<div class="helpDate">
+		Last updated 19 October 2015	</div>
+	</div>
+<p style="text-align: right;">
+<a href="/help?all=1">All articles &raquo;</a>
+</p>
+</div>
+
+
+<div style="clear: both"></div>
+</div><!-- /content -->
+
+</div><!-- /bodywrap -->
+
+<div id="siteErrorBar"><div class="wrap" id="siteErrorBarCont">Loading...</div></div>
+
+
+
+<div id="footer">
+
+	<a href="/">About
+	</a><a href="/products">Plans &amp; pricing
+	</a><a href="/terms">Terms &amp; conditions
+	</a><a href="/privacy">Privacy policy
+	</a><a href="/notices">Notices
+	</a><a href="/contact">Contact us
+	</a>
+	<div class="verybottom">
+		&copy; 2004&ndash;2026 Cbox Communications (Pty) Ltd, all rights reserved. 
+			1 ms. 
+			83ce		</a>
+	</div>
+
+</div>
+
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-242554-2', {
+	'cookieDomain': 'www.cbox.ws'
+});
+ga('send', 'pageview');
+
+</script>
+
+
+<script src="/code.js?20171024"></script>
+<script>
+	// Modal / naked mode.
+	if (window.isPopup) {
+		document.body.className = "Popped";
+	}
+	
+	// Only for CP pages
+	upgradeCheckboxes();
+
+var dropCrumb = function () {
+	if (!localStorage) {
+		return;
+	}
+	var bc = getCrumbs();
+	bc.push(location.href);
+	bc.splice(0, bc.length - 5);
+	localStorage.setItem("site:bread", JSON.stringify(bc));
+};
+
+var getCrumbs = function () {
+	if (!localStorage) {
+		return [];
+	}
+	var bcStr = localStorage.getItem("site:bread");
+	var bc = [];
+	if (bcStr) {
+		bc = JSON.parse(bcStr);
+	}
+	
+	return bc;
+}
+
+dropCrumb();
+</script>
+
+
+</body>
+</html>
+

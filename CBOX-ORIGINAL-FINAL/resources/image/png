@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Not Found &middot; Cbox</title>
+<style type="text/css">
+
+@font-face {
+	font-family: 'Numans';
+	src: url('//static.cbox.ws/fonts/numans-regular1-webfont.eot');
+	src: url('//static.cbox.ws/fonts/numans-regular1-webfont.eot?#iefix') format('embedded-opentype'),
+		url('//static.cbox.ws/fonts/numans-regular1-webfont.woff2?1') format('woff2'),
+		url('//static.cbox.ws/fonts/numans-regular1-webfont.woff') format('woff'),
+		url('//static.cbox.ws/fonts/numans-regular1-webfont.ttf') format('truetype'),
+		url('//static.cbox.ws/fonts/numans-regular1-webfont.svg#numansregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+	font-weight: 400;
+    src: url('//static.cbox.ws/fonts/opensans-regular1.eot');
+    src: url('//static.cbox.ws/fonts/opensans-regular1.eot?#iefix') format('embedded-opentype'),
+         url('//static.cbox.ws/fonts/opensans-regular1.woff2') format('woff2'),
+         url('//static.cbox.ws/fonts/opensans-regular1.woff') format('woff'),
+         url('//static.cbox.ws/fonts/opensans-regular1.ttf') format('truetype');
+    font-style: normal;
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	min-width: 150px;
+	overflow: hidden;
+	background: #fff;
+	font-family: "Open Sans", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+}
+
+h1 {
+	font-family: "Numans", "Open Sans", Helvetica, Arial, sans-serif;
+	font-weight: normal;
+	
+}
+
+
+#cont {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	background: #222;
+	color: #eee;
+	padding: 1em;
+}
+
+
+</style>
+</head>
+<body>
+<div id="cont">
+	<h1>Not found (404)</h1>
+	<p>
+	<span id="message">This Cbox may be misconfigured. </span>
+	</p>
+	
+</div>
+
+<script>
+var $msg = document.getElementById("message");
+
+if (parent === window) {
+	$msg.innerText = "There is no resource at this location.";
+}
+
+</script>
+
+
+</body>
+</html>

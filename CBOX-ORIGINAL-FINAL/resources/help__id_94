@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>About CSS editing - Help &middot; Cbox</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content='width=device-width, initial-scale=1' name='viewport'>
+<meta name="description" content="Cbox live chat is an embeddable chat app for online communities, groups, and live-streaming events.">
+<link href="data:image/x-icon;base64,AAABAAEAEBACAAAAAACwAAAAFgAAACgAAAAQAAAAIAAAAAEAAQAAAAAAQAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA" rel="icon" type="image/x-icon">
+<link rel="stylesheet" href="/style.css?2050221">
+</head>
+<body id="mainbody">
+
+	<script>
+	// Define stub
+	var rcvdformresponse = function () {};
+	</script>
+	
+	<div id="mask"></div>
+
+
+
+<div id="popovr_box">
+	<div class="wrap">
+		<div style="padding: 20px; background-color: #fff">
+			<!--<div style="float:right; font-size: 150%;"><b><a href="javascript:popovr_close()">X</a></b></div>-->
+			<div id="popovr_title">
+				<!-- title -->
+			</div>
+			
+			<div id="popovr_text" style="text-align: left; clear:both">
+				<!-- content -->
+			</div>
+
+			<div id="popovr_t_login" style="display: none; text-align: left; clear:both">
+				<p>
+					Your session has expired. Please log back in to continue.
+				</p>
+				<iframe src="javascript:false" name="t_qlpop" onload="rcvdformresponse(this.name)" width="1" height="1" class="frmiframe"></iframe>
+				<form name="qlpop" action="/admin_d_login?f=qlpop" target="t_qlpop" method="post" onsubmit="return subsaving(this.name, 'sub', 'logging in...');">
+				<fieldset>
+					<label>Username:</label>
+					<input type="text" name="uname" value="msmsas55@gmail.com" maxlength="50" class="txtbox">
+					<label>Password:</label>
+					<input type="password" name="pword" value="" maxlength="50" class="txtbox">
+					<input type="submit" name="sub" value=" Log in ">
+					
+					<div id="m_qlpop" class="frmmsg1"></div>
+					<div id="em_qlpop" class="frmmsg2"></div>
+				</fieldset>
+				</form>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<!--[if lte IE 7]>
+	<div class="notice_er notice_top">
+		You are using an old version of Internet Explorer or you are in Compatibility View mode. 
+		This website will not work correctly. 
+		<br>
+		Please upgrade your browser or disable Compatibility View.
+	</div>
+<![endif]-->
+
+
+<div id="bodywrap">
+	<div id="header">
+		<div class="wrap">
+
+			<a id="logo" href="https://www.cbox.ws">
+				<img src="//www.cbox.ws/gfx/logo400.png" width="200" height="86" alt="Cbox" border="0">
+			</a>
+
+			<div id="headerExtras">
+	
+								
+								<span id="userWelcome">msmsas55@gmail.com</span>
+				<a href="/admin?switch">My Cboxes</a>
+				<a href="/admin?acct">My Account</a>
+												<a href="/help">Support
+				</a><a href="/admin?preproc=logout" onclick="return logout()">Log out
+				</a>
+							</div>
+		</div>
+	</div>
+
+		<div id="subbar">
+		<div class="wrap">
+			<a href="/admin?home" class="submenuitem"><b>msmsas55</b>			</a><a href="/admin?snippet" class="submenuitem">Publish
+			</a><a href="#" id="hovmenu1" class="submenuitem" onmousedown="return hovmenu(this, 1)">Look &amp; feel
+			</a><a href="#" id="hovmenu2" class="submenuitem" onmousedown="return hovmenu(this, 2)">Options
+			</a><a href="#" id="hovmenu3" class="submenuitem" onmousedown="return hovmenu(this, 3)">Users
+			</a><a href="#" id="hovmenu4" class="submenuitem" onmousedown="return hovmenu(this, 4)">Messages
+			</a>
+		</div>
+	</div>
+	<div id="bar3">
+		<div id="hovmenu" class="wrap"><a></a></div>
+	</div>
+	
+	<div id="wideimg" style="position: relative; width: 100%; left: 0">
+	</div>
+	
+	<div id="main" class="wrap ">
+<script language="JavaScript">
+var hit = new Array();
+var openans = new Array();
+
+function toggleanswer(id) {
+  if (typeof(document.getElementById("ans"+id).style.display) == "undefined") {
+    return true;
+  }
+  x = document.getElementById("ans"+id);
+  if (x.style.display != "none") {
+    x.style.display = "none";
+  }
+  else {
+    x.style.display = "";
+    if (document.images && !hit[id]) {
+      (new Image()).src="/help?hit="+id;
+      hit[id] = true;
+    }
+	if (x.scrollIntoViewIfNeeded) {
+		// Cuts question title off in some cases; workaround not straightforward. 
+		x.scrollIntoViewIfNeeded();
+	}
+  }
+  return false;
+}
+</script>
+
+<div id="content" class="withAside">
+<h1>Help &amp; Support</h1>
+
+<h2>About CSS editing</h2>
+<div class="helpContent" id="ans94">
+	<p>
+Cbox provides a <a href="/admin?style">Theme editor</a> that lets you adjust colours and font sizes. With a paid plan though, you get even more flexibility with our CSS editor. 
+</p>
+<p class="aside"><b>Please note:</b> Editing CSS is an advanced feature and requires some knowledge of the language. Improperly-formed CSS can make your Cbox unusable. You can find many useful <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference" target="_blank">CSS resources</a> on the Web.
+</p>
+<p>
+Some of the things you can do with custom CSS:
+</p>
+<ul>
+<li>Change colours and dimensions that aren't available in the theme editor. 
+<li>Add effects such as shadows, borders, and gradients.
+<li>Change the layout of messages by adjusting positioning. 
+<li>Create custom classes for styling names and parts of messages, in conjunction with <a href="/help?id=42">[class] boxcode</a> and <a href="/help?id=67">filtering</a>. 
+</ul>
+
+<h3>Getting started</h3>
+<p class="aside">
+The class names and IDs that we use are relatively stable. However, while we always aim to minimize disruption, it is possible &mdash; due to new features or bugfixes, for example &mdash; that we have to change HTML in ways that require updating your CSS.
+</p>
+<p>
+We recommend using your browser's built-in development tools to assist you in finding the names of elements and classes to edit. Generally, you can right-click on an element in your Cbox, and select "Inspect". 
+</p>
+<p>
+In the new version of Cbox, the CSS you enter in your editor is <em>appended</em> to the base CSS. This means you do not have to copy any classes or properties that you are not editing. For example, to make avatars round, simply use:
+</p>
+<pre>
+.pic {
+    border-radius: 50%;
+}
+</pre>
+<p>
+Notice that the other properties, such as width and height, are not affected by this CSS. Any properties that are bound to the basic theme editor can still be edited that way. We strongly recommend this approach &mdash; rather than copying the base CSS and then editing it &mdash; for both performance and maintainability reasons. 
+</p>
+
+
+<h3>More examples</h3>
+<p>
+By default a star icon appears after mod/admin names. You can change or remove that:
+</p>
+<pre>
+.msg.Adm .nme:after, .usr.Adm .nme:after,
+.msg.Mod .nme:after, .usr.Mod .nme:after {
+    content: '';
+}
+</pre>
+<p>
+You can use the <code>:after</code> pseudo-element to add text as well. This puts a colon after each name:
+</p>
+<pre>
+.msg .nme:after {
+    content: ':';
+}
+</pre>
+<p>
+You can also change the colour of mod/admin text or messages to distinguish them:
+</p>
+<pre>
+.msg.Adm {
+    background: #FFEB3B;
+    color: #000;
+}
+</pre>
+<p>
+The following CSS will make the name and message run together without a line-break between them:
+</p>
+<pre>
+.msg .body {
+    display: inline;
+}
+</pre>
+<p>
+Certain buttons in the UI can safely be removed using CSS. For example, to remove the "pop out" button:
+</p>
+<pre>
+#btnPop {
+    display: none;
+}
+</pre>
+<p>
+You can use CSS to create a default profile picture:
+</p>
+<pre>
+.pic.Empty {
+  background: url(https://cbox.im/i/zfqhv.c100.png) no-repeat center center;
+  background-size: 100%;
+}
+</pre>
+<p>
+You can take advantage of CSS's cascading nature to target different rules at the same element in different contexts. For example, to show rounded avatars in the users list, but hide them completely in messages, you could use a pair of rules:
+</p>
+<pre>
+.msg .pic {
+    display: none;
+}
+.usr .pic {
+    border-radius: 50%;
+}
+</pre>
+<p>
+To change or remove the maximum height that Cbox restricts your emoticons to, you can use a rule like this: 
+</p>
+<pre>
+.msg .emote {
+    max-height: none;
+}
+</pre>
+<p>
+The following rule makes message background colours alternate:
+</p>
+<pre>
+.msg:nth-of-type(2n) {
+    background: #03A9F4;
+}
+</pre>
+<p>
+With CSS you can influence browser functionality as well. The following CSS prevents users from being able to select text in messages:
+</p>
+<pre>
+.msg {
+    user-select: none;
+}
+</pre>
+
+
+<a name="custom"></a><h3>Custom classes</h3>
+<p>
+You can define your own classes to be used in conjunction with <a href="/help?srch=filtering" target="_new">filters</a>. Filters support <a href="/help?srch=boxcode target="_new">boxcode</a>, so you can apply colour that way. But for more flexibility, there's a special <kbd>[class]</kbd> boxcode that lets you use any CSS you want. 
+</p>
+<p>
+For example, this CSS rule targets a class called <kbd>cc_glow</kbd>.
+</p>
+<pre>
+.cc_glow {
+    text-shadow: 0px 0px 3px #E91E63;
+    font-size: 120%;
+}
+</pre>
+<p>
+With the above CSS, the corresponding boxcode is <kbd>[class=glow][/class]</kbd>.
+</p>
+<p>
+So to use your CSS, you could add a <a href="/admin?filtering" target="_new">filter</a> rule like this:
+</p>
+<pre>
+hello:[class=glow]hello[/class]
+</pre>
+<p>
+With both the CSS and the filtering rule in place, simply typing <kbd>hello</kbd> in your Cbox should show glowing text.
+</p>
+<p>
+You can also override existing boxcode rather than defining your own classes:
+</p>
+<pre>
+.msg .body s {
+    text-decoration: none;
+    opacity: 0.5;
+}
+</pre>
+<p>
+The above modifies the <kbd>[s][/s]</kbd> boxcode which would normally produce a <s>strikethrough</s>. Instead it will produce translucent text. The <code>.msg .body</code> selectors are there to ensure only markup in messages is targeted. 
+</p>
+
+
+<h3>Specificity</h3>
+<p>
+Sometimes you might find your edits don't appear to be overriding Cbox's base CSS. This can be due to CSS <a href="https://developer.mozilla.org/en/docs/Web/CSS/Specificity" target="_blank">Specificity rules</a>. You may need to add specificity by including more parts in your selectors. For example, to change the colour of the smilies/emoticons button, you can use: 
+</p>
+<pre>
+form#frmMain button#btnSmilies {
+    color: red;
+}
+</pre>
+<p>
+Notice that while the <code>form#frmMain</code> part might seem redundant, it increases specificity sufficiently to override Cbox's base CSS. Alternatively, you can use the <code>!important</code> rule to achieve the same outcome.
+</p>
+<p class="aside">While <kbd>!important</kbd> can make customization easier, we don't recommend using it, as it increases the likelihood of unintended side-effects.</p>
+<pre>
+button#btnSmilies {
+    color: red !important;
+}
+</pre>
+
+
+<!--
+<h3>Advanced uses</h3>
+<p>
+CSS has powerful applications, including the ability to add content. For example, you can add text to a button like this: 
+</p>
+<pre>
+#btnPop span:before {
+    content: "Pop out";
+}
+</pre>
+<p>
+However, note that changes to the interface elements of your Cbox are liable to break due to updates to our code. 
+</p>
+<p>
+You can also include content such as images from other domains. 
+</p>
+<pre>
+body {
+    background: url('https://placekitten.com/600/800');
+    background-size: cover;
+}
+</pre>
+-->
+
+
+		<div class="helpDate">
+		Last updated 31 May 2021	</div>
+	</div>
+<script>
+if (history.replaceState) {
+	history.replaceState(null, "", "/help?id=94");
+}
+</script>
+<p>
+<a href="/help">&laquo; Support home</a>
+</p>
+</div>
+
+
+<div style="clear: both"></div>
+</div><!-- /content -->
+
+</div><!-- /bodywrap -->
+
+<div id="siteErrorBar"><div class="wrap" id="siteErrorBarCont">Loading...</div></div>
+
+
+
+<div id="footer">
+
+	<a href="/">About
+	</a><a href="/products">Plans &amp; pricing
+	</a><a href="/terms">Terms &amp; conditions
+	</a><a href="/privacy">Privacy policy
+	</a><a href="/notices">Notices
+	</a><a href="/contact">Contact us
+	</a>
+	<div class="verybottom">
+		&copy; 2004&ndash;2026 Cbox Communications (Pty) Ltd, all rights reserved. 
+			1 ms. 
+			83ce		</a>
+	</div>
+
+</div>
+
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-242554-2', {
+	'cookieDomain': 'www.cbox.ws'
+});
+ga('send', 'pageview');
+
+</script>
+
+
+<script src="/code.js?20171024"></script>
+<script>
+	// Modal / naked mode.
+	if (window.isPopup) {
+		document.body.className = "Popped";
+	}
+	
+	// Only for CP pages
+	upgradeCheckboxes();
+
+var dropCrumb = function () {
+	if (!localStorage) {
+		return;
+	}
+	var bc = getCrumbs();
+	bc.push(location.href);
+	bc.splice(0, bc.length - 5);
+	localStorage.setItem("site:bread", JSON.stringify(bc));
+};
+
+var getCrumbs = function () {
+	if (!localStorage) {
+		return [];
+	}
+	var bcStr = localStorage.getItem("site:bread");
+	var bc = [];
+	if (bcStr) {
+		bc = JSON.parse(bcStr);
+	}
+	
+	return bc;
+}
+
+dropCrumb();
+</script>
+
+
+</body>
+</html>
+

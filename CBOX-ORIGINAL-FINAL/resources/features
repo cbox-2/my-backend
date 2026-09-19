@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Plans &amp; Pricing &middot; Cbox</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content='width=device-width, initial-scale=1' name='viewport'>
+<meta name="description" content="Cbox live chat is an embeddable chat app for online communities, groups, and live-streaming events.">
+<link href="data:image/x-icon;base64,AAABAAEAEBACAAAAAACwAAAAFgAAACgAAAAQAAAAIAAAAAEAAQAAAAAAQAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA" rel="icon" type="image/x-icon">
+<link rel="stylesheet" href="/style.css?2050221">
+</head>
+<body id="mainbody">
+
+	<script>
+	// Define stub
+	var rcvdformresponse = function () {};
+	</script>
+	
+	<div id="mask"></div>
+
+
+
+<div id="popovr_box">
+	<div class="wrap">
+		<div style="padding: 20px; background-color: #fff">
+			<!--<div style="float:right; font-size: 150%;"><b><a href="javascript:popovr_close()">X</a></b></div>-->
+			<div id="popovr_title">
+				<!-- title -->
+			</div>
+			
+			<div id="popovr_text" style="text-align: left; clear:both">
+				<!-- content -->
+			</div>
+
+			<div id="popovr_t_login" style="display: none; text-align: left; clear:both">
+				<p>
+					Your session has expired. Please log back in to continue.
+				</p>
+				<iframe src="javascript:false" name="t_qlpop" onload="rcvdformresponse(this.name)" width="1" height="1" class="frmiframe"></iframe>
+				<form name="qlpop" action="/admin_d_login?f=qlpop" target="t_qlpop" method="post" onsubmit="return subsaving(this.name, 'sub', 'logging in...');">
+				<fieldset>
+					<label>Username:</label>
+					<input type="text" name="uname" value="msmsas55@gmail.com" maxlength="50" class="txtbox">
+					<label>Password:</label>
+					<input type="password" name="pword" value="" maxlength="50" class="txtbox">
+					<input type="submit" name="sub" value=" Log in ">
+					
+					<div id="m_qlpop" class="frmmsg1"></div>
+					<div id="em_qlpop" class="frmmsg2"></div>
+				</fieldset>
+				</form>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<!--[if lte IE 7]>
+	<div class="notice_er notice_top">
+		You are using an old version of Internet Explorer or you are in Compatibility View mode. 
+		This website will not work correctly. 
+		<br>
+		Please upgrade your browser or disable Compatibility View.
+	</div>
+<![endif]-->
+
+
+<div id="bodywrap">
+	<div id="header">
+		<div class="wrap">
+
+			<a id="logo" href="https://www.cbox.ws">
+				<img src="//www.cbox.ws/gfx/logo400.png" width="200" height="86" alt="Cbox" border="0">
+			</a>
+
+			<div id="headerExtras">
+	
+								
+								<span id="userWelcome">msmsas55@gmail.com</span>
+				<a href="/admin?switch">My Cboxes</a>
+				<a href="/admin?acct">My Account</a>
+												<a href="/help">Support
+				</a><a href="/admin?preproc=logout" onclick="return logout()">Log out
+				</a>
+							</div>
+		</div>
+	</div>
+
+		<div id="subbar">
+		<div class="wrap">
+			<a href="/admin?home" class="submenuitem"><b>msmsas55</b>			</a><a href="/admin?snippet" class="submenuitem">Publish
+			</a><a href="#" id="hovmenu1" class="submenuitem" onmousedown="return hovmenu(this, 1)">Look &amp; feel
+			</a><a href="#" id="hovmenu2" class="submenuitem" onmousedown="return hovmenu(this, 2)">Options
+			</a><a href="#" id="hovmenu3" class="submenuitem" onmousedown="return hovmenu(this, 3)">Users
+			</a><a href="#" id="hovmenu4" class="submenuitem" onmousedown="return hovmenu(this, 4)">Messages
+			</a>
+		</div>
+	</div>
+	<div id="bar3">
+		<div id="hovmenu" class="wrap"><a></a></div>
+	</div>
+	
+	<div id="wideimg" style="position: relative; width: 100%; left: 0">
+	</div>
+	
+	<div id="main" class="wrap Wide">
+
+<div id="content">
+<h1>Plans & Pricing</h1>
+
+<p>
+See the important features and differences between the service levels available with Cbox.
+</p>
+
+
+<form method="get" action="/upgrade">
+<input type="hidden" name="p" value="0">
+<input type="hidden" name="mode" value="">
+<input type="hidden" name="uname" value="msmsas55">
+
+
+<div class="col1_4"> <!-- #E86A89; #F5B8C7; -->
+	<div style="background-color: #BBB; padding: 10px;">
+		<p>
+		<span style="font-size: 150%;font-weight: 100;">
+		Cbox Free<br>
+		</span>
+		
+		</p>
+		<p>
+		For small groups, or light engagement.
+		</p>
+		<span style="font-size: 150%;font-weight: 100;">
+		free
+		</span>
+		<small>forever</small>
+		
+		<div style="text-align: right">
+			<input type="button" value="" style="visibility:hidden"> 		</div>
+	</div>
+	
+	<div style="background-color: #EAEAEA; padding: 10px; height: 300px; margin: 0 0 1em 0;">
+		<p>
+		Your Free Cbox stores 100 messages, and supports message filtering, 
+		emoticons, and custom themes. 
+		</p><p>
+		It provides a rich media experience with support for avatars, 
+		autolinking, and boxcode.
+		</p>
+	</div>
+</div>
+<div class="col2_4">
+	<div style="background-color: #FCC946; padding: 10px;">
+		<p>
+		<span style="font-size: 150%;font-weight: 100;">
+		Cbox Premium
+		</span>
+		</p>
+		<p>
+		More flexibility. For vibrant communites and groups. 
+		</p>
+		<span style="font-size: 150%;font-weight: 100;">
+		$1.67
+		</span>
+		<small>per month, paid annually</small>
+		<div style="text-align: right">
+			<input type="button" value="Go Premium" onclick="this.form.p.value=1;this.form.mode.value='upgrade';this.form.submit()">		</div>
+	</div>
+	<div style="background-color: #FFE39B; padding: 10px; height: 300px; margin: 0 0 1em 0;">
+		<p>
+			Unlock user registration, moderators, custom themes, filtering, and more. 
+			Premium also eliminates Cbox branding and ads.
+		</p>
+		<p>
+			Cbox Premium is the chat solution that thousands of vibrant, engaged communities depend on.
+		</p>
+	</div>
+</div>
+<div class="col3_4">
+	<div style="background-color: #A6D83F; padding: 10px; ">
+		<p>
+		<span style="font-size: 150%;font-weight: 100;">
+		Cbox Pro
+		</span>
+		</p>
+		<p>
+		More control. For live events and 24/7 conversation. 
+		</p>
+		<span style="font-size: 150%;font-weight: 100;">
+		$7.50
+		</span>
+		<small>per month, paid annually</small>
+		<div style="text-align: right">
+			<input type="button" value="Go Pro" onclick="this.form.p.value=2;this.form.mode.value='upgrade';this.form.submit()">		</div>
+	</div>
+	<div style="background-color: #D0F781; padding: 10px; height: 300px; margin: 0 0 1em 0;">
+		<p>
+			In addition to all Premium features, Cbox Pro unlocks support 
+			for moderated chat, multiple channels, and single sign-on. 
+		</p>
+		<p>
+			Cbox Pro is the deeply-integrated white label chat solution that 
+			keeps audiences returning for more. 
+		</p>
+	</div>
+</div>
+<div class="col4_4">
+	<div style="background-color: #dd8eec; padding: 10px; ">
+		<p>
+		<span style="font-size: 150%;font-weight: 100;">
+		Cbox <b>Pro+</b>
+		</span>
+		</p>
+		<p>
+		High capacity. Handles high concurrency and load spikes. 
+		</p>
+		<span style="font-size: 150%;font-weight: 100;">
+		$15.00+
+		</span>
+		<small>per month</small>
+		<div style="text-align: right">
+			<input type="button" value="Go Pro+" onclick="this.form.p.value=3;this.form.mode.value='upgrade';this.form.submit()">		</div>
+	</div>
+	<div style="background-color: #efb2d7; padding: 10px; height: 300px; margin: 0 0 1em 0;">
+		<p>
+			If your application demands high availability during live-streaming or other high-load 
+			events, Cbox Pro+ is the plan you need. 
+		</p>
+		<p>
+			All the features of Cbox Pro, but with guaranteed concurrent client (CCU) provisioning. 
+		</p>
+	</div>
+</div>
+
+
+<div class="colclear"></div>
+
+
+
+<a id="compare">&nbsp;</a>
+<h2 id="featureGridTitle">Feature comparison</h2>
+
+<div style="position: relative; display: inline-block; max-width: 100%; overflow-x: auto;">
+<table class="featureGrid">
+	<thead>
+		<tr><td> </td>
+		<td><span>Cbox Free</span></td>
+		<td><span>Cbox Premium</span></td>
+		<td><span>Cbox Pro</span></td>
+		<td><span>Cbox Pro+</span></td></tr>
+	</thead>
+	<tbody>
+		<tr><td>Messages/day</td><td>150</td><td>1,500</td><td>15,000</td><td>150k+</td></tr>
+		<tr><td>Visitors/day</td><td>1k</td><td>10k</td><td>100k</td><td>1M+</td></tr>
+		<tr><td>Channels</td><td>1</td><td>10</td><td>100</td><td rowspan="16" style="background: #fff"><div style="transform:rotateZ(-90deg)">All other features as per Pro plan.</div></td></tr>
+		<tr><td>Message history</td><td>100</td><td>500</td><td>5000</td></tr>
+		<tr><td>Show users online</td><td>&mdash;</td><td>Yes</td><td>Yes, plus typing</td></tr>
+		<tr><td>Registered users</td><td>&mdash;</td><td>1,000</td><td>10,000</td></tr>
+		<tr><td>User integration</td><td>&mdash;</td><td>&mdash;</td><td>Yes</td></tr>
+		<tr><td>Moderation</td><td>&mdash;</td><td>Delete &amp; ban</td><td>Moderated chat</td></tr>
+		<tr><td>Archives</td><td>&mdash;</td><td>3 months</td><td>3 months</td></tr>
+		<tr><td>Webhook push</td><td>&mdash;</td><td>&mdash;</td><td>Yes</td></tr>
+		<tr><td>Notifications</td><td>&mdash;</td><td>Email &amp; audio</td><td>Custom audio, push</td></tr>
+		<tr><td>Abuse mitigation</td><td>Built-in</td><td>CAPTCHA &amp; auto-ban</td><td>Proxy ban, country restriction</td></tr>
+		<tr><td>Private messaging</td><td>&mdash;</td><td>Mods &amp; admins</td><td>Mods &amp; admins</td></tr>
+		<tr><td>Custom filters</td><td>Up to 10</td><td>Up to 100</td><td>Up to 1,000</td></tr>
+		<tr><td>Emoticons / GIFs</td><td>Up to 30</td><td>Up to 100</td><td>Up to 1,000</td></tr>
+		<tr><td>Themes</td><td>Colours &amp; fonts</td><td>2kb custom CSS</td><td>10kb custom CSS</td></tr>
+		<tr><td>SSL-enabled</td><td>&mdash;</td><td>Yes</td><td>Yes</td></tr>
+		<tr><td>Branding / ads</td><td>Cbox-branded, ad-supported</td><td>No branding or ads</td><td>No branding or ads</td></tr>
+	</tbody>
+	<tfoot>
+		<tr><td>&nbsp;</td><td><input type="button" value="" style="visibility:hidden"> </td><td><input type="button" value="Go Premium" onclick="this.form.p.value=1;this.form.mode.value='upgrade';this.form.submit()"></td><td><input type="button" value="Go Pro" onclick="this.form.p.value=2;this.form.mode.value='upgrade';this.form.submit()"></td><td><input type="button" value="Go Pro+" onclick="this.form.p.value=3;this.form.mode.value='upgrade';this.form.submit()"></td></tr>
+	</tfoot>
+</table>
+</div>
+
+</form>
+
+<p>&nbsp;</p>
+
+<h2>How many users can I have online?</h2>
+<p>
+Cbox is engineered to support very high concurrency. On our paid plans you can have hundreds of users online at once. 
+If you have a large platform with tens of thousands of concurrent users or more, we offer the Pro+ plan, which allows you to select the capacity  
+you require. 
+</p>
+
+<h2>Do you have a demo?</h2>
+<p>
+The Cbox on the <a href="/">home page</a> is a live example of Cbox Pro. Instead of a demo plan, we offer a 30-day 
+money-back guarantee on your purchase. 
+</p>
+
+<h2>Does Cbox work on mobile?</h2>
+<p>
+Yes, Cbox supports modern smartphones with its responsive and lightweight design. We provide you with 
+a direct link for your Cbox which is ideal for mobile access, but if your site layout is responsive, 
+then Cbox will work well embedded, too.
+</p>
+
+<h2>Can I change the look &amp; feel?</h2>
+<p>
+Customization is a feature with Cbox: we have over 50 configurable settings, over 30 language localizations, and you can customize 
+the colours, fonts and CSS of your Cbox to make it seamless with your site. Our paid plans are also free of branding. 
+</p>
+
+<h2>Any other questions?</h2>
+<p>
+Please <a href="/contact">contact us</a> if you have any queries!
+</p>
+
+<!--
+
+<hr style="clear: both">
+
+
+<h2>Cbox Premium</h2>
+
+<p>
+Cbox Premium includes all the features you need to have a fully-fledged chat system for your community. Live chat (auto-refresh), moderators, custom filters, and more. 
+</p>
+<p>
+Cbox Premium is a scalable, always-on chat solution: it will host vibrant conversation between large numbers of visitors, and log individual messages while you're away. 
+It is the perfect chat application for small- to medium-sized web communities. 
+</p>
+<p>
+For more information about Cbox Premium, please <a href="/contact">contact us</a>.
+</p>
+
+
+<h2>Cbox Pro</h2>
+
+<p>
+Premium Pro turns your Cbox into a multi-channel experience. You are not limited to a single conversation. Instead of having to create a separate Cbox for 
+each chat event, or channel, or user group, you can now manage them all from one Cbox. Your users, settings, and layout are preserved across threads, but each thread 
+hosts a unique conversation. 
+</p>
+<p>
+We also provide a simple API, which your site can leverage to generate new threads on the fly. For each new article, group, or user who joins your site, you can automatically 
+generate a new Cbox thread.
+</p>
+<p>
+For more information about Cbox Pro, please <a href="/contact">contact us</a>.
+</p>
+-->
+
+</div>
+
+
+<div style="clear: both"></div>
+</div><!-- /content -->
+
+</div><!-- /bodywrap -->
+
+<div id="siteErrorBar"><div class="wrap" id="siteErrorBarCont">Loading...</div></div>
+
+
+
+<div id="footer">
+
+	<a href="/">About
+	</a><a href="/products">Plans &amp; pricing
+	</a><a href="/terms">Terms &amp; conditions
+	</a><a href="/privacy">Privacy policy
+	</a><a href="/notices">Notices
+	</a><a href="/contact">Contact us
+	</a>
+	<div class="verybottom">
+		&copy; 2004&ndash;2026 Cbox Communications (Pty) Ltd, all rights reserved. 
+			0 ms. 
+			83ce		</a>
+	</div>
+
+</div>
+
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-242554-2', {
+	'cookieDomain': 'www.cbox.ws'
+});
+ga('send', 'pageview');
+
+</script>
+
+
+<script src="/code.js?20171024"></script>
+<script>
+	// Modal / naked mode.
+	if (window.isPopup) {
+		document.body.className = "Popped";
+	}
+	
+	// Only for CP pages
+	upgradeCheckboxes();
+
+var dropCrumb = function () {
+	if (!localStorage) {
+		return;
+	}
+	var bc = getCrumbs();
+	bc.push(location.href);
+	bc.splice(0, bc.length - 5);
+	localStorage.setItem("site:bread", JSON.stringify(bc));
+};
+
+var getCrumbs = function () {
+	if (!localStorage) {
+		return [];
+	}
+	var bcStr = localStorage.getItem("site:bread");
+	var bc = [];
+	if (bcStr) {
+		bc = JSON.parse(bcStr);
+	}
+	
+	return bc;
+}
+
+dropCrumb();
+</script>
+
+
+</body>
+</html>
+

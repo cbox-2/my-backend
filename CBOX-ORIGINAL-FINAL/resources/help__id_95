@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Using the Cbox webhook - Help &middot; Cbox</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content='width=device-width, initial-scale=1' name='viewport'>
+<meta name="description" content="Cbox live chat is an embeddable chat app for online communities, groups, and live-streaming events.">
+<link href="data:image/x-icon;base64,AAABAAEAEBACAAAAAACwAAAAFgAAACgAAAAQAAAAIAAAAAEAAQAAAAAAQAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA" rel="icon" type="image/x-icon">
+<link rel="stylesheet" href="/style.css?2050221">
+</head>
+<body id="mainbody">
+
+	<script>
+	// Define stub
+	var rcvdformresponse = function () {};
+	</script>
+	
+	<div id="mask"></div>
+
+
+
+<div id="popovr_box">
+	<div class="wrap">
+		<div style="padding: 20px; background-color: #fff">
+			<!--<div style="float:right; font-size: 150%;"><b><a href="javascript:popovr_close()">X</a></b></div>-->
+			<div id="popovr_title">
+				<!-- title -->
+			</div>
+			
+			<div id="popovr_text" style="text-align: left; clear:both">
+				<!-- content -->
+			</div>
+
+			<div id="popovr_t_login" style="display: none; text-align: left; clear:both">
+				<p>
+					Your session has expired. Please log back in to continue.
+				</p>
+				<iframe src="javascript:false" name="t_qlpop" onload="rcvdformresponse(this.name)" width="1" height="1" class="frmiframe"></iframe>
+				<form name="qlpop" action="/admin_d_login?f=qlpop" target="t_qlpop" method="post" onsubmit="return subsaving(this.name, 'sub', 'logging in...');">
+				<fieldset>
+					<label>Username:</label>
+					<input type="text" name="uname" value="msmsas55@gmail.com" maxlength="50" class="txtbox">
+					<label>Password:</label>
+					<input type="password" name="pword" value="" maxlength="50" class="txtbox">
+					<input type="submit" name="sub" value=" Log in ">
+					
+					<div id="m_qlpop" class="frmmsg1"></div>
+					<div id="em_qlpop" class="frmmsg2"></div>
+				</fieldset>
+				</form>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<!--[if lte IE 7]>
+	<div class="notice_er notice_top">
+		You are using an old version of Internet Explorer or you are in Compatibility View mode. 
+		This website will not work correctly. 
+		<br>
+		Please upgrade your browser or disable Compatibility View.
+	</div>
+<![endif]-->
+
+
+<div id="bodywrap">
+	<div id="header">
+		<div class="wrap">
+
+			<a id="logo" href="https://www.cbox.ws">
+				<img src="//www.cbox.ws/gfx/logo400.png" width="200" height="86" alt="Cbox" border="0">
+			</a>
+
+			<div id="headerExtras">
+	
+								
+								<span id="userWelcome">msmsas55@gmail.com</span>
+				<a href="/admin?switch">My Cboxes</a>
+				<a href="/admin?acct">My Account</a>
+												<a href="/help">Support
+				</a><a href="/admin?preproc=logout" onclick="return logout()">Log out
+				</a>
+							</div>
+		</div>
+	</div>
+
+		<div id="subbar">
+		<div class="wrap">
+			<a href="/admin?home" class="submenuitem"><b>msmsas55</b>			</a><a href="/admin?snippet" class="submenuitem">Publish
+			</a><a href="#" id="hovmenu1" class="submenuitem" onmousedown="return hovmenu(this, 1)">Look &amp; feel
+			</a><a href="#" id="hovmenu2" class="submenuitem" onmousedown="return hovmenu(this, 2)">Options
+			</a><a href="#" id="hovmenu3" class="submenuitem" onmousedown="return hovmenu(this, 3)">Users
+			</a><a href="#" id="hovmenu4" class="submenuitem" onmousedown="return hovmenu(this, 4)">Messages
+			</a>
+		</div>
+	</div>
+	<div id="bar3">
+		<div id="hovmenu" class="wrap"><a></a></div>
+	</div>
+	
+	<div id="wideimg" style="position: relative; width: 100%; left: 0">
+	</div>
+	
+	<div id="main" class="wrap ">
+<script language="JavaScript">
+var hit = new Array();
+var openans = new Array();
+
+function toggleanswer(id) {
+  if (typeof(document.getElementById("ans"+id).style.display) == "undefined") {
+    return true;
+  }
+  x = document.getElementById("ans"+id);
+  if (x.style.display != "none") {
+    x.style.display = "none";
+  }
+  else {
+    x.style.display = "";
+    if (document.images && !hit[id]) {
+      (new Image()).src="/help?hit="+id;
+      hit[id] = true;
+    }
+	if (x.scrollIntoViewIfNeeded) {
+		// Cuts question title off in some cases; workaround not straightforward. 
+		x.scrollIntoViewIfNeeded();
+	}
+  }
+  return false;
+}
+</script>
+
+<div id="content" class="withAside">
+<h1>Help &amp; Support</h1>
+
+<h2>Using the Cbox webhook</h2>
+<div class="helpContent" id="ans95">
+	<h3>Getting started</h3>
+<p class="aside">
+This feature requires some familiarity with hosting your own scripts on the Web. Our code examples are in PHP, but you can use any platform and programming language you like, providing you can access HTTP POST data. 
+</p>
+<p>
+The Cbox webhook is an HTTP POST callback mechanism for getting a copy of new messages as they are posted to your Cbox. 
+A couple of lines of PHP are sufficient to get started:
+</p>
+
+<pre>
+&lt;?php
+$input = @file_get_contents("php://input");
+$json = json_decode($input);
+
+// $json contains array of messages
+
+error_log(print_r($json, true), 1, "your-email@example.com");
+
+echo "OK";
+?&gt;
+</pre>
+
+<p>
+With the above code uploaded to your server, test that it works by opening the corresponding URL, e.g. <kbd>https://yoursite.example.com/cbox.php</kbd>, 
+and confirming that you see "OK". You can then enter it as your callback URL in your Cbox settings.
+</p>
+<p>
+When a user posts a message, Cbox will issue an HTTP <code>POST</code> request to your callback URL, 
+with Content-Type <code>application/json</code>. The request body will look something like this:
+</p>
+<pre>
+[{"type":"message","box":802140,"channel":0,"time":1488526982,"uid":0,"name":"test","text":"this is a test","link":"","ip":"0.0.0.0"}]
+</pre>
+<p>
+The object is an array of messages. There can be multiple messages in a single POST. Your code can do whatever you like with the messages; it 
+just needs to return an HTTP OK status to Cbox. Any response body is ignored. 
+</p>
+
+<h3>Message contents</h3>
+<p>
+The message webhook is located after the message-accepted stage and before filtering. This means your endpoint will only receive 
+messages that are being published on your Cbox (i.e. not messages from banned users). They will be "raw", having none of 
+the built-in or custom filters applied (i.e. no boxcode expansion). Important to note is that messages can contain any 
+UTF-8 character, and so should be escaped as appropriate before storage or display.
+</p>
+<p>
+Message properties:
+</p>
+<ul>
+<li><code>type</code> &mdash; always set to "message"
+<li><code>box</code> &mdash; your Cbox ID.
+<li><code>channel</code> &mdash; The channel ID to which the message was posted. 
+<li><code>id</code> &mdash; The message ID. 
+<li><code>time</code> &mdash; Unix times when the message was received. 
+<li><code>uid</code> &mdash; Registered user ID. Guest IDs are undefined or zero.
+<li><code>name</code> &mdash; The user's name, as entered.
+<li><code>text</code> &mdash; The text of the message, as entered.
+<li><code>link</code> &mdash; Link associated with the message; the profile URL. 
+<li><code>ip</code> &mdash; IP address of the user. 
+</ul>
+
+<h3>Errors and retry</h3>
+<p>
+Your endpoint needs to return an HTTP success header (status codes in the <code>2XX</code> range) in response to the POST. 
+If it returns any other status, or times out, Cbox will consider the delivery to have failed. On failure, Cbox will buffer messages for 
+retry. Cbox will retry the POST at increasingly long intervals, even in the absence of further new messages. 
+</p>
+<p>
+Cbox buffers are not unlimited; if your endpoint is down for an extended time, the oldest messages may be dropped. 
+</p>
+
+
+<h3>Notes</h3>
+<ul>
+<li>Cbox ignores the body sent in response to the POST, and does not wait for it to complete. 
+<li>Return a <code>200 OK</code> to Cbox as quickly as possible. Otherwise, there is a risk of a timeout, which will cause the same message(s) to be re-sent. If your message processing is slow, move it "offline", either by completing and flushing the HTTP response early and continuing to work, or by offloading incoming messages to another service.
+<li>For forwards-compatibility, confirm that <code>type == 'message'</code> in your code; new event types may be supported in future.
+<li>The box and channel properties mean you can multiplex several Cboxes to a single endpoint, and filter or switch based on channel. 
+<li>Message ID is a monotonically increasing number. Larger IDs are always newer messages. 
+<li>Although some properties are 32-bit integers, it's recommended that you treat all values as UTF-8 strings for storage or further processing. 
+<li>The POST request includes a custom HTTP header, <code>X-Cbox-Time</code> which contains the Unix timestamp at the moment the POST was sent. You 
+can use this to calculate differential message times. 
+</ul>		<div class="helpDate">
+		Last updated 31 May 2021	</div>
+	</div>
+<script>
+if (history.replaceState) {
+	history.replaceState(null, "", "/help?id=95");
+}
+</script>
+<p>
+<a href="/help">&laquo; Support home</a>
+</p>
+</div>
+
+
+<div style="clear: both"></div>
+</div><!-- /content -->
+
+</div><!-- /bodywrap -->
+
+<div id="siteErrorBar"><div class="wrap" id="siteErrorBarCont">Loading...</div></div>
+
+
+
+<div id="footer">
+
+	<a href="/">About
+	</a><a href="/products">Plans &amp; pricing
+	</a><a href="/terms">Terms &amp; conditions
+	</a><a href="/privacy">Privacy policy
+	</a><a href="/notices">Notices
+	</a><a href="/contact">Contact us
+	</a>
+	<div class="verybottom">
+		&copy; 2004&ndash;2026 Cbox Communications (Pty) Ltd, all rights reserved. 
+			1 ms. 
+			83ce		</a>
+	</div>
+
+</div>
+
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-242554-2', {
+	'cookieDomain': 'www.cbox.ws'
+});
+ga('send', 'pageview');
+
+</script>
+
+
+<script src="/code.js?20171024"></script>
+<script>
+	// Modal / naked mode.
+	if (window.isPopup) {
+		document.body.className = "Popped";
+	}
+	
+	// Only for CP pages
+	upgradeCheckboxes();
+
+var dropCrumb = function () {
+	if (!localStorage) {
+		return;
+	}
+	var bc = getCrumbs();
+	bc.push(location.href);
+	bc.splice(0, bc.length - 5);
+	localStorage.setItem("site:bread", JSON.stringify(bc));
+};
+
+var getCrumbs = function () {
+	if (!localStorage) {
+		return [];
+	}
+	var bcStr = localStorage.getItem("site:bread");
+	var bc = [];
+	if (bcStr) {
+		bc = JSON.parse(bcStr);
+	}
+	
+	return bc;
+}
+
+dropCrumb();
+</script>
+
+
+</body>
+</html>
+

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Cbox - Box error</title>
+<style>
+	html, body {
+		margin: 0;
+		overflow: hidden;
+		background: #ffffff4d;
+		backdrop-filter: blur(3px);
+		font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+		color: #000;
+		font-size: 16px;
+		position: relative;
+		height: 100%;
+		
+	}
+	
+	.errbar {
+		margin: 0;
+		padding: 1em;
+		background-color: #FC735A;
+	}
+	h1 {
+		margin: 0;
+		font-size: 24px;
+		font-weight: 100;
+		line-height: 24px;
+		padding-bottom: 0.5em;
+	}
+	
+	a, a:link, a:visited, a:active {
+		color: #059AD0;
+		text-decoration: none;
+	}
+	a:hover {
+		text-decoration: underline;
+	}
+	
+	.errbar a {
+		color: #fff;
+		text-decoration: underline;
+	}
+	
+	.extra {
+		padding: 1em;
+	}
+	
+	.foot {
+		padding: 1em;
+		position: absolute;
+		bottom: 0;
+		font-size: 80%;
+	}
+	
+	@media (min-width: 600px) {
+		.errbar, .extra {
+			padding-left: 4em;
+		}
+	}
+</style>
+</head>
+<body>
+	<div class="errbar">
+		<h1>There was a problem</h1>
+		Cbox not found or invalid token &ndash; please check URL.
+	</div>
+	<div class="extra">
+		If this is your Cbox, you may need to <a href="https://www.cbox.ws/admin" target="_new">visit your control panel</a> to resolve this error.
+	</div>
+	<div class="foot">
+		
+	</div>
+	
+</body>
+</html>

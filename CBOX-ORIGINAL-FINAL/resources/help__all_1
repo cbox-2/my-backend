@@ -1,0 +1,2212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>All questions - Help &middot; Cbox</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content='width=device-width, initial-scale=1' name='viewport'>
+<meta name="description" content="Cbox live chat is an embeddable chat app for online communities, groups, and live-streaming events.">
+<link href="data:image/x-icon;base64,AAABAAEAEBACAAAAAACwAAAAFgAAACgAAAAQAAAAIAAAAAEAAQAAAAAAQAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA" rel="icon" type="image/x-icon">
+<link rel="stylesheet" href="/style.css?2050221">
+</head>
+<body id="mainbody">
+
+	<script>
+	// Define stub
+	var rcvdformresponse = function () {};
+	</script>
+	
+	<div id="mask"></div>
+
+
+
+<div id="popovr_box">
+	<div class="wrap">
+		<div style="padding: 20px; background-color: #fff">
+			<!--<div style="float:right; font-size: 150%;"><b><a href="javascript:popovr_close()">X</a></b></div>-->
+			<div id="popovr_title">
+				<!-- title -->
+			</div>
+			
+			<div id="popovr_text" style="text-align: left; clear:both">
+				<!-- content -->
+			</div>
+
+			<div id="popovr_t_login" style="display: none; text-align: left; clear:both">
+				<p>
+					Your session has expired. Please log back in to continue.
+				</p>
+				<iframe src="javascript:false" name="t_qlpop" onload="rcvdformresponse(this.name)" width="1" height="1" class="frmiframe"></iframe>
+				<form name="qlpop" action="/admin_d_login?f=qlpop" target="t_qlpop" method="post" onsubmit="return subsaving(this.name, 'sub', 'logging in...');">
+				<fieldset>
+					<label>Username:</label>
+					<input type="text" name="uname" value="msmsas55@gmail.com" maxlength="50" class="txtbox">
+					<label>Password:</label>
+					<input type="password" name="pword" value="" maxlength="50" class="txtbox">
+					<input type="submit" name="sub" value=" Log in ">
+					
+					<div id="m_qlpop" class="frmmsg1"></div>
+					<div id="em_qlpop" class="frmmsg2"></div>
+				</fieldset>
+				</form>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<!--[if lte IE 7]>
+	<div class="notice_er notice_top">
+		You are using an old version of Internet Explorer or you are in Compatibility View mode. 
+		This website will not work correctly. 
+		<br>
+		Please upgrade your browser or disable Compatibility View.
+	</div>
+<![endif]-->
+
+
+<div id="bodywrap">
+	<div id="header">
+		<div class="wrap">
+
+			<a id="logo" href="https://www.cbox.ws">
+				<img src="//www.cbox.ws/gfx/logo400.png" width="200" height="86" alt="Cbox" border="0">
+			</a>
+
+			<div id="headerExtras">
+	
+								
+								<span id="userWelcome">msmsas55@gmail.com</span>
+				<a href="/admin?switch">My Cboxes</a>
+				<a href="/admin?acct">My Account</a>
+												<a href="/help">Support
+				</a><a href="/admin?preproc=logout" onclick="return logout()">Log out
+				</a>
+							</div>
+		</div>
+	</div>
+
+		<div id="subbar">
+		<div class="wrap">
+			<a href="/admin?home" class="submenuitem"><b>msmsas55</b>			</a><a href="/admin?snippet" class="submenuitem">Publish
+			</a><a href="#" id="hovmenu1" class="submenuitem" onmousedown="return hovmenu(this, 1)">Look &amp; feel
+			</a><a href="#" id="hovmenu2" class="submenuitem" onmousedown="return hovmenu(this, 2)">Options
+			</a><a href="#" id="hovmenu3" class="submenuitem" onmousedown="return hovmenu(this, 3)">Users
+			</a><a href="#" id="hovmenu4" class="submenuitem" onmousedown="return hovmenu(this, 4)">Messages
+			</a>
+		</div>
+	</div>
+	<div id="bar3">
+		<div id="hovmenu" class="wrap"><a></a></div>
+	</div>
+	
+	<div id="wideimg" style="position: relative; width: 100%; left: 0">
+	</div>
+	
+	<div id="main" class="wrap ">
+<script language="JavaScript">
+var hit = new Array();
+var openans = new Array();
+
+function toggleanswer(id) {
+  if (typeof(document.getElementById("ans"+id).style.display) == "undefined") {
+    return true;
+  }
+  x = document.getElementById("ans"+id);
+  if (x.style.display != "none") {
+    x.style.display = "none";
+  }
+  else {
+    x.style.display = "";
+    if (document.images && !hit[id]) {
+      (new Image()).src="/help?hit="+id;
+      hit[id] = true;
+    }
+	if (x.scrollIntoViewIfNeeded) {
+		// Cuts question title off in some cases; workaround not straightforward. 
+		x.scrollIntoViewIfNeeded();
+	}
+  }
+  return false;
+}
+</script>
+
+<div id="content" class="withAside">
+<h1>Help &amp; Support</h1>
+
+
+	<p>
+	Our help database contains answers to most of the common questions regarding our products. 
+	</p>
+	<p>
+	If you are unable to locate a satisfactory answer for your query by searching here, please <a href="/contact?ref=help">contact us</a>.
+	</p>
+
+	<form action="/help" method="get">
+	<fieldset>
+	<legend>Search support</legend>
+	<input type="text" id="inpHelpQuery" name="srch" size="45" maxlength="255" class="txtbox" placeholder="e.g. how do I change my theme?" value="">
+	<input type="submit" value=" Go " style="">
+	</fieldset>
+	</form>
+
+<script>
+	document.getElementById("inpHelpQuery").focus();
+	document.getElementById("inpHelpQuery").select();
+</script>
+<h2 id="q9"><a href="/help?id=9" onclick="return toggleanswer(9)">I lost my Cbox embed code. Where can I get it?</a></h2>
+
+<div class="helpContent" id="ans9" data-score="1" style="display:none;">
+	<p>
+Your Cbox embed code is available at your <a href="/admin?snippet">control panel</a>. You need this code to install your Cbox on your website.
+</p>
+<p>
+Also on that page is your Quick Link &mdash; a URL which you can use to access your Cbox directly in your browser or on your mobile device. 
+</p>		<div class="helpDate">
+		Last updated 19 October 2015	</div>
+	</div>
+<h2 id="q24"><a href="/help?id=24" onclick="return toggleanswer(24)">How do I put my Cbox on my website?</a></h2>
+
+<div class="helpContent" id="ans24" data-score="1" style="display:none;">
+	<p>
+Once you have <a href="/getone">created your Cbox account</a>, go to the <a href="/admin?snippet">Publish</a> page of your control panel. The code and steps for embedding your Cbox are provided there for a number of common platforms. 
+</p>
+<p>
+If you install your Cbox and all you see is code, or nothing at all, your web host may be removing or otherwise interfering with the HTML iframe tags that Cbox uses. Your Cbox code needs to be pasted into an area of your site that accepts HTML without modification. This may mean switching your editor from "rich text" or "WYSIWYG" mode into HTML-editing or "raw" mode, or you may need to open your template files in a plain-text editor like Notepad. 
+</p><p>
+Remember that you always have the option of posting or sharing your Cbox <a href="/admin?snippet">Quick Link</a> &mdash; this gives visitors direct access to your Cbox in a full-screen layout, so it's perfect as a mobile option or for stand-alone use.
+</p>		<div class="helpDate">
+		Last updated 19 October 2015	</div>
+	</div>
+<h2 id="q14"><a href="/help?id=14" onclick="return toggleanswer(14)">How do change my Cbox's style to go with my site's design?</a></h2>
+
+<div class="helpContent" id="ans14" data-score="1" style="display:none;">
+	<p>
+Go to the <a href="/admin?style">Theme editor</a> in your control panel. There you can specify the fonts and colours of your Cbox, using a point-and-click editor. You can always reset your theme to one of the preset defaults there, if you would like to start again.  
+</p>
+<p>
+If you have a <a href="/upgrade">Premium or Pro Cbox</a> you can <a href="/admin?styleadv">edit CSS</a>, which gives you complete control over presentation. 
+</p>		<div class="helpDate">
+		Last updated 1 June 2016	</div>
+	</div>
+<h2 id="q16"><a href="/help?id=16" onclick="return toggleanswer(16)">How do I delete messages?</a></h2>
+
+<div class="helpContent" id="ans16" data-score="1" style="display:none;">
+	<p>
+If you have a <a href="/upgrade">Premium or Pro Cbox</a>, you can create a moderator name for yourself at your <a href="/admin?users">Users page</a>, and then log in on your Cbox using the "profile" link. You will see a delete icon [x] next to each message in your Cbox, and you will not have to log in at your control panel at all to delete messages.
+</p>
+<p>
+Alternatively, visit your <a href="/admin?posts">Messages page</a> to delete messages individually or in bulk. Deleted messages are removed from your public Cbox history, but are preserved in your <a href="/admin?postsarc">Archives</a>.
+</p>
+		<div class="helpDate">
+		Last updated 18 April 2016	</div>
+	</div>
+<h2 id="q15"><a href="/help?id=15" onclick="return toggleanswer(15)">Can I make my Cbox transparent?</a></h2>
+
+<div class="helpContent" id="ans15" data-score="1" style="display:none;">
+	<p>
+Yes. In the <a href="/admin?style">Theme editor</a>, simply delete the colour codes for the main and form background ("BG") elements. This will make the Cbox transparent, allowing whatever is behind the Cbox to show through. 
+</p>
+<p>
+Note that any pop-ups generated by a transparent Cbox will have the default background colour &mdash; usually white. If your font colour is light, it may be invisible in popups. You can fix this by <a href="/admin?styleadv">editing the CSS</a> to introduce a background-color rule for popups. 
+</p>		<div class="helpDate">
+		Last updated 27 May 2015	</div>
+	</div>
+<h2 id="q35"><a href="/help?id=35" onclick="return toggleanswer(35)">How do I find out who posted in my Cbox?</a></h2>
+
+<div class="helpContent" id="ans35" data-score="1" style="display:none;">
+	<p>
+Cbox cannot identify your visitors, but we do record IP addresses. Your <a href="/admin?posts">Messages page</a> makes them available to you, and you can also ban people from posting in your Cbox from that page. 
+</p>
+		<div class="helpDate">
+		Last updated 19 October 2015	</div>
+	</div>
+<h2 id="q17"><a href="/help?id=17" onclick="return toggleanswer(17)">How do I ban / unban someone?</a></h2>
+
+<div class="helpContent" id="ans17" data-score="1" style="display:none;">
+	<p>
+If you have a <a href="/upgrade">Premium or Pro</a> Cbox, you can create a moderator account for yourself <a href="/admin?users">here</a>, and then ban people with one click while logged in to your Cbox. You will see [x][o] links next to each message. Clicking the [o] will ban that user. 
+</p>
+<p>
+Alternatively, go to your <a href="/admin?posts">Messages page</a>, select a message from the user you want to ban, and click the "Ban" link. 
+</p>
+<p>
+Your <a href="/admin?bans">Blocked users</a> page lists the bans currently in force. To unban someone, select the ban and click "Unban". Bans that show as "expired" will be cleared within a few minutes. 
+</p>		<div class="helpDate">
+		Last updated 19 October 2015	</div>
+	</div>
+<h2 id="q10"><a href="/help?id=10" onclick="return toggleanswer(10)">How do I change my settings?</a></h2>
+
+<div class="helpContent" id="ans10" data-score="1" style="display:none;">
+	<p>
+Check out the <a href="/admin">control panel</a>. Cbox is highly customizable, and the options are arranged in the control panel into sections. Some options are only available on paid plans. These will usually be greyed-out. Upgrading will unlock these options, but will not automatically enable them. 
+</p>
+<p>
+Most changes to settings will take effect immediately, but some will require that you refresh the page that your Cbox is on. If you have embedded your Cbox on your website, you will generally not need to reinstall it. Settings that change your embed code will notify you of this. 
+</p>		<div class="helpDate">
+		Last updated 27 May 2015	</div>
+	</div>
+<h2 id="q42"><a href="/help?id=42" onclick="return toggleanswer(42)">Formatting messages with boxcode</a></h2>
+
+<div class="helpContent" id="ans42" data-score="1" style="display:none;">
+	<p class="aside">
+When boxcode is disabled in <a href="/admin?settings">Posting options</a>, it is only disabled for user messages. You will still be able to use it for your Sticky message and Custom filtering rules. 
+</p>
+<p>
+Cbox supports <b>boxcode</b>, which is a way to add markup to messages. You can also use it to style your <a href="/admin?sticky">Sticky message</a> and <a href="/admin?filtering">Custom filtering</a> replacement text. 
+</p>
+<p>
+The boxcodes supported by Cbox are:
+</p>
+<ul>
+<li>[color=#ff0000]<span style="color:#f00">hex colour</span>[/color] or [color=forestgreen]<span style="color:forestgreen">named colour</span>[/color]
+<li>[color=#f00,#ff0]<span style="color:#f00; background-color:#ff0">foreground and background</span>[/color]
+<li>[b]<b>bold text</b>[/b]
+<li>[u]<u>underlined text</u>[/u]
+<li>[i]<i>italicized text</i>[/i]
+<li>[s]<s>struck-out text</s>[/s]
+<li>[q]<q>quoted text</q>[/q]
+<li>[sub]<sub>subscript</sub>[/sub]
+<li>[sup]<sup>superscript</sup>[/sup]
+<li>[center]centered text[/center]
+<li>[br]<br>(line break)
+<li>[big]<span style="font-size:120%">larger font</span>[/big]
+<li>[small]<span style="font-size: 90%">smaller font</span>[/small]
+<li>[class=custom]custom-styled text[/custom]
+<li>[code]<code>fixed-width text</code>[/code]
+<li>[url=https://address.com/hyperlink]link text[/url] or [url]https://address.com/hyperlink[/url]
+<li>[img=https://address.com/image.jpg]image title[/img] or [img]https://address.com/image.jpg[/img]
+</ul>
+
+<h3>Combining boxcode</h3>
+<p class="aside">
+Besides using boxcode in <a href="/admin?filtering">Custom filtering</a> replacement text, you can also <i>match</i> boxcodes in filter rules. <a href="/help?id=67">See more.</a>
+</p>
+<p>
+It's possible to combine boxcode by nesting it, with some caveats:
+<ol>
+<li>Tags must be nested in the correct order: <kbd>[b][u]bold underline[/u][/b]</kbd> is valid but <kbd>[b][u]broken[/b][/u]</kbd> is not. 
+<li>The same tag cannot be nested. For example, <kbd>[class=one][class=two]some text[/class][/class]</kbd> will not work. To get the intended behaviour in this case, you could have a combined class instead: <kbd>[class=onetwo]some text[/class]</kbd>.
+<li>The no-attribute form of [url] (e.g. without link text), and both forms of the [img] tag, must be the innermost element in any nested sequence. 
+</ol>
+</p>
+
+<h3>Styling boxcode</h3>
+<p>
+Boxcode is translated internally to HTML. You can thus affect the presentation of boxcode by <a href="/admin?styleadv">editing your CSS</a>. For example, to change the presentation of the [s] tag:
+</p>
+<pre>
+s {
+	text-decoration: none; /* reset default */
+	opacity: 0.2;
+}
+</pre>
+<p class="aside">[class] parameters must start with a letter, and are limited to 20 alphanumeric characters. <kbd>[class=blink]</kbd> is valid but <kbd>[class=2]</kbd> is not. </p>
+<p>
+The [class] boxcode is intended for open-ended styling. It produces a span with no default CSS. You can create a corresponding class using a <code>cc_</code> prefix. For example, for blurred text, copy this to <a href="/admin?styleadv">your CSS</a>:
+</p>
+<pre>
+.cc_blur {
+	text-shadow: #000 0 0 0.5em;
+	color: transparent;
+}
+</pre>
+<p>
+Now users can blur the text in their messages: <kbd>[class=blur]this will be blurred![/class]</kbd>.
+</p>
+<p>
+<a href="help?id=94#custom">Find out more about custom CSS.</a>
+</p>		<div class="helpDate">
+		Last updated 31 May 2021	</div>
+	</div>
+<h2 id="q28"><a href="/help?id=28" onclick="return toggleanswer(28)">I can't log in. It says "Invalid username or password"</a></h2>
+
+<div class="helpContent" id="ans28" data-score="1" style="display:none;">
+	<p>
+If you have lost your username or password, visit <a href="/forgotpword">this page</a>, enter your email address, and you will be sent an email with a link that you can follow to reset your login. 
+</p>
+<p>
+If you do not receive the login details you expect via email, or if you have lost access to your email address, you can <a href="/contact">contact us</a>. Under some circumstances we are able to recover a lost account. 
+</p>		<div class="helpDate">
+		Last updated 19 October 2015	</div>
+	</div>
+<h2 id="q23"><a href="/help?id=23" onclick="return toggleanswer(23)">How do I close my Cbox account?</a></h2>
+
+<div class="helpContent" id="ans23" data-score="1" style="display:none;">
+	<p>
+If you have installed the Cbox HTML embed code on your site, delete the code there. Then, you can close your Cbox account in your control panel at <a href="/admin?account">this page</a>. Note that your account name will remain reserved on our system. If you want to create a new account with the same name, change the name on the old one before deleting it. 
+</p>
+		<div class="helpDate">
+		Last updated 1 June 2016	</div>
+	</div>
+<h2 id="q21"><a href="/help?id=21" onclick="return toggleanswer(21)">I forgot my password. What can I do?</a></h2>
+
+<div class="helpContent" id="ans21" data-score="1" style="display:none;">
+	<p>
+Visit <a href="/forgotpword">this page</a>, and enter your email address to have your details sent to you. Alternatively, you can enter your Cbox account name or your embed code, and we will send a reset link to the email address we have on record. 
+</p>
+<p>
+If you do not receive the login details you expect via email, you can <a href="/contact">contact us</a>. Under some circumstances we are able to recover a lost account. 
+</p>		<div class="helpDate">
+		Last updated 27 May 2015	</div>
+	</div>
+<h2 id="q30"><a href="/help?id=30" onclick="return toggleanswer(30)">I deleted some messages by accident. Can I get them back?</a></h2>
+
+<div class="helpContent" id="ans30" data-score="1" style="display:none;">
+	<p>
+Unfortunately deleted messages cannot be restored to your Cbox conversation history without re-posting them. 
+</p>
+<p>
+However, if you have a Premium or Pro Cbox, all your messages are archived, including messages that were deleted. You can generate a transcript from your archive at <a href="/admin?postsarc">this page</a>. 
+</p>
+		<div class="helpDate">
+		Last updated 16 June 2015	</div>
+	</div>
+<h2 id="q25"><a href="/help?id=25" onclick="return toggleanswer(25)">How do I create a Cbox?</a></h2>
+
+<div class="helpContent" id="ans25" data-score="1" style="display:none;">
+	<p>
+Creating a Cbox is quick, easy, and free. Simply visit <a href="/getone">this page</a>, and fill in the form. Your Cbox will be created instantly, and you will be able to get started right away. 
+</p>		<div class="helpDate">
+		Last updated 27 May 2015	</div>
+	</div>
+<h2 id="q43"><a href="/help?id=43" onclick="return toggleanswer(43)">Can I have more than one Cbox?</a></h2>
+
+<div class="helpContent" id="ans43" data-score="1" style="display:none;">
+	<p>
+Yes, you can have as many as you like! <a href="/getone">Create a separate account</a> for each Cbox. You will need a unique account name for each, but we recommend using the same email address. 
+</p>
+<p>
+If you need a large number of Cboxes, you might want to be on our <a href="/product">Cbox Pro</a> plan. Cbox Pro supports <a href="/admin?channels">channels</a>, which are independent conversation threads. Each channel can be embedded or linked as if it were a separate Cbox, and will host a separate conversation. Channels share the same theme, settings and users, and you only need one control panel login to manage them. 
+</p>		<div class="helpDate">
+		Last updated 1 June 2016	</div>
+	</div>
+<h2 id="q38"><a href="/help?id=38" onclick="return toggleanswer(38)">How do I remove the "cbox" or "Get a Cbox" link?</a></h2>
+
+<div class="helpContent" id="ans38" data-score="1" style="display:none;">
+	<p>
+These links and all other ads are removed automatically when you <a href="/upgrade">upgrade</a> your Cbox to a paid plan.
+</p>		<div class="helpDate">
+		Last updated 27 May 2015	</div>
+	</div>
+<h2 id="q40"><a href="/help?id=40" onclick="return toggleanswer(40)">The form part of my Cbox doesn't display. I only see the outline.</a></h2>
+
+<div class="helpContent" id="ans40" data-score="1" style="display:none;">
+	<p>
+This can be caused by Internet security software or other plugins or extensions installed in your browser. 
+</p>
+<p>
+For example, if you have Norton Internet Security, the Chrome browser extension that is installed with this software has been known to cause this issue. Disabling the extension will fix it. To do so, enter <b>chrome://extensions</b> in the browser address bar, locate the Norton extension, and disable it.
+</p>
+<p>
+If you have McAfee Internet Security installed, your Privacy Service may be interfering with the loading of Cboxes. Try the following steps to resolve the problem:
+</p>
+<ol>
+<li>Right click the McAfee icon in your system tray.
+<li>Select Privacy Service | Options.
+<li>Click on "Block Ads".
+<li>Uncheck "Block ads on this computer".
+</ol>		<div class="helpDate">
+		Last updated 27 May 2015	</div>
+	</div>
+<h2 id="q34"><a href="/help?id=34" onclick="return toggleanswer(34)">How do I move my Cbox to a different part of my page?</a></h2>
+
+<div class="helpContent" id="ans34" data-score="1" style="display:none;">
+	<p>
+You can move your Cbox <a href="/admin?snippet">embed code</a> around in your HTML to make your Cbox show up in a different place. You can also make it align to the centre or right side of the page, by editing the code a little.
+</p>
+<p>
+Your code may include something like this: 
+</p>
+<pre>
+position: relative; margin: 0 auto;
+</pre>
+<p>
+Remove <code>margin: 0 auto;</code> to eliminate the centering. You can replace it with <code>float: left;</code> or <code>float: right;</code> to make your Cbox move to the left or right, respectively. 
+</p>
+<p>
+To move it up or down on your page, you'll need to move the code to a different part of your layout. If you have access to the HTML of your page but don't know HTML, test different places to see which works best.
+</p>
+<p>
+Other <a href="/admin?snippet">code variations</a> may have different position methods, but can usually be edited in CSS. For example, the "fixed button" code includes inline CSS which controls its position on the page. 
+</p>		<div class="helpDate">
+		Last updated 8 October 2015	</div>
+	</div>
+<h2 id="q13"><a href="/help?id=13" onclick="return toggleanswer(13)">How do I change my Cbox's size?</a></h2>
+
+<div class="helpContent" id="ans13" data-score="1" style="display:none;">
+	<p>
+You can change your Cbox's size on the <a href="/admin?layout">Layout page</a> of your control panel. Simply change the values for width and height, and then save your changes. You will then be informed that your code has been updated &mdash; go to your <a href="/admin?snippet">Publish</a> page to get your new code, to reinstall your Cbox on your website.
+</p>
+<p>
+If the message input area in your Cbox looks wrong, or cut off, you may need to increase the "Form height" setting, also at your <a href="/admin?layout">Layout page</a>. 
+</p>
+<p>
+Your Cbox does not in fact have to be a fixed size. You can edit your embed code directly to introduce relative widths and heights. 
+</p>		<div class="helpDate">
+		Last updated 27 May 2015	</div>
+	</div>
+<h2 id="q45"><a href="/help?id=45" onclick="return toggleanswer(45)">Can I create moderators or administrators?</a></h2>
+
+<div class="helpContent" id="ans45" data-score="1" style="display:none;">
+	<p>
+Moderation is available on <a href="/upgrade">paid Cboxes</a>. Messages on a free Cbox can only be deleted via the control panel only. 
+</p>
+<div class="aside">
+Mods and admins have the same permissions, but admins are ranked higher than mods: mods cannot ban admins or delete their messages. Mods cannot ban each other, but they can delete each others' messages. Admins cannot ban each other either, but they can delete anyone's messages.
+</div>
+<p>
+You can create a mod or admin name at your <a href="/admin?users">Users page</a>, either by selecting one of the existing registered names and clicking the "Mod" button, or by creating a new registered user with Moderator or Administrator status using the form on that page. 
+</p>
+<p>
+To log in with a mod/admin name on your Cbox, enter the name in the "name" box, click the "profile" link at the bottom-right, and then enter the password.
+</p>
+<p>
+After successfully logging in, you should see [x] and [o] icons next to each message in your Cbox. Clicking the [x] deletes a message, while clicking [o] bans the user that posted the message.
+</p>
+		<div class="helpDate">
+		Last updated 19 October 2015	</div>
+	</div>
+<h2 id="q47"><a href="/help?id=47" onclick="return toggleanswer(47)">I am banned on my own Cbox!</a></h2>
+
+<div class="helpContent" id="ans47" data-score="1" style="display:none;">
+	<p>
+This can happen when you are using the same ISP as a user who was banned on your Cbox &mdash; either you are sharing an IP address, or you are being assigned dynamic IP addresses. To unban yourself, go to your <a href="/admin?bans">Bans page</a> and unban the most recent bans one by one until you are able to post again. 
+</p>		<div class="helpDate">
+		Last updated 14 July 2015	</div>
+	</div>
+<h2 id="q33"><a href="/help?id=33" onclick="return toggleanswer(33)">My time is wrong. How do I change it?</a></h2>
+
+<div class="helpContent" id="ans33" data-score="1" style="display:none;">
+	<p>
+In the <a href="/admin?dateopt">Date options</a> in your control panel, there is a "Zone" setting. Click the [reset] link to have Cbox attempt to figure out the correct time zone based on your current clock time. If it's still not correct according to the example shown on that page, add or subtract 1 from the Zone number until the example time shown is correct. Your time zone may be negative or positive.
+</p>
+<p>
+You can also change the "Date display" option to show relative timestamps &mdash; this way the clock time is not shown on your Cbox at all, but rather a relative time, such as "2 minutes ago". 
+</p>		<div class="helpDate">
+		Last updated 18 April 2016	</div>
+	</div>
+<h2 id="q37"><a href="/help?id=37" onclick="return toggleanswer(37)">Is Cbox free?</a></h2>
+
+<div class="helpContent" id="ans37" data-score="1" style="display:none;">
+	<p>
+We have a free plan, which will always be free, but it does not offer the full complement of features available with Cbox. Our <a href="/products">paid plans</a> come with plenty of good reasons to upgrade. 
+</p>		<div class="helpDate">
+		Last updated 27 May 2015	</div>
+	</div>
+<h2 id="q31"><a href="/help?id=31" onclick="return toggleanswer(31)">My form fields have a yellow background!</a></h2>
+
+<div class="helpContent" id="ans31" data-score="1" style="display:none;">
+	<p>
+This may be caused by the Google toolbar's AutoFill feature. You can turn this feature off. First open the toolbar options page (click the "G" icon in the search bar and select "Manage..." from the drop-down list).
+</p><p>
+For older versions, click the More tab, and then under "Extras", untick the "Automatically highlight fields that AutoFill can fill" option. Newer versions just require that you untick the Autofill box on the Browsing tab, and still newer versions have the AutoFill option on the Features tab.
+</p>		<div class="helpDate">
+		Last updated 22 January 2015	</div>
+	</div>
+<h2 id="q46"><a href="/help?id=46" onclick="return toggleanswer(46)">How can I add emoticons?</a></h2>
+
+<div class="helpContent" id="ans46" data-score="1" style="display:none;">
+	<p>
+Cbox supports custom emoticons. You can add and delete emoticons at <a href="/admin?smilies">this page</a> in your control panel.
+</p>
+<p class="aside">You can control the size and other layout properties of emoticon images using <a href="/help?id=94">CSS</a>.</p>
+<p>
+To add a new emoticon, simply click the Upload button and then select the image file, either from your device, or by pasting in a URL. Formats supported are GIF (including animated GIF), JPG, and PNG.
+</p>
+<p>
+Each emoticon needs a shortcut code, so that users can simply type the code to insert the emoticon. This code can be anything you like, but it's recommended to use a common prefix/suffix to avoid conflicts with ordinary words in conversation. For example, <code>:hello:</code> will not conflict with "hello world". After clicking Save, your new emoticon(s) will be available immediately in your Cbox.
+</p>
+		<div class="helpDate">
+		Last updated 3 August 2017	</div>
+	</div>
+<h2 id="q18"><a href="/help?id=18" onclick="return toggleanswer(18)">Why are there ads?</a></h2>
+
+<div class="helpContent" id="ans18" data-score="1" style="display:none;">
+	<p>
+Advertising offsets the cost of providing the free version of Cbox. You may <a href="/upgrade">upgrade</a> your Cbox at any time to a paid plan, which removes all the ads and the Cbox branding, and also unlocks lots of other <a href="/products">useful features</a>. 
+</p>		<div class="helpDate">
+		Last updated 19 October 2015	</div>
+	</div>
+<h2 id="q53"><a href="/help?id=53" onclick="return toggleanswer(53)">I banned someone and they are still able to post. What can I do?</a></h2>
+
+<div class="helpContent" id="ans53" data-score="1" style="display:none;">
+	<p>
+The user's IP address is probably changing. Cbox has a feature that allows you to strengthen bans so that certain kinds of changing (dynamic) IPs are blocked by a single ban. Cbox Pro has additional features that can pre-emptively ban users of proxies. 
+</p>
+<p>
+Go to your <a href="/admin?bans">bans</a> page, and select the ban(s) that are not effective. Then click the "Strengthen" button in the top-right. This will "widen the net" on the selected bans. You can click Strengthen again to widen the net even further.
+</p>
+<p>
+Note that strengthened bans are more likely to affect other people, especially other customers of the same ISP, because they constitute a range of IP addresses. A doubly-strengthened ban covers about 65 000 IP addresses. 
+</p>
+<p>
+If you have a <a href="/upgrade">paid Cbox</a>, you have <a href="/admin?users">access control</a> features you should enable, including the option to require users to register their names before posting. You can also control whether your users are able to register their own names. You can disable this second option to take control over registration; simply deleting a registered user will then prevent that person from posting, regardless of IP, because they cannot register a new name. 
+</p>
+<p>
+With a <a href="/upgrade?p=2">Pro Cbox</a>, you can enable "Auto-ban proxies" at your <a href="/admin?settings">Settings</a> page. Your Cbox will detect proxies, VPNs and Tor exit nodes and will automatically and temporarily ban users who attempt to post from behind such services. 
+</p>		<div class="helpDate">
+		Last updated 19 October 2015	</div>
+	</div>
+<h2 id="q19"><a href="/help?id=19" onclick="return toggleanswer(19)">How can I upgrade my Cbox?</a></h2>
+
+<div class="helpContent" id="ans19" data-score="1" style="display:none;">
+	<p>
+Your Cbox is not at its full potential unless you <a href="/upgrade">upgrade</a> to a paid plan.
+</p>
+<p>
+Upgrading unlocks features like user registration and moderation, private messaging, and priority support: things essential for getting the most out of your Cbox. <a href="/products">See our product comparison</a>.
+</p><p>
+We offer a 30-day money-back guarantee on all purchases, so if you aren't sure it'll be worth it, you have nothing to lose by finding out. 
+</p><p>
+You can also upgrade for a friend &ndash; simply enter their Cbox account name on the upgrade page instead of your own. 
+</p>
+		<div class="helpDate">
+		Last updated 19 June 2016	</div>
+	</div>
+<h2 id="q8"><a href="/help?id=8" onclick="return toggleanswer(8)">I didn't get an email I was expecting</a></h2>
+
+<div class="helpContent" id="ans8" data-score="1" style="display:none;">
+	<p>
+The most likely reason for this is that it was delayed, or trapped by a spam filter. Check your spam folder in your email client. If emails from Cbox are repeatedly being marked as spam, try adding our addresses to your email client's address book.
+</p>
+<p>
+It's also possible the email address we have on record for you is wrong. If you know your account details, log in and <a href="/admin?account">check your email address</a> is correctly spelled. 
+</p>
+<p>
+Finally, you may want to <a href="/contact">contact us</a> from another email address for further assistance. 
+</p>
+		<div class="helpDate">
+		Last updated 27 May 2015	</div>
+	</div>
+<h2 id="q12"><a href="/help?id=12" onclick="return toggleanswer(12)">Every time I do something in the control panel, I get logged out.</a></h2>
+
+<div class="helpContent" id="ans12" data-score="1" style="display:none;">
+	<p>
+You need to have cookies enabled in your browser in order to use the control panel. Your browser may be configured not to accept cookies, or it may be in a "private browsing" mode, or you may have a plugin or extension that is restricting them. Test in another browser if possible.
+</p>		<div class="helpDate">
+		Last updated 27 May 2015	</div>
+	</div>
+<h2 id="q26"><a href="/help?id=26" onclick="return toggleanswer(26)">What payment methods are available?</a></h2>
+
+<div class="helpContent" id="ans26" data-score="1" style="display:none;">
+	<p>
+We accept payment via PayPal. PayPal accepts most credit and debit cards, and depending on your region, you may be able to check out without creating a PayPal account. In some regions it is also possible to pay via bank transfer ("eCheck") through PayPal. 
+</p>
+<p>
+If you have any difficulties making payment, please <a href="/contact">contact us</a>, and we can assist.
+</p>
+		<div class="helpDate">
+		Last updated 13 July 2016	</div>
+	</div>
+<h2 id="q41"><a href="/help?id=41" onclick="return toggleanswer(41)">My scroll bar is missing!</a></h2>
+
+<div class="helpContent" id="ans41" data-score="1" style="display:none;">
+	<p>
+This is normal for Cboxes that do not have many messages. The scroll bar will appear when it's required. If you want to force it to appear always, you can <a href="/admin?styleadv">edit CSS</a>, adding the following: 
+</p>
+<pre>
+body {overflow: scroll;}
+</pre>		<div class="helpDate">
+		Last updated 27 May 2015	</div>
+	</div>
+<h2 id="q50"><a href="/help?id=50" onclick="return toggleanswer(50)">My Cbox says it is locked and posting is disabled</a></h2>
+
+<div class="helpContent" id="ans50" data-score="1" style="display:none;">
+	<p>
+This is usually caused by the Lock option in your <a href="/admin?account">Control panel</a>. Click the "Unlock" button to return your Cbox to normal.
+</p>
+<p>
+If your Cbox says it is expired, it will need to be <a href="/upgrade?mode=renew">renewed</a>. After renewal it will be unlocked automatically. 
+</p>		<div class="helpDate">
+		Last updated 24 October 2015	</div>
+	</div>
+<h2 id="q44"><a href="/help?id=44" onclick="return toggleanswer(44)">How do I disable the ActiveX prompt?</a></h2>
+
+<div class="helpContent" id="ans44" data-score="1" style="display:none;">
+	<p>
+The ActiveX prompt appears in very old versions of Internet Explorer if the security level setting is high. Cbox uses ActiveX in some versions of IE for refreshing and posting. However your Cbox will function fine without ActiveX if you choose to disable it. To disable the dialog, follow these steps:
+</p>
+<ol>
+<li>Select Tools -> Internet Options from the menu.
+<li>Choose the Security tab.
+<li>If the Default Level button is not disabled, click it.
+<li>Set the Security level slider to Medium.
+</ol>
+<p>
+If that does not work, or you have set up a Custom Level, click the Custom Level button and ensure that "Run ActiveX controls and plugins" and "Script ActiveX controls marked safe for scripting" are both set to Enabled.
+</p>		<div class="helpDate">
+		Last updated 22 January 2015	</div>
+	</div>
+<h2 id="q59"><a href="/help?id=59" onclick="return toggleanswer(59)">Where can I change my password?</a></h2>
+
+<div class="helpContent" id="ans59" data-score="1" style="display:none;">
+	<p>
+You can change your Cbox account control panel password at the <a href="/admin?account">Account details</a> section of your control panel.
+</p>
+<p>
+If you can't remember your current password you can request a new one <a href="/forgotpword">at this page</a>.
+</p>
+<p>
+To change the password of a registered name on your Cbox, you will need to delete the registered name in question at the <a href="/admin?users">Users page</a> of your control panel, and then re-register the user or allow the user to register again.
+</p>		<div class="helpDate">
+		Last updated 27 May 2015	</div>
+	</div>
+<h2 id="q57"><a href="/help?id=57" onclick="return toggleanswer(57)">How can I prevent spam and abuse on my Cbox?</a></h2>
+
+<div class="helpContent" id="ans57" data-score="1" style="display:none;">
+	<p>
+First decide whether the messages appear to be automated, or coming from an individual user. 
+</p>
+<p>
+Cbox works hard to prevent automated spam from reaching your Cbox. However if you are having trouble with such spam, you can require all users to solve a CAPTCHA before posting, by changing your CAPTCHA setting to "Strict" at your <a href="/admin?settings">Settings page</a>. 
+</p>
+<p>
+For spam from an individual user, first try banning the user. At your <a href="/admin?posts">Messages page</a>, select the unwanted messages and click "Ban". With a paid Cbox, you can ban the user from within your Cbox by logging in as a <a href="/help?srch=mod">mod user</a>. 
+</p>
+<p>
+Abusive users may attempt to evade bans by accessing your Cbox from behind an anonymizing proxy, via a VPN, Tor, or similar service. With a Pro Cbox, you can enable "Auto-ban proxies" at your <a href="/admin?settings">Settings</a>. You can also enable "Strong bans" there, which makes bans more resilient against changing IP addresses. However, it also increases the risk of bans affecting other users. 
+</p><p>
+You can also strengthen individual bans by selecting them in your <a href="/admin?bans">Blocked users</a> list and clicking "Strengthen". This "widens the net" on an IP ban. Note that this can prevent other users of the same ISP from accessing your Cbox, so you should ensure the duration is short on such bans. 
+</p>
+<p>
+If you have a <a href="/upgrade">Premium or Pro Cbox</a>, you have more <a href="/admin?users">access control</a> options. It's recommended to always  <i>enable</i> the option "Users must be registered to post". Normally, you would also enable "Users can password-protect their names" so that they can register themselves; for more control, you can disable this option and register users manually. 
+</p>
+<p>
+You can also choose to disable new registrations temporarily to "lock down" your Cbox. Existing users will still be able to log in and post. 
+</p>
+<p>
+Finally, if you <i>disable</i> the option "Users can password-protect their names" you can still <i>enable</i> "Users can authenticate via Facebook" &mdash; now new users can join your Cbox via Facebook, but if they are banned then their Facebook identity is also blocked. 
+<p>
+Some other things you can do if you experience recurring abuse of your Cbox: 
+</p>
+<ul>
+<li>Delegate <a href="/admin?users">moderator authority</a> (<i>Premium and Pro</i>) to trusted users who are able to monitor your Cbox during times you are not.</li>
+<li>Use <a href="/admin?settings">Moderated Chat mode</a> (<i>Pro</i>) to prevent users posting directly to public chat. Their messages will need to be approved by a mod.</li>
+<li>Place your Cbox in a members-only or private area of your site, such that users must log in to your site before they can see your Cbox.</li> 
+<li>Implement <a href="/admin?userint">User Integration</a> (<i>Cbox Pro</i>), which ensures that only users who are registered on your own site can post. </li>
+<li>Configure and enable the <a href="/admin?snippet">Site whitelist</a> (<i>Premium and Pro</i>). This prevents your Cbox embed code from being displayed on any other site.</li>
+<li>Generate a new <a href="/admin?snippet">Security tag</a> and republish your Cbox embed code. This revokes access for any user who may have a link to your Cbox but no longer has access to the page it is embedded on.</li>
+<li>Disable the <a href="/admin?snippet">Quick link</a>. This will prevent users from being able to access your Cbox except via the page you have embedded it on.</li>
+</ul>
+<p>
+Finally, if abuse continues, you should <a href="/contact">contact us</a>. We want to keep all Cboxes free from spam and abuse, and will do what we can to assist. 
+</p>		<div class="helpDate">
+		Last updated 17 May 2021	</div>
+	</div>
+<h2 id="q58"><a href="/help?id=58" onclick="return toggleanswer(58)">How do I change my Quick Link address / account name / login name?</a></h2>
+
+<div class="helpContent" id="ans58" data-score="1" style="display:none;">
+	<p>
+The account name that you log in with at the Cbox control panel is also your Quick Link address. You can change your account name at the <a href="/admin?account">Account details</a> page. This will change your Quick Link address at the same time. 
+</p>
+<p>
+If you have forgotten your account name and are unable to log in, you can reset your password <a href="/forgotpword">at this page.</a>
+</p>		<div class="helpDate">
+		Last updated 27 May 2015	</div>
+	</div>
+<h2 id="q49"><a href="/help?id=49" onclick="return toggleanswer(49)">On MyLeague my Cbox doesn't show the "name" box</a></h2>
+
+<div class="helpContent" id="ans49" data-score="1" style="display:none;">
+	<p>
+By default, Cboxes embedded on MyLeague.com are integrated with your MyLeague userbase. This disables the "name" and "email / url" boxes on your Cbox, and automatically assigns usernames and avatars to members who are signed in on MyLeague. Non-members and members who have not signed in are given the name "Guest."
+</p>
+<p>
+If you would prefer to use Cbox's built-in user features, so that your visitors must specify their names themselves, you can do that by choosing a different <a href="/admin?snippet">Cbox code</a> variation &mdash; choose "Inline (default)". Then a new embed code will appear, which you will need to copy-and-paste over your old Cbox code in your MyLeague page.
+</p>
+<p>
+Then Save and refresh your page and you should see the "name" box on your Cbox. You will now have access to all <a href="/admin?users">User and Access Control</a> features.
+</p>		<div class="helpDate">
+		Last updated 17 October 2015	</div>
+	</div>
+<h2 id="q52"><a href="/help?id=52" onclick="return toggleanswer(52)">How do I downgrade my account?</a></h2>
+
+<div class="helpContent" id="ans52" data-score="1" style="display:none;">
+	<p>
+You can downgrade from Pro to Premium at your <a href="/admin?downgrade">control panel</a>. Your Pro features will be disabled automatically.
+</p><p>
+If you let your Premium plan lapse, it will not automatically revert to a Free Cbox. Your messages and settings will be saved but your Cbox will be locked. You will be able to renew at any time reactivate it. To get back on the Free plan, simply <a href="/getone">sign up</a> for a new Cbox, using a new Cbox name. 
+</p>
+<p>
+If our service is not meeting your expectations on any plan, please <a href="/contact">contact us</a> and we will do what we can to improve your experience.
+</p>		<div class="helpDate">
+		Last updated 22 September 2016	</div>
+	</div>
+<h2 id="q55"><a href="/help?id=55" onclick="return toggleanswer(55)">I can't log in to my account but my username is taken</a></h2>
+
+<div class="helpContent" id="ans55" data-score="1" style="display:none;">
+	<p>
+First try <a href="/forgotpword">recovering your password</a>. If your account is not found or you do not receive the email, the account may have been closed. 
+</p>
+<p>
+Cbox reserves account names for some time after an account is closed. If you want to use the same account name, we can sometimes assist if you <a href="/contact">contact us</a>. 
+</p>
+		<div class="helpDate">
+		Last updated 27 May 2015	</div>
+	</div>
+<h2 id="q51"><a href="/help?id=51" onclick="return toggleanswer(51)">How do I renew my Cbox?</a></h2>
+
+<div class="helpContent" id="ans51" data-score="1" style="display:none;">
+	<p>
+Renewal is straightforward &mdash; it's the same process as for upgrading, <a href="/upgrade?mode=renew">at this page.</a>
+</p><p>
+When you renew, your paid term is extended with the additional time that you purchase, and if you have any remaining credit, it is carried forward. So for example, if you have 20 days remaining, and you purchase an additional six months, you will have six months plus 20 days' credit after renewal. 
+</p>		<div class="helpDate">
+		Last updated 24 October 2015	</div>
+	</div>
+<h2 id="q48"><a href="/help?id=48" onclick="return toggleanswer(48)">I am seeing an error saying "Private Cbox."</a></h2>
+
+<div class="helpContent" id="ans48" data-score="1" style="display:none;">
+	<p>
+This is the message that shows when your Cbox is accessed from an address other than the one specified at your <a href="/admin?snippet">Publish page</a>, when you have the option "Allow access only at this address" enabled. 
+</p>
+<p>
+A common reason for this to happen is that you have entered an address that is more specific than it needs to be &mdash; for example, including the "www." at the beginning when your visitors don't need to include that to reach your website. Most of the time "mysite.com" works just as well as "www.mysite.com", but if you have specified "www.mysite.com" as the only address to allow access at, then Cbox will show an error when you arrive at your site via "mysite.com". 
+</p>
+<p>
+The solution is to simplify the address so it covers all the legitimate routes to your page, or turn off the option "Allow access only at this address."
+</p>		<div class="helpDate">
+		Last updated 14 July 2015	</div>
+	</div>
+<h2 id="q63"><a href="/help?id=63" onclick="return toggleanswer(63)">Can I prevent "Guest" from posting in my Cbox?</a></h2>
+
+<div class="helpContent" id="ans63" data-score="1" style="display:none;">
+	<p>
+With a paid Cbox, you can enable the option "Users must be registered" at the <a href="/admin?users">Users</a> page in your control panel. 
+</p>
+<p>
+If you are using Integration, then there are two ways to disable access for a particular user. The easiest is to register the "Guest" name, then immediately ban it.
+</p>
+<p>
+You can also invalidate names in your Integration code. For example, use a conditional and clear the nme and nmekey parameters:
+</p>
+<pre>
+&lt;?php
+if ($nme == "Guest") {
+  $nme = "";
+  $nmekey = "";
+}
+// The rest of your Integration code goes here...
+?&gt;
+</pre>		<div class="helpDate">
+		Last updated 26 September 2016	</div>
+	</div>
+<h2 id="q60"><a href="/help?id=60" onclick="return toggleanswer(60)">How can I prevent other websites from showing my Cbox?</a></h2>
+
+<div class="helpContent" id="ans60" data-score="1" style="display:none;">
+	<p>
+The option "Enable site whitelist" at <a href="/admin?snippet">your Publish page</a> will prevent other websites from displaying your Cbox to their visitors. 
+</p>
+<p>
+When using this option, ensure the web address we have on record (also on that page) is the simplest possible address for your site. For example you should generally not include the "www." part nor any trailing path, like "/index.html".
+</p>		<div class="helpDate">
+		Last updated 16 June 2015	</div>
+	</div>
+<h2 id="q62"><a href="/help?id=62" onclick="return toggleanswer(62)">How can I post a link or image in my Sticky message?</a></h2>
+
+<div class="helpContent" id="ans62" data-score="1" style="display:none;">
+	<p>
+The <a href="/admin?sticky">Sticky message</a> accepts boxcode, even if you have not enabled boxcode for ordinary messages. So to post a link, enter the following: 
+</p>
+<pre>
+[url=https://mysite.com]This is a link[/url]
+</pre>
+<p>
+You can post an image as well:
+</p>
+<pre>
+[img=https://mysite.com/path/to/image.jpg]Description[/img]
+</pre>
+<p>
+See <a href="/help?id=42">this article</a> for a complete boxcode reference. 
+</p>		<div class="helpDate">
+		Last updated 31 May 2021	</div>
+	</div>
+<h2 id="q66"><a href="/help?id=66" onclick="return toggleanswer(66)">How do I use avatars?</a></h2>
+
+<div class="helpContent" id="ans66" data-score="1" style="display:none;">
+	<p>
+You can enable avatars for your Cbox at your <a href="/admin?settings">Posting options</a> page (under "Message options"). 
+</p>
+<p>
+Once enabled, your users can upload their chosen images to any image hosting provider, and then enter the link to them in the email / url input box of your Cbox. Any URL ending .gif, .jpg or .png will be accepted. 
+</p>
+<p class="aside">
+Note that if you are accessing your Cbox over <a href="/help?id=69">HTTPS</a>, then your users' avatars will need to be hosted at a provider that supports HTTPS; otherwise, the browser will not show them. 
+</p>
+<p>
+Avatars will be resized by the browser. You can change the size of avatars with Premium Cbox by <a href="/admin?styleadv">editing the CSS</a>. The class that controls avatars is called <code>.pic</code>. Edit the <code>width</code> and <code>height</code> properties to change the dimensions.
+</p>
+<p>
+To integrate avatars with your user system, see Extended Integration at your <a href="/admin?userint">User Integration</a> page. 
+</p>
+		<div class="helpDate">
+		Last updated 9 June 2016	</div>
+	</div>
+<h2 id="q65"><a href="/help?id=65" onclick="return toggleanswer(65)">Can I configure custom user groups or colors?</a></h2>
+
+<div class="helpContent" id="ans65" data-score="1" style="display:none;">
+	<p>
+Cbox Premium and Pro allow you to customize the four built-in usergroup name colours at your <a href="/admin?style">Themes</a> page. The group colours you can specify are Normal, Registered, Moderator, and Admin. These correspond to the user types at your <a href="/admin?users">Users</a> page.
+</p>
+<p>
+In addition, you can use <a href="/admin?filtering">Filtering</a> rules to specify unique styles for selected names, including unregistered ones. To do this, add rules as follows, one per line:
+</p>
+<pre>
+jacob:[color=green]jacob[/color]
+</pre>
+<p>
+In the above example "jacob" is the name of the user. You can change the colour to any valid HTML colour name or hex code. You will need to have <a href="/admin?settings">boxcode</a> enabled in order for this to work. 
+</p>
+
+<h3>Custom CSS-based rules</h3>
+<p>
+For registered users you can create <a href="/admin?style">custom CSS</a> to target their names or messages by ID. For example: 
+</p>
+<pre>
+.msg[data-uid="123456"] .nme {
+    color: red;
+}
+</pre>
+<p>
+The data-uid is the registered user's Cbox ID. The easiest way to get this is to click the user's name in your Cbox. An at-tag will appear in your message input box, e.g. <@123456|ExampleUser> where the number after the @ is the user ID. 
+</p>
+		<div class="helpDate">
+		Last updated 20 May 2024	</div>
+	</div>
+<h2 id="q61"><a href="/help?id=61" onclick="return toggleanswer(61)">Can I have more than one Cbox on a page?</a></h2>
+
+<div class="helpContent" id="ans61" data-score="1" style="display:none;">
+	<p>
+Yes. This will work if they are different Cboxes. If you want to show the <i>same Cbox</i> more than once on the page, you will need to make a small change to the embed code for each additional embed.  
+</p>
+<p>
+In your Cbox embed code you will see something like <code>name="cboxmainA-123456" id="cboxmainA-123456"</code> &mdash; this uniquely identifies the Cbox so that its frames can communicate with each other. The <code>A-123456</code> part appears four times in total in the standard embed code. Edit it, simply adding a dash and a serial number, to make it <code>A-123456-2</code>, for example. 
+</p>
+		<div class="helpDate">
+		Last updated 17 October 2015	</div>
+	</div>
+<h2 id="q64"><a href="/help?id=64" onclick="return toggleanswer(64)">How do I ban a user by name?</a></h2>
+
+<div class="helpContent" id="ans64" data-score="1" style="display:none;">
+	<p>
+When you ban a user in your Cbox by clicking the [o] ban button, or at your <a href="/admin?posts">Messages</a> page, Cbox will ban the name as well as the IP address.
+</p>
+<p>
+You can also prevent a name from being used by reserving it. To reserve a name, register it at the <a href="/admin?users">Users</a> page, without a password. Nobody will be able to log in with this name. If it is already registered, delete the name and re-register it with a blank password. 
+</p>		<div class="helpDate">
+		Last updated 19 October 2015	</div>
+	</div>
+<h2 id="q56"><a href="/help?id=56" onclick="return toggleanswer(56)">The Quick Link page has an error saying "Not Found" or "Invalid Quick Link"</a></h2>
+
+<div class="helpContent" id="ans56" data-score="1" style="display:none;">
+	<p>
+Check that your Quick Link is enabled at your <a href="/admin?snippet">Publish</a> page, and confirm that you have the correct URL for it. 
+</p>		<div class="helpDate">
+		Last updated 27 May 2015	</div>
+	</div>
+<h2 id="q72"><a href="/help?id=72" onclick="return toggleanswer(72)">Bot users</a></h2>
+
+<div class="helpContent" id="ans72" data-score="1" style="display:none;">
+	<p>
+You can register a bot user at your <a href="/admin?users">Users</a> page. Bot users are like ordinary registered users, except that instead of a password they are issued an <i>access token</i>. You cannot log in via the normal profile dialog. Instead, you can use the token directly in HTTP requests to Cbox. 
+</p>
+<p>
+We do not currently support an official API, but to demonstrate how you might read and post to your Cbox using a bot, the proof-of-concept PHP script below takes a simple HTTP-based approach. Run this script on your own server, and your bot will post to your Cbox. After its initial message, it will poll for messages containing trigger words, to which it will respond.
+</p>
+<p>
+You can run the script from a shell, or have it run automatically with a crontab entry. When it's running, test it by entering a message in your Cbox such as "hello bot", "time?", or "what is the weather in new york?"
+</p>
+
+<pre>
+#!/usr/bin/php
+&lt;?php
+define('LISTEN', true);
+define('PID_FILE', './cboxbot.pid');
+
+// Edit these lines for your Cbox and bot user. 
+$box = array('srv' =&gt; <b>7</b>, 'id' =&gt; <b>1</b>, 'tag' =&gt; '<b>bOxTag</b>');
+$bot = array('name' =&gt; '<b>mybot</b>', 'token' =&gt; '<b>XJC-bottoken-asKC</b>', 'url' =&gt; '');
+$msg = 'Hello world!';
+
+
+$callmap = array(
+	'/\bhello bot\b/iu' =&gt; 'bot_greet',
+	'/\btime\?/iu' =&gt; 'bot_time',
+	'/\bweather in ([a-zA-Z-0-9 ,]+)/iu' =&gt; 'bot_weather',
+);
+
+// Basic reply
+function bot_time ($msg) {
+	return date("M d Y H:i:s");
+}
+
+// An example incorporating message data. 
+function bot_greet ($msg) {
+	return "Hello ".$msg['name'];
+}
+
+// An example calling an external API
+function bot_weather ($msg, $matches) {
+	$place = $matches[1];
+
+	if (!$place) {
+		return;
+	}
+
+	$query = 'select * from weather.forecast where woeid in (select woeid from geo.places(1) where text="'.addslashes($place).'")';
+
+	$url = 'https://query.yahooapis.com/v1/public/yql?q='.urlencode($query).'&format=json&u=c&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys';
+
+	$out = file_get_contents($url);
+
+	if (!$out) {
+		return;
+	}
+
+	$wobj = json_decode($out);
+
+	if (!$wobj-&gt;query-&gt;results) {
+		return;
+	}
+
+	$cond = $wobj-&gt;query-&gt;results-&gt;channel-&gt;item-&gt;condition;
+	$desc = $wobj-&gt;query-&gt;results-&gt;channel-&gt;description;
+
+	return "[b]".$cond-&gt;text." ".$cond-&gt;temp."F [/b] (".$desc." at ".$cond-&gt;date.")";
+}
+
+
+// Do not edit past this point. 
+
+set_time_limit(0);
+
+
+$id = cbox_post($msg, $bot, $box, $error);
+
+if (!$id) {
+	echo $error;
+}
+else {
+	echo "Posted ID $id\n";
+}
+
+if (!LISTEN) {
+	exit;
+}
+
+// Synchronization.
+// PID file is not removed on exit, but it is unlocked. A locked file indicates a running process.
+$fp = fopen(PID_FILE, 'a+');
+
+if (!flock($fp, LOCK_EX | LOCK_NB)) {
+	echo "Could not lock PID file. Process already running?\n"; 
+	exit;
+}
+
+ftruncate($fp, 0);
+fwrite($fp, posix_getpid()."\n");
+fflush($fp);
+
+do {
+
+	$msgs = cbox_get_msgs($id, $bot, $box);
+
+	if (!$msgs || !is_array($msgs)) {
+		sleep(5);
+		continue;
+	}
+
+	$id = (int)$msgs[0]['id'];
+
+	for ($i = 0; $i &lt; count($msgs); $i++) {
+	
+		if ($msgs[0]['name'] == $bot['name']) {
+			continue;	// Ignore bot's own messages.
+		}
+	
+		$msgtext = $msgs[$i]['message'];
+		
+		foreach ($callmap as $expr =&gt; $func) {
+			$matches = array();
+			
+			if (preg_match($expr, $msgtext, $matches)) {
+			
+				$reply = call_user_func($func, $msgs[$i], $matches);
+				
+				if ($reply) {
+					cbox_post($reply, $bot, $box, $error);
+				}
+			}
+		}
+	}
+	
+	sleep(2);
+} while (true);
+
+
+function cbox_get_msgs ($id, $user, $box, &$error = '') {
+	$srv = $box['srv'];
+	$boxid = $box['id'];
+	$boxtag = $box['tag'];
+	
+	$host = "www$srv.cbox.ws";
+	$path = "/box/?boxid=$boxid&boxtag=$boxtag&sec=archive";
+	$port = 80;
+	$timeout = 30;
+
+	$get = array(
+		'i' =&gt; (int)$id,
+		'k' =&gt; $user['token'],
+		'fwd' =&gt; 1,
+		'aj' =&gt; 1
+	);	
+
+	$req = '';
+	$res = '';
+	
+	foreach ($get as $k =&gt; $v) {
+		$path .= "&$k=".urlencode($v);
+	}
+	
+	$hdr  = "GET $path HTTP/1.1\r\n";
+	$hdr .= "Host: $host\r\n\r\n";
+	
+	$fp = fsockopen ($host, $port, $errno, $errstr, $timeout);
+
+	if (!$fp) {
+		$error = "Could not open socket: $errno - $errstr\n";
+		return;
+	}
+
+	fputs ($fp, $hdr);
+	
+	while (!feof($fp)) {
+		$res .= fgets ($fp, 1024);
+	}
+	
+	fclose ($fp);
+
+	if (!$res || !strpos($res, "200 OK")) {
+		$error = "Bad response:\r\n $res";
+		return;
+	}
+
+	$matches = array();
+
+	preg_match_all('/\n([^\t\n]*)\t([^\t]*)\t([^\t]*)\t([^\t]*)\t'
+.'([^\t]*)\t([^\t]*)\t([^\t]*)\t([^\t]*)\t/', $res, $matches);
+
+	$msgs = array();
+
+	$map = array('id', 'time', 'date', 'name', 'group', 'url', 'message');
+
+	for ($m = 0; $m &lt; count($map); $m++) {
+		for ($i = 0; $i &lt; count($matches[$m+1]); $i++) {
+			$msgs[$i][$map[$m]] = $matches[$m+1][$i];
+		}
+	}
+
+	return $msgs;
+}
+
+
+function cbox_post ($msg, $user, $box, &$error = '') {
+	$srv = $box['srv'];
+	$boxid = $box['id'];
+	$boxtag = $box['tag'];
+	
+	$host = "www$srv.cbox.ws";
+	$path = "/box/?boxid=$boxid&boxtag=$boxtag&sec=submit";
+	$port = 80;
+	$timeout = 30;
+
+	$post = array(
+		'nme' =&gt; $user['name'],
+		'key' =&gt; $user['token'],
+		'eml' =&gt; $user['url'],
+		'pst' =&gt; $msg,
+		'aj' =&gt; '1'
+	);	
+
+	$req = '';
+	$res = '';
+	
+	foreach ($post as $k =&gt; $v) {
+		$req .= "$k=".urlencode($v)."&";
+	}
+	$req = substr($req, 0, -1);
+	
+	$hdr  = "POST $path HTTP/1.1\r\n";
+	$hdr .= "Host: $host\r\n";
+	$hdr .= "Content-Type: application/x-www-form-urlencoded\r\n";
+	$hdr .= "Content-Length: ".strlen($req)."\r\n\r\n";
+	
+	$fp = fsockopen ($host, $port, $errno, $errstr, $timeout);
+
+	if (!$fp) {
+		$error = "Could not open socket: $errno - $errstr\n";
+		return;
+	}
+
+	fputs ($fp, $hdr.$req);
+	
+	while (!feof($fp)) {
+		$res .= fgets ($fp, 1024);
+	}
+	
+	fclose ($fp);
+
+	if (!$res || !strpos($res, "200 OK")) {
+		$error = "Bad response:\r\n $res";
+		return;
+	}
+
+	$matches = array();
+
+	preg_match('/1(.*)\t(.*)\t(.*)\t(.*)\t(.*)\t(.*)/', $res, $matches);
+
+	$err = $matches[1];
+	$id = $matches[6];
+
+	if ($err) {
+		$error = "Got error from Cbox: $err";
+		return;
+	}
+
+	return $id;
+}
+?&gt;
+</pre>		<div class="helpDate">
+		Last updated 9 September 2016	</div>
+	</div>
+<h2 id="q54"><a href="/help?id=54" onclick="return toggleanswer(54)">I can't hear the sound effect or its volume is too low</a></h2>
+
+<div class="helpContent" id="ans54" data-score="1" style="display:none;">
+	<p>
+Check that sound notification is enabled at the <a href="/admin?settings">Settings</a> page of your Control Panel.
+</p>
+<p>
+If it is enabled, then you should see a volume control button in your Cbox. Clicking this will toggle through three levels. It will also play the sound on each click to confirm the level. 
+</p>
+<p>
+If you are using a custom sound, ensure that you have uploaded both OGG and MP3 versions of the file. Cbox chooses which one to load based on the browser's capabilities. 
+</p>
+<p>
+If you still cannot hear the sound, then there may be a problem with your browser or system. Please <a href="/contact">contact us</a> for further assistance. 
+</p>		<div class="helpDate">
+		Last updated 16 June 2015	</div>
+	</div>
+<h2 id="q67"><a href="/help?id=67" onclick="return toggleanswer(67)">Filtering names and messages</a></h2>
+
+<div class="helpContent" id="ans67" data-score="1" style="display:none;">
+	<p>
+At its simplest, the <a href="/admin?filtering">Custom filter</a> is a list of words that you want hidden or replaced in your Cbox. Enter words, one per line, and if a user's name or message contains that word, it will be filtered out. 
+</p>
+<pre>
+badword
+badderword:betterword
+</pre>
+<p>
+When a message is applied to the above filter, "badword" will be turned into asterisks, and "badderword" will be replaced by "betterword". The ":" (colon) character separates the pattern text from the replacement text. If the colon is left out, the entire line is the word to match. 
+</p>
+<p>
+Filters can be useful for more interesting things too, however.
+</p>
+<h3>Styling and aliasing names</h3>
+<p>
+You can set colours for admins, mods and registered users on your <a href="/admin?style">Themes</a> page, but you can create individualized filters for particular names or words you want to highlight. 
+</p>
+<pre>
+jacob:[color=green]TheRealJacob[/color]
+</pre>
+<p>
+This user would still enter "jacob" as his name in your Cbox, but whenever he posts, or whenever someone mentions him in a message, the output will be <span style="color:green">TheRealJacob</span>, in green. 
+</p>
+<p>
+If you want to apply style besides colour to names, you can use the <kbd>[class]</kbd> boxcode.
+</p>
+<pre>
+jacob:[class=vip]{$0}[/vip]
+</pre>
+<p>
+You will then need to define your <a href="help?id=94#custom">custom CSS</a> for this class. 
+</p>
+
+<h3>Using and disabling boxcode</h3>
+<p class="aside">
+Boxcode itself can be customised, making the combination of filtering and formatting very powerful. <a href="/help?id=42">See more.</a>
+</p>
+<p>
+Your custom filtering rules support boxcode, as seen in the example above, even if you have boxcode disabled for messages in your <a href="/admin?settings">Settings</a>. You can also <i>match</i> the boxcode that people use (or attempt to use) in their messages. 
+</p>
+<pre>
+![br]:/
+haiku:The moment two bubbles[br]are united, they both vanish.[br]A lotus blooms.
+</pre>
+<p>
+The first rule will match "[br]" appearing in messages, and replace it with a slash. But the [br]s that appear in the second rule will still work, creating line breaks, because each replacement string is boxcode-filtered independently. 
+</p>
+<p>
+If boxcode is <i>enabled</i> for messages, then you can create aliases and compound boxcode using partial (open) tags:
+</p>
+<pre>
+![red]:[color=#f00][b]
+![/red]:[/b][/color]
+</pre>
+<p>
+When a user enters <kbd>[red]this is red[/red]</kbd>, the filter translates this to <kbd>[color=#f00][b]this is red[/b][/color]</kbd>, which is now valid boxcode, and will in turn become HTML. 
+</p>
+<p class="aside">
+<b>Tip:</b> If a rule isn't matching when it should, try putting <kbd>!</kbd> at the start of the line. If a rule is matching when it shouldn't, try putting <kbd>~</kbd> at the start of the line.
+</p>
+<h3>Filter modes</h3>
+<p>
+By default, filter rules are matched anywhere that the search text is not surrounded by other letters. Starting a line with the prefix "!" (exclamation mark) makes the rule a simple <em>substring filter</em> instead. Such rules are stronger in the sense that they will match in more contexts. However, unintended substitution is also more likely. 
+</p>
+<p>
+By contrast, a rule that begins with "~" (tilde) is only matched when preceded by space and followed by space or punctuation. This is similar to how emoticon substitution works. Such rules are looser in the sense that they are only matched in this specific form. Unintended substitution is less likely, but the rule may not be triggered as easily as desired. 
+<pre>
+fred:Fred
+!color:colour
+~plane:✈
+</pre>
+<p>
+In this example, the first rule will match the "fred" in "@fred" and "(fred)", but not in "freddy" or "alfred". The second rule will match "color" as well as "colorful" (substituting "colour" and "colourful" respectively). The third rule matches only "plane" by itself or followed by punctuation.
+</p>
+<h3>Filter order</h3>
+<p>
+Names and messages are filtered first by your custom rules. Messages are then parsed for smilies, boxcode, and links, in that order, if you have these features enabled. Names do not have these built-in filters applied. 
+</p>
+<p>
+Within your custom filter itself, the order of rule-matching is from top to bottom. 
+</p>
+<pre>
+hi:hello
+hello:goodbye
+</pre>
+<p>
+If a user posts "hi!", then as the message passes through the above rules it will be translated first to "hello!", and then, because it now matches the second rule, it becomes "goodbye!". In general, whenever a rule matches something that appears in another rule's replacement text, the order matters, and earlier rules can influence the effect of later ones. It's not recommended to depend on this behaviour, however. To create internal shortcuts, use variables. 
+</p>
+<h3>Variables</h3>
+<p>
+A line beginning with a "$" (dollar sign) defines a variable that you can use in subsequent replacement text:
+</p>
+<pre>
+$pre:[big][color=#ff0000]
+$suf:[/big][/color]
+jane:{$pre}Jane{$suf}
+john:{$pre}{$0}{$suf}
+</pre>
+<p>
+The first two lines do not match any name or message text; they define variables representing the strings following the colon. Variables are written in to the replacement string by surrounding them with braces. Variables in replacement text are expanded before filtering itself is applied to messages. The variable $0 is special: it contains the text that matched. 
+</p>
+		<div class="helpDate">
+		Last updated 7 August 2018	</div>
+	</div>
+<h2 id="q73"><a href="/help?id=73" onclick="return toggleanswer(73)">Private messaging</a></h2>
+
+<div class="helpContent" id="ans73" data-score="1" style="display:none;">
+	<p>
+Cbox supports private messaging to and from mod and admin users. You can enable PM for your Cbox at your <a href="/admin?settings">Settings</a> page.  
+</p>
+<p class="aside">
+You can also type out the PM command: enter <code>//pm username message...</code>, where username is the name of the person you want to send your message to. This method works if the username conforms to Cbox "strict name" or "ASCII name" policy, i.e. comprises alphanumeric characters only and includes no spaces. Otherwise, you will have to refer to the user by ID.
+</p>
+<p class="aside">
+By default, ordinary users cannot send PMs to other ordinary users. One of the two participants in any private conversation must be a mod or admin. 
+</p>
+<h3>Opting in and out</h3>
+<p>
+Registered users can opt in to sending and receiving private messages from other registered (non-mod) users, by entering <code>//pm on</code>. The command  <code>//pm off</code> revokes this availability.
+</p>
+
+<h3>Errors on sending</h3>
+<p>
+Private messages can fail to send for a number of reasons. If you get an error, it will likely either be due to the target user not being online (see below) or due to policy regarding who can send and receive private messages (see above). If the target user is not online, you may need to wait just a few seconds before retrying. Refer to the onliners list to confirm whether Cbox recognizes the user as present. 
+</p>
+<h3>Message delivery</h3>
+<p>
+Private messages are sent via the streaming interfaces. The target user must be viewing and connected. Users on old browsers or restricted networks may not be able to receive PMs. When your message has been accepted by our servers for relaying, you will see an indicator (by default, a tick symbol). When the message has been received by the target user, the indicator will change (double-tick symbol). If that doesn't happen, your message probably wasn't received. Note that Cbox does not know that a message has been read, only that it has been delivered. 
+</p>
+<h3>Persistence</h3>
+<p>
+Cbox does not store private messages for future delivery. New messages are relayed only if the user has an active connection. If the user has gone offline or is otherwise unable to receive your message, it will not be sent again, and nor will it be seen by that user when he reconnects. If you do not see the two-tick "received" indicator within a few seconds of sending a message, you will need to re-send your message later.
+</p>		<div class="helpDate">
+		Last updated 26 September 2017	</div>
+	</div>
+<h2 id="q82"><a href="/help?id=82" onclick="return toggleanswer(82)">Commands</a></h2>
+
+<div class="helpContent" id="ans82" data-score="1" style="display:none;">
+	<p>
+There are a number of commands you can enter in your Cbox to perform actions that would otherwise require a tap or click, or that are not available through other means. 
+</p>
+<p class="aside">
+Note that commands are not formally supported by Cbox, and are liable to change, or not to function, at any time. 
+</p>
+<p>
+Enter commands as if they were messages in your Cbox: 
+<ul>
+<li><kbd>//debug [watch]</kbd> &mdash; shows debugging information. 
+<li><kbd>//reload [clean]</kbd> &mdash; refreshes the Cbox iframe. Enter <kbd>//reload clean</kbd> to clear local data. (This will log you out and reset preferences.)
+<li><kbd>//ignore <b>joe</b></kbd> &mdash; ignore the user <b>joe</b>. Leave out the name to get a list of currently-ignored users. Repeat the command with an ignored name to un-ignore that person. 
+<li><kbd>//pm <b>mary</b> hello!</kbd> &mdash; sends <kbd>hello!</kbd> to the user called <b>mary</b>. (Requires <a href="/admin?settings">private messaging</a> to be enabled.)
+<li><kbd>//colors</kbd> &mdash; open a colour palette to change your message text colour (requires <a href="/admin?settings">boxcode</a> to be enabled.)
+<li><kbd>//tetris</kbd>, <kbd>//sudoku</kbd>, <kbd>//wordsearch <b>game-id</b></kbd> &mdash; for wordsearch, invite another user to enter the same command, with the same game-id, to join your game. 
+</ul>
+		<div class="helpDate">
+		Last updated 17 October 2017	</div>
+	</div>
+<h2 id="q69"><a href="/help?id=69" onclick="return toggleanswer(69)">Does Cbox support HTTPS (SSL/TLS)?</a></h2>
+
+<div class="helpContent" id="ans69" data-score="1" style="display:none;">
+	<p>
+Yes &ndash; Cbox is delivered over HTTPS by default. 
+</p>
+<p>
+If you are using an older version of the embed code, you may need to modify it slightly to ensure your Cbox is delivered over HTTPS. Simply replace the instances of <code>src="<b>http://</b>..."</code> with <code>src="<b>https://</b>..."</code>.
+</p>
+<p>
+If you are using Cbox over SSL, it's possible to get mixed-content warnings if you have any third-party resources on your Cbox that are not delivered over HTTPS &ndash; for example, user avatars, emoticons, or notification sound effects. These URLs should start with <b>https://</b> or <b>//</b> to avoid warnings. Warnings will generally not interfere with functionality, but they may cause your browser's security indicator (often a padlock icon) to change. 
+</p>		<div class="helpDate">
+		Last updated 31 May 2021	</div>
+	</div>
+<h2 id="q71"><a href="/help?id=71" onclick="return toggleanswer(71)">How do I change the "welcome" message?</a></h2>
+
+<div class="helpContent" id="ans71" data-score="1" style="display:none;">
+	<p>
+The "Welcome to Cbox" message appears if there are no other messages to display. You can disable or change it simply by posting a <a href="/admin?sticky">Sticky message</a>. 
+</p>
+<p>
+Note however that the Sticky message differs from the Welcome message in that it remains visible on your Cbox even after other messages have been posted.
+</p>		<div class="helpDate">
+		Last updated 14 July 2015	</div>
+	</div>
+<h2 id="q80"><a href="/help?id=80" onclick="return toggleanswer(80)">User Integration</a></h2>
+
+<div class="helpContent" id="ans80" data-score="1" style="display:none;">
+	<p class="aside">You need some development experience to make use of this feature, with the ability to edit your site's back-end code.</p>
+<p>
+Cbox Pro supports Integration, which is a way to implement single sign-on. If users already log in or register with your site, Integration means they don't have to enter their name again on your Cbox.
+</p><p>
+Configure Integration at your <a href="/admin?userint">control panel</a>. Example code is available there. The rest of this article deals with general concerns. 
+</p>
+
+<h3>How it works</h3>
+<p>
+Integration is implemented using query string parameters appended to the Cbox iframe URL. The final parameter is a signature generated from the rest of the URL. You don't need any external components or callbacks, just language support for HMAC-SHA256, base64-encoding, and url-encoding. 
+</p>
+<p>
+The signature is important to secure the generated URL against tampering by the user or any other intermediary. However, most back-end platforms have built-in support for the necessary functions. 
+</p>
+
+<h3>Integrating avatars and profile links</h3>
+<p>
+The only required parameter is <code>nme</code>, for the user's name, and the signature, <code>sig</code>. But you can also pass <code>lnk</code> and <code>pic</code> parameters to Cbox, to take advantage of name links and avatars, respectively. These should be provided as <em>absolute</em> URLs. For example, <code>https://yoursite.example.com/path/to/image.gif</code>. Note that the respective <a href="/admin?settings">display settings</a> need to be enabled for name links or avatars to show up. 
+</p>
+
+<h3>Integrating with mod/admin permissions</h3>
+<p>
+Integrated users' names will be registered with Cbox automatically, if they aren't already. This means you can confer mod/admin permissions at your <a href="/admin?users">Users page</a>. 
+</p><p>
+You can also use Integration with <a href="/help?id=91">Moderated chat</a>. With Moderated mode enabled, your Integrated users by default will not have voice permission. You will be able to review their messages as a mod or admin user in your Cbox and approve them accordingly. 
+</p>
+
+<h3>Security</h3>
+<p>
+Note that if you have existing users registered before enabling Integration, they are authenticated by Integration regardless of their password. This means if you have an existing "admin" user registered with a password on your Cbox, and you then enable Integration, the corresponding user named "admin" on your site will get that name (and permission). This can be an advantage, but if it's a risk in your case, delete all <a href="/admin?users">registered users</a> before enabling Integration. 
+</p><p>
+The signature in the Integrated Cbox URL protects the name and other information in transit. However, if you are concerned about leaked URLs, you can limit URL validity by passing an additional (signed) query string parameter, <code>valid_to</code>, which should be set to a UNIX timestamp. The URL will stop working after the time specified. 
+</p><p>
+You can also change the key used to generate the signature, by changing your <a href="/admin?snippet">security tag</a>. This invalidates all your Cbox URLs, but requires that you change your published Cbox embed code accordingly. 
+</p>
+
+<h3>Debugging</h3>
+<p>
+If you get an error in your Cbox saying that there's a problem with Integration, the most common cause is an invalid signature. 
+</p><p>
+The first thing to do is right-click and inspect the Cbox iframe URL. You should have <code>nme=...&amp;sig=...</code> parameters populated in the query string. If not, check that your embed code is in place and being parsed without errors. 
+</p><p>
+If the <code>sig</code> parameter is present in the URL, confirm that it is being generated using the correct secret key. The key is available at your <a href="/admin?userint">Integration</a> page. 
+</p><p>
+Ensure that you are url-encoding your query string parameters exactly once, and encoding <em>before</em> calculating the signature. The signature itself must then also be url-encoded, and appended to the URL. If you see the sequence <code>%25XX</code> in the URL, that's a sign that you might be applying url-encoding to already url-encoded strings. 
+</p><p>
+If you are still getting errors, <a href="/contact">contact us</a> including the code you are using and an example URL, and we should be able to assist.
+</p>		<div class="helpDate">
+		Last updated 8 March 2017	</div>
+	</div>
+<h2 id="q68"><a href="/help?id=68" onclick="return toggleanswer(68)">How do I automate creating channels with the Channel API?</a></h2>
+
+<div class="helpContent" id="ans68" data-score="1" style="display:none;">
+	<p>
+Cbox Pro provides a very simple API for creating new channels on the fly. 
+</p><p>
+At the <a href="admin?channels" target="_new">Channels page</a> in your control panel you will find your secret API URL. You can open this URL directly in your browser to test it, but it's intended to be called by back-end scripts running on your own site. 
+</p><p>
+The return format for this call is a single line of tab-separated plain-text fields. If there was an error, the first field is "FAIL" and the second field is an error code. If a new thread was successfully generated, the first field is "OK", and the second and third fields are the thread ID and thread key, respectively. 
+</p><p>
+By way of example, this very simple PHP script will generate threads for your Cbox. New threads created via the API will show up in your control panel, but you should store the thread ID and key in your own database as well.
+</p>
+
+<pre>
+&lt;?php 
+$cb_tid = null;
+$cb_tkey = null;
+
+$cb_rs = file_get_contents(<strong>'YOUR_API_URL'</strong>, 'r');
+
+$cb_rp = explode("\t", $cb_rs);
+
+if ($cb_rp[0] === 'FAIL') {
+	// There was an error. 
+	// $cb_rp[1] contains the error code
+}
+else if ($cb_rp[0] === 'OK') {
+	// Success
+	$cb_tid = $cb_rp[1];
+	$cb_tkey = $cb_rp[2];
+}
+else {
+	// Some other error occured.
+}
+
+if ($cb_tid && $cb_tkey) {
+	// New key generated. Store $cb_tid and $cb_tkey in your database or user session.
+	// And insert them into your Cbox HTML code iframe src URLs: 
+	// ....&sec=main&tid=&lt;?php echo $cb_tid;?&gt;&tkey=&lt;?php echo $cb_tkey;?&gt;
+	// ....&sec=form&tid=&lt;?php echo $cb_tid;?&gt;&tkey=&lt;?php echo $cb_tkey;?&gt;
+}
+?&gt;
+</pre>		<div class="helpDate">
+		Last updated 17 June 2015	</div>
+	</div>
+<h2 id="q93"><a href="/help?id=93" onclick="return toggleanswer(93)">The new Cbox</a></h2>
+
+<div class="helpContent" id="ans93" data-score="1" style="display:none;">
+	<p>
+We've recently launched a new version of Cbox with an entirely new interface. By going back to the basics and building a modern UI, we have created a more flexible, accessible platform to support future development.
+</p>
+<p>
+Some of the things that have been improved in the new Cbox:
+</p>
+<ol>
+<li>Mobile responsiveness. We've enlarged the buttons and done away with popups; overlays keep all functions in the Cbox itself. 
+<li>Message history. Simply scroll back to load older messages. 
+<li>Registration and login. It's clearer and quicker to register a name and log in with it. 
+<li>Avatars. Users can upload pictures from within Cbox. No need to copy-paste URLs. 
+<li>Themes. The new Cbox supports more fonts and more colour options. 
+<li>Embedding. The embed code has been simplified to support more platforms. 
+</ol>
+
+<h3>Migrating to V10</h3>
+<p>
+If you already have an older Cbox, you can get the latest version by creating a <a href="/getone">new Cbox</a> on your account. While it's not possible to transfer your data and settings automatically, we can transfer any paid credit balance if you decide to switch over to your new Cbox: simply <a href="/contact">contact us</a> to request a transfer. 
+</p>
+		<div class="helpDate">
+		Last updated 5 June 2017	</div>
+	</div>
+<h2 id="q94"><a href="/help?id=94" onclick="return toggleanswer(94)">About CSS editing</a></h2>
+
+<div class="helpContent" id="ans94" data-score="1" style="display:none;">
+	<p>
+Cbox provides a <a href="/admin?style">Theme editor</a> that lets you adjust colours and font sizes. With a paid plan though, you get even more flexibility with our CSS editor. 
+</p>
+<p class="aside"><b>Please note:</b> Editing CSS is an advanced feature and requires some knowledge of the language. Improperly-formed CSS can make your Cbox unusable. You can find many useful <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference" target="_blank">CSS resources</a> on the Web.
+</p>
+<p>
+Some of the things you can do with custom CSS:
+</p>
+<ul>
+<li>Change colours and dimensions that aren't available in the theme editor. 
+<li>Add effects such as shadows, borders, and gradients.
+<li>Change the layout of messages by adjusting positioning. 
+<li>Create custom classes for styling names and parts of messages, in conjunction with <a href="/help?id=42">[class] boxcode</a> and <a href="/help?id=67">filtering</a>. 
+</ul>
+
+<h3>Getting started</h3>
+<p class="aside">
+The class names and IDs that we use are relatively stable. However, while we always aim to minimize disruption, it is possible &mdash; due to new features or bugfixes, for example &mdash; that we have to change HTML in ways that require updating your CSS.
+</p>
+<p>
+We recommend using your browser's built-in development tools to assist you in finding the names of elements and classes to edit. Generally, you can right-click on an element in your Cbox, and select "Inspect". 
+</p>
+<p>
+In the new version of Cbox, the CSS you enter in your editor is <em>appended</em> to the base CSS. This means you do not have to copy any classes or properties that you are not editing. For example, to make avatars round, simply use:
+</p>
+<pre>
+.pic {
+    border-radius: 50%;
+}
+</pre>
+<p>
+Notice that the other properties, such as width and height, are not affected by this CSS. Any properties that are bound to the basic theme editor can still be edited that way. We strongly recommend this approach &mdash; rather than copying the base CSS and then editing it &mdash; for both performance and maintainability reasons. 
+</p>
+
+
+<h3>More examples</h3>
+<p>
+By default a star icon appears after mod/admin names. You can change or remove that:
+</p>
+<pre>
+.msg.Adm .nme:after, .usr.Adm .nme:after,
+.msg.Mod .nme:after, .usr.Mod .nme:after {
+    content: '';
+}
+</pre>
+<p>
+You can use the <code>:after</code> pseudo-element to add text as well. This puts a colon after each name:
+</p>
+<pre>
+.msg .nme:after {
+    content: ':';
+}
+</pre>
+<p>
+You can also change the colour of mod/admin text or messages to distinguish them:
+</p>
+<pre>
+.msg.Adm {
+    background: #FFEB3B;
+    color: #000;
+}
+</pre>
+<p>
+The following CSS will make the name and message run together without a line-break between them:
+</p>
+<pre>
+.msg .body {
+    display: inline;
+}
+</pre>
+<p>
+Certain buttons in the UI can safely be removed using CSS. For example, to remove the "pop out" button:
+</p>
+<pre>
+#btnPop {
+    display: none;
+}
+</pre>
+<p>
+You can use CSS to create a default profile picture:
+</p>
+<pre>
+.pic.Empty {
+  background: url(https://cbox.im/i/zfqhv.c100.png) no-repeat center center;
+  background-size: 100%;
+}
+</pre>
+<p>
+You can take advantage of CSS's cascading nature to target different rules at the same element in different contexts. For example, to show rounded avatars in the users list, but hide them completely in messages, you could use a pair of rules:
+</p>
+<pre>
+.msg .pic {
+    display: none;
+}
+.usr .pic {
+    border-radius: 50%;
+}
+</pre>
+<p>
+To change or remove the maximum height that Cbox restricts your emoticons to, you can use a rule like this: 
+</p>
+<pre>
+.msg .emote {
+    max-height: none;
+}
+</pre>
+<p>
+The following rule makes message background colours alternate:
+</p>
+<pre>
+.msg:nth-of-type(2n) {
+    background: #03A9F4;
+}
+</pre>
+<p>
+With CSS you can influence browser functionality as well. The following CSS prevents users from being able to select text in messages:
+</p>
+<pre>
+.msg {
+    user-select: none;
+}
+</pre>
+
+
+<a name="custom"></a><h3>Custom classes</h3>
+<p>
+You can define your own classes to be used in conjunction with <a href="/help?srch=filtering" target="_new">filters</a>. Filters support <a href="/help?srch=boxcode target="_new">boxcode</a>, so you can apply colour that way. But for more flexibility, there's a special <kbd>[class]</kbd> boxcode that lets you use any CSS you want. 
+</p>
+<p>
+For example, this CSS rule targets a class called <kbd>cc_glow</kbd>.
+</p>
+<pre>
+.cc_glow {
+    text-shadow: 0px 0px 3px #E91E63;
+    font-size: 120%;
+}
+</pre>
+<p>
+With the above CSS, the corresponding boxcode is <kbd>[class=glow][/class]</kbd>.
+</p>
+<p>
+So to use your CSS, you could add a <a href="/admin?filtering" target="_new">filter</a> rule like this:
+</p>
+<pre>
+hello:[class=glow]hello[/class]
+</pre>
+<p>
+With both the CSS and the filtering rule in place, simply typing <kbd>hello</kbd> in your Cbox should show glowing text.
+</p>
+<p>
+You can also override existing boxcode rather than defining your own classes:
+</p>
+<pre>
+.msg .body s {
+    text-decoration: none;
+    opacity: 0.5;
+}
+</pre>
+<p>
+The above modifies the <kbd>[s][/s]</kbd> boxcode which would normally produce a <s>strikethrough</s>. Instead it will produce translucent text. The <code>.msg .body</code> selectors are there to ensure only markup in messages is targeted. 
+</p>
+
+
+<h3>Specificity</h3>
+<p>
+Sometimes you might find your edits don't appear to be overriding Cbox's base CSS. This can be due to CSS <a href="https://developer.mozilla.org/en/docs/Web/CSS/Specificity" target="_blank">Specificity rules</a>. You may need to add specificity by including more parts in your selectors. For example, to change the colour of the smilies/emoticons button, you can use: 
+</p>
+<pre>
+form#frmMain button#btnSmilies {
+    color: red;
+}
+</pre>
+<p>
+Notice that while the <code>form#frmMain</code> part might seem redundant, it increases specificity sufficiently to override Cbox's base CSS. Alternatively, you can use the <code>!important</code> rule to achieve the same outcome.
+</p>
+<p class="aside">While <kbd>!important</kbd> can make customization easier, we don't recommend using it, as it increases the likelihood of unintended side-effects.</p>
+<pre>
+button#btnSmilies {
+    color: red !important;
+}
+</pre>
+
+
+<!--
+<h3>Advanced uses</h3>
+<p>
+CSS has powerful applications, including the ability to add content. For example, you can add text to a button like this: 
+</p>
+<pre>
+#btnPop span:before {
+    content: "Pop out";
+}
+</pre>
+<p>
+However, note that changes to the interface elements of your Cbox are liable to break due to updates to our code. 
+</p>
+<p>
+You can also include content such as images from other domains. 
+</p>
+<pre>
+body {
+    background: url('https://placekitten.com/600/800');
+    background-size: cover;
+}
+</pre>
+-->
+
+
+		<div class="helpDate">
+		Last updated 31 May 2021	</div>
+	</div>
+<h2 id="q76"><a href="/help?id=76" onclick="return toggleanswer(76)">Can I use HTML in filters and sticky messages?</a></h2>
+
+<div class="helpContent" id="ans76" data-score="1" style="display:none;">
+	<p>
+Cbox has traditionally supported HTML in filters and sticky messages for paid accounts. For security reasons this option is not enabled by default. Furthermore, in HTML mode, some other features of Cbox may be limited or disabled. 
+</p><p>
+If HTML mode is <em>disabled</em> on your Cbox, then you can add markup and colour to your filters and stickies using <a href="/admin?srch=boxcode">boxcode</a>, which supports a range of HTML-like tags.
+</p><p>
+If you are currently using HTML mode, we strongly recommend disabling it and using boxcode instead &mdash; this will help to ensure that your Cbox is as secure as possible and compatible with all features.
+</p>
+		<div class="helpDate">
+		Last updated 19 October 2015	</div>
+	</div>
+<h2 id="q95"><a href="/help?id=95" onclick="return toggleanswer(95)">Using the Cbox webhook</a></h2>
+
+<div class="helpContent" id="ans95" data-score="1" style="display:none;">
+	<h3>Getting started</h3>
+<p class="aside">
+This feature requires some familiarity with hosting your own scripts on the Web. Our code examples are in PHP, but you can use any platform and programming language you like, providing you can access HTTP POST data. 
+</p>
+<p>
+The Cbox webhook is an HTTP POST callback mechanism for getting a copy of new messages as they are posted to your Cbox. 
+A couple of lines of PHP are sufficient to get started:
+</p>
+
+<pre>
+&lt;?php
+$input = @file_get_contents("php://input");
+$json = json_decode($input);
+
+// $json contains array of messages
+
+error_log(print_r($json, true), 1, "your-email@example.com");
+
+echo "OK";
+?&gt;
+</pre>
+
+<p>
+With the above code uploaded to your server, test that it works by opening the corresponding URL, e.g. <kbd>https://yoursite.example.com/cbox.php</kbd>, 
+and confirming that you see "OK". You can then enter it as your callback URL in your Cbox settings.
+</p>
+<p>
+When a user posts a message, Cbox will issue an HTTP <code>POST</code> request to your callback URL, 
+with Content-Type <code>application/json</code>. The request body will look something like this:
+</p>
+<pre>
+[{"type":"message","box":802140,"channel":0,"time":1488526982,"uid":0,"name":"test","text":"this is a test","link":"","ip":"0.0.0.0"}]
+</pre>
+<p>
+The object is an array of messages. There can be multiple messages in a single POST. Your code can do whatever you like with the messages; it 
+just needs to return an HTTP OK status to Cbox. Any response body is ignored. 
+</p>
+
+<h3>Message contents</h3>
+<p>
+The message webhook is located after the message-accepted stage and before filtering. This means your endpoint will only receive 
+messages that are being published on your Cbox (i.e. not messages from banned users). They will be "raw", having none of 
+the built-in or custom filters applied (i.e. no boxcode expansion). Important to note is that messages can contain any 
+UTF-8 character, and so should be escaped as appropriate before storage or display.
+</p>
+<p>
+Message properties:
+</p>
+<ul>
+<li><code>type</code> &mdash; always set to "message"
+<li><code>box</code> &mdash; your Cbox ID.
+<li><code>channel</code> &mdash; The channel ID to which the message was posted. 
+<li><code>id</code> &mdash; The message ID. 
+<li><code>time</code> &mdash; Unix times when the message was received. 
+<li><code>uid</code> &mdash; Registered user ID. Guest IDs are undefined or zero.
+<li><code>name</code> &mdash; The user's name, as entered.
+<li><code>text</code> &mdash; The text of the message, as entered.
+<li><code>link</code> &mdash; Link associated with the message; the profile URL. 
+<li><code>ip</code> &mdash; IP address of the user. 
+</ul>
+
+<h3>Errors and retry</h3>
+<p>
+Your endpoint needs to return an HTTP success header (status codes in the <code>2XX</code> range) in response to the POST. 
+If it returns any other status, or times out, Cbox will consider the delivery to have failed. On failure, Cbox will buffer messages for 
+retry. Cbox will retry the POST at increasingly long intervals, even in the absence of further new messages. 
+</p>
+<p>
+Cbox buffers are not unlimited; if your endpoint is down for an extended time, the oldest messages may be dropped. 
+</p>
+
+
+<h3>Notes</h3>
+<ul>
+<li>Cbox ignores the body sent in response to the POST, and does not wait for it to complete. 
+<li>Return a <code>200 OK</code> to Cbox as quickly as possible. Otherwise, there is a risk of a timeout, which will cause the same message(s) to be re-sent. If your message processing is slow, move it "offline", either by completing and flushing the HTTP response early and continuing to work, or by offloading incoming messages to another service.
+<li>For forwards-compatibility, confirm that <code>type == 'message'</code> in your code; new event types may be supported in future.
+<li>The box and channel properties mean you can multiplex several Cboxes to a single endpoint, and filter or switch based on channel. 
+<li>Message ID is a monotonically increasing number. Larger IDs are always newer messages. 
+<li>Although some properties are 32-bit integers, it's recommended that you treat all values as UTF-8 strings for storage or further processing. 
+<li>The POST request includes a custom HTTP header, <code>X-Cbox-Time</code> which contains the Unix timestamp at the moment the POST was sent. You 
+can use this to calculate differential message times. 
+</ul>		<div class="helpDate">
+		Last updated 31 May 2021	</div>
+	</div>
+<h2 id="q89"><a href="/help?id=89" onclick="return toggleanswer(89)">How do I cancel my automatic billing?</a></h2>
+
+<div class="helpContent" id="ans89" data-score="1" style="display:none;">
+	<p>
+If you are a paid customer with a recurring payment profile (or subscription) at PayPal, then you can cancel it at any time. Your Cbox will not automatically be closed and if you have remaining credit it will continue to work. You will be able to upgrade or renew again manually &mdash; this is useful if you want to switch to a longer term. 
+</p>
+<p>
+Cancel an active payment profile with the following steps:
+</p>
+<ol>
+<li>Go to <a href="https://paypal.com" target="_blank">PayPal.com</a> and sign in.</li>
+<li>Go to "Activity" for your transaction history.</li>
+<li>Search for the email address "paypal@cbox.ws".</li>
+<li>You should see your latest payment to Cbox. Click to view its details.</li>
+<li>Locate the link to the profile or subscription on the payment details page.</li>
+<li>From the recurring profile details, you will be able to cancel your subscription.</li>
+</ol>
+<p>
+If you do not see a link to the profile or subscription from the payment details page, then it may have been a one-off payment with no associated automatic billing. 
+</p>		<div class="helpDate">
+		Last updated 31 May 2021	</div>
+	</div>
+<h2 id="q87"><a href="/help?id=87" onclick="return toggleanswer(87)">What happens when my Cbox goes over its limits?</a></h2>
+
+<div class="helpContent" id="ans87" data-score="1" style="display:none;">
+	<p>
+We don't automatically throttle or curtail access to Cboxes that go over their hits or messages per day limits.
+</p><p>
+However, our resources are shared between all customers. During high demand, Cboxes which have high concurrency (users online) may experience temporary interruptions or unavailability.
+</p><p>
+For this reason, we advise that if your Cbox consistently exceeds the daily views/messages thresholds, you <a href="/products">upgrade</a> to a plan with higher capacity, or <a href="/contact">contact us</a> if you are unsure of your requirements. 
+</p><p>
+Your Cbox is also limited in the total number of messages it can store. When you reach this limit, the oldest messages are removed from the public history. If you have a paid plan, you can still retrieve messages up to three months old via your <a href="/admin?postsarc">archive page</a>.
+</p>		<div class="helpDate">
+		Last updated 14 November 2019	</div>
+	</div>
+<h2 id="q86"><a href="/help?id=86" onclick="return toggleanswer(86)">Push notifications</a></h2>
+
+<div class="helpContent" id="ans86" data-score="1" style="display:none;">
+	<p class="aside">
+We're excited about this feature, but please note that the technology that supports it is relatively new; there are some limitations and there may be some disruptions as we work on it in future. 
+</p>
+<p>
+You will often want to know when a message has been posted on your Cbox while you have been away from the chat. Today on Android smartphones and tablets using Chrome browser, and for Chrome on the desktop, it's possible to subscribe for <i>push notifications</i> for Cbox messages.
+</p>
+<p>
+This feature is only available to paid Cboxes, at your <a href="/admin?snippet">Quick Link</a>, and for technical reasons it's only available when the page is loaded over SSL/TLS. Your browser address bar should start <code><b>https://</b>my.cbox.ws/[your_Cbox_name]</code>
+</p>
+<p class="aside"><b>Note:</b> If you accidentally click "deny" to the browser permission request, you will need to reset your browser's privacy settings: in Chrome, delete the Cbox entry at <code>chrome://settings/content</code> under "Notifications" -&gt; "Manage exceptions..."
+</p>
+<p>
+If you see the bell icon at the top right, you are all set: click or tap the bell to subscribe. The first time you do this, your browser will ask permission to send you notifications on behalf of Cbox. Once we have subscribed you, the bell icon will change &mdash; you can click it again to unsubscribe from this Cbox. 
+</p>
+<p>
+Once you are subscribed for notifications, you will receive messages in your device's notification bar whenever new messages are posted to your Cbox. This will work even if the tab is closed. On desktop, Chrome may need to be running but you will not need to have Cbox open in any window. 
+</p><p>
+You can have multiple subscriptions for different Cboxes and you will receive notifications for each. We combine notifications for channels and also rate-limit them to minimize potential disruption.
+</p><p>
+We are looking forward rolling this important feature out to more browsers and devices in future. Your feedback is invaluable during this process &mdash; <a href="/contact">let us know</a> what you think.
+</p>
+		<div class="helpDate">
+		Last updated 4 April 2016	</div>
+	</div>
+<h2 id="q91"><a href="/help?id=91" onclick="return toggleanswer(91)">What is Moderated chat and voice permission?</a></h2>
+
+<div class="helpContent" id="ans91" data-score="1" style="display:none;">
+	<p>
+A <a href="/admin?settings">Moderated</a> Cbox requires that messages be manually approved before they are published. 
+</p>
+<p>
+Normally, all users can post to your public Cbox, and everyone can see their messages. If you enable Moderated chat, then only <b>voiced</b> users can post directly. Unvoiced users' messages are redirected to a special channel where moderators can view and approve them.  
+</p>
+<p>
+This setting enables <i>proactive</i> moderation. It's important if you are concerned about your platform's brand but still want your Cbox to be publicly-accessible. It's also useful if you host live chats where you may want to control the volume and relevance of published messages by accepting only the ones you want, and at the appropriate time. 
+</p>
+
+<h3>Using Moderated chat</h3>
+<p class="aside">
+For testing, it's helpful to open another instance of your Cbox in an incognito/private tab. This allows you to log in as a guest in one tab and as a Mod in the other. 
+</p>
+<p>
+When you enable this setting, a <b>shadow channel</b> is created. Regular users cannot access it, but a Mod or Admin user on the public Cbox will see a "mod channel" link or "thumbs up" button. Clicking this button opens the shadow channel, and shows any messages that are awaiting approval. These messages can be published (i.e. re-posted) to the public Cbox by clicking the <b>[a]</b>/"tick" button in the mod tools next to each message. 
+</p>
+
+<h3>Voice permission</h3>
+<p class="aside">
+Note that when users register they do not automatically get voice. So, if you have existing registered users, before you enable Moderated chat, you might first want to <a href="/admin?users">voice them</a>.
+</p>
+<p>
+Mods and admins always have voice. This means they can always post directly to your public Cbox. Registered users (other than mods and admins) can be voiced and unvoiced from within your Cbox by clicking the <b>[v]</b>/"plus" button in the mod tools next to their messages. Unregistered guest users cannot be granted this permission, however. 
+</p>
+<p>
+Voice permission grants a user direct publication access to your Cbox, without any of the special permissions of mods or admins. It is useful in cases where the user is trusted and/or conversation established.
+</p>
+
+<h3>Moderated channels</h3>
+<p>
+Moderation works in conjunction with channels, too. The global setting controls whether new channels are created in Moderated mode or not. The per-channel setting is maintained even if the global setting is later changed. 
+</p>
+
+
+		<div class="helpDate">
+		Last updated 18 November 2016	</div>
+	</div>
+<h2 id="q77"><a href="/help?id=77" onclick="return toggleanswer(77)">How do I disable the email/url field?</a></h2>
+
+<div class="helpContent" id="ans77" data-score="1" style="display:none;">
+	<p>
+You can hide the email/url box at <a href="/admin?layout">your control panel</a>. Note that this input is required if you have avatars enabled, but otherwise, you can disable it.
+</p>
+	</div>
+<h2 id="q90"><a href="/help?id=90" onclick="return toggleanswer(90)">What are the emoticon / filter limits?</a></h2>
+
+<div class="helpContent" id="ans90" data-score="1" style="display:none;">
+	<p>
+Because emoticons and filtering rules require additional message processing time, we have a limit on the number that can be defined per Cbox. The limits <a href="/products">vary by plan</a> and you can upgrade if you need to increase them. 
+</p>
+<p>
+If you later downgrade your plan, your limits will be reduced but we will not automatically delete any of your data. 
+</p>		<div class="helpDate">
+		Last updated 17 July 2016	</div>
+	</div>
+<h2 id="q84"><a href="/help?id=84" onclick="return toggleanswer(84)">Cbox forgets my name</a></h2>
+
+<div class="helpContent" id="ans84" data-score="1" style="display:none;">
+	<p>
+If Cbox does not remember your user name between visits, your browser's privacy settings may be preventing Cbox from storing this information. 
+</p><p>
+Some browsers have a setting specifically to block <i>third-party cookies</i> or site data. When Cbox is embedded on a site, it is considered a third-party content source from the visitor's perspective, and this preference will apply. 
+</p><p>
+You can usually configure an exception for Cbox in your browser's privacy settings. Use <kbd>*.cbox.ws</kbd> as the address. 
+</p><p>
+If you have set up an exception for Cbox or configured your browser to allow third-party storage, and Cbox still forgets your name, then the problem may be a browser extension instead. To test this, disable all extensions in your browser, and if that fixes the problem, re-enable them one by one until the problem returns. This last extension will need to be configured with an exception for Cbox, as above. 
+</p>
+		<div class="helpDate">
+		Last updated 26 October 2015	</div>
+	</div>
+<h2 id="q75"><a href="/help?id=75" onclick="return toggleanswer(75)">Why does my online-user count differ from [third-party tracker]'s count?</a></h2>
+
+<div class="helpContent" id="ans75" data-score="1" style="display:none;">
+	<p>
+There are a number of factors that can account for a difference in the number of users shown as online, even if your tracker code is placed on exactly the same pages as your Cbox. 
+</p><p>
+One reason for count inaccuracy is that it's often impossible to get positive confirmation that a visitor has left the page. Cbox applies a fixed timeout of three minutes to each session, after which the user is considered offline. A tracker with a longer timeout may show a larger number of visitors online. Cbox also does not require a user to keep interacting to be considered online (they will be marked as idle instead). A tracker that shows only active users may have a lower count. 
+</p><p>
+Cbox counts users differently depending depending on whether they are named or not. A named user in general is one who has previously interacted with your Cbox, for example by posting a message in it. All other visitors are considered to be anonymous guests. To maximize the privacy of your visitors, Cbox does not send cookies or other tracking information to anonymous visitors' browsers, and instead uses a passive IP-based method to count them. This can cause inaccuracy in the anonymous-guest component of your total. If multiple anonymous visitors share an IP address behind the same NAT device, for example, then they will be undercounted; if their IP address is changing frequently, they may be overcounted. 
+</p><p>
+Recognized, named users are tracked more precisely, and will only be counted once, regardless of how many tabs or devices they are using your Cbox in. 
+</p>		<div class="helpDate">
+		Last updated 1 June 2016	</div>
+	</div>
+<h2 id="q85"><a href="/help?id=85" onclick="return toggleanswer(85)">Typing notifications</a></h2>
+
+<div class="helpContent" id="ans85" data-score="1" style="display:none;">
+	<p>
+Cbox can display a status message showing who is currently typing a message in your Cbox. This feature is available to <a href="/upgrade">Premium and Pro Cboxes</a>. Enable it in settings from the <a href="/admin?settings">display users online</a> drop-down. 
+</p>		<div class="helpDate">
+		Last updated 19 June 2016	</div>
+	</div>
+<h2 id="q79"><a href="/help?id=79" onclick="return toggleanswer(79)">About Facebook integration</a></h2>
+
+<div class="helpContent" id="ans79" data-score="1" style="display:none;">
+	<p>
+Paid Cboxes support Facebook authentication for user registration. You can enable this option at your <a href="/admin?users">Users page</a>. 
+</p><p>
+Facebook authentication makes it easy for users to register their names with your Cbox, because they do not have to enter or remember a separate password for Cbox. They tap the "profile" link and then the "Log in with Facebook" button. If they are already logged in with Facebook and have previously accepted the Cbox app connection, then they will be logged in without any further prompt. 
+</p>
+<p>
+Facebook authentication also makes it easier for you to control access to your Cbox, because bans against Facebook users will apply to their Facebook identity, not just their name or IP on your Cbox.
+</p><p>
+Cbox does not use its Facebook integration to post to users' feeds; we only ask permission to retrieve the user's name and email address, as well as basic public information that all Facebook apps receive. We may set the user's avatar on your Cbox to their Facebook profile picture by default, but they are free to change this. 
+</p>
+		<div class="helpDate">
+		Last updated 19 October 2015	</div>
+	</div>
+<h2 id="q92"><a href="/help?id=92" onclick="return toggleanswer(92)">Microphone (beta)</a></h2>
+
+<div class="helpContent" id="ans92" data-score="1" style="display:none;">
+	<p>
+Microphone brings voice notes to your Cbox. Users will see a microphone symbol below the message input box, which they can press and hold to record a note. The note is then posted into their message using regular <a href="/help?srch=boxcode">boxcode</a>.
+</p>
+<div class="notice">This is a beta feature currently, with limited availability. Its implementation may change in future.</div>
+<p>
+On the first tap of the button, the browser will request permission to use the device microphone. The user must Accept this request the first time. On future visits, the permission should be preserved. 
+</p>
+<h3>Compatibility</h3>
+<p>
+This feature makes use of recent browser technologies. As such it requires a modern browser such as Chrome. It will work on Android smartphones as well as desktops. 
+</p>
+<p>
+<b>Importantly,</b> you must have <a href="/admin?snippet">SSL (HTTPS) enabled</a> both in your Cbox <i>and your site</i>. If your site does not support HTTPS, then you will still be able to use this feature at your <a href="/admin?snippet">Quick Link</a>, but you will receive an error from it on your embedded Cbox. 
+</p>
+<h3>Security</h3>
+<p>
+We recommend using this feature in conjunction with a <a href="/help?srch=moderated">Moderated</a> Cbox. This way, you or a moderator has to give explicit voice permission to users before they are able to post messages (and also therefore, voice notes.) In other respects, voice notes are just like other messages with media in them. 
+</p>
+<h3>Installation</h3>
+<p>
+After enabling the feature, you may need to increase your Cbox <a href="/admin?layout">form height</a>. Otherwise, the button might be cut off and not be fully visible in your Cbox. 
+</p>		<div class="helpDate">
+		Last updated 22 September 2016	</div>
+	</div>
+<h2 id="q83"><a href="/help?id=83" onclick="return toggleanswer(83)">What happens to my credit when I upgrade or renew early?</a></h2>
+
+<div class="helpContent" id="ans83" data-score="1" style="display:none;">
+	<p>
+When you renew your service with us, your paid term is extended by the additional time that you purchase, regardless of the remaining credit. This means you never lose any time. For example, if your term ends on 21 September, but you renew early, purchasing 12 months in July, then your term is extended to 21 September <i>next year</i>. 
+</p>
+<h3>Upgrading Premium to Pro</h3>
+<p>
+When you upgrade from Premium to Pro, your credit is reset for the new plan. Remaining Premium credit is however held on your account, and if you have sufficient credit, you can <a href="/contact">contact us</a> to request a pro-rated conversion after your upgrade. 
+</p>
+		<div class="helpDate">
+		Last updated 1 June 2016	</div>
+	</div>
+<h2 id="q96"><a href="/help?id=96" onclick="return toggleanswer(96)">Ban and kick: what's the difference?</a></h2>
+
+<div class="helpContent" id="ans96" data-score="1" style="display:none;">
+	<p>
+When you ban a user, they are not able to post to your Cbox for the duration of the ban. They will also not be able to use any other features, such as private messaging. The default ban duration is one day. 
+</p><p>
+Kicking a user, by contrast, simply disconnects them from your Cbox. Their view of your Cbox will go blank, and they won't be able to see any new messages, nor post. 
+</p><p>
+Unlike a ban however, a kick is not continuously enforced. A kicked user can re-load your Cbox to re-join and resume viewing and posting. For this reason, kicking can be useful as a deterrent or warning &mdash; or simply to drop idle users &mdash; but it cannot prevent a user from returning to your Cbox. 
+</p>		<div class="helpDate">
+		Last updated 1 February 2018	</div>
+	</div>
+<h2 id="q88"><a href="/help?id=88" onclick="return toggleanswer(88)">Downloading message archives</a></h2>
+
+<div class="helpContent" id="ans88" data-score="1" style="display:none;">
+	<p>
+You can generate message archives at <a href="/admin?postsarc">your control panel</a>. These are records of the conversation in your Cbox including messages that were subsequently deleted or purged. 
+</p><p>
+The format is tab-separated CSV, so you will be able to import the file into a spreadsheet or database system.
+</p><p>
+It's not currently possible to import message archives back into Cbox. 
+</p>
+	</div>
+<h2 id="q78"><a href="/help?id=78" onclick="return toggleanswer(78)">How do I change the Cbox language?</a></h2>
+
+<div class="helpContent" id="ans78" data-score="1" style="display:none;">
+	<p>
+You can set your preferred language at <a href="/admin?home">your control panel</a>. This will change the language that your Cbox is displayed in, providing that we have a translation for that language. The Cbox website and control panel is only available in English. 
+</p><p>
+If you would like to provide a translation for Cbox for your language, please <a href="/contact">contact us</a>. 
+</p>
+		<div class="helpDate">
+		Last updated 19 October 2015	</div>
+	</div>
+<h2 id="q70"><a href="/help?id=70" onclick="return toggleanswer(70)">How do I choose a secure password?</a></h2>
+
+<div class="helpContent" id="ans70" data-score="1" style="display:none;">
+	<p>
+Your security online is important to us. Please consider these guidelines for choosing a secure password:
+<ul>
+<li>Avoid words which appear in the dictionary.</li>
+<li>A longer password is generally better.</li>
+<li>Mix uppercase letters, numbers, and other special characters into your password.</li>
+<li>Your password should not easily be associated with you &ndash; don't use your name or birthdate in your password.</li>
+</ul>
+</p>
+<p>
+Cbox will send you a password reset email if you ever forget your password here. This means that your email account must be at least as secure as your Cbox account. <b>Do not use the same password for Cbox that you use for your email account.</b> This is good practice generally: it is common for Internet services to send password reset emails to your email address. If any one of them is compromised, the risk is limited to that account only if your passwords are different. 
+</p>
+<p>
+A good tip for choosing a strong password: start with a memorable sentence. Then take the first letter from each word in the sentence to make your password. Use a mix of upper- and lower-case letters and use a number or other non-alphabetic character as a substitute for at least one letter. 
+</p>		<div class="helpDate">
+		Last updated 8 October 2015	</div>
+	</div>
+<h2 id="q97"><a href="/help?id=97" onclick="return toggleanswer(97)">Getting error "L-connection" when attempting to post</a></h2>
+
+<div class="helpContent" id="ans97" data-score="1" style="display:none;">
+	<p>
+The error message "L-connection" usually means that your network or internet connectivity is down. 
+</p>
+<p>
+However it may also be due to browser security policy relating to third-party iframes. In this case you may need to change your embed code to use HTTPS / SSL: locate your Cbox embed code in your site source, and where you find <code>src="http://wwwX.cbox.ws...</code>, substitute <code>src="<strong>https://</strong>wwwX.cbox.ws...</code>. 
+</p>		<div class="helpDate">
+		Last updated 10 December 2018	</div>
+	</div>
+<h2 id="q98"><a href="/help?id=98" onclick="return toggleanswer(98)">Cbox not displaying in Firefox 72</a></h2>
+
+<div class="helpContent" id="ans98" data-score="1" style="display:none;">
+	<p>
+Firefox from version 72 includes an Enhanced Tracking Protection feature that is now enabled by default. This feature misidentifies Cbox as a "fingerprinter" or "tracker" service and blocks it on third party sites, including your own site if you have embedded your Cbox there. 
+</p>
+<p>
+<a href="https://support.mozilla.org/en-US/kb/enhanced-tracking-protection-firefox-desktop#w_what-to-do-if-a-site-seems-broken" target="_blank">You can disable ETP</a> or add an exception to allow Cbox to load on your site. You should also still be able to use your <a href="/admin?snippet">Quick Link</a> to access your Cbox.
+</p>
+<p>
+Cbox has notified the list provider and has requested removal, and we are awaiting resolution. We are unfortunately not able to provide a timeline for when this will happen.
+</p>
+	</div>
+<h2 id="q99"><a href="/help?id=99" onclick="return toggleanswer(99)">How do I delete my data?</a></h2>
+
+<div class="helpContent" id="ans99" data-score="1" style="display:none;">
+	<p>
+If you are a Cbox administrator or owner then you can delete users' data via the control panel. In particular, you can delete messages permanently at <a href="/admin?posts">here</a> and remove registered user names <a href="/admin?users">here.</a>
+</p>
+<p>
+If you are a Cbox user then you can request the owner or administrator of the Cbox that you have participated in to remove your data. 
+</p>
+<p>
+You can also request a manual data deletion by <a href="/contact">contacting us</a>, including a reference to your account. We may require that you provide additional information to authenticate you as the account owner. 
+</p>		<div class="helpDate">
+		Last updated 30 June 2021	</div>
+	</div>
+</div>
+
+
+<div style="clear: both"></div>
+</div><!-- /content -->
+
+</div><!-- /bodywrap -->
+
+<div id="siteErrorBar"><div class="wrap" id="siteErrorBarCont">Loading...</div></div>
+
+
+
+<div id="footer">
+
+	<a href="/">About
+	</a><a href="/products">Plans &amp; pricing
+	</a><a href="/terms">Terms &amp; conditions
+	</a><a href="/privacy">Privacy policy
+	</a><a href="/notices">Notices
+	</a><a href="/contact">Contact us
+	</a>
+	<div class="verybottom">
+		&copy; 2004&ndash;2026 Cbox Communications (Pty) Ltd, all rights reserved. 
+			1 ms. 
+			83ce		</a>
+	</div>
+
+</div>
+
+
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ga('create', 'UA-242554-2', {
+	'cookieDomain': 'www.cbox.ws'
+});
+ga('send', 'pageview');
+
+</script>
+
+
+<script src="/code.js?20171024"></script>
+<script>
+	// Modal / naked mode.
+	if (window.isPopup) {
+		document.body.className = "Popped";
+	}
+	
+	// Only for CP pages
+	upgradeCheckboxes();
+
+var dropCrumb = function () {
+	if (!localStorage) {
+		return;
+	}
+	var bc = getCrumbs();
+	bc.push(location.href);
+	bc.splice(0, bc.length - 5);
+	localStorage.setItem("site:bread", JSON.stringify(bc));
+};
+
+var getCrumbs = function () {
+	if (!localStorage) {
+		return [];
+	}
+	var bcStr = localStorage.getItem("site:bread");
+	var bc = [];
+	if (bcStr) {
+		bc = JSON.parse(bcStr);
+	}
+	
+	return bc;
+}
+
+dropCrumb();
+</script>
+
+
+</body>
+</html>
+

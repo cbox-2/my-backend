@@ -1,0 +1,11 @@
+{  
+  "name": "msmsas55",  
+  "short_name": "msmsas55",  
+  "icons": [{  
+        "src": "/smile192.png",  
+        "sizes": "192x192",
+        "type": "image/png"
+      }],  
+  "display": "standalone",  
+  "gcm_sender_id": "758940942608"
+}
