@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html><html dir="rtl"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="robots" content="noindex, nofollow"><meta name="viewport" content="width=device-width, user-scalable=no"><meta http-equiv="X-UA-Compatible" content="IE=edge"><link href="data:image/x-icon;base64,AAABAAEAEBACAAAAAACwAAAAFgAAACgAAAAQAAAAIAAAAAEAAQAAAAAAQAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA//8AAP//AAD//wAA" rel="icon" type="image/x-icon"><title>Cbox</title><style type="text/css">@import "./?boxid=4271419&boxtag=do3gdi&sec=css&i=1431386153";</style><script>
+try {
+	var cbf = window.opener;
+	cbf.aonliners(0);
+} catch (e) {};
+
+function pmquote (uid) {
+	if (!cbf) {
+		return;
+	}
+	
+	var cd = cbf.document;
+	var inp = cd.forms[0].pst;
+	
+	if (inp.value == cbf.t3) {
+		inp.value = "";
+	}
+	inp.value = "//pm "+uid+" "+inp.value;
+
+	var caret = inp.value.length;
+
+	if (cd.selection) {
+		var sel = cd.selection.createRange();
+		sel.moveEnd ('character', caret);
+		sel.moveStart ('character', caret);
+		sel.select();
+	}
+	else if (inp.selectionStart != "null") {
+		inp.selectionStart = caret;
+		inp.selectionEnd = caret;
+	}
+	
+	inp.focus();
+	window.blur();
+}
+
+</script>
+</head>
+<body class="mnbdy popBdy popUsers">
+<table border="0" cellpadding="0" cellspacing="0" width="100%" height="100%" align="center"><tr><td height="100%" valign="top">
+
+  <table border="0" cellpadding="2" cellspacing="0" width="100%">
+  <tr><td class="stxt2" align="center"><b>يدردشون الآن (0)</b></td></tr>
+  </table>
+  <br>
+  <table border="0" cellpadding="2" cellspacing="0" width="100%">
+  <tr><td class="stxt">
+  <div align="center"><i>لا أحد يدردش الآن.</i></div>  </td></tr>
+  </table>
+  <br>
+  <table border="0" cellpadding="2" cellspacing="0" width="100%">
+  <tr><td class="stxt2" align="center"><b>يستعرضون حاليا (0)</b></td></tr>
+  </table>
+  <br>
+  <table border="0" cellpadding="2" cellspacing="0" width="100%">
+  <tr><td class="stxt">
+  <div align="center"><i>لا أحد يستعرض الآن.</i></div>  </td></tr>
+  </table>
+
+<br>
+</td></tr>
+<tr><td>
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tr><td class="stxt2" align="center"><a href="JavaScript:window.close()"><b>غلق</b></a></td></tr>
+</table>
+</td></tr></table>
+
+</body></html>
